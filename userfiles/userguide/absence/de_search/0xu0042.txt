@@ -1,0 +1,6 @@
+BIEN
+ 6
+BLEUES
+ 4
+BOUTONS
+ 6

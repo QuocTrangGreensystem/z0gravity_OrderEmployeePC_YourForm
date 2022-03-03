@@ -1,0 +1,672 @@
+html body {
+  font-family: 'Open Sans';
+}
+body * {
+  box-sizing: border-box;
+}
+.ticket {
+  overflow: hidden;
+}
+.ticket a {
+  color: #2178c3;
+}
+
+#the-ticket {
+  margin-bottom: 20px;
+}
+#ticket-comments {
+  /*float: right;
+	width: 33%;*/
+}
+#ticket-fields {
+  margin-bottom: 20px;
+  background: #fff;
+}
+#ticket-fields td,
+#ticket-fields th {
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  box-sizing: border-box;
+  text-align: center;
+  vertical-align: middle;
+}
+#ticket-fields td {
+  padding: 10px 0;
+}
+#ticket-fields th {
+  background: #06427a url(../img/front/bg-head-table.png) repeat-x;
+  border-bottom: none;
+  border-top: none;
+  border-right: 1px solid #fff;
+  font-weight: bold;
+  font-size: 14px;
+  color: #fff;
+}
+#ticket-fields td {
+  border: 1px solid #e0e0e0;
+  font-size: 14px;
+  color: #414141;
+}
+#ticket-fields .ms-drop.bottom {
+  /*z-index: 10 !important;*/
+}
+
+.ticket-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+#ticket-fields span.separator:after {
+  content: '/';
+  margin-right: 5px;
+  margin-left: 5px;
+}
+#ticket-fields span:last-child:after {
+  content: '';
+}
+#ticket-fields input[type='text'],
+#ticket-fields .input:not(.checkbox) {
+  /* width: 75%; */
+  background: #fff;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: 14px;
+  /* margin: auto; */
+  margin: 0 10px;
+}
+#ticket-fields .input input,
+#ticket-fields .input select {
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  border: none;
+  padding: 0 7px;
+}
+.ms-parent button {
+  border: 1px solid #ddd;
+  height: 36px;
+  line-height: 36px;
+  box-sizing: border-box;
+  text-align: left;
+  padding: 0 7px;
+  background: #fff;
+  font: inherit;
+}
+#ticket-fields .separator {
+  font-size: 14px;
+}
+
+#ticket-fields input[type='checkbox'] {
+  width: auto;
+  padding: 0;
+  height: inherit;
+}
+#ticket-fields .input.text {
+  background: url(../../img/new-icon/pen.png) no-repeat 95% center;
+}
+#ticket-fields input[type='text'] {
+  width: 86%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  padding-left: 8px;
+  margin-left: 0;
+  padding-right: 0;
+}
+
+#ticket-fields select {
+  width: auto;
+  min-width: 150px;
+  font-size: 14px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  background: url(/img/new-icon/down.png) no-repeat right 10px center #fff !important;
+}
+#ticket-fields .checkbox label {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #e1e6e8;
+  background: transparent;
+  border-radius: 2px;
+  box-sizing: border-box;
+  margin: auto;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  text-indent: -99999px;
+  vertical-align: middle;
+}
+#ticket-fields .checkbox label:after {
+  content: '';
+  margin-right: 20px;
+  display: inline-block;
+  vertical-align: text-top;
+  width: 14px;
+  height: 14px;
+  background: transparent;
+  z-index: 2;
+  top: 2px;
+  left: 2px;
+  border-radius: 2px;
+  cursor: pointer;
+  position: absolute;
+}
+#ticket-fields .checkbox input[type='checkbox']:checked + label:after {
+  background: #5584ff;
+}
+#ticket-fields .checkbox input {
+  opacity: 0;
+}
+#ticket-fields .delivery-date .input {
+  background: url(../../img/new-icon/date.png) no-repeat right 8px center #fff;
+}
+
+.mce-body-content img {
+  max-width: 100%;
+}
+.ticket-section {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border: 1px solid #ddd;
+}
+.ticket-header {
+  background: #06427a url(../img/front/bg-head-table.png) repeat-x;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  font-weight: bold;
+  height: 36px;
+  line-height: 36px;
+  box-sizing: border-box;
+}
+.toolbar {
+  position: absolute;
+  left: 5px;
+  top: 4px;
+}
+.toolbar span {
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  margin-right: 2px;
+  cursor: pointer;
+}
+.toolbar span.on {
+  background-color: #eee;
+}
+.toolbar span.off {
+  display: none;
+}
+#edit-content {
+  background-image: url(../img/edit.png);
+}
+#open-modal i {
+  font-size: 16px;
+  position: relative;
+  color: #fff;
+}
+#ticket-editor,
+.ticket-btn {
+  display: none;
+}
+
+.plupload_file_size,
+.plupload_file_name {
+  color: #000 !important;
+}
+
+#ticket-attachments {
+}
+#attachment-images,
+#attachment-documents {
+  overflow: hidden;
+}
+.attachment {
+  float: left;
+  margin-right: 10px;
+  padding: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.attachment.image {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background: #eee;
+  position: relative;
+}
+.attachment.image:last-child {
+  clear: right;
+}
+.attachment.image:hover {
+  border-color: #0069d6;
+  background: #fff;
+}
+.attachment.image span {
+  background: url(../img/up-arrow.png) no-repeat;
+  display: block;
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  right: 2px;
+  bottom: 2px;
+  border: 1px solid #0069d6;
+}
+.attachment.document {
+  margin-right: 20px;
+  margin-bottom: 5px;
+}
+.attachment.document span {
+  background: url(../img/new-icon/ic-upload.png) no-repeat center left;
+  padding: 6px 6px 6px 25px;
+  color: #2178c3;
+  font-weight: bold;
+}
+.qtip-content {
+  padding: 0;
+}
+.tooltip-action b {
+  display: block;
+  padding: 5px;
+}
+.tooltip-action i {
+  font-style: italic;
+  display: block;
+  padding: 5px;
+  font-size: 12px;
+  color: #666;
+}
+/*.tooltip-action span {
+	display: block;
+	padding: 5px;
+	padding-left: 30px;
+	color: #666;
+}*/
+.tooltip-action button {
+  display: block;
+  width: 100%;
+  min-width: 150px;
+  padding: 8px 5px;
+  padding-left: 30px;
+  color: #0069d6;
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 5px 50%;
+  cursor: pointer;
+  border-top: 1px solid #ddd;
+  text-align: left;
+}
+.tooltip-action button:hover {
+  background-color: #f0f0f0;
+}
+.tooltip-action .download {
+  background-image: url(../img/new-icon/download.png);
+  background-position: -2px;
+}
+.tooltip-action .delete {
+  background-image: url(../img/new-icon/close.png);
+  background-position: 5px;
+}
+.tooltip-action .insert {
+  background-image: url(../img/new-icon/pen.png);
+  background-position: 7px;
+}
+
+/* comment */
+#comment-list {
+  margin-top: 10px;
+  padding: 0;
+  list-style: none;
+}
+.comment {
+  overflow: hidden;
+  border-bottom: 1px solid #bbb;
+  margin: 0 0 10px 0;
+}
+.comment-author {
+  font-weight: bold;
+  font-size: 14px;
+  color: #2178c3;
+}
+.comment-avatar {
+  float: left;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+.comment-time {
+  color: #888;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+#ticket-comments .comment-content {
+  padding-top: 0;
+  margin-left: 55px;
+  padding-bottom: 10px;
+}
+#ticket-comments .comment-content {
+  border: none;
+}
+.comment-form {
+  padding-bottom: 10px;
+}
+.comment-text-wrapper {
+  margin-left: 55px;
+}
+#comment-text {
+  display: block;
+  width: 100%;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  visibility: visible !important;
+}
+.comment-actions {
+  float: right;
+}
+.comment-actions li {
+  float: left;
+}
+
+.comment-actions li a {
+  display: block;
+  height: 40px;
+  width: 40px;
+  box-sizing: border-box;
+  border: 1px solid #bbb;
+  text-align: center;
+  line-height: 40px;
+  border-right: 0;
+  background-position: top center;
+}
+.comment-actions li a.delete:hover {
+  background-color: #f05352;
+}
+.comment-actions a i {
+  font-size: 16px;
+  color: #ccc;
+  position: relative;
+  top: 2px;
+}
+.comment-actions a:hover i {
+  color: #fff;
+}
+.comment-actions a.static span {
+  opacity: 0.7;
+  transition: opacity 0.5s;
+}
+
+.comment-actions li a.static:hover span {
+  background-position: top center;
+  opacity: 1;
+}
+
+.comment-actions a.edit span {
+  background-image: url(../../img/new-icon/pen.png);
+  top: 10px;
+  position: relative;
+}
+.comment-actions a.delete span {
+  background-image: url(../img/exts/delete.png);
+  top: 10px;
+  position: relative;
+}
+.comment-actions span {
+  background: #fff no-repeat top center;
+  display: inline-block;
+  text-indent: -99999px;
+  width: 16px;
+  height: 16px;
+}
+
+.comment-actions li:last-child a {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-right: 1px solid #bbb;
+}
+
+.comment-actions li:first-child a {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.comment-actions a:hover {
+  background-color: #247fc3;
+  /* border:1px solid #247FC3; */
+}
+.comment-buttons {
+  margin-top: 15px;
+  display: none;
+}
+
+.comment-origin {
+  display: none;
+}
+
+.comment-system {
+  border-color: #9dd9ed;
+}
+
+.comment-system .comment-avatar {
+  width: 24px;
+  height: 24px;
+}
+.comment-system .comment-author,
+.comment-system .comment-time {
+  display: inline-block;
+}
+.comment-system .comment-text {
+  font-style: italic;
+  color: #666;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.1) url(../img/loading_check.gif) no-repeat center
+    center;
+  position: absolute;
+  display: none;
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 5px solid #ccc;
+  margin: 1.5em 10px 10px 10px;
+  padding: 0.5em 10px;
+  quotes: '\201C''\201D''\2018''\2019';
+  font-style: italic;
+  color: #666;
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+#ticket-info {
+  overflow: hidden;
+}
+#btn-list {
+  clear: both;
+}
+
+button.btn-ticket {
+  height: 40px;
+  width: 40px;
+  line-height: 38px;
+  border: 1px solid #e1e6e8;
+  background-color: #ffffff;
+  border-radius: 3px;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  transition: all 0.3s ease;
+  color: #666;
+  cursor: pointer;
+  background-image: none;
+  margin-right: 7px;
+}
+button.btn-ticket.btn-red i {
+  color: #f05352;
+}
+button.btn-ticket.btn-red:hover {
+  background-color: #f05352;
+  border-color: #f05352;
+}
+button.btn-ticket.btn-red:hover i {
+  color: #ffffff;
+}
+button.btn-ticket i {
+  position: relative;
+  top: 5px;
+  font-size: 20px;
+}
+button.btn-ticket:hover {
+  background-color: #247fc3;
+  color: #fff;
+  border-color: #247fc3;
+}
+button.btn-ticket:hover svg {
+  fill: #fff;
+}
+.follow-placeholder {
+  display: none;
+  margin-bottom: 20px;
+}
+.comment .my-avatar {
+  margin-right: 0;
+}
+.avatar-top {
+  width: calc(100% - 64px);
+  display: inline-block;
+  vertical-align: middle;
+}
+.avatar-top b {
+  /* position: relative;
+  top: -2px; */
+  line-height: 17px;
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  overflow: hidden;
+}
+.avatar-top span {
+  display: block;
+  line-height: 20px;
+  position: relative;
+}
+.ms-parent .ms-choice > div {
+  top: 14px;
+  background: url(/img/new-icon/down.png) left top no-repeat;
+}
+.ms-parent .ms-choice > div.open {
+  background: url(/img/new-icon/up.png) left top no-repeat;
+  top: 14px;
+}
+a.edit .icon-pencil:before {
+  content: '\e05f';
+}
+#layout .light-popup {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+}
+#attachment-link {
+  display: block;
+  margin-bottom: 10px;
+}
+#attachment-images {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+#attachment-link .attachment span {
+  color: #242424;
+}
+#attachment-link .attachment a {
+  margin-left: 7px;
+}
+.ms-drop ul > li label {
+  position: relative;
+  cursor: pointer;
+}
+.ms-drop ul > li label:after,
+.ms-drop ul > li label:before {
+  content: '';
+  cursor: pointer;
+  position: absolute;
+}
+.ms-drop ul > li label:after {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #e1e6e8;
+  background: transparent;
+  border-radius: 2px;
+  box-sizing: border-box;
+  top: 2px;
+  left: 7px;
+}
+.ms-drop ul > li label:before {
+  content: '';
+  margin-right: 20px;
+  display: inline-block;
+  vertical-align: text-top;
+  width: 12px;
+  height: 12px;
+  background: transparent;
+  z-index: 2;
+  top: 5px;
+  left: 10px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.ms-parent .ms-drop ul > li.selected,
+.ms-parent .ms-drop ul > li:hover {
+  background-color: transparent;
+}
+.ms-drop ul > li.selected label:before {
+  background: #5584ff;
+}
+.ms-drop ul > li label input {
+  opacity: 0;
+  display: inline;
+  margin: 0;
+  margin-right: 7px;
+  margin-left: 10px;
+}
+.qtip.qtip-default {
+  /* left: 20px !important; */
+}
+body #template_upload {
+  position: fixed;
+}
+.icon-link:before {
+  font-size: 18px;
+  color: #999;
+}
+.ticket-wrapper {
+  padding: 10px;
+}
+#ticket-info #btn-list {
+  margin-left: 10px;
+}
+select.dataTicketStatus {
+  border: 1px solid #ddd;
+  height: 36px;
+  line-height: 36px;
+  box-sizing: border-box;
+  text-align: left;
+  padding: 0 7px;
+  background: #fff;
+}

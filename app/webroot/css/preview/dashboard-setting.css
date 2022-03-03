@@ -1,0 +1,60 @@
+.layout-setting ul ul{
+	text-align: right;
+	    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.layout-setting ul ul li{
+	display: inline-block;
+}
+.layout-setting.gridster ul ul li a{
+	position: relative;
+	display: block;
+	right: inherit;
+	top: inherit
+}
+.layout-setting.gridster ul ul li.df-show a{
+	border-radius: 0;
+    width: 20px;
+	border-radius: 2px;
+    height: 20px;
+}
+.layout-setting.gridster ul ul li.df-show a:before{
+	height: 10px;
+    width: 10px;
+    background-color: #247FC3;
+    margin: 3px;
+	border-radius: 2px;
+	    left: 0;
+    top: 0px;
+}
+.layout-setting.gridster ul ul li.disabled.df-show a:before{
+	border: none;
+	opacity: 0;
+}
+.wd-submit .btn-form-action.btn-ok{
+	float: none;
+}
+.layout-setting.gridster ul li.disabled ul li.df-show a:before{
+	opacity: 0;
+}
+.wd-submit .btn-form-action.loading span{
+	display: none;
+}
+.wd-submit .btn-form-action.btn-ok.loading{
+	background-color: transparent;
+	position: relative;
+}
+.wd-submit .btn-form-action.btn-ok.loading:after{
+	content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: url(/img/business/wait-1.gif) no-repeat center center;
+    z-index: 3;
+    display: block;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+}

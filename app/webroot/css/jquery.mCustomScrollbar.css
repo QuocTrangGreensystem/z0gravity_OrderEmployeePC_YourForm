@@ -1,0 +1,12 @@
+#mcs_container{}
+#mcs_container .customScrollBox{position:relative;width:auto;overflow:hidden;}
+#mcs_container .customScrollBox .container{position:relative; left:0;}
+#mcs_container .customScrollBox .content{clear:both;}
+
+.dragger_container{height:15px; padding:1px; position: absolute;z-index: 10000;bottom:0;left:0;background-color: #fff;border:1px solid #9e9e9e}
+.dragger_container .dragger{position:absolute; width:60px; height:13px; background:url(mcsDragger.png) no-repeat;margin-top:2px;}
+
+#mcs1_container{width:auto}
+#mcs1_container .customScrollBox{position:relative; width:auto; overflow:hidden;}
+#mcs1_container .customScrollBox .container{position:relative; left:0;}
+#mcs1_container .customScrollBox .content{clear:both;}

@@ -1,0 +1,2278 @@
+<!-- =============================================== CHEN CSS + JS ================================================================ -->
+<?php
+	$getDataByPath = $getDataByPath ? 1 : 0;
+	echo $this->Html->css(array(
+		'projects',
+		'activity_request',
+		'slick_grid/slick.pager',
+		'slick_grid/slick.common',
+		'slick_grid/slick.edit'
+	));
+	echo $this->Html->script(array(
+		'slick_grid/lib/jquery-ui-1.8.16.custom.min',
+		'slick_grid/slick.core',
+		'slick_grid/slick.dataview',
+		'slick_grid/controls/slick.pager',
+		'slick_grid/slick.formatters',
+		'slick_grid/plugins/slick.cellrangedecorator',
+		'slick_grid/plugins/slick.cellrangeselector',
+		'slick_grid/plugins/slick.cellselectionmodel',
+		'slick_grid/slick.editors',
+		'slick_grid_custom'
+	));
+	if($typeSelect == 'week'){
+		echo $this->Html->css(array(
+			'slick_grid/slick.grid',
+		));
+		echo $this->Html->script(array(
+			'slick_grid/lib/jquery.event.drag-2.0.min',
+			'slick_grid/slick.grid'
+		));
+	} else {
+		echo $this->Html->css(array(
+			'slick_grid/slick.grid.activity'
+		));
+		echo $this->Html->script(array(
+			'slick_grid/lib/jquery.event.drag-2.2',
+			'slick_grid/slick.grid.activity'
+		));
+	}
+	$totalColums = 3;
+?>
+<style>.separator-week-div{border-left: 2px solid red; margin-left: -2px;}.disable-edit-day-div{background-color: #FAFAFA;}#absence, #absence-table{margin-left:-1px;}.foreDayCols{min-width:149px;max-width:149px;overflow:hidden;}#foreAction{min-width:50px;max-width:50px;overflow:hidden;}#scrollTopAbsence{ height:20px; width:500px; margin-bottom:5px; float:right; overflow-y:hidden;overflow-x:auto;}#scrollTopAbsenceContent{ height:20px;}.slick-cell.l1{ line-height:13px; vertical-align:middle; }i{font-size:12px; display:block; color:#30F;}</style>
+
+<div id="wd-container-main" class="wd-project-admin">
+	<?php echo $this->element("project_top_menu") ?>
+	<div class="wd-layout" style="height: 100%;">
+		<div class="wd-main-content">
+			<div class="wd-list-project">
+				<div style="padding-left:20px;">
+					<select style="border:1px solid #999;padding:2px;" name="typeRequest" id="typeRequest">
+						<option value="week" <?php echo $typeSelect=='week'?'selected':'';?>><?php echo __('Week',true);?></option>
+						<option value="month" <?php echo $typeSelect=='month'?'selected':'';?>><?php echo __('Month',true);?></option>
+						<!--option value="year" <?php //echo $typeSelect=='year'?'selected':'';?>><?php //echo __('Year',true);?></option-->
+					</select>  
+				</div>
+				<div id="message-place">
+					<?php
+					echo $this->Session->flash();
+					?>
+				</div>
+				<div id="clean-ok" class="message success" style="display: none;">OK <a href="#" class="close">x</a></div>
+				<div id="absence-container" style="min-height:400px;">
+					<div class="wd-table ch-check" id="project_container" style="width:100%;height: auto;">
+						<div id="table-control">
+							<?php
+							echo $this->Form->create('Control', array(
+								'type' => 'get',
+								'url' => '/' . Router::normalize($this->here)));
+							?>
+							<fieldset style="margin-left: 22px;">
+								<?php
+								echo $this->element('week_activity');
+								$idManageCheck = null;
+								if($isManage){
+									echo $this->Form->hidden('id', array('value' => $this->params['url']['id']));
+									$idManageCheck = $this->params['url']['id'];
+									echo $this->Form->hidden('profit', array('value' => $this->params['url']['profit']));
+								}
+								?>
+								<div class="input">
+									<?php
+									echo $this->Form->year('year', date('Y', $_start) - 5, date('Y', $_start) + 2, date('Y', $_start), array('empty' => false));
+									?>
+								</div>
+								<div class="input">
+									<?php
+									echo $this->Form->month('month', date('m', $_start), array('empty' => false));
+									echo $this->Form->hidden('get_path', array('value' => $getDataByPath ? 1 : 0));
+									?>
+								</div>
+								<div class="button">
+									<input type="submit" value="OK" />
+								</div>
+								<div class="activity-request-status">
+								<!--MODIFY BY VI NGUYEN 03/052014-->
+										<h2>
+										<?php 
+											$dateValidate = !empty($requestConfirmDate) ? date('d/m/Y', $requestConfirmDate) : '';
+											$nameValidate = !empty($requestConfirmName) ? $requestConfirmName : '';
+											if ($requestConfirm == 0 && $typeSelect != 'year'){
+												//__('Waiting validation');
+												__('Sent');
+											} elseif ($requestConfirm == 1 && $typeSelect != 'year'){
+												__('Rejected (' .$nameValidate. ', ' .$dateValidate . ')');
+											} elseif ($requestConfirm == 2 && $typeSelect != 'year'){
+												__('Validated (' .$nameValidate. ', ' .$dateValidate . ')');
+											} elseif($requestConfirm == -1 && $typeSelect != 'year'){
+												__('In progress');
+											}
+										?>
+										</h2>
+								  <!--END 03/05/2014-->
+									</div>
+								<div style="clear:both;"></div>
+							</fieldset>
+							<?php
+							echo $this->Form->end();
+							?>
+							<!--a href="javascript:void(0);" id="refresh_menu" class="wd-add-project" style=" position:absolute !important; left: 115px;"><span><?php //__('Refresh Menu') ?></span></a-->
+							
+							<?php if (empty($isManage) || ($isManage && ($requestConfirm == -1 || $requestConfirm == 1))) : ?>
+								<?php if (($requestConfirm == -1 || $requestConfirm == 1) && $typeSelect != 'year'): ?>
+									<?php if($activateCopy == 1):?>
+										<a href="javascript:void(0)" id="copy_forecast" style="margin-top: -30px;padding-top: 12px;" class="copy-timesheet" title="<?php __('Copy Forecast')?>"><span><?php __('Copy Forecast'); ?></span></a>
+									<?php endif; ?>
+									<a href="javascript:void(0)" id="submit-request-all-top" class="send-for-validate send-for-validate-top" title="<?php __('Send')?>"><span><?php __('Request validate'); ?></span></a>
+									<a href="javascript:void(0)" class="" id="refresh_menu" title="<?php __('Refresh Menu')?>"><span><?php __('Refresh Menu') ?></span></a>                                    
+								<?php endif; ?>
+							<?php else : ?>
+								<?php
+									$employee_info = $this->Session->read('Auth.employee_info');
+									$is_sas = $employee_info['Employee']['is_sas'];
+									if ($is_sas != 1) {
+										$role = $employee_info['Role']['name'];
+									} 
+								?>
+								<?php if($requestConfirm == 0 && $typeSelect != 'year')://if($role == "admin"):?>
+								<a href="javascript:void(0)" id="submit-request-no-top" class="validate-for-reject validation-for-reject-top" title="<?php __('Reject Requested')?>"><span><?php __('Reject Requested'); ?></span></a>
+								<?php endif;?>
+								<?php if($requestConfirm == 2 && $role == "admin" && $typeSelect != 'year'):?>
+								<a href="javascript:void(0)" id="submit-request-no-top" class="validate-for-reject validate-for-reject-top" title="<?php __('Reject Requested')?>"><span><?php __('Reject Requested'); ?></span></a>
+								<?php endif;?>
+								<?php if ($requestConfirm != 2 && $typeSelect != 'year') : ?>
+								<a href="javascript:void(0)" id="submit-request-ok-top" class="validate-for-validate validation-for-validate-top" title="<?php __('Validate Requested')?>"><span><?php __('Validate Requested'); ?></span></a>
+								<?php endif; ?>
+							<?php endif; ?>
+							<a href="javascript:;" onclick="expandScreen();" id="expand-btn" class="validate-for-validate validation-for-validate-top"><?php echo $this->Html->image("front/expand-tree.png"); ?></a>
+                            <?php
+                                $employee_info = $this->Session->read('Auth.employee_info');
+                                $role = !empty($employee_info['Role']) && !empty($employee_info['Role']['name']) ? $employee_info['Role']['name'] : '';
+                                $checkCompanyRequests = ClassRegistry::init('ActivityRequest')->find('all', array(
+                                    'recursive' => -1,
+                                    'conditions' => array('company_id' => $employeeName['company_id']),
+                                    'fields' => array('id'),
+                                    'limit' => 1
+                                ));
+                                $checkCompanyRequests = !empty($checkCompanyRequests) ? count($checkCompanyRequests) : 0;
+                                if($role == "admin" && $checkCompanyRequests == 0):
+                            ?>
+                            <a href="javascript:void(0)" class="import-excel-icon-all" id="import_CSV" style="margin-right: 22px; margin-top: -42px;" title="<?php __('Import CSV')?>"><span><?php __('Import CSV') ?></span></a>
+                            <?php 
+                                endif; 
+                            ?>
+                        </div>
+						<div id="absence-wrapper" <?php if($typeSelect != 'week'){echo "class='hideScroll'";}?> >
+						
+							<?php if($typeSelect != 'week'){?>
+							<style>#absence-fixed{ width:28% !important; }</style>
+					   <div id="scrollTopAbsence"><div id="scrollTopAbsenceContent"></div></div>
+						<br clear="all"  />
+							<table id="absence-fixed">
+								<thead>
+									<tr>
+										<th rowspan="2" width="" id="foreEmploy"></th>
+										<th rowspan="2" width="30%" id="foreCapacity"><?php __('Capacity'); ?></th>
+									</tr>     
+								</thead>
+								<tbody id="absence-table-fixed">
+								</tbody>
+							</table>
+							<?php }else {?><style>.slick-viewport{ overflow-x:hidden !important; overflow-y:auto !important;}</style><?php }?>
+							<div id="absence-scroll" style="visibility: hidden;">
+								<table id="absence" style="visibility: visible;">
+									<thead>
+										<tr>
+											<?php if($typeSelect == 'week'):?>
+											<th rowspan="2" width="18%" id="foreEmploy"></th>
+											<th rowspan="2" width="8%" id="foreCapacity"><?php __('Capacity'); ?></th>
+											<?php endif;?>
+											<?php 
+												if(!empty($listWorkingDays)):
+													$count=3;
+													foreach($listWorkingDays as $key => $val):
+															$totalColums++;
+											?>
+											<th width="<?php echo ($typeSelect == 'week') ? '11%' : '149';?>" class="foreDayCols <?php echo 'fore'.date('l', $val);?> col-<?php echo $count;?>"><?php echo __(date('l', $val)) . __(date(' d ', $val)) . __(date('M', $val)); ?></th>
+											<?php
+													$count++;
+													endforeach;
+												endif;
+											?>
+											<?php
+												if(($typeSelect == 'week' || $typeSelect == 'month') && ($requestConfirm == -1 || $requestConfirm == 1)):
+											?>
+											<th rowspan="2" width="1%" id="foreAction"><?php echo __('Action'); ?></th>
+											<?php
+												endif
+											?>
+										</tr>
+									</thead>
+									<tbody id="absence-table">
+										<tr><td colspan="27">&nbsp;</td></tr>
+									</tbody>
+								</table>
+							</div>
+							
+						</div>
+						<div id="activity-request" style="margin: 0px 22px 0 22px;height:400px;border-bottom: 1px solid #ccc;"></div>
+						<div style="margin: 0 22px; ">
+							<div class="wd-title" style="padding: 10px;">
+								<?php if (empty($isManage) || ($isManage && ($requestConfirm == -1 || $requestConfirm == 1))) : ?>
+									<?php if (($requestConfirm == -1 || $requestConfirm == 1) && $typeSelect != 'year'): ?>
+										<div style="display: none;">
+											<?php
+											echo $this->Form->create('Request', array(
+												'id' => 'form-request-all',
+												'type' => 'get',
+												'url' => array('controller' => 'activity_forecasts', 'action' => 'confirm_request', $typeSelect)));
+											if ($isManage) {
+												echo $this->Form->hidden('id', array('value' => $this->params['url']['id']));
+												echo $this->Form->hidden('profit', array('value' => $this->params['url']['profit']));
+											}
+											$valWeek = date('W', $_end);
+											$valYear = date('Y', $_end);
+											if($typeSelect === 'month'){
+												$valWeek = date('W', $_start);
+												$valYear = date('Y', $_start);
+												echo $this->Form->hidden('month', array('value' => @$_GET['month']));
+											}
+											echo $this->Form->input('week', array('type' => 'hidden', 'value' => $valWeek));
+											echo $this->Form->input('year', array('type' => 'hidden', 'value' => $valYear));
+											echo $this->Form->input('rd', array('value' => mt_rand(9999, 99999)));
+											echo $this->Form->hidden('get_path', array(
+												'name' => 'get_path',
+												'value' => $getDataByPath ? 1 : 0
+											));
+											echo $this->Form->end();
+											?>
+										</div>
+										<a style="float: left;" href="javascript:void(0)" id="submit-request-all" class="send-for-validate send-for-validate-bot" title="<?php __('Send')?>"><span><?php __('Request validate'); ?></span></a>
+									<?php endif; ?>
+								<?php else : ?>
+									<?php
+									$types = $urls = '';
+									$urls = array('profit' => $profit, 'week' => date('W', $_end), 'year' => date('Y', $_end), 'get_path' => $getDataByPath ? 1 : 0);
+									if($typeSelect === 'week'){
+										$types = 'week';
+									} elseif($typeSelect === 'month'){
+										$types = 'month';
+										$urls = array('profit' => $profit, 'week' => date('W', $_start), 'year' => date('Y', $_start), 'get_path' => $getDataByPath ? 1 : 0);
+									}
+									echo $this->Form->create('Request', array(
+										'escape' => false, 'id' => 'request-form', 'type' => 'post',
+										'url' => array('controller' => 'activity_forecasts', 'action' => 'response', $types, '?' => $urls)));
+									echo $this->Form->hidden('id.' . $employeeName['id'], array('value' => 1));
+									echo $this->Form->hidden('validated', array('name' => 'data[validated]', 'value' => 0, 'id' => 'ac-validated'));
+									echo $this->Form->end();
+									?>
+									<?php
+										$employee_info = $this->Session->read('Auth.employee_info');
+										$is_sas = $employee_info['Employee']['is_sas'];
+										if ($is_sas != 1) {
+											$role = $employee_info['Role']['name'];
+										} 
+									?>
+									<?php if($requestConfirm == 0 && $typeSelect != 'year')://if($role == "admin"):?>
+									<a href="javascript:void(0)" id="submit-request-no" class="validate-for-reject validate-for-reject-bottom" title="<?php __('Reject Requested')?>"><span><?php __('Reject Requested'); ?></span></a>
+									<?php endif;?>
+									<?php if($requestConfirm == 2 && $role == "admin" && $typeSelect != 'year'):?>
+									<a href="javascript:void(0)" id="submit-request-no" class="validate-for-reject validation-for-reject-bottom" title="<?php __('Reject Requested')?>"><span><?php __('Reject Requested'); ?></span></a>
+									<?php endif;?>
+									<?php if ($requestConfirm != 2 && $typeSelect != 'year') : ?>
+									<a href="javascript:void(0)" id="submit-request-ok" class="validate-for-validate validation-for-validate-bottom" title="<?php __('Validate Requested')?>"><span><?php __('Validate Requested'); ?></span></a>
+									<?php endif; ?>
+								<?php endif; ?>
+							</div>
+							<?php //echo $this->element('grid_status'); ?>
+							<div id="menuContext" style=" content:close-quote; position:absolute;">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<?php
+/**
+ * Cac function ho tro cho phan view
+ */
+function jsonParseOptions($options, $safeKeys = array()) {
+	$output = array();
+	$safeKeys = array_flip($safeKeys);
+	foreach ($options as $option) {
+		$out = array();
+		foreach ($option as $key => $value) {
+			if (!is_int($value) && !isset($safeKeys[$key])) {
+				$value = json_encode($value);
+			}
+			$out[] = $key . ':' . $value;
+		}
+		$output[] = implode(', ', $out);
+	}
+	return '[{' . implode('},{ ', $output) . '}]';
+}
+
+function formatForecast($n) {
+	return number_format($n, 2, '.', '');
+}
+/**
+ * Xay dung du lieu cho phan forecast va phan timesheet
+ */
+$dataView = array();
+$mapDatas = array('hl' => array(), 'ab' => array(), 'ac' => array(), 'chAb' => array());
+$absences['off'] = array('print' => __('Holiday', true));
+foreach ($employees as $id => $employee) {
+	foreach ($listWorkingDays as $day => $time) {
+		$default = array(
+			'date' => $time,
+			'absence_am' => 0,
+			'absence_pm' => 0,
+			'activity_am' => 0,
+			'activity_pm' => 0,
+			'employee_id' => $id
+		);
+		foreach (array('am', 'pm') as $type) {
+			if (!empty($holidays[$time][$type])) {
+				continue;
+			}
+			$isValidated = isset($requests[$id][$time]['absence_' . $type]) && ($requests[$id][$time]['response_' . $type] == 'validated' || $requests[$id][$time]['response_' . $type] == 'waiting');
+			if (!empty($forecasts[$id][$time]['activity_' . $type]) && $forecasts[$id][$time][$type . '_model']) {
+				$default['activity_' . $type] = $forecasts[$id][$time]['activity_' . $type];
+				$default['model_' . $type] = strtolower($forecasts[$id][$time][$type . '_model']);
+				if ($isValidated) {
+					unset($activityRequests[$default['activity_' . $type]]);
+				}
+			}
+			if (!empty($requests[$id][$time]['absence_' . $type])
+					&& ($requests[$id][$time]['response_' . $type] === 'validated'
+					|| $requests[$id][$time]['response_' . $type] === 'waiting'
+					|| empty($forecasts[$id][$time]['activity_' . $type]))) {
+				$default['absence_' . $type] = $requests[$id][$time]['absence_' . $type];
+				$default['response_' . $type] = $requests[$id][$time]['response_' . $type];
+				if ($isValidated) {
+					$mapDatas['chAb'][$default['absence_' . $type]][] = $requests[$id][$time]['response_' . $type];
+					if (!isset($mapDatas['ab'][$default['absence_' . $type]][$day])) {
+						$mapDatas['ab'][$default['absence_' . $type]][$day] = 0;
+					}
+					$mapDatas['ab'][$default['absence_' . $type]][$day] += 0.5;
+				}
+			}
+		}
+		$dataView[$id][$day] = $default;
+	}
+}
+$workloadOfEmployees = array();
+if(!empty($workloads)){
+	foreach($dataView as $id1 => $_dataViews){
+		foreach($_dataViews as $time1 => $_dataView){
+			foreach($workloads as $id2 => $_workloads){
+				foreach($_workloads as $time2 => $_workload){
+					if($id1 == $id2 && $time1 == $time2){
+						$dataView[$id1][$time1]['workload'] = $_workload;
+					}
+					$workloadOfEmployees[$time2] = $_workload;
+				}
+			}    
+		}
+	}
+}
+echo '<style type="text/css">
+	.slick-header-columns{ display:none;},
+	.slick-viewport{ padding:0 !important; },
+	.slick-viewport .grid-canvas .ab-validated .r1,
+	.slick-viewport .grid-canvas .ab-holiday .r1 {background-color: #ffff00; color: #000 !important; }
+	.ab-holiday .r1 {background-color: #ffff00; color: #000 !important; }
+	.ab-validation .r1 {background-color: #99cc00; color: #000 !important;}
+	.ab-waiting .r1 {background-color: #ff6600; color: #000 !important;}
+	.ab-validated .r1,.rp-validated span {}
+	.ab-holiday .r1, .rp-holiday span {}
+	.l0{ padding-right:0px !important; }
+	.l'.$totalColums++.'{ padding-right:0px !important;}
+	  </style>';
+$css = '';
+foreach ($constraint as $key => $data) {
+	//$css .= ".rp-$key span {background-color :#fff;}";
+}
+echo '<style type="text/css">' . $css . '</style>';
+$columns = array(
+	array(
+		'id' => 'no.',
+		'field' => 'no.',
+		'name' => '#',
+		'sortable' => false,
+		'resizable' => false,
+		'noFilter' => 1,
+	),
+	array(
+	'rerenderOnResize' => true,
+		'id' => 'activity',
+		'field' => 'activity',
+		'name' => __('Activity', true),
+		'width' => 130,
+		'sortable' => false,
+		'resizable' => false,
+		'noFilter' => 1,
+		'formatter' => 'Slick.Formatters.Activity',
+		'editor' => 'Slick.Editors.selectBox2'
+	),
+	array(
+	'rerenderOnResize' => true,
+		'id' => 'capacity',
+		'field' => 'capacity',
+		'name' => __('Capacity', true),
+		'width' => 130,
+		'sortable' => false,
+		'resizable' => false,
+		'noFilter' => 1,
+		'formatter' => 'Slick.Formatters.Capacity'
+	)
+);
+if(!empty($listWorkingDays)){
+	foreach($listWorkingDays as $key => $val){
+		$columns[] = array(
+			'rerenderOnResize' => true,
+				'id' => $val,
+				'field' => $val,
+				'name' => __(date('l', $val), true) . ' / ' . date('d M', $val),
+				'width' => 130,
+				'sortable' => false,
+				'resizable' => false,
+				'noFilter' => 1,
+				'editor' => 'Slick.Editors.forecastValue',
+				'validator' => 'DataValidation.forecastValue',
+				'formatter' => 'Slick.Formatters.forecastValue'
+		);
+	} 
+}
+$columns[] = array(
+	'rerenderOnResize' => true,
+		'id' => 'action.',
+		'field' => 'action.',
+		'name' => __('Action', true),
+		'width' => 90,
+		'sortable' => false,
+		'resizable' => false,
+		'noFilter' => 1,
+		'formatter' => 'Slick.Formatters.Action'
+);
+$i = 1;
+$gridView = array();
+$selectMaps = array();
+$capacity = array();
+foreach ($listWorkingDays as $day => $time) {
+	$capacity[$day] = floatval($workdays[strtolower(date('l', $day))]);
+	if (isset($holidays[$time])) {
+		foreach ($holidays[$time] as $val) {
+			if (!isset($mapDatas['hl']['off'][$day])) {
+				$mapDatas['hl']['off'][$day] = 0;
+			}
+			$mapDatas['hl']['off'][$day] += 0.5;
+		}
+	}
+}
+$capacity['capacity'] = array_sum($capacity);
+$_mapDatas = !empty($mapDatas['chAb']) ? $mapDatas['chAb'] : array();
+unset($mapDatas['chAb']);
+foreach ($mapDatas as $type => $mapData) {
+	foreach ($mapData as $activity => $dx) {
+		$data = array(
+			'id' => $type . '-' . $activity,
+			'no.' => $i++,
+			'type' => $type,
+			'MetaData' => array(),
+			'readonly' => true
+		);
+		if ($type == 'ab') {
+			$data['MetaData']['cssClasses'] = 'disabled ab-validated';
+			if(!empty($_mapDatas[$activity]) && in_array('waiting', $_mapDatas[$activity])){
+				$data['MetaData']['cssClasses'] = 'disabled ab-validated ab-waiting';
+			} else {
+				$data['MetaData']['cssClasses'] = 'disabled ab-validated ab-validation';
+			}
+		} elseif ($type == 'hl') {
+			$data['MetaData']['cssClasses'] = 'disabled ab-holiday';
+		}
+		$data['activity'] = $activity;
+		foreach ($dx as $day => $val) {
+			$data[$day] = formatForecast($val);
+		}
+		if ($type == 'ac') {
+			foreach ($dayMaps as $day => $time) {
+				if (isset($activityRequests[$activity][$time])) {
+					$data[$day] = formatForecast($activityRequests[$activity][$time]['value']);
+				}
+			}
+			unset($activityRequests[$activity]);
+		}
+		$data['action.'] = '';
+		$gridView[] = $data;
+	}
+}
+foreach ($activityRequests as $activity => $data) {
+	$data = array(
+		'id'          => 'ac-' . $activity,
+		'no.'         => $i++,
+		'type'        => 'ac',
+		'MetaData'    => array(),
+		'last'        => $activity
+	);
+	
+	$new   = $activity;
+	$task  = '';
+	
+	if(strpos($activity, '-') !== false){
+		list($new , $task) = explode('-', $activity , 2);
+	}
+
+	$data['activity'] = $new;
+	$data['task_id']  = $task;
+	foreach ($listWorkingDays as $day => $time) {
+		if (isset($activityRequests[$activity][$time])) {
+			$data[$day] = formatForecast($activityRequests[$activity][$time]['value']);
+		}
+	}
+	$data['action.'] = '';
+	$gridView[] = $data;
+}
+$i18ns = array(
+	'Add a comment' => __('Add a comment', true),
+	'Summary' => __('Summary', true),
+	'Holiday' => __('Holiday', true),
+	'-- Any --' => __('-- Any --', true),
+	'This information is not blank!' => __('This information is not blank!', true),
+	'You have to declare %s days before validate your request' => __('You have to declare %s days before validate your request', true),
+	'Your are sure to validate you time sheet? Once validated your could not modify it' => __('Your are sure to validate you time sheet? Once validated your could not modify it', true),
+	'The value must between %1$s and %2$s.' => __('The value must between %1$s and %2$s.', true),
+	'Clear' => __('Clear', true),
+	'No name' => __('No name', true),
+	'Unknown' => __('Unknown', true),
+);
+if($typeSelect === 'week'){
+	$queryUpdate = '/week?week=' . date('W', $_end) . '&year=' . date('Y', $_end);
+}else{
+	$queryUpdate = '/month?month=' . date('m', $_start) . '&year=' . date('Y', $_start);
+}
+if ($isManage) {
+	$queryUpdate .= '&id=' . $this->params['url']['id'] . '&profit=' . $this->params['url']['profit'];
+}
+if ($is_sas != 1) {
+	$role = $employee_info['Role']['name'];
+}
+$queryUpdate = $getDataByPath ? $queryUpdate.'&get_path='.$getDataByPath : $queryUpdate;
+?>
+<!-- Phan html dung de xu ly mot so tac vu an, khi nao can thiet se goi len -->
+<div id="action-template" style="display: none;">
+	<div style="margin: 0 auto !important; width: 54px;">
+		<div class="wd-bt-big">
+			<a onclick="return confirm('<?php echo h(sprintf(__('Are you sure you want to delete "%s"?', true), '%2$s')); ?>');" class="wd-hover-advance-tooltip" href="<?php echo $this->Html->url(array('action' => 'delete_request', '%1$s','%3$s')) . $queryUpdate; ?>">&nbsp;</a>
+		</div>
+	</div>
+</div>
+<!-- dialog_import -->
+<div id="dialog_import_CSV" style="display:none" title="Import CSV file" class="buttons">
+    <?php
+    echo $this->Form->create('Import', array('id' => 'uploadForm', 'type' => 'file', //'target' => '_blank',
+        'url' => array('controller' => 'activity_forecasts', 'action' => 'import_csv')));
+    ?>
+    <div class="wd-input">
+        <center>
+            <label><?php echo __('File:') ?></label>
+            <input type="file" name="FileField[csv_file_attachment]" />
+        </center>
+        <div style="clear:both; margin-left:100px; width: 220px; color: #008000; font-style:italic;">(Allowed file type: *.csv)</div>
+    </div>
+    <ul class="type_buttons">
+        <li><a class="cancel" href="javascript:void(0)"><?php echo __('Close') ?></a></li>
+        <li><a id="import-submit" class="new" onclick="return false;" href="#"><?php echo __('Submit') ?></a></li>
+        <li id="error"></li>
+    </ul>
+    <?php echo $this->Form->end(); ?>
+</div>
+<!-- dialog_import -->
+<!-- Dialog xu ly phan request all data in timesheet -->
+<div id="dialog-request-all" class="buttons" style="display: none;" title="<?php echo __('Send request for validation', true) ?>">
+	<div class="dialog-request-message">
+
+	</div>
+	<div style="clear: both;"></div>
+	<ul class="type_buttons" style="padding-right: 10px !important">
+		<li><a href="javascript:void(0)" class="cancel"></a></li>
+		<li><a href="javascript:void(0)" class="ok"></a></li>
+	</ul>
+</div>
+<!-- dialog_vision_portfolio: phan nay xu ly luc reject va validate o admin -->
+<div id="add-comment-dialog" class="buttons" style="display: none;" title="<?php __('Confirm'); ?>">
+	<div class="dialog-request-message">
+		<?php //__('Your are sure to validate you time sheet? Once validated your could not modify it'); ?>
+	</div>
+	<ul class="type_buttons" style="padding-right: 10px !important">
+		<li><a href="javascript:void(0)" class="cancel"></a></li>
+		<li><a href="javascript:void(0)" class="ok"></a></li>
+	</ul>
+</div>
+<!-- ToolTip -->
+<div id="tooltip-template" class="buttons" style="display: none;">
+	<dl id="tooltip-template-dl" class="non-actask">
+		<dt><?php __('Name'); ?> :</dt>
+		<dd>%1$s</dd>
+		<dt><?php __('Short name'); ?> :</dt>
+		<dd>%2$s</dd>
+		<dt><?php __('Long name'); ?> :</dt>
+		<dd>%3$s</dd>
+		<dt><?php __('Family'); ?> :</dt>
+		<dd>%4$s</dd>
+		<dt><?php __('Subfamily'); ?> :</dt>
+		<dd>%5$s</dd>
+		<dt class="actask"><?php __('Task'); ?> :</dt>
+		<dd class="actask">%6$s</dd>
+	</dl>
+</div>
+<!-- Cho nay de tao context menu -->
+<div id="jqxMenu"></div>
+
+<!-- =============================================== SCRIPT WRITE INSIDE CODE ================================================================ -->
+<script type="text/javascript">
+	(function($){
+		//$(function(){
+			var openDialog = function(title,callback){
+				var $dialog = $('#add-comment-dialog').attr('title' , title);
+				$dialog.dialog({
+					zIndex : 10000,
+					modal : true,
+					minHeight : 50,
+					close : function(){
+						$dialog.dialog('destroy');
+					}
+				});
+				$dialog.find('a.ok').unbind().click(function(){
+					callback.call(this);
+				});
+				$dialog.find('a.cancel').unbind().click(function(){
+					$dialog.dialog('close');
+					return false;
+				});
+			};
+			$('#submit-request-no, #submit-request-no-top').click(function(){
+				openDialog('<?php __('Reject Activity request?'); ?>',function(){
+					$('#ac-validated').val(0);
+					$('#request-form').submit();
+				});
+			});
+			$('#submit-request-ok, #submit-request-ok-top').click(function(){
+				openDialog('<?php __('Activity validate?'); ?>',function(){
+					$('#ac-validated').val(1);
+					$('#request-form').submit();
+				});
+			});
+
+		//});
+
+	})(jQuery);
+</script>
+<script>
+	var DataValidation = {}, gridControl, typeSelect = <?php echo json_encode($typeSelect);?>, requestConfirm = <?php echo json_encode($requestConfirm);?>;
+	$(document).ready(function () {
+		/**
+		 * Cac function viet them.
+		 */
+		function GetObjectKeyIndex(obj, keyToFind) {
+			var i = 0, key;
+			for (key in obj) {
+				if (key == keyToFind) {
+					return i;
+				}
+				i++;
+			}
+			return null;
+		};
+		function GetObjectValueIndex(obj, keyToFind) {
+			var i = 0, key;
+			for (key in obj) {
+				var val = obj[key] ? obj[key] : 0;
+				if (val == keyToFind) {
+					return i;
+				}
+				i++;
+			}
+			return null;
+		};
+		/**
+		 * Cac doan code
+		 */
+		/**
+		 * Phan Slick Grid cho phan timesheet
+		 */
+		var $this = SlickGridCustom, actionTemplate  =  $('#action-template').html(), currentMousePos = { x: -1, y: -1 }
+			mapeds = <?php echo json_encode($mapeds); ?>,
+			capacity = <?php echo json_encode($capacity); ?>,
+			absences = <?php echo json_encode($absences); ?>,
+			workdays = <?php echo json_encode($workdays); ?>,
+			listWorkingDays = <?php echo  json_encode($listWorkingDays);?>,
+			daysInWeek = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
+			activityNotAccessDeletes = <?php echo json_encode($activityNotAccessDeletes);?>,
+			taskNotAccessDeletes = <?php echo json_encode($taskNotAccessDeletes);?>,
+			checkFullDayActivities = <?php echo json_encode($checkFullDayActivities);?>,
+			checkFullDayTasks = <?php echo json_encode($checkFullDayTasks);?>,
+			checkFullDays = <?php echo json_encode($checkFullDays);?>,
+			activities = mapeds['activity'], tasks = mapeds['task'];
+		$(document).mousemove(function(event) {
+			currentMousePos.x = event.pageX;
+			currentMousePos.y = event.pageY;
+		});
+		$this.i18n = <?php echo json_encode($i18ns); ?>;
+		$this.canModified =  <?php echo json_encode($requestConfirm == -1 || $requestConfirm == 1); ?>; 
+		if(typeSelect === 'year'){
+			$this.canModified = false;
+		}
+		// Formatters...
+		$.extend(Slick.Formatters,{
+			Action : function(row, cell, value, columnDef, dataContext){
+				if(dataContext.activity != 0){ // is activity
+					if(activityNotAccessDeletes[dataContext.activity]){
+						return '';
+					}
+				} else { // is task
+					if(taskNotAccessDeletes[dataContext.task_id]){
+						return '';
+					}
+				}
+				if(dataContext.type == 'ab' || dataContext.readonly || dataContext.type == 'hl'){
+					return '';
+				}
+				var nameDelete = '';
+				if(dataContext.activity && dataContext.activity != 0){
+					nameDelete = (activities[dataContext.activity] || {}).name || $this.t('Unknown');
+				} else {
+					nameDelete = (tasks[dataContext.task_id] || {}).name || $this.t('Unknown');
+				}
+				return Slick.Formatters.HTMLData(row, cell, $this.t(actionTemplate, dataContext.activity,
+				nameDelete, dataContext.task_id || -1), columnDef, dataContext);
+			},
+			Activity : function(row, cell, value, columnDef, dataContext){
+				if(dataContext.type == 'ac'){
+					if(activities[value]){
+						if(dataContext.task_id && activities[value].tasks[dataContext.task_id]){
+							var _taskName = activities[value].tasks[dataContext.task_id] ? activities[value].tasks[dataContext.task_id].name : '';
+							_taskName = _taskName ? '<i>' + _taskName + '</i>' : _taskName;
+							value = '<div class="activity-tootip" rel="' + value + '" task="' + dataContext.task_id + '">' + activities[value].short_name + _taskName + '</div>';
+						} else {
+							value = '<div class="activity-tootip" rel="' + value + '">' + activities[value].short_name + '</div>';
+						}
+					} else {
+						if(dataContext.task_id) {
+							var task_id = dataContext.task_id;
+							if(tasks[task_id]){
+								var task = tasks[task_id];
+								if(task.activity_id){
+									var activity_id = task.activity_id;
+									if(activities[activity_id]){
+										var _taskName = activities[activity_id].tasks[dataContext.task_id] ? activities[activity_id].tasks[dataContext.task_id].name : '';
+										_taskName = _taskName ? '<i>' + _taskName + '</i>' : _taskName;
+										value = '<div class="activity-tootip" rel="' + activity_id + '" task="' + dataContext.task_id + '">' + activities[activity_id].short_name + _taskName +'</div>';
+									} else {
+										value = $this.t('Unknown');
+									}
+								}
+							}
+						}
+					}
+				} else {
+					value = absences[value] ? absences[value].print : $this.t('Unknown');
+				}
+				return Slick.Formatters.HTMLData(row, cell, value , columnDef, dataContext);
+			},
+			Capacity : function(row, cell, value, columnDef, dataContext){
+				value = 0;
+				$.each(listWorkingDays , function(ind, val){
+					if(dataContext[ind]){
+						value += parseFloat(dataContext[ind]);
+					}
+				});
+				dataContext.capacity =  Number(value).toFixed(2);
+				return Slick.Formatters.HTMLData(row, cell, dataContext.capacity , columnDef, dataContext);
+			},
+			forecastValue : function(row, cell, value, columnDef, dataContext){
+				var day = columnDef.field * 1000;
+				day = new Date(day);
+				var _class = '';
+				if(daysInWeek[day.getDay()] && daysInWeek[day.getDay()] == 'monday' && typeSelect != 'week'){
+					_class += 'separator-week';
+				}
+				if(dataContext.activity && dataContext.activity != 0){ // activity
+					if(checkFullDayActivities && checkFullDayActivities[dataContext.activity] && (checkFullDayActivities[dataContext.activity][columnDef.field] == 0 || checkFullDayActivities[dataContext.activity][columnDef.field] == 2)){
+						_class += ' disable-edit-day';
+					}
+				} else {
+					if(checkFullDayTasks && checkFullDayTasks[dataContext.task_id] && (checkFullDayTasks[dataContext.task_id][columnDef.field] == 0 || checkFullDayTasks[dataContext.task_id][columnDef.field] == 2)){
+						_class += ' disable-edit-day';
+					}
+				}
+				if(checkFullDays && checkFullDays[columnDef.field]){
+					_class += ' disable-edit-day';
+				}
+				value = value ? value : '';
+				return Slick.Formatters.HTMLData(row, cell, '<span class="' + _class + '">' + value + '</span>', columnDef, dataContext);
+			}
+		});
+		// Editors...
+		$.extend(Slick.Editors,{
+			forecastValue : function(args){
+				$.extend(this, new Slick.Editors.textBox(args));
+					this.input.attr('maxlength' , 7).keypress(function(e){
+					var key = e.keyCode ? e.keyCode : e.which;
+					if(!key || key == 8 || key == 13){return;}
+					var val = $(e.currentTarget).replaceSelection(String.fromCharCode(key));
+					var _role = <?php echo json_encode($role);?>;
+					if(_role == 'conslt'){
+						var _val = parseFloat(val, 10);
+						if(!(val != '0' && val == '+') && (!/^[\-+]?([0-9]{1}|[1-9][0-9]{1,2})(\.[0-9]{0,2})?$/.test(val) || !(_val >= 0 && _val <= 365))){
+							e.preventDefault();
+							return false;
+						}
+					} else {
+						var _val = parseFloat(val, 10);
+						if(!(val != '0' && val == '-' || val == '+') && (!/^[\-+]?([0-9]{1}|[1-9][0-9]{1,2})(\.[0-9]{0,2})?$/.test(val) || !(_val >= -365 && _val <= 365))){
+							e.preventDefault();
+							return false;
+						}
+					}
+				});
+			},
+			selectBox2 : function(args){
+				$.extend(this, new Slick.Editors.selectBox(args));
+				this.div = $('<div class="request-selectbox" />');
+				var destroy = this.destroy;
+				this.destroy = function () {
+					destroy.apply(this, $.makeArray(arguments));
+					this.div.remove();
+				};
+				var serializeValue = this.serializeValue;
+				this.serializeValue = function(){
+					if(!this.isCreated){
+						this.div.html(this.input.find(':selected').text() || '');
+						setTimeout(function(){
+							$('#activity-request').trigger({
+								type: 'contextmenu',
+								which: 3,
+								pageX : currentMousePos.x,
+								pageY : currentMousePos.y
+							});
+						} , 100);
+						this.isCreated = true;
+					}
+					return serializeValue.apply(this,$.makeArray(arguments));
+				};
+				this.input.hide();
+				$(args.container).append(this.div);
+			}
+		});
+		// SlickGrid Validate in timesheet
+		DataValidation.forecastValue = function(value, args){
+			var _value = parseFloat(value),value = 0;
+			$.each(args.grid.getData().getItems() , function(){
+				if(this[args.column.field] && (!args.item || this.id != args.item.id)){
+					value += parseFloat(this[args.column.field]);
+				}
+			});
+			otherVal = value;
+			value += _value;
+			value = parseFloat(value.toFixed(2));
+			message = parseFloat((capacity[args.column.field] - otherVal).toFixed(2)) == 0 ? $this.t('No more value is allowed.') : null;
+			return {
+				valid : value <= capacity[args.column.field],
+				message : parseFloat((capacity[args.column.field] - otherVal).toFixed(2)) == 0 ? $this.t('No more value is allowed.') : $this.t('The value must between %1$s and %2$s.' , 0 , (capacity[args.column.field] - otherVal).toFixed(2))
+			};
+		};
+		// du lieu cho forecast
+		var activityFromTasks = <?php echo json_encode($activityFromTasks); ?>,
+			projectFromTasks = <?php echo json_encode($projectFromTasks); ?>,
+			consumedForecastForActivityRequests = <?php echo json_encode($consumedForecastForActivityRequests);?>,
+			projectLinkedActivity = <?php echo json_encode($projectLinkedActivity);?>,
+			familyFromTasks = <?php echo json_encode($familyFromTasks);?>,
+			workloadOfEmployees = <?php echo json_encode($workloadOfEmployees);?>,
+			activityGroupFromTasks = <?php echo json_encode($activityGroupFromTasks);?>;
+		// tootip cho activity va task
+		var tooltipTemplate = $('#tooltip-template').html();
+		$(document).on('mouseenter','div.activity-tootip' , function(e){
+			var $el         = $(this),
+				dx          = activities[$el.attr('rel')],
+				task        = $el.attr('task'),
+				taskName    = dx.tasks[task] ? dx.tasks[task].name : '';
+			var content = $this.t(
+				tooltipTemplate,
+				dx.name ,
+				dx.short_name,
+				dx.long_name,
+				(mapeds['family'][dx.family_id] || {name : ''}).name,
+				(mapeds['subfamily'][dx.subfamily_id] || {name : ''}).name, 
+				taskName
+			);
+			if(taskName){
+				content = content.replace('non-actask', 'has-actask');
+			}
+			$el.tooltip({
+				maxWidth : 400,
+				maxHeight : 300,
+				openEvent : 'xtip-show',
+				closeEvent : 'xtip-hide',
+				content: content
+			}).trigger('xtip-show',e);
+		}).on('click mouseleave','div.activity-tootip' , function(){
+			$(this).tooltip('destroy');
+		});
+		// tootip cho forecasts
+		$(document).on('mouseenter','div.activity-tootip-forecast' , function(e){
+			var $el = $(this);
+			var rel = $el.attr('rel');
+			var day = $el.attr('day');
+			var idCurrent = rel;
+			rel = rel.split('-');
+			var id = 0;
+			if(rel[0] === 'pr'){
+				id = projectLinkedActivity[rel[1]] ? projectLinkedActivity[rel[1]] : 0;
+			} else {
+				id = rel[1];
+			}
+			var task = workloadOfEmployees[day][idCurrent] ? workloadOfEmployees[day][idCurrent] : [];
+			var nameTask = '';
+			if(task){
+				$.each(task, function(ind, val){
+					nameTask += val + '<br />';
+				});
+			}
+			var dx = activityGroupFromTasks[id];
+			var families = familyFromTasks[dx.family_id] ? familyFromTasks[dx.family_id] : '';
+			var subFamilies = familyFromTasks[dx.subfamily_id] ? familyFromTasks[dx.subfamily_id] : '';
+			var content = $this.t(
+				tooltipTemplate,
+				dx.name ,
+				dx.short_name,
+				dx.long_name,
+				families,
+				subFamilies,
+				nameTask
+			);
+			if(nameTask){
+				content = content.replace('non-actask', 'has-actask');
+			}
+			$el.tooltip({
+				maxWidth : 600,
+				maxHeight : 500,
+				openEvent : 'xtip-show',
+				closeEvent : 'xtip-hide',
+				content: content
+			}).trigger('xtip-show',e);
+		}).on('click mouseleave','div.activity-tootip-forecast' , function(){
+			$(this).tooltip('destroy');
+		});
+		// Khai bao cac bien
+		var index = 0, notSelectTasks = {}, notSelectActivities = {}, taskSelected = {};
+		var onAfterSave = function(){
+			var val = 0;
+			$.each(gridControl.getData().getItems() , function(undefined, dx){
+				if(this.id && !this.notsaved){
+					val+= Number(this.capacity);
+				}
+			});
+			$('#form-request-all').data('capacity' , {
+				value : val,
+				total : capacity.capacity
+			});
+			var activeNext = gridControl.getActiveCell();
+			if(activeNext!=null){
+				gridControl.gotoCell(activeNext.row, activeNext.cell, true);
+			}
+		 }; 
+		 var onCellChange = function(args){ 
+			if(args){
+				$.each(listWorkingDays, function(ind, val){
+					if(args.item[ind] == ''){
+						args.item[ind] = 0;
+					}                   
+				});               
+			}
+			var dt = {};
+			$.each(gridControl.getData().getItems() , function(undefined, dx){
+				$.each(capacity , function(id){
+					dt[id] = dt[id] || 0;
+					if(dx[id]){
+						dt[id] += parseFloat(dx[id]);
+					}
+				});
+			});
+			args && $.extend(args.item, taskSelected);
+			$.each(dt , function(id){
+				$(gridControl.getHeaderRowColumn(id)).find('.activity-capacity b').html(String(Number(this).toFixed(2)));
+			});            
+			$('.separator-week').parent().addClass('separator-week-div');
+			$('.disable-edit-day').parent().addClass('disable-edit-day-div');
+		 };
+		// Cac phuong thuc cua slick grid
+		$this.onApplyValue = function(item){
+			item.type = 'ac';
+			item.id = 'act-' + (index++);
+			item.notsaved = true;
+		};
+		$this.onCellChange = $this.onAddNewRow = onCellChange;
+		$this.onAfterSave =  function(result,args){
+			if(result){
+				if(args.item && args.item.notsaved){
+					args.item.notsaved = false;
+				}
+			} else {
+				args.item.notsaved = true;
+			}
+			onAfterSave();
+			return true;
+		};
+		$this.onBeforeSave = function(args){
+			var result = false;
+			$.each(listWorkingDays , function(ind, val){
+				if(args.item[ind]){
+					result = true;
+					return false;
+				}
+			});
+			return result;
+		};
+		var rowEdit = 0;
+		$this.onBeforeEdit = function(args){
+			rowEdit = args.row;
+			taskSelected = {}; 
+			if(args.item && args.item.type == 'ab' || $.type(capacity[args.column.field]) != 'undefined' && capacity[args.column.field] == 0){
+				return false;
+			}
+			if(args.item){
+				if(args.item.activity && args.item.activity != 0){ //activity
+					if(checkFullDayActivities && checkFullDayActivities[args.item.activity] && (checkFullDayActivities[args.item.activity][args.column.field] == 0 || checkFullDayActivities[args.item.activity][args.column.field] == 2)){
+						return false;
+					}
+				} else { // task
+					if(checkFullDayTasks && checkFullDayTasks[args.item.task_id] && (checkFullDayTasks[args.item.task_id][args.column.field] == 0 || checkFullDayTasks[args.item.task_id][args.column.field] == 2)){
+						return false;
+					}
+				}
+				if(checkFullDays && checkFullDays[args.column.field]){
+					return false;
+				}
+			}
+			if(args.column.field == 'activity'){
+				if(args.item && args.item.readonly){
+					return false;
+				}
+				notSelectTasks = {};
+				notSelectActivities = {};
+				$.each(args.grid.getData().getItems() , function(){
+					if(this.type == 'ac' && this.activity && (!args.item || this.id != args.item.id)){
+						if(!this.task_id){
+							notSelectActivities[this.activity] = this.activity;
+						} else {
+							notSelectTasks[this.task_id] = true;
+						}
+					}
+				});
+			}
+			return true;
+		};
+		$this.selectMaps.activity = {};
+		var createMapActivities = <?php echo json_encode($createMapActivities);?>;
+		$.each(createMapActivities, function(id){
+			if(!this.activate){}
+			$this.selectMaps.activity[id] =  this.short_name;
+		});
+		var  gridView = <?php echo json_encode($gridView); ?>;
+		var  columns = <?php echo jsonParseOptions($columns, array('editor', 'formatter', 'validator')); ?>;
+		$this.fields = {
+			id          : {defaulValue : 0},
+			last        : {defaulValue : 0},
+			activity    : {defaulValue : '', allowEmpty : false},
+			task_id     : {defaulValue : ''}
+		};
+		if(listWorkingDays){
+			$.each(listWorkingDays, function(ind, val){
+				$this.fields[ind] = {defaulValue : '', required : ['activity']};
+			});
+		}
+		$this.url =  '<?php echo $html->url(array('action' => 'update_request')) . $queryUpdate; ?>';
+		gridControl = $this.init($('#activity-request'),gridView,columns, options = {frozenColumn: 2});
+		/**
+		 * Tinh toan lai phan width cua table timesheet
+		 */
+		
+		//alert($("#absence").width());
+		
+		//var tableWidth = 27;
+		var widthEmploy = $('#foreEmploy').width();
+		var widthCapacity = $('#foreCapacity').width();
+		
+		var widthMon= $('.foreDayCols').width();
+		var widthAction= $('#foreAction').width();
+		//$('.slick-headerrow-columns').width($('#absence').width());
+		//$('.slick-headerrow').width($('#absence').width('#absence'));
+		if(widthEmploy){
+			var cols = gridControl.getColumns();
+			var _lengthCols = cols.length;
+			cols[0].width = 32;
+			cols[1].width = widthEmploy-21;
+			cols[2].width = widthCapacity+12;
+			if($.browser.mozilla == true)
+			{
+				var wt1=11;
+				var wt2=8;
+				var wt3=7;
+			}
+			else
+			{
+				var wt1=12;
+				var wt2=9;
+				var wt3=8;
+			}
+			for(i = 3; i < _lengthCols; i++){
+				if(cols[i]){
+					var tw=$('.col-'+i).width();
+					cols[i].width = widthMon+wt1;
+				}
+			}
+			if(cols[_lengthCols-1] && cols[_lengthCols-1].id === 'action.'){
+				if($('.grid-canvas-right').height()>369)
+				{
+					cols[_lengthCols-1].width = widthAction-8;
+				}
+				else
+				{
+					cols[_lengthCols-1].width = widthAction+wt1;
+				}
+			}
+			else 
+			{
+				if($('.grid-canvas-right').height()>369)
+				{
+					cols[_lengthCols-1].width = widthMon-7;
+				}
+			}
+			gridControl.setColumns(cols);
+			
+			var temp=setInterval(function(){
+				$(window).resize();
+				$("#scrollTopAbsenceContent").width($("#absence").width());
+				$("#scrollTopAbsence").width($("#absence-scroll").width());
+				clearInterval(temp);
+			},100);
+		}
+		$(window).resize(function() {
+			var _lWidths = $(window).width();
+			var _widthPopups = Math.round((95*_lWidths)/100);
+			$('#dialog_copy_forecasts').parent().css('width', _widthPopups + 'px');
+			//_widthPopups = Math.round((90*_widthPopups)/100);
+			$('#reForecasts').css('width', _widthPopups + 'px');
+			
+			var temp=setInterval(function(){
+			var absenceWidht=$("#absence-scroll").width();
+			$(".slick-pane-right").width(absenceWidht);
+			$(".slick-viewport-right").width(absenceWidht);
+			$(".slick-headerrow").width(absenceWidht);
+			
+			$("#absence-request").width(absenceWidht+$(".slick-viewport-left").width());
+			$("#activity-request").width(absenceWidht+$(".slick-viewport-left").width());
+			clearInterval(temp);
+			},1000);
+			var widthBrowser = $(window).width();
+			widthBrowser = ((widthBrowser*85)/100).toFixed(0);
+			widthBrowser = (widthBrowser/4).toFixed(1);
+			var leftMenuTwo = parseFloat(widthBrowser)-20;
+			var leftMenuThree = parseFloat(widthBrowser) + parseFloat(leftMenuTwo) - 20;
+			var leftMenuFour = parseFloat(leftMenuTwo) + parseFloat(leftMenuThree);
+			$('.menu-level-1, .menu-level-2, .menu-level-3, .menu-level-3-4').css('width', widthBrowser+'px');
+			$('.menu-level-2').css('left', leftMenuTwo+'px');
+			$('.menu-level-3').css('left', leftMenuThree+'px');
+			$('.menu-level-3-4').css('left', leftMenuFour+'px');
+			$('#menuContext, .menu-level-2, .menu-level-3, .menu-level-3-4').hide();
+			gridControl.gotoCell(gridView.length, 2, true);
+			// resize timesheet
+			widthEmploy = $('#foreEmploy').width();
+			widthCapacity = $('#foreCapacity').width();
+			
+			widthMon= $('.foreDayCols').width();
+			widthAction= $('#foreAction').width();
+			if(widthEmploy){
+				var cols = gridControl.getColumns();
+				var _lengthCols = cols.length;
+				if($.browser.mozilla == true)
+				{
+					var wt1=11;
+					var wt2=8;
+					var wt3=7;
+				}
+				else
+				{
+					var wt1=12;
+					var wt2=9;
+					var wt3=8;
+				}
+				cols[0].width = 32;
+				cols[1].width = widthEmploy-21;
+				cols[2].width = widthCapacity+wt1;
+				for(i = 3; i < _lengthCols; i++){
+					if(cols[i]){
+						cols[i].width = widthMon+wt1;
+					}
+				}
+				
+				if(cols[_lengthCols-1] && cols[_lengthCols-1].id === 'action.'){
+					if($('.grid-canvas-right').height()>369)
+						cols[_lengthCols-1].width = widthAction-8;
+					else
+						cols[_lengthCols-1].width = widthAction+wt1;
+				}
+				else 
+				{
+					if($('.grid-canvas-right').height()>369)
+					{
+						cols[_lengthCols-1].width = widthMon-7;
+					}
+				}
+				gridControl.setColumns(cols);
+			}
+			$("#scrollTopAbsenceContent").width($("#absence").width());
+			$("#scrollTopAbsence").width($("#absence-scroll").width());
+			var dt = {};
+			$.each(gridControl.getData().getItems() , function(undefined, dx){
+				$.each(capacity , function(id){
+					dt[id] = dt[id] || 0;
+					if(dx[id]){
+						dt[id] += parseFloat(dx[id]);
+					}
+				});
+			});
+			if($.isEmptyObject(dt)){
+				$.each(capacity , function(id){
+					$(gridControl.getHeaderRowColumn(id)).html('<span class="activity-capacity"><b>0</b> / ' + String(Number(this).toFixed(2)) + '</span>');
+				});
+			}else {
+				$.each(dt , function(id, val){
+					$(gridControl.getHeaderRowColumn(id)).html('<span class="activity-capacity"><b>'+val.toFixed(2)+'</b> / ' + capacity[id].toFixed(2) + '</span>');
+				});
+			}
+			$('.separator-week').parent().addClass('separator-week-div');
+			$('.disable-edit-day').parent().addClass('disable-edit-day-div');
+		});
+		$.each(capacity , function(id){
+			$(gridControl.getHeaderRowColumn(id)).html('<span class="activity-capacity"><b>0</b> / ' + String(Number(this).toFixed(2)) + '</span>');
+		});
+		onAfterSave();
+		onCellChange();
+		// Button submit request all click
+		$('#submit-request-all, #submit-request-all-top').click(function(){
+			var $dialog = $('#dialog-request-all');
+			$dialog.dialog({
+				zIndex : 10000,
+				modal : true,
+				minHeight : 50,
+				close : function(){
+					$dialog.dialog('destroy');
+				}
+			});
+			var dx = $('#form-request-all').data('capacity');
+			if(Number(dx.value).toFixed(2) - Number(dx.total).toFixed(2) == 0){
+				$dialog.find('a.ok').unbind().click(function(){
+					$('#form-request-all').submit();
+					$dialog.dialog('close');
+					return false;
+				});
+				$dialog.find('a.cancel').show().unbind().click(function(){
+					$dialog.dialog('close');
+					return false;
+				});
+				$dialog.find('.dialog-request-message').html($this.t('Your are sure to validate you time sheet? Once validated your could not modify it'));
+			}else{
+				$dialog.find('a.ok').unbind().click(function(){
+					$dialog.dialog('close');
+					return false;
+				});
+				$dialog.find('a.cancel').hide();
+				$dialog.find('.dialog-request-message').html($this.t('You have to declare %s days before validate your request' , (dx.total - dx.value).toFixed(2) ));
+			}
+
+		});
+		// create context menu
+		var employeeHasProject = <?php echo json_encode($employeeHasProject);?>;
+		var profitHasProject = <?php echo json_encode($profitHasProject);?>;
+		function contextMenuBuild(datas){
+			var widthBrowser = $(window).width();
+			widthBrowser = ((widthBrowser*85)/100).toFixed(0);
+			widthBrowser = (widthBrowser/4).toFixed(1);
+			var leftMenuTwo = parseFloat(widthBrowser)-20;
+			var leftMenuThree = parseFloat(widthBrowser) + parseFloat(leftMenuTwo) - 20;
+			var idOfMenu1 = 'ch-menu-family';
+			var classMenu1 = 'ch-menu-1';
+			var menuLevelOne = '<div class="menu-level-1" style="width:'+widthBrowser+'px;" id="' +idOfMenu1+ '"><ul><div class="context-menu-filter no-hide-menu-1"><span class="no-hide-menu-1"><input type="text" rel="no-history" onclick="initMenuFilter(\''+idOfMenu1+'\', \'' +classMenu1+ '\');" class="ch-menu-input no-hide-menu-1"></span></div>';
+			var menu = menuTwo = menuThree = '';
+			$.each(datas.family, function(idFamily, valFamily){
+				var nameFamily = valFamily.name ? valFamily.name : '';
+				var familyChildren = valFamily.sub || valFamily.act ? 'have-children' : '';
+					menuLevelOne += '<li id="family-' +idFamily+ '" class="'+familyChildren+' no-hide-menu-1"><span class="ch-family no-hide-menu-1 ch-menu-1">' +nameFamily+ '</span></li>';
+				if(valFamily.sub || valFamily.act){
+					var idOfMenu2 = 'menu-family-' +idFamily;
+					var classMenu2 = 'ch-menu-2';
+					var menuLevelTwo = '<div id="menu-family-' +idFamily+ '" class="menu-level-2" style="width:'+widthBrowser+'px; left:'+leftMenuTwo+'px;"><ul><div class="context-menu-filter no-hide-menu-1"><span class="no-hide-menu-1"><input type="text" rel="no-history" onclick="initMenuFilter(\''+idOfMenu2+'\', \'' +classMenu2+ '\');" class="ch-menu-input no-hide-menu-1"></span></div>';
+					if(valFamily.sub){
+						$.each(valFamily.sub, function(index, idSubFamily){
+							var nameSubFamily = datas.subfamily[idSubFamily].name ? datas.subfamily[idSubFamily].name : '';
+							var subFamilyChildren = datas.subfamily[idSubFamily].act ? 'have-children-sub' : '';
+							menuLevelTwo += '<li id="sub-family-' +idSubFamily+ '" class="'+subFamilyChildren+' no-hide-menu-1"><span class="ch-sub-family no-hide-menu-1 ch-menu-2">' +nameSubFamily+ '</span></li>'; 
+							if(datas.subfamily[idSubFamily].act){
+								var idOfMenu3 = 'menu-sub-family-' +idSubFamily;
+								var classMenu3 = 'ch-menu-3';
+								var menuLevelThree = '<div id="menu-sub-family-' +idSubFamily+ '" class="menu-level-3" style="width:'+widthBrowser+'px; left:'+leftMenuThree+'px;"><ul><div class="context-menu-filter no-hide-menu-1"><span class="no-hide-menu-1"><input type="text" rel="no-history" onclick="initMenuFilter(\''+idOfMenu3+'\', \'' +classMenu3+ '\');" class="ch-menu-input no-hide-menu-1"></span></div>';
+								$.each(datas.subfamily[idSubFamily].act, function(index, idActivity){
+									var haveTask = (datas.activity[idActivity].tasks.length != 0 || datas.activity[idActivity].have_task === 'true') ? true : false;
+									var classLi = (haveTask == true) ? 'color: #000' : 'color: orange';
+									var classSpan = (haveTask == true) ? 'ch-activities' : '';
+									var haveChildren = (haveTask == true) ? 'have-children-sub' : '';
+									
+									var nameActivity = datas.activity[idActivity].short_name ? datas.activity[idActivity].short_name : '';
+									menuLevelThree += '<li id="three-activity-' +idActivity+ '" style="' +classLi+ '" class="'+haveChildren+' no-hide-menu-1"><span id="acti-' +idActivity+ '" class="no-hide-menu-1 ch-activity-img ch-menu-3 ' +classSpan+ '">' +nameActivity+ '</span></li>';
+								});
+								menuLevelThree += '</ul></div>';
+								menuThree += menuLevelThree;
+							}
+						});
+					} 
+					if(valFamily.sub && valFamily.act){
+						menuLevelTwo += '<hr style="margin: -3px 0;" />';
+					}
+					if(valFamily.act){
+						$.each(valFamily.act, function(index, idActivity){
+							var haveTask = (datas.activity[idActivity].tasks.length != 0 || datas.activity[idActivity].have_task === 'true') ? true : false;
+							var classLi = (haveTask == true) ? 'color: #000' : 'color: orange';
+							var classSpan = (haveTask == true) ? 'ch-activities' : '';
+							var haveChildren = (haveTask == true) ? 'have-children-sub' : '';
+							
+							var nameActivity = datas.activity[idActivity].short_name ? datas.activity[idActivity].short_name : '';
+							menuLevelTwo += '<li id="two-activity-' +idActivity+ '" style="' +classLi+ '" class="'+haveChildren+' no-hide-menu-1"><span id="acti-' +idActivity+ '" class="no-hide-menu-1 ch-activity-img ch-menu-2 ' +classSpan+ '">' +nameActivity+ '</span></li>';
+						});
+					}
+					menuLevelTwo += '</ul></div>';  
+					menuTwo += menuLevelTwo;
+				}  
+			});
+			menuLevelOne += '</ul></div>';
+			menu += menuLevelOne;
+			menu += menuTwo;
+			menu += menuThree;
+			$('#menuContext').html(menu);
+			var menuLevelFour = '';
+			$.each(datas.alltask, function(idActivity, tasks){
+				var idOfMenu4 = 'menu-activity-' +idActivity;
+				var classMenu4 = 'ch-menu-4';
+				menuLevelFour += '<div id="menu-activity-' +idActivity+ '" class="menu-level-3-4" style="width:'+widthBrowser+'px;"><ul><div class="context-menu-filter no-hide-menu-1"><span class="no-hide-menu-1"><input type="text" rel="no-history" onclick="initMenuFilter(\''+idOfMenu4+'\', \'' +classMenu4+ '\');" class="ch-menu-input no-hide-menu-1"></span></div>';
+				var isProject = datas.activity[idActivity].is_project ? datas.activity[idActivity].is_project : 0;
+				$.each(tasks, function(idTask, values){
+					if(values.status && (values.status === 'clos' || values.status === 'closed')){
+						// do nothing
+					} else {
+						if(values.previous == null){
+							var nameTask = values.name ? values.name : '';
+							menuLevelFour += '<li style="color: blue;" class="no-hide-menu-1"><span id="task-' +idActivity+ '-' +idTask+'" class="no-hide-menu-1 ch-task-img ch-menu-4">' +nameTask+ '</span>';
+							var consumed = values['consumed'] ? parseFloat(values['consumed']) : 0;
+							var workload = values['estimated'] ? parseFloat(values['estimated']) : 0;
+							var classValid = 'wd-bt-yes';
+							var classValidSpan = '';
+							if(values['is_parent'] === 'true'){
+								classValid = 'wd-bt-no ch-item-disabled ch-item-disabled-selected';
+								classValidSpan = 'ch-bt-parent';
+							} else {
+								if(consumed >= workload){
+									classValid = 'wd-bt-no ch-item-disabled';
+								}
+							}
+							if(isProject == 0){
+								// nhung activity khong lien ket voi project
+								// thi employee duoc request tu do
+							} else {
+								// nhung activity co linked voi project
+								// profitHasProject: cac project profit nay co tham gia vao
+								if(GetObjectKeyIndex(profitHasProject, isProject) == null){
+									// kiem tra cac project khong co trong profitHasProject
+									// thi ko cho phep request
+									classValid += ' ch-only-profit-have-request';
+								} else {
+									// neu kiem tra project co trong list profitHasProject
+									// thi cho phep request
+								}
+								// employeeHasProject: cac project employee nay co tham gia vao.
+								if(GetObjectKeyIndex(employeeHasProject, isProject) == null){
+									// kiem tra cac project khong co trong employeeHasProject
+									// thi ko cho phep request
+									classValid += ' ch-only-employ-have-request';
+								} else {
+									// neu kiem tra project co trong list employeeHasProject
+									// thi cho phep request
+								}
+							}
+							menuLevelFour += '<p style="margin-left: 28px;" class="' + classValid + ' no-hide-menu-1">(' + consumed + '/' + workload + ')<span class="' +classValidSpan+ '"></span></p></li>';
+						}
+					}
+				});   
+				menuLevelFour += '</ul></div>';  
+			});
+			if(menuLevelFour != ''){
+				$('#menuContext').html($('#menuContext').html() + menuLevelFour);
+			}
+			$.ajax({
+				url : '<?php echo $html->url(array('action' => 'contextMenuCache', $idManageCheck)); ?>',
+				cache : false,
+				type : 'POST',
+				data: {
+					content: $('#menuContext').html()
+				},
+				success: function(data){
+				}
+			});
+			return menu;
+		}
+		function isRightClick(event) {
+			var rightclick;
+			if (!event) var event = window.event;
+			if (event.which) {
+				//if(event.which == 3 || event.which == 1){
+				if(event.which == 3){
+					rightclick = true;
+				}
+			}
+			else if (event.button) rightclick = (event.button == 2);
+			return rightclick;
+		}
+		function refreshMapeds(id_activity, id_task, list_mapeds){
+			var result = '';
+			$.ajax({
+				url : '<?php echo $html->url(array('action' => 'refreshDataMenu')); ?>' + '/' + id_activity + '/' + id_task,
+				cache : false,
+				type : 'POST',
+				async: false,
+				data: {
+					mapeds: list_mapeds
+				},
+				success: function(data){
+					result = JSON.parse(data);
+				}
+			});
+			return result;
+		}
+		// disable the default browser's context menu.
+		$(document).on('contextmenu', function (e) {
+			return false;
+		});
+		var listActi = <?php echo json_encode($lisActivityRequests);?>;
+		var listTask = <?php echo json_encode($lisTaskRequests);?>;
+		var cacheMenu = <?php echo json_encode($cacheMenu)?>;
+		var allowRequestRemainZero = <?php echo json_encode($allowRequestRemain['ActivitySetting']['allow_remain_zero_consume']);?>;
+		var onlyEmployeeInProjectHaveRequest = <?php echo json_encode($allowRequestRemain['ActivitySetting']['allow_employee_in_team_consume']);?>;
+		var onlyPorfitInProjectHaveRequest = <?php echo json_encode($allowRequestRemain['ActivitySetting']['allow_team_consume']);?>;
+		/**
+		 * An/hien refresh menu
+		 */
+		if(cacheMenu){
+			$('#menuContext').html(cacheMenu);
+			$('#refresh_menu').show();
+		} else {
+			$('#refresh_menu').hide();
+		}
+		$.ajax({
+			url : '<?php echo $html->url(array('action' => 'contextMenu', $idManageCheck)); ?>',
+			cache : false,
+			type : 'POST',
+			data: {
+				listActi: listActi,
+				listTask: listTask
+			},
+			success: function(data){
+				var datas = JSON.parse(data);
+				mapeds = datas;
+				activities = datas.activity;
+				tasks = datas.task;
+				if(!cacheMenu){
+					contextMenu = contextMenuBuild(datas);
+					if(contextMenu){
+						$('#ch-waiting').hide(); 
+						$('#refresh_menu').show();
+					}
+				}
+			}
+		});
+		/**
+		 * Xu ly hover vao cac item cua menu context
+		 */
+		var menuLiOne = [];
+		var menuLiTwo = [];
+		var hoverLiThree = '';
+		var hoverLiThreeFour = '';
+		$('.menu-level-1 ul li').live('hover', function(){
+			var familyHoverId = $(this).attr('id');
+			familyHoverId = '#menu-'+familyHoverId;
+			if(familyHoverId){
+				$('#menuContext').find('.menu-level-2').each(function(){
+					var subAndActHoverId = '#' + $(this).attr('id');
+					if(familyHoverId == subAndActHoverId){
+						$(familyHoverId).show();
+					} else {
+						$(subAndActHoverId).hide();
+						if(hoverLiThreeFour){
+							$(hoverLiThreeFour).hide();
+						}
+						if(hoverLiThree){
+							$(hoverLiThree).hide();
+						}
+					}
+				});
+			}
+		});
+		$('.menu-level-2 ul li').live('hover', function(){
+			var getId = $(this).attr('id');
+			var checkSub = getId.split('-');
+			if(checkSub[0] === 'sub'){
+				$('.menu-level-3-4').hide();
+				var subFamilyHoverId = '#menu-'+getId;
+				if(subFamilyHoverId){
+					$('#menuContext').find('.menu-level-3').each(function(){
+						var activityHoverId = '#' + $(this).attr('id');
+						if(subFamilyHoverId == activityHoverId){
+							hoverLiThree = subFamilyHoverId;
+							$(subFamilyHoverId).show();
+						} else {
+							$(activityHoverId).hide();
+						}
+					});
+				}
+			} else {
+				$('.menu-level-3').hide();
+				var widthBrowser = $(window).width();
+				widthBrowser = ((widthBrowser*85)/100).toFixed(0);
+				widthBrowser = (widthBrowser/4).toFixed(1);
+				var leftMenuTwo = parseFloat(widthBrowser)-20;
+				var leftMenuThree = parseFloat(widthBrowser) + parseFloat(leftMenuTwo) - 20;
+				var activityHoverId = '#menu-'+checkSub[1]+'-'+checkSub[2];
+				if(activityHoverId){
+					$('#menuContext').find('.menu-level-3-4').each(function(){
+						var taskHoverId = '#' + $(this).attr('id');
+						if(activityHoverId == taskHoverId){
+							$(activityHoverId).css('left', leftMenuThree+'px');
+							hoverLiThreeFour = activityHoverId;
+							$(activityHoverId).show();
+						} else {
+							$(taskHoverId).hide();
+						}
+					});
+				}
+			}
+		});
+		$('.menu-level-3 ul li').live('hover', function(){
+			var widthBrowser = $(window).width();
+			widthBrowser = ((widthBrowser*85)/100).toFixed(0);
+			widthBrowser = (widthBrowser/4).toFixed(1);
+			var leftMenuTwo = parseFloat(widthBrowser)-20;
+			var leftMenuThree = parseFloat(widthBrowser) + parseFloat(leftMenuTwo) - 20;
+			var leftMenuFour = parseFloat(leftMenuTwo) + parseFloat(leftMenuThree);
+			var getId = $(this).attr('id');
+			getId = getId.split('-');
+			var activityHoverId = '#menu-'+getId[1]+'-'+getId[2];
+			if(activityHoverId){
+				$('#menuContext').find('.menu-level-3-4').each(function(){
+					var taskHoverId = '#' + $(this).attr('id');
+					if(activityHoverId == taskHoverId){
+						$(activityHoverId).css('left', leftMenuFour+'px');
+						hoverLiThreeFour = activityHoverId;
+						$(activityHoverId).show();
+					} else {
+						$(taskHoverId).hide();
+					}
+				});
+			}
+		});
+		_href = window.location.search;
+		if(_href){
+			_href = '/activity_forecasts/request/'+typeSelect+'/'+_href;
+		} else {
+			_href = '/activity_forecasts/request/'+typeSelect+'/';
+		}
+		/**
+		 * refresh menu
+		 */
+		$('#refresh_menu').click(function(){
+			$.ajax({
+				url : '<?php echo $html->url(array('action' => 'cleanupCacheMenu', $idManageCheck)); ?>',
+				cache : false,
+				success: function(data){
+					$('#refresh_menu').hide();
+					$('#clean-ok').show();
+					window.location = (_href);
+				}
+			});
+			cacheMenu = '';
+		}); 
+		// click vao cac item trong context menu
+		var checkTask = false;
+		$('.menu-level-2 ul li, .menu-level-3 ul li, .menu-level-3-4 ul li').live('click', function(){
+			var element = this;
+			// family
+			if($(this).find('p').hasClass('ch-family') || $(this).find('span').hasClass('ch-family')){
+				return false;
+			}
+			// sub-family
+			if($(this).find('p').hasClass('ch-sub-family') || $(this).find('span').hasClass('ch-sub-family')){
+				return false;
+			}
+			// activity
+			if($(this).find('p').hasClass('ch-activities') || $(this).find('span').hasClass('ch-activities')){
+				return false;
+			}
+			// task con roi or task cha
+			if($(this).find('p').hasClass('ch-item-disabled-selected') || $(this).find('span').hasClass('ch-item-disabled-selected')){
+				return false;
+			}
+			// allow/not allow request when task have remain = 0
+			if(allowRequestRemainZero == 0){
+				if($(this).find('p').hasClass('ch-item-disabled') || $(this).find('span').hasClass('ch-item-disabled')){
+					return false;
+				}
+			}
+			// only profit in project have request
+			if(onlyPorfitInProjectHaveRequest == 1){
+				if($(this).find('p').hasClass('ch-only-profit-have-request') || $(this).find('span').hasClass('ch-only-profit-have-request')){
+					return false;
+				}
+			}
+			// only employee in project have request
+			if(onlyEmployeeInProjectHaveRequest == 1){
+				if($(this).find('p').hasClass('ch-only-employ-have-request') || $(this).find('span').hasClass('ch-only-employ-have-request')){
+					return false;
+				}
+			}
+			var idSelected = $(this).find('span').attr('id');
+			var titleSelected = $(this).find('span').html();
+			if(idSelected){
+				$('#menuContext').find('#'+idSelected).each(function(){
+					$(this).addClass('ch-item-disabled-selected');
+					$(this).parent().css('color', '#000');
+				});
+				idSelected = idSelected.split('-');
+				if(idSelected[0] === 'task'){
+					checkTask = true;
+					if(GetObjectValueIndex(listTask, idSelected[2]) == null){
+						// do nothing
+					 } else {
+						return false;
+					 }
+				} else {
+					checkTask = false;
+					if(GetObjectValueIndex(listActi, idSelected[1]) == null){
+						// do nothing
+					 } else {
+						return false;
+					 }
+				}
+				selectActivity.call(element, idSelected[1], titleSelected);
+				if(idSelected[0] === 'task'){
+					taskSelected = tasks[idSelected[2]] ? tasks[idSelected[2]] : [];
+					selectTask.call(element, idSelected[1], taskSelected);
+				}
+				$('#menuContext, .menu-level-1, .menu-level-2, .menu-level-3, .menu-level-3-4').hide();
+			}
+		});
+		$('html').click(function(e) {
+			var widthBrowser = $(window).width();
+			widthBrowser = ((widthBrowser*85)/100).toFixed(0);
+			widthBrowser = (widthBrowser/4).toFixed(1);
+			var leftMenuTwo = parseFloat(widthBrowser)-20;
+			var leftMenuThree = parseFloat(widthBrowser) + parseFloat(leftMenuTwo) - 20;
+			var top = 165;
+			var temp = 33;
+			rowEdit = rowEdit;
+			if($.browser.mozilla == true)
+			{
+				temp = 35;
+				top = 175;
+			}
+			top += temp*rowEdit;
+			
+			/*if(top >= 336){
+				top = 370;
+			} else {
+				top = 400 - top;
+			}*/
+			if(($(e.target).is('.l1') && !$(e.target).is('.slick-headerrow-column')) || $(e.target).is('.request-selectbox') || $(e.target).is('.no-hide-menu-1')) {
+				if($(e.target).is('.l1')){
+					$('.menu-level-2, .menu-level-3, .menu-level-3-4').hide();
+				}
+				$('#menuContext').css('top', ''+top+'px');
+				$('#menuContext').show();
+				$('.menu-level-1, .menu-level-2, .menu-level-3, .menu-level-3-4').css('width', widthBrowser+'px');
+				$('.menu-level-2').css('left', leftMenuTwo+'px');
+				$('.menu-level-3').css('left', leftMenuThree+'px');
+				$('.menu-level-1').show();
+			} else {
+				$('#menuContext').hide();
+				$('.menu-level-1').hide();
+			}
+		}); 
+		// chon task or activity
+		var selectActivity = function(key,title){
+			var editor = gridControl.getCellEditor(),
+			item = editor.getArgs().item;
+			editor.setValue(key);
+			editor.div.html(title);
+			editor.applyValue(item, editor.getValue());
+			taskSelected = {task_id : ''};
+			$(this).closest('.sub-context').hide();
+			if(checkTask == false){
+				gridControl.gotoCell(gridView.length, 3, true);
+			}
+		},
+		selectTask = function(key,task){
+		   var editor = gridControl.getCellEditor();
+			taskSelected = {task_id : task.id};
+			$(this).closest('.sub-context').hide();
+			try{
+				editor.div.html(editor.div.html() + ':' + activities[key].tasks[task.id].name);
+				gridControl.gotoCell(gridView.length, 3, true);
+			}catch(ex){}
+		};
+		/**************************************************Phan forecast nam ben tren cua man hinh request ***********************/
+		var dataSets    = <?php echo json_encode($dataView); ?>,
+			holidays        = <?php echo json_encode(@$holidays); ?> || {},
+			employees       = <?php echo json_encode($employees); ?>,
+			$container      = $('#absence-table').html(''),
+			dataSum = 0,
+			output = _output = '',total = _tForecast = _tRemain = _tWorkload = 0, _workloads = [];
+		if(typeSelect != 'week'){
+			$containerFixed  = $('#absence-table-fixed').html('');
+		}
+		var _total = 0;
+		$.each(listWorkingDays, function(k, val){
+			_total++;
+		});
+		$.each(dataSets, function(id){
+			var output  = '', total = _total;
+			$.each(this ,function(day , data){
+				var _day = day * 1000;
+				_day = new Date(_day);
+				_day = daysInWeek[_day.getDay()];
+				var val     = parseFloat(workdays[_day]),
+					dt      = holidays[data.date] || {},
+					opt     = {value : ''};
+				if(this.workload){
+					var name = '';
+					$.each(this.workload, function(ind, values){
+						var estimated = consumedForecastForActivityRequests[day][ind] ? consumedForecastForActivityRequests[day][ind] : 0;
+						dataSum += estimated ? parseFloat(estimated) : 0;
+						ind = ind.split('-');
+						if(ind[0] === 'pr'){
+							//name += projectFromTasks[ind[1]] ? '<div class="activity-tootip-forecast" rel="pr-'+ind[1]+'" day="'+day+'"><p>' + projectFromTasks[ind[1]] + '<span style="font-weight: bold;">(' + estimated + ')</span>' + '</p></div>' : '';
+							name += projectFromTasks[ind[1]] ? '<div class="activity-tootip-forecast" rel="pr-'+ind[1]+'" day="'+day+'"><p>' + projectFromTasks[ind[1]] + '</p></div>' : '';
+						} else {
+							//name += activityFromTasks[ind[1]] ? '<div class="activity-tootip-forecast" rel="ac-'+ind[1]+'" day="'+day+'"><p>' + activityFromTasks[ind[1]] + '<span style="font-weight: bold;">(' + estimated + ')</span>' + '</p></div>' : '';
+							name += activityFromTasks[ind[1]] ? '<div class="activity-tootip-forecast" rel="ac-'+ind[1]+'" day="'+day+'"><p>' + activityFromTasks[ind[1]] + '</p></div>' : '';
+						}
+					});
+					opt.value = name;
+				}
+				switch(val){
+					case 1:
+						if(dt['am']){
+							if(dt['pm']){
+								opt.value += '<div><p><span style="color: red;">' + $this.t('Holiday') + '</span></p></div>';
+								total -= 1;
+							} else {
+								opt.value += '<div><p><span style="color: red;">' + $this.t('Holiday') + '</span></p></div>';
+								total -= 0.5;
+							}
+						} else {
+							if(dt['pm']){
+								opt.value += '<div><p><span style="color: red;">' + $this.t('Holiday') + '</span></p></div>';
+								total -= 0.5;
+							} else {
+								
+							}
+						}
+						break;
+					case 0.5:
+						if(dt['am']){
+							opt.value += '<div><p><span style="color: red;">' + $this.t('Holiday') + '</span></p></div>';
+							total -= 0.5;
+						} else {
+							
+						}
+						break;
+				}
+				if(data['absence_am'] && data['response_am'] == 'validated'){
+					if(data['absence_pm'] && data['response_pm'] == 'validated'){
+						if(absences[data['absence_am']].print === absences[data['absence_pm']].print){
+							opt.value += '<div><p><span style="color: red;">' + absences[data['absence_am']].print + '</span></p></div>';
+						} else {
+							opt.value += '<div><p><span style="color: red;">' + absences[data['absence_am']].print + '</span></p></div>'
+							+ '<div><p><span style="color: red;">' + absences[data['absence_pm']].print + '</span></p></div>';
+						}
+						total -= 1;
+					} else {
+						opt.value += '<div><p><span style="color: red;">' + absences[data['absence_am']].print + '</span></p></div>';
+						total -= 0.5;
+					}
+				} else {
+					if(data['absence_pm'] && data['response_pm'] == 'validated'){
+						opt.value += '<div><p><span style="color: red;">' + absences[data['absence_pm']].print + '</span></p></div>';
+						total -= 0.5;
+					} else {
+						
+					}
+				}
+				if(listWorkingDays[day]){
+					$.each(opt, function(index, vals){
+						output+= '<td class="foreDayCols" >' + vals + '</td>';
+					});
+				}
+			});
+			if((typeSelect == 'week' || typeSelect == 'month') && (requestConfirm == -1 || requestConfirm == 1)){
+				output += '<td  style="border-right: 1px solid #ccc !important;"></td>';
+			}
+			var $class = '';
+			if(dataSum > total){
+				$class = 'check-workload';
+			}
+			//$container.append('<tr><td class="st"><span>' + employees[id] + '</span><td class="ct"><span>' + total + '</span></td></td>' + output + '</tr>');
+			if(typeSelect === 'week'){
+				$container.append('<tr><td class="st" rowspan="2"><span>' + employees[id] 
+					 + '</span><td class="ct ' + $class + '" rowspan="2"><span>' + dataSum.toFixed(2) + '/' + total + '</span></td>' + output + '</tr>'
+					 + '<tr>' + _output + '</tr>'
+				);
+			} else {
+				$containerFixed.append('<tr><td class="st" rowspan="2"><span>' + employees[id] 
+					 + '</span><td class="ct ' + $class + '" rowspan="2"><span>' + dataSum.toFixed(2) + '/' + total + '</span></td></tr>'
+					
+				);
+				$container.append('<tr>' + output + '</tr>');
+			}
+		   // $container.append('<tr><td class="st" rowspan="2"><span>' + employees[id] 
+//                + '</span><td class="ct ' + $class + '" rowspan="2"><span>' + dataSum.toFixed(2) + '/' + total + '</span></td>' + output + '</tr>'
+//                + '<tr>' + _output + '</tr>'
+//                );
+		   });
+	});
+	var lisTaskRequests = <?php echo json_encode($lisTaskRequests); ?>;
+	var initMenuFilter = function(indFilter, indSpan){ 
+		var timeoutID = null, searchHandler = function(){
+			var val = $(this).val();
+			$('#' + indFilter).find('li span.'+indSpan).each(function(){
+				var $label = $(this).html();
+				$label = $label.toLowerCase();
+				val = val.toLowerCase();
+				if(!val.length || $label.indexOf(val) != -1 || !val){
+					$(this).parent().css('display', 'block');
+				} else{
+					$(this).parent().css('display', 'none');
+				}
+			});
+		};
+
+		$('#' + indFilter + ' div span').find('input').click(function(e){
+			e.stopImmediatePropagation();
+		}).keyup(function(){
+			var self = this;
+			clearTimeout(timeoutID);
+			timeoutID = setTimeout(function(){
+				searchHandler.call(self);
+			} , 200);
+		});
+
+	};
+	/**
+	 * Xac dinh vi tri hien thi cua nut SEND o top
+	 */
+	var widthOfCopy = 0;
+	var widthOfStatus = 0;
+	var marginOfValid = 0;
+	var marginOfReject = 0;
+	var marginOfRejectOne = 0;
+	if(typeSelect === 'week'){
+		widthOfCopy = parseInt($('.activity-request-status').width()) + 430;
+		widthOfStatus = widthOfCopy + 40; 
+		var activateCopy = <?php echo json_encode($activateCopy);?>;
+		if(activateCopy == 0){
+			widthOfStatus = parseInt($('.activity-request-status').width()) + 430;
+		}  
+		marginOfValid = parseInt($('.activity-request-status').width()) + 415;
+		marginOfReject = parseInt($('.activity-request-status').width()) + 455;
+		marginOfRejectOne = parseInt($('.activity-request-status').width()) + 425;  
+	} else {
+		widthOfCopy = parseInt($('.activity-request-status').width()) + 350;
+		widthOfStatus = widthOfCopy + 40; 
+		var activateCopy = <?php echo json_encode($activateCopy);?>;
+		if(activateCopy == 0){
+			widthOfStatus = parseInt($('.activity-request-status').width()) + 430;
+		} 
+		//widthOfStatus = parseInt($('.activity-request-status').width()) + 355;   
+		marginOfValid = parseInt($('.activity-request-status').width()) + 345;
+		marginOfReject = parseInt($('.activity-request-status').width()) + 378; 
+		marginOfRejectOne = parseInt($('.activity-request-status').width()) + 345;
+	}
+	$('.validation-for-validate-top').css({
+		'margin-left': marginOfValid+'px',
+		'margin-top' : '-32px',
+		'padding-bottom' : '16px'
+	});   
+	$('.validation-for-reject-top').css({
+		'margin-left': marginOfReject+'px',
+		'margin-top' : '-30px',
+		'padding-bottom' : '16px'
+	});    
+	$('#submit-request-all-top').css({
+		'margin-left': widthOfStatus+'px'
+	}); 
+	var widthOfStatusAndSend = widthOfStatus + 40;
+	$('#refresh_menu').css({
+		'margin-left': widthOfStatusAndSend+'px',
+		'margin-top' : '-28px'
+			
+	});
+	$('#expand-btn').css({
+		'margin-left': (widthOfStatusAndSend+40)+'px'
+	});
+	$('.validate-for-reject-top').css({
+		'margin-left': marginOfRejectOne+'px',
+		'margin-top' : '-30px'
+	});
+	$('.copy-timesheet').css({
+		'margin-left': widthOfCopy+'px'
+	});
+	<?php 
+	$month = date('m', $_start);
+	$week = date('W', $_start);
+	$year = date('Y', $_start);
+	$profit = !empty($this->params['url']['profit']) ? $this->params['url']['profit'] : '';
+	$idManageValidation = !empty($this->params['url']['id']) ? $this->params['url']['id'] : '';
+	?>
+	var $month = <?php echo json_encode($month);?>,
+		$week = <?php echo json_encode($week);?>,
+		$year = <?php echo json_encode($year);?>,
+		$profit = <?php echo json_encode($profit);?>,
+		$getDataByPath = <?php echo json_encode($getDataByPath);?>,
+		$idManageValidation = <?php echo json_encode($idManageValidation);?>;
+	$('#typeRequest').change(function () {
+		var linkRequest = '/activity_forecasts/request/';
+		if($(this).val() == 'week'){ // change month to week
+			linkRequest += 'week';
+		} else if($(this).val() == 'month'){ // change week to month
+			linkRequest += 'month';
+		} else { // change to year
+			$month = 1;
+			linkRequest += 'year';
+		}
+		var refreshLink = '';
+		if($idManageValidation){
+			refreshLink = linkRequest + '?id=' + $idManageValidation + '&profit=' + $profit + '&year=' + $year + '&month=' + $month +'&get_path=' + $getDataByPath;
+		} else {
+			refreshLink = linkRequest + '?year=' + $year + '&month=' + $month + '&profit=' + $profit +'&get_path=' + $getDataByPath;
+		}
+		window.location.href = refreshLink;    
+	}); 
+	$('#activity-request').css('width',$('#absence-wrapper').width());
+	$(function () {
+		$("#absence-scroll").scroll(function () {
+			$('.separator-week').parent().addClass('separator-week-div');
+			$('.disable-edit-day').parent().addClass('disable-edit-day-div');
+			$(".slick-viewport-right").scrollLeft($("#absence-scroll").scrollLeft());
+			$("#scrollTopAbsence").scrollLeft($("#absence-scroll").scrollLeft());
+		});
+		$("#scrollTopAbsence").scroll(function () {
+			$('.separator-week').parent().addClass('separator-week-div');
+			$('.disable-edit-day').parent().addClass('disable-edit-day-div');
+			$(".slick-viewport-right").scrollLeft($("#absence-scroll").scrollLeft());
+			$("#absence-scroll").scrollLeft($("#scrollTopAbsence").scrollLeft());
+		});
+		
+		$(".slick-viewport-right").scroll(function () {
+			$('.separator-week').parent().addClass('separator-week-div');
+			$('.disable-edit-day').parent().addClass('disable-edit-day-div');
+			$("#absence-scroll").scrollLeft($(".slick-viewport-right").scrollLeft());
+		});
+		$('.separator-week').parent().addClass('separator-week-div');
+		$('.disable-edit-day').parent().addClass('disable-edit-day-div');
+		$('#absence-table-fixed').children().children().css({
+			height: $('#absence-table').children().children().height() + 'px',
+			'vertical-align': 'middle'
+		});
+	});
+</script>
+<!-- ------------------------------PHAN POPUP FORECAST --------------------------------------- -->
+<style>
+	.tr_copy_exists{
+		background-color: rgb(224, 224, 224);
+	}
+</style>
+<!-- dialog_copy_forecasts -->
+<div>
+<div id="dialog_copy_forecasts" class="buttons" style="display: none;">
+	<fieldset>
+		<?php 
+		echo $this->Form->create('Copy', array(
+				'type' => 'file', 'id' => 'form_dialog_copy_forecasts', 
+				'url' => array('controller' => 'activity_forecasts', 'action' => 'copy_forecasts', $typeSelect, $_start, $_end)
+			)); ?>
+		<div style="height:auto; width: 98%; overflow-x: auto;" class="wd-scroll-form" id="reForecasts">
+			<table id="absence">
+				<thead>
+					<tr>
+						<th rowspan="1"><?php __('Action'); ?></th>
+						<th rowspan="2"><?php __('Project/Activity'); ?></th>
+						<th rowspan="2"><?php __('Part'); ?></th>
+						<th rowspan="2"><?php __('Phase'); ?></th>
+						<th rowspan="2"><?php __('Task'); ?></th>
+						<?php 
+							if(!empty($listWorkingDays)):
+								foreach($listWorkingDays as $key => $val):
+						?>
+						<th colspan="2"><?php echo __(date('l', $val)) . __(date(' d ', $val)) . __(date('M', $val)); ?></th>
+						<?php        	   
+								endforeach;
+							endif;
+						?>
+					</tr>
+				</thead>
+				<tbody id="copy-forecast-table">
+				<?php
+					if(!empty($dataForecasts)):
+						echo $this->Form->hidden('get_path', array('value' => isset($getDataByPath) ? $getDataByPath : ''));
+						echo $this->Form->hidden('profit', array('value' => !empty($this->params['url']['profit']) ? $this->params['url']['profit'] : ''));
+						echo $this->Form->hidden('id', array('value' => !empty($this->params['url']['id']) ? $this->params['url']['id'] : $employee_info['Employee']['id']));
+						echo $this->Form->input('week', array('type' => 'hidden', 'value' => date('W', $_end)));
+						echo $this->Form->input('month', array('type' => 'hidden', 'value' => date('m', $_start)));
+						echo $this->Form->input('year', array('type' => 'hidden', 'value' => date('Y', $_end)));
+						foreach($dataForecasts as $key => $dataForecast):
+							if($key == 'project'):
+								foreach($dataForecast as $projectId => $values):
+									foreach($values as $partId => $value):
+										foreach($value as $phaseId => $val):
+											foreach($val as $taskId => $vals):
+												$exists = false;
+												if(in_array($taskId, $lisTaskRequests)){
+													$exists = true;
+												}
+				?>
+							<tr class="<?php echo ($exists == true) ? 'tr_copy_exists' : '';?>">
+								<?php if($exists == true){?>
+								<td colspan="1" style="color: black;"><?php echo $this->Form->input('id.' . $taskId, array('type' => 'checkbox', 'label' => false, 'class' => 'copy-checkbox-format', 'hiddenField' => false, 'disabled' => 'disabled'));?></td>
+								<?php } else {?>
+								<td colspan="1" style="color: black;"><?php echo $this->Form->input('id.' . $taskId, array('type' => 'checkbox', 'label' => false, 'class' => 'copy-checkbox-format', 'hiddenField' => false));?></td>
+								<?php }?>
+								<td colspan="1" style="color: black;"><?php echo !empty($projectFromTasks[$projectId]) ? $projectFromTasks[$projectId] : '';?></td>
+								<td colspan="1" style="color: black;"><?php echo !empty($projectPartFromTasks[$partId]) ? $projectPartFromTasks[$partId] : '';;?></td>
+								<td colspan="1" style="color: black;"><?php echo !empty($projectPhaseFromTasks[$phaseId]) ? $projectPhaseFromTasks[$phaseId] : '' ;?></td>
+								<td colspan="1" style="color: black;"><?php echo !empty($listProjectTaskFromTasks[$listIdActivityTaskFromTasks[$taskId]]) ? $listProjectTaskFromTasks[$listIdActivityTaskFromTasks[$taskId]] : '';?></td>
+								<?php
+									foreach($vals as $times => $val){
+								?>
+									<td colspan="2" style="color: black;"><?php echo $val;?></td>
+								<?php
+									}
+								?>
+							</tr>
+				<?php
+											endforeach;
+										endforeach;
+									endforeach;
+								endforeach;
+							endif;
+							if($key == 'activity'):
+								foreach($dataForecast as $activityId => $values):
+									foreach($values as $taskId => $vals):
+										$exists = false;
+										if(in_array($taskId, $lisTaskRequests)){
+											$exists = true;
+										}
+				?>
+							<tr class="<?php echo ($exists == true) ? 'tr_copy_exists' : '';?>">
+								<?php if($exists == true){?>
+								<td colspan="1" style="color: black;"><?php echo $this->Form->input('id.' . $taskId, array('type' => 'checkbox', 'label' => false, 'class' => 'copy-checkbox-format', 'hiddenField' => false, 'disabled' => 'disabled'));?></td>
+								<?php } else {?>
+								<td colspan="1" style="color: black;"><?php echo $this->Form->input('id.' . $taskId, array('type' => 'checkbox', 'label' => false, 'class' => 'copy-checkbox-format', 'hiddenField' => false));?></td>
+								<?php }?>
+								<td colspan="1" style="color: black;"><?php echo !empty($activityFromTasks[$activityId]) ? $activityFromTasks[$activityId] : '';;?></td>
+								<td colspan="1" style="color: black;"><?php echo '';?></td>
+								<td colspan="1" style="color: black;"><?php echo '';?></td>
+								<td colspan="1" style="color: black;"><?php echo !empty($listActivityTaskFromTasks[$taskId]) ? $listActivityTaskFromTasks[$taskId] : '';?></td>
+								<?php
+									foreach($vals as $times => $val){
+								?>
+									<td colspan="2" style="color: black;"><?php echo $val;?></td>
+								<?php
+									}
+								?>
+							</tr>
+				<?php
+									endforeach;
+								endforeach;       
+							endif;
+						endforeach;
+					endif;
+				?>
+				</tbody>
+			</table>
+		</div>
+		<?php
+		echo $this->Form->end();
+		?>  
+	</fieldset>
+	<div style="clear: both;"></div>
+	<ul class="type_buttons" style="padding-right: 10px !important">
+		<li><a href="javascript:void(0)" class="cancel"><?php __("Cancel") ?></a></li>
+		<li><a href="javascript:void(0)" class="new" id="ok_copy" style="display: none;"><?php __('OK') ?></a></li>
+		<li><a href="javascript:void(0)" class="new" id="ok_copy_disable" style="background: #CECACA !important;"><?php __('OK') ?></a></li>
+	</ul>
+</div>
+</div>
+<!-- dialog_copy_forecasts.end -->
+<!-- dialog_loader --->
+<div id="gs_loader" style="display: none;">
+	<div class="gs_loader">
+		<p>Please wait, Copy Forecast...</p>
+	</div>
+</div>
+<!-- dialog_loader.end --->
+<script>
+	$("#copy_forecast").live('click',function(){
+		var lHeight =  $(window).height();
+		var DialogFullHeight = Math.round((80*lHeight)/100);
+		var lWidth = $(window).width();
+		var DialogFull = Math.round((95*lWidth)/100);
+		widthPopup = DialogFull;
+		$('#dialog_copy_forecasts').dialog({
+			position    :'center',
+			autoOpen    : false,
+			autoHeight  : true,
+			modal       : true,
+			width       : widthPopup,
+			open : function(e){
+				var $dialog = $(e.target);
+				$dialog.dialog({open: $.noop});
+			}
+		});
+		$("#dialog_copy_forecasts").dialog('option',{title:'Copy Forecasts'}).dialog('open');
+	});
+	
+	$(".cancel").live('click',function(){
+		$("#dialog_copy_forecasts").dialog('close');
+        $("#dialog_import_CSV").dialog("close");
+	});
+	$("#ok_copy").live('click',function(e){
+		$('#gs_loader').css('display', 'block');
+		$("#form_dialog_copy_forecasts").submit();
+	});
+	$(".copy-checkbox-format").live('click',function(){
+		if($(this).is(':checked')){
+			$('#ok_copy').show();
+			$('#ok_copy_disable').hide();
+			$(this).parent().parent().parent().addClass('tr_copy_exists');
+		} else {
+			var idCheck = false;
+			$("#copy-forecast-table tr").each(function(index, val){
+				$checkBox = $(val).find('.copy-checkbox-format').is(':checked');
+				if($checkBox == true){
+					idCheck = true;
+				}
+			});
+			if(idCheck == false){
+				$('#ok_copy').hide();
+				$('#ok_copy_disable').show();
+			}
+			$(this).parent().parent().parent().removeClass('tr_copy_exists');
+		}
+		
+	});
+	var temp=setInterval( function(){
+		$('.disable-edit-day').each(function(index, element) {
+			var text=$(this).text();
+			if(text=='')
+			{
+				$(this).text('0.00');
+			}
+		});
+		clearInterval(temp);
+	},1000);
+	//EXPAND TREE
+	$(document).keyup(function(e) {
+		if (window.event)
+		{
+			var value = window.event.keyCode;
+		}
+		else
+			var value=e.which;
+		if (value == 27) { collapseScreen(); }   
+	});
+	function collapseScreen()
+	{
+		$('#table-control').show();
+		$('.wd-title').show();
+		$('#collapse').hide();
+		$('#project_container').removeClass('fullScreen');
+		$(window).resize();	
+	}
+	function expandScreen()
+	{
+		$('#table-control').hide();
+		$('.wd-title').hide();
+		$('#project_container').addClass('fullScreen');
+		$('#collapse').show();
+		$(window).resize();
+	}  
+    $('#dialog_import_CSV').dialog({
+        position    :'center',
+        autoOpen    : false,
+        autoHeight  : true,
+        modal       : true,
+        width       : 360,
+        height      : 150
+    });
+    $("#import_CSV").click(function(){
+        $('.wd-input').show();
+        $('#loading').hide();
+        $("input[name='FileField[csv_file_attachment]']").val("");
+        $(".error-message").remove();
+        $("input[name='FileField[csv_file_attachment]']").removeClass("form-error");
+        $(".type_buttons").show();
+        $('#dialog_import_CSV').dialog("open");
+    
+    });
+    $("#import-submit").click(function(){
+        $(".error-message").remove();
+        $("input[name='FileField[csv_file_attachment]']").removeClass("form-error");
+        if($("input[name='FileField[csv_file_attachment]']").val()){
+            var filename = $("input[name='FileField[csv_file_attachment]']").val();
+            var valid_extensions = /(\.csv)$/i;   
+            if(valid_extensions.test(filename)){ 
+                $('#uploadForm').submit();
+            }
+            else{
+                $("input[name='FileField[csv_file_attachment]']").addClass("form-error");
+                jQuery('<div>', {
+                    'class': 'error-message',
+                    text: 'Incorrect type file'
+                }).appendTo('#error');
+            }
+            $("#dialog_import_CSV").dialog("close");
+        }else{
+            jQuery('<div>', {
+                'class': 'error-message',
+                text: 'Please choose a file!'
+            }).appendTo('#error');
+        }
+    });
+</script>
+<div id="collapse" onclick="collapseScreen();" ><?php echo $this->Html->image("front/collapse-tree.png"); ?></div>
+<style>
+#absence-fixed th {
+	padding-top: 3px !important;
+	padding-bottom: 3px !important;
+}
+</style>

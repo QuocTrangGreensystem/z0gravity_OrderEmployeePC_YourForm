@@ -1,0 +1,90 @@
+msgid "Task"
+msgstr "Tâche"
+
+msgid "Order"
+msgstr ""
+
+msgid "Priority"
+msgstr ""
+
+msgid "Status"
+msgstr "Statut"
+
+msgid "Profile"
+msgstr ""
+
+msgid "Assigned To"
+msgstr "Affecté à"
+
+msgid "Start date"
+msgstr "Date début"
+
+msgid "End date"
+msgstr "Date de fin"
+
+msgid "Duration"
+msgstr "Durée J"
+
+msgid "Predecessor"
+msgstr "Prédécesseur"
+
+msgid "Workload"
+msgstr "Charge J.H."
+
+msgid "Overload"
+msgstr "Surcharge J.H."
+
+msgid "Consumed"
+msgstr "Consommé J.H."
+
+msgid "Manual Consumed"
+msgstr ""
+
+msgid "In Used"
+msgstr "J.H. non validé"
+
+msgid "Completed"
+msgstr "Avancement %"
+
+msgid "Remain"
+msgstr "RAC J.H."
+
+msgid "Initial workload"
+msgstr "Charge initiale J.H."
+
+msgid "Initial start date"
+msgstr "Date de début initiale"
+
+msgid "Initial end date"
+msgstr "Date fin initale"
+
+msgid "Amount €"
+msgstr ""
+
+msgid "% progress order"
+msgstr ""
+
+msgid "% progress order €"
+msgstr ""
+
+msgid "Text"
+msgstr "Mémo"
+
+msgid "Attachment"
+msgstr "Fichier"
+
+msgid "+/-"
+msgstr "+/-"
+
+msgid "Unit Price"
+msgstr "Unit Price fr"
+
+msgid "Consumed €"
+msgstr "Consumed € fr"
+
+msgid "Remain €"
+msgstr "Remain € fr"
+
+msgid "Workload €"
+msgstr "Workload € fr"
+

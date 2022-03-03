@@ -1,0 +1,17 @@
+# used to remove files from deployment using `git archive`
+# git files
+.gitattributes export-ignore
+.gitignore export-ignore
+.htaccess export-ignore
+app/.htaccess export-ignore
+# folders
+userfiles/* export-ignore
+tmp/* export-ignore
+plugins/* export-ignore
+cake/* export-ignore
+config/* export-ignore
+
+# app/webroot/* export-ignore
+
+# files
+sql_update*.sql export-ignore

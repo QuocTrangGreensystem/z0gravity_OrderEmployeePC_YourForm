@@ -1,0 +1,96 @@
+msgid "Project details"
+msgstr ""
+
+msgid "Project Name"
+msgstr ""
+
+msgid "Project long name"
+msgstr ""
+
+msgid "Project Code 1"
+msgstr ""
+
+msgid "Project Code 2"
+msgstr ""
+
+msgid "Company"
+msgstr ""
+
+msgid "Project Manager"
+msgstr ""
+
+msgid "Project type"
+msgstr ""
+
+msgid "Program"
+msgstr ""
+
+msgid "Priority"
+msgstr ""
+
+msgid "Implementation Complexity"
+msgstr ""
+
+msgid "Created value"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Current Phase"
+msgstr ""
+
+msgid "Link To RMS Activity"
+msgstr ""
+
+msgid "Issues"
+msgstr ""
+
+msgid "Primary Objectives"
+msgstr ""
+
+msgid "Project Objectives"
+msgstr ""
+
+msgid "Constraint"
+msgstr ""
+
+msgid "Remark"
+msgstr ""
+
+msgid "Chief Business"
+msgstr ""
+
+msgid "Technical manager"
+msgstr ""
+
+msgid "Start Date"
+msgstr ""
+
+msgid "End Date"
+msgstr ""
+
+msgid "Customer"
+msgstr ""
+
+msgid "Functional leader"
+msgstr ""
+
+msgid "UAT manager"
+msgstr ""
+
+msgid "Free 1"
+msgstr ""
+
+msgid "Free 2"
+msgstr ""
+
+msgid "Free 3"
+msgstr ""
+
+msgid "Free 4"
+msgstr ""
+
+msgid "Free 5"
+msgstr ""
+

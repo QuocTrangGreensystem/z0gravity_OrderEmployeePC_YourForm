@@ -1,0 +1,262 @@
+.ganttCustom-month table tr,
+.ganttCustom-month table td,
+.ganttCustom-month  table{
+	/* border-color: #F2F5F7; */
+	/* border-color: #666666; */
+	border-color: #999;
+	border-style: solid;
+	border-width: 0px;
+}
+.ganttCustom-month  table{
+	border-left-width: 1px;
+}
+.ganttCustom-month table tr{
+	border-bottom-width: 1px;
+}
+.ganttCustom-month table td div{
+	line-height: 28px;
+}
+.ganttCustom-month table td{
+	border-right-width: 1px;
+	/* height: 40px; */
+	height: 39px;
+	vertical-align: middle;
+}
+.ganttCustom-month table td div{
+	padding: 0 3px;
+}
+.ganttCustom-month table td div.box-left,
+.ganttCustom-month table td div.box-right{
+	padding: 0;
+}
+.ganttCustom-month .gantt-list .gantt-staff table tr:not(.gantt-head) .gantt-name{
+	min-width: 250px;
+	color: #217FC2;
+    padding-left: 15px;
+    position: relative;
+}
+.ganttCustom-month table td.gantt-space {
+    height: 20px;
+    line-height: 14px;
+}
+.ganttCustom-month table table{
+	border: 0 !important;
+}
+.ganttCustom-month  table table{
+	border-width: 0px;
+}
+.ganttCustom-month table table tr:last-child,
+.ganttCustom-month .gantt-chart-wrapper .gantt:nth-child(2) tr:last-child{
+	border-bottom-width: 0px;
+}		
+.ganttCustom-month table table tr:last-child td{
+	border-bottom: 0;
+}
+.ganttCustom-mont .trPC.trPC-1 .gantt-name div{
+	width: 165px !important;
+	min-width: 165px !important;
+}
+.ganttCustom-month #export-header{
+	height: 40px;
+}
+.ganttCustom-month #export-header .gantt-head:not(.gantt-title){
+	border-bottom-width: 
+}
+.gantt-list table[rel="list-summary"] tr:first-child,
+.gantt-list table[rel="list-summary"] tr:first-child td{
+    border-bottom: 0 !important;
+}
+.ganttCustom-month #mcs_container .gantt-list .gantt-head:not(.gantt-title) td,
+.ganttCustom-month #export-header .gantt-head:not(.gantt-title) td,
+.ganttCustom-month #mcs_container .gantt-list .gantt-head,
+.ganttCustom-month #export-header .gantt-head{
+	position: relative;
+	overflow: visible;
+}
+.ganttCustom-month #export-header .gantt-head:not(.gantt-title) td{
+	height: 0;
+	padding: 0;
+	position:  relative;
+}
+.ganttCustom-month #mcs1_container .container,
+.ganttCustom-month #mcs_container{
+	box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+}
+.ganttCustom-month #mcs_container .gantt-list .gantt-head:not(.gantt-title) td div,
+.ganttCustom-month #export-header .gantt-head:not(.gantt-title) td div{
+    position: absolute;
+    height: 80px;
+    z-index:  0;
+    font-size: 60px;
+    line-height:  80px;
+    color: rgba(255, 255, 255, 0.3);
+    width: calc(100% - 15px);
+    max-width: 100%;
+    top: 0;
+    left: 0;
+    padding: 0;
+    padding-left: 15px;
+	border-right: 1px solid #ccc;
+	z-index: 2;
+}
+.ganttCustom-month #mcs1_container .gantt-chart-wrapper >.gantt .gantt-node.gantt-node-head{
+	overflow: visible;
+}
+.ganttCustom-month .gantt-chart-wrapper .gantt:first-child #export-header .gantt-head{
+	display: none;
+}
+.ganttCustom-month .gantt-list.gantt-head-scroll .gantt-head td,
+.ganttCustom-month .gantt-chart-wrapper .gantt:first-child #export-header .gantt-num td{
+	height: 50px;
+	line-height: 50px;
+	padding: 0 !important;
+}
+.ganttCustom-month .gantt-list.gantt-list-primary .gantt-head td{
+	padding: 0 3px;
+}
+.ganttCustom-month .dragger_container{
+	height: 6px;
+	background: #f2f5f7;
+	border-radius: 4px;
+	border: none
+}
+.ganttCustom-month .dragger_container .dragger{
+	height: 6px;
+	background: #c7cdd0;
+	border-radius: 4px;
+	background-image: inherit;
+	margin: 0;
+	width: 100px;
+}
+.wd-title #absence-prev{
+	background: url('/img/new-icon/prevous.png') center center no-repeat;
+	width: 32px;
+	height: 32px;
+}
+.wd-title #absence-prev:hover{
+	background-color: #3571c4;
+	background-position: center;
+	border-radius: 50%;
+}
+.f-hidden{
+	display: none !important;
+}
+/*.wd-main-content .openMenu{
+	display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    z-index: 3;
+    transition: all 0.4s ease;
+}
+.wd-main-content .openMenu.active{
+	left: 252px;
+}
+.wd-content-left{
+	opacity: 0;
+	left: -100%;
+	transition: all 0.4s ease;
+	position: absolute;
+	width: 240px;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+}
+.wd-content-left.active {
+    left: 0;
+    opacity: 1;
+    z-index: 12;
+}
+.wd-content-right, .wd-layout > .wd-main-content > .wd-tab{
+	width: 100%;
+}*/
+.gantt-wrapper .gantt-green{
+	background: #EFF6F0 !important;
+	color: #6EAF79;
+}
+.gantt-wrapper .gantt-employee .gantt-invalid, 
+.gantt-wrapper .gantt-staff .gantt-node td.gantt-invalid, 
+.gantt-wrapper .gantt-staff .gantt-node td.gantt-invalid input, 
+.gantt-wrapper .gantt-staff .gantt-node .gantt-summary td.gantt-invalid, 
+.gantt-wrapper .gantt-invalid .gantt-unzero{
+	background-color: #FDECEC !important;
+    color: #F05352;
+}
+
+.gantt-list .gantt-staff table .gantt-name{
+	font-weight: 400;
+	padding: 0;
+	padding-left: 15px;
+    box-sizing: border-box;
+}
+.gantt-list .gantt-staff table .gantt-name .name{
+	max-width: calc( 100% - 40px);
+    display: block;
+}
+.gantt-list .gantt-staff table .gantt-name svg{
+	cursor: pointer;
+}
+.gantt-list .gantt-staff table .gantt-name .wd-loading,
+.gantt-list .gantt-staff table .gantt-name svg{
+	position: absolute;
+	top: 50%;
+	margin-top: -16px;
+	right: 4px;
+	display: none;	
+}
+.gantt-list .gantt-staff table .gantt-name .wd-loading{
+	width: 16px;
+    height: 16px;
+    border: 1px solid #E1E6E8;
+    border-top-color: #247FC3;
+    border-radius: 50%;
+    animation: wd-rotate 2s infinite;
+    margin: -8px 8px;
+}
+.gantt-list .gantt-staff.loading table .gantt-name svg{
+	display: none !important;
+}
+.gantt-list .gantt-staff.loading table .gantt-name .wd-loading{
+	display: block;
+}
+.gantt-list .gantt-staff table .gantt-name svg:hover{
+	fill: #217FC2;
+}
+.gantt-list .gantt-staff:not(.acti) table .gantt-name svg + svg{
+	display: block;
+}
+.gantt-list .gantt-staff.acti table .gantt-name svg{
+	display: block;
+	fill: #217FC2;
+}
+.gantt-list .gantt-staff:not(.acti) table .gantt-name svg path{
+	fill: #217FC2;
+}
+.gantt-list .gantt-staff.acti table .gantt-name svg + svg{
+	display: none;
+}
+.no-expand .gantt-name svg,
+.gantt-summary .gantt-name svg{
+	display: none !important;
+}
+.text-bold{
+	font-weight: 600;
+}
+
+#GanttChartDIV table tr.text-bold td{
+    border-bottom-color: #578eb4;
+}
+.gantt-list .gantt-staff table .gantt-name svg .a{fill:none;}
+.gantt-list .gantt-staff.acti table .gantt-name svg .b{fill:#c6cccf;}
+.gantt-list .trSubFamily .gantt-name span.name{
+	color: #6EAF79;
+}
+.gantt-list .trFamily .gantt-name span.name,
+.gantt-list .gantt-summary .gantt-name span.name{
+	color: #247FC3;
+}
+.gantt-list .trActivity .gantt-name span.name{
+	color: #5487FF;
+}
+.gantt-list .gantt-employee .gantt-name span.name{
+	color: #424242;
+}

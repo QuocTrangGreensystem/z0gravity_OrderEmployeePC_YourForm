@@ -1,0 +1,2468 @@
+
+{
+	"info": {
+		"_postman_id": "19a27e3a-ae57-4204-86ec-7e60351861cb",
+		"name": "WS - Projects - Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Update Project All key input",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data[auth_code]",
+							"value": "{{auth_code}}",
+							"type": "text"
+						},
+						{
+							"key": "data[access_token]",
+							"value": "{{token}}",
+							"type": "text"
+						},
+						{
+							"key": " configs",
+							"value": "",
+							"description": "Mandatory,",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[identifier]",
+							"value": "code",
+							"description": "Mandatory, code/project_name",
+							"type": "text"
+						},
+						{
+							"key": "data[allow_new_list_values]",
+							"value": "no",
+							"description": "Mandatory, Yes/no",
+							"type": "text"
+						},
+						{
+							"key": "data[update_or_replace]",
+							"value": "update",
+							"description": "Mandatory: Allow update / replace",
+							"type": "text"
+						},
+						{
+							"key": "project data",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[project_name]",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "data[project_code]",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "data[program]",
+							"value": " name of Program",
+							"description": "max 255",
+							"type": "text"
+						},
+						{
+							"key": " Text input",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[address]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[free_1]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[free_2]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[free_3]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[free_4]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[free_5]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[issues]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[address]",
+							"value": "<String>",
+							"description": " // text",
+							"type": "text"
+						},
+						{
+							"key": "data[latlng]",
+							"value": "<String>",
+							"description": " // 15ky tuv",
+							"type": "text"
+						},
+						{
+							"key": "data[primary_objectives]",
+							"value": "<String>",
+							"description": " // 16ky tu",
+							"type": "text"
+						},
+						{
+							"key": "data[project_objectives]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[long_project_name]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[remark]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[constraint]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_1]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_2]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_3]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_4]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_5]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_6]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_7]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_8]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_9]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_10]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_11]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_12]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_13]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_14]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_15]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_16]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_17]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_18]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_19]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_20]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_1]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_2]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_3]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_4]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_5]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_6]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_7]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_8]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_9]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_10]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_11]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_12]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_13]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_14]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_15]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_16]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_17]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_18]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_19]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_20]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[editor_1]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[editor_2]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[editor_3]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[editor_4]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "data[editor_5]",
+							"value": "<String>",
+							"type": "text"
+						},
+						{
+							"key": "PM",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[project_manager][]",
+							"value": "<PM1>",
+							"type": "text"
+						},
+						{
+							"key": "data[project_manager][]",
+							"value": "<PM2>",
+							"type": "text"
+						},
+						{
+							"key": "data[read_access][]",
+							"value": "<PM-RA1>",
+							"type": "text"
+						},
+						{
+							"key": "data[chief_business][]",
+							"value": "<PM-CB1>",
+							"type": "text"
+						},
+						{
+							"key": "data[chief_business][]",
+							"value": "<PM-CB1>",
+							"type": "text"
+						},
+						{
+							"key": "data[functional_leader][]",
+							"value": "<PM-FL1>",
+							"type": "text"
+						},
+						{
+							"key": "data[uat_manager][]",
+							"value": "<PM-UM1>",
+							"type": "text"
+						},
+						{
+							"key": " Select Item",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[list_1]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[list_2]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[list_3]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[list_4]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[list_5]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[list_6]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[list_7]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[list_8]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[list_9]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[list_10]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[list_11]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[list_12]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[list_13]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[list_14]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[project_type]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[project_sub_type]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[project_sub_sub_type]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[complexity]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[budget_customer]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[project_priority]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[sub_program]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[project_status]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[profit_center]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[team]",
+							"value": "<Select item> // team or profit_center is same",
+							"type": "text"
+						},
+						{
+							"key": " Multi select item",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[list_muti_1][]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[list_muti_2][]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[list_muti_3][]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[list_muti_4][]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[list_muti_5][]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[list_muti_6][]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[list_muti_7][]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[list_muti_8][]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[list_muti_9][]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[list_muti_10][]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": "data[current_phases][]",
+							"value": "<Select item>",
+							"type": "text"
+						},
+						{
+							"key": " Number data",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[price_1]",
+							"value": "<Decimal (15,2)>",
+							"type": "text"
+						},
+						{
+							"key": "data[price_2]",
+							"value": "<Decimal (15,2)>",
+							"type": "text"
+						},
+						{
+							"key": "data[price_3]",
+							"value": "<Decimal (15,2)>",
+							"type": "text"
+						},
+						{
+							"key": "data[price_4]",
+							"value": "<Decimal (15,2)>",
+							"type": "text"
+						},
+						{
+							"key": "data[price_5]",
+							"value": "<Decimal (15,2)>",
+							"type": "text"
+						},
+						{
+							"key": "data[price_6]",
+							"value": "<Decimal (15,2)>",
+							"type": "text"
+						},
+						{
+							"key": "data[number_1]",
+							"value": "<Decimal (15,2)>",
+							"type": "text"
+						},
+						{
+							"key": "data[number_2]",
+							"value": "<Decimal (15,2)>",
+							"type": "text"
+						},
+						{
+							"key": "data[number_3]",
+							"value": "<Decimal (15,2)>",
+							"type": "text"
+						},
+						{
+							"key": "data[number_4]",
+							"value": "<Decimal (15,2)>",
+							"type": "text"
+						},
+						{
+							"key": "data[number_5]",
+							"value": "<Decimal (15,2)>",
+							"type": "text"
+						},
+						{
+							"key": "data[number_6]",
+							"value": "<Decimal (15,2)>",
+							"type": "text"
+						},
+						{
+							"key": "data[number_7]",
+							"value": "<Decimal (15,2)>",
+							"type": "text"
+						},
+						{
+							"key": "data[number_8]",
+							"value": "<Decimal (15,2)>",
+							"type": "text"
+						},
+						{
+							"key": "data[number_9]",
+							"value": "<Decimal (15,2)>",
+							"type": "text"
+						},
+						{
+							"key": "data[number_10]",
+							"value": "<Decimal (15,2)>",
+							"type": "text"
+						},
+						{
+							"key": "data[number_11]",
+							"value": "<Decimal (15,2)>",
+							"type": "text"
+						},
+						{
+							"key": "data[number_12]",
+							"value": "<Decimal (15,2)>",
+							"type": "text"
+						},
+						{
+							"key": "data[number_13]",
+							"value": "<Decimal (15,2)>",
+							"type": "text"
+						},
+						{
+							"key": "data[number_14]",
+							"value": "<Decimal (15,2)>",
+							"type": "text"
+						},
+						{
+							"key": "data[number_15]",
+							"value": "<Decimal (15,2)>",
+							"type": "text"
+						},
+						{
+							"key": "data[number_16]",
+							"value": "<Decimal (15,2)>",
+							"type": "text"
+						},
+						{
+							"key": "data[number_17]",
+							"value": "<Decimal (15,2)>",
+							"type": "text"
+						},
+						{
+							"key": "data[number_18]",
+							"value": "<Decimal (15,2)>",
+							"type": "text"
+						},
+						{
+							"key": " Boolean, Allow values - Yes/Y/1, No/N/0",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[bool_1]",
+							"value": "<Yes/No>",
+							"type": "text"
+						},
+						{
+							"key": "data[bool_2]",
+							"value": "<Yes/No>",
+							"type": "text"
+						},
+						{
+							"key": "data[bool_3]",
+							"value": "<Yes/No>",
+							"type": "text"
+						},
+						{
+							"key": "data[bool_4]",
+							"value": "<Yes/No>",
+							"type": "text"
+						},
+						{
+							"key": "data[yn_1]",
+							"value": "<Yes/No>",
+							"type": "text"
+						},
+						{
+							"key": "data[yn_2]",
+							"value": "<Yes/No>",
+							"type": "text"
+						},
+						{
+							"key": "data[yn_3]",
+							"value": "<Yes/No>",
+							"type": "text"
+						},
+						{
+							"key": "data[yn_4]",
+							"value": "<Yes/No>",
+							"type": "text"
+						},
+						{
+							"key": "data[yn_5]",
+							"value": "<Yes/No>",
+							"type": "text"
+						},
+						{
+							"key": "data[yn_6]",
+							"value": "<Yes/No>",
+							"type": "text"
+						},
+						{
+							"key": "data[yn_7]",
+							"value": "<Yes/No>",
+							"type": "text"
+						},
+						{
+							"key": "data[yn_8]",
+							"value": "<Yes/No>",
+							"type": "text"
+						},
+						{
+							"key": "data[yn_9]",
+							"value": "<Yes/No>",
+							"type": "text"
+						},
+						{
+							"key": " date - DD-MM-YYYY",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[date_1]",
+							"value": "<DD-MM-YYYY>",
+							"type": "text"
+						},
+						{
+							"key": "data[date_2]",
+							"value": "<DD-MM-YYYY>",
+							"type": "text"
+						},
+						{
+							"key": "data[date_3]",
+							"value": "<DD-MM-YYYY>",
+							"type": "text"
+						},
+						{
+							"key": "data[date_4]",
+							"value": "<DD-MM-YYYY>",
+							"type": "text"
+						},
+						{
+							"key": "data[date_5]",
+							"value": "<DD-MM-YYYY>",
+							"type": "text"
+						},
+						{
+							"key": "data[date_6]",
+							"value": "<DD-MM-YYYY>",
+							"type": "text"
+						},
+						{
+							"key": "data[date_7]",
+							"value": "<DD-MM-YYYY>",
+							"type": "text"
+						},
+						{
+							"key": "data[date_8]",
+							"value": "<DD-MM-YYYY>",
+							"type": "text"
+						},
+						{
+							"key": "data[date_9]",
+							"value": "<DD-MM-YYYY>",
+							"type": "text"
+						},
+						{
+							"key": "data[date_10]",
+							"value": "<DD-MM-YYYY>",
+							"type": "text"
+						},
+						{
+							"key": "data[date_11]",
+							"value": "<DD-MM-YYYY>",
+							"type": "text"
+						},
+						{
+							"key": "data[date_12]",
+							"value": "<DD-MM-YYYY>",
+							"type": "text"
+						},
+						{
+							"key": "data[date_13]",
+							"value": "<DD-MM-YYYY>",
+							"type": "text"
+						},
+						{
+							"key": "data[date_14]",
+							"value": "<DD-MM-YYYY>",
+							"type": "text"
+						},
+						{
+							"key": " Date - MM-YYY or DD-MM-YYYY",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[date_mm_yy_1]",
+							"value": "<DD-MM-YYYY or MM-YYYY>",
+							"type": "text"
+						},
+						{
+							"key": "data[date_mm_yy_2]",
+							"value": "<DD-MM-YYYY or MM-YYYY>",
+							"type": "text"
+						},
+						{
+							"key": "data[date_mm_yy_3]",
+							"value": "<DD-MM-YYYY or MM-YYYY>",
+							"type": "text"
+						},
+						{
+							"key": "data[date_mm_yy_4]",
+							"value": "<DD-MM-YYYY or MM-YYYY>",
+							"type": "text"
+						},
+						{
+							"key": "data[date_mm_yy_5]",
+							"value": "<DD-MM-YYYY or MM-YYYY>",
+							"type": "text"
+						},
+						{
+							"key": "Date - YYYY",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[date_yy_1]",
+							"value": "<YYYY>",
+							"type": "text"
+						},
+						{
+							"key": "data[date_yy_2]",
+							"value": "<YYYY>",
+							"type": "text"
+						},
+						{
+							"key": "data[date_yy_3]",
+							"value": "<YYYY>",
+							"type": "text"
+						},
+						{
+							"key": "data[date_yy_4]",
+							"value": "<YYYY>",
+							"type": "text"
+						},
+						{
+							"key": "data[date_yy_5]",
+							"value": "<YYYY>",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{WS}}/ws/update_project",
+					"host": [
+						"{{WS}}"
+					],
+					"path": [
+						"ws",
+						"update_project"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1. Create Project - Prerpod6",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"project_name\", \"New Project by WS\");\r",
+							"pm.environment.set(\"project_code\", \"NEW_PR\");\r",
+							"pm.environment.set(\"program\", \"Attractivité et international\");\r",
+							"pm.environment.set(\"pm_name\", \"Huynh Test Ticket\"); //1PM"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.test(\"Status is success\", function () {\r",
+							"    pm.expect(jsonData.status).to.eql('success');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data[auth_code]",
+							"value": "{{auth_code}}",
+							"type": "text"
+						},
+						{
+							"key": "data[access_token]",
+							"value": "{{token}}",
+							"type": "text"
+						},
+						{
+							"key": "data[project_name]",
+							"value": "{{project_name}}",
+							"description": "Mandatory,",
+							"type": "text"
+						},
+						{
+							"key": "data[Project Code]",
+							"value": "{{project_code}}",
+							"description": "Options, Default: New Project ID",
+							"type": "text"
+						},
+						{
+							"key": "data[program]",
+							"value": "{{program}}",
+							"description": "Mandatory",
+							"type": "text"
+						},
+						{
+							"key": "data[project_manager]",
+							"value": "{{pm_name}}",
+							"description": "Mandatory: Allow String or Array",
+							"type": "text"
+						},
+						{
+							"key": "data[project_manager][]",
+							"value": "Anna S",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[project_manager][]",
+							"value": "C Goemaere",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[project_manager][]",
+							"value": "Cyrielle Trouillet",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[project_manager][]",
+							"value": "Audrey Combe",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[other_key]",
+							"value": "other_value",
+							"description": "Key without validated will not be saved",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{WS}}/ws/create_project",
+					"host": [
+						"{{WS}}"
+					],
+					"path": [
+						"ws",
+						"create_project"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Update Project Free text updated",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.test(\"Status is success\", function () {\r",
+							"    pm.expect(jsonData.status).to.eql('success');\r",
+							"});\r",
+							"pm.test(\"Correct New Project Name\", function () {\r",
+							"    pm.expect(jsonData.data.Project.project_name).to.eql('Project Name edited');\r",
+							"});\r",
+							"pm.test(\"Correct Project Code\", function () {\r",
+							"    pm.expect(jsonData.data.Project.project_code_1).to.eql('NEW_PR');\r",
+							"});\r",
+							"pm.test(\"Correct Program ID\", function () {\r",
+							"    pm.expect(jsonData.data.Project.project_amr_program_id).to.eql('1402');\r",
+							"});\r",
+							"pm.test(\"Free text updated\", function () {\r",
+							"    pm.expect(jsonData.data.Project.free_1).to.eql('Text free_1');\r",
+							"});\r",
+							"pm.test(\"Address text updated\", function () {\r",
+							"    pm.expect(jsonData.data.Project.address).to.eql('Text address');\r",
+							"});\r",
+							"pm.test(\"project_objectives text updated\", function () {\r",
+							"    pm.expect(jsonData.data.Project.project_objectives).to.eql('Text project_objectives');\r",
+							"});\r",
+							"pm.test(\"long_project_name text updated\", function () {\r",
+							"    pm.expect(jsonData.data.Project.long_project_name).to.eql('Text long_project_name');\r",
+							"});\r",
+							"pm.test(\"text_one_line_1 text updated\", function () {\r",
+							"    pm.expect(jsonData.data.Project.text_one_line_1).to.eql('Text text_one_line_1');\r",
+							"});\r",
+							"pm.test(\"text_two_line_1 text updated\", function () {\r",
+							"    pm.expect(jsonData.data.Project.text_two_line_1).to.eql('Text text_two_line_1');\r",
+							"});\r",
+							"pm.test(\"editor_1 text updated\", function () {\r",
+							"    pm.expect(jsonData.data.Project.editor_1).to.eql('Text editor_1');\r",
+							"});\r",
+							"pm.test(\"change \\'updated\\' value\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"last_modified\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data[auth_code]",
+							"value": "{{auth_code}}",
+							"type": "text"
+						},
+						{
+							"key": "data[access_token]",
+							"value": "{{token}}",
+							"type": "text"
+						},
+						{
+							"key": " configs",
+							"value": "",
+							"description": "Mandatory,",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[identifier]",
+							"value": "code",
+							"description": "Mandatory",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[allow_new_list_values]",
+							"value": "no",
+							"description": "Mandatory",
+							"type": "text"
+						},
+						{
+							"key": "data[update_or_replace]",
+							"value": "update",
+							"description": "Mandatory",
+							"type": "text"
+						},
+						{
+							"key": "project data",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[project_code]",
+							"value": "NEW_PR",
+							"type": "text"
+						},
+						{
+							"key": "data[project_name]",
+							"value": "Project Name edited",
+							"type": "text"
+						},
+						{
+							"key": "data[program]",
+							"value": " DSI",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": " Text input",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[free_1]",
+							"value": "Text free_1",
+							"type": "text"
+						},
+						{
+							"key": "data[free_2]",
+							"value": "Text free_2",
+							"description": "max 255",
+							"type": "text"
+						},
+						{
+							"key": "data[free_3]",
+							"value": "Text free_3",
+							"description": " ",
+							"type": "text"
+						},
+						{
+							"key": "data[free_4]",
+							"value": "Text free_4",
+							"type": "text"
+						},
+						{
+							"key": "data[free_5]",
+							"value": "Text free_5",
+							"type": "text"
+						},
+						{
+							"key": "data[issues]",
+							"value": "Text issues",
+							"type": "text"
+						},
+						{
+							"key": "data[address]",
+							"value": "Text address",
+							"type": "text"
+						},
+						{
+							"key": "data[latlng]",
+							"value": "Text latlng",
+							"type": "text"
+						},
+						{
+							"key": "data[primary_objectives]",
+							"value": "Text primary_objectives",
+							"type": "text"
+						},
+						{
+							"key": "data[project_objectives]",
+							"value": "Text project_objectives",
+							"type": "text"
+						},
+						{
+							"key": "data[long_project_name]",
+							"value": "Text long_project_name",
+							"type": "text"
+						},
+						{
+							"key": "data[remark]",
+							"value": "Text remark",
+							"type": "text"
+						},
+						{
+							"key": "data[constraint]",
+							"value": "Text constraint",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_1]",
+							"value": "Text text_one_line_1",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_2]",
+							"value": "Text text_one_line_2",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_3]",
+							"value": "Text text_one_line_3",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_4]",
+							"value": "Text text_one_line_4",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_5]",
+							"value": "Text text_one_line_5",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_6]",
+							"value": "Text text_one_line_6",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_7]",
+							"value": "Text text_one_line_7",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_8]",
+							"value": "Text text_one_line_8",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_9]",
+							"value": "Text text_one_line_9",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_10]",
+							"value": "Text text_one_line_10",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_11]",
+							"value": "Text text_one_line_11",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_12]",
+							"value": "Text text_one_line_12",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_13]",
+							"value": "Text text_one_line_13",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_14]",
+							"value": "Text text_one_line_14",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_15]",
+							"value": "Text text_one_line_15",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_16]",
+							"value": "Text text_one_line_16",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_17]",
+							"value": "Text text_one_line_17",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_18]",
+							"value": "Text text_one_line_18",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_19]",
+							"value": "Text text_one_line_19",
+							"type": "text"
+						},
+						{
+							"key": "data[text_one_line_20]",
+							"value": "Text text_one_line_20",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_1]",
+							"value": "Text text_two_line_1",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_2]",
+							"value": "Text text_two_line_2",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_3]",
+							"value": "Text text_two_line_3",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_4]",
+							"value": "Text text_two_line_4",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_5]",
+							"value": "Text text_two_line_5",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_6]",
+							"value": "Text text_two_line_6",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_7]",
+							"value": "Text text_two_line_7",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_8]",
+							"value": "Text text_two_line_8",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_9]",
+							"value": "Text text_two_line_9",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_10]",
+							"value": "Text text_two_line_10",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_11]",
+							"value": "Text text_two_line_11",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_12]",
+							"value": "Text text_two_line_12",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_13]",
+							"value": "Text text_two_line_13",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_14]",
+							"value": "Text text_two_line_14",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_15]",
+							"value": "Text text_two_line_15",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_16]",
+							"value": "Text text_two_line_16",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_17]",
+							"value": "Text text_two_line_17",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_18]",
+							"value": "Text text_two_line_18",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_19]",
+							"value": "Text text_two_line_19",
+							"type": "text"
+						},
+						{
+							"key": "data[text_two_line_20]",
+							"value": "Text text_two_line_20",
+							"type": "text"
+						},
+						{
+							"key": "data[editor_1]",
+							"value": "Text editor_1",
+							"type": "text"
+						},
+						{
+							"key": "data[editor_2]",
+							"value": "Text editor_2",
+							"type": "text"
+						},
+						{
+							"key": "data[editor_3]",
+							"value": "Text editor_3",
+							"type": "text"
+						},
+						{
+							"key": "data[editor_4]",
+							"value": "Text editor_4",
+							"type": "text"
+						},
+						{
+							"key": "data[editor_5]",
+							"value": "Text editor_5",
+							"type": "text"
+						},
+						{
+							"key": " PM - for next test",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[project_manager][]",
+							"value": "Viet Nguyen",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{WS}}/ws/update_project",
+					"host": [
+						"{{WS}}"
+					],
+					"path": [
+						"ws",
+						"update_project"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Update Project- update PM",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.test(\"Status is success\", function () {\r",
+							"    pm.expect(jsonData.status).to.eql('success');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"change \\'updated\\' value\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"last_modified\");\r",
+							"});\r",
+							"pm.test(\"PM is updated\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"ProjectEmployeeManager\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data[auth_code]",
+							"value": "{{auth_code}}",
+							"type": "text"
+						},
+						{
+							"key": "data[access_token]",
+							"value": "{{token}}",
+							"type": "text"
+						},
+						{
+							"key": " configs",
+							"value": "",
+							"description": "Mandatory,",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[identifier]",
+							"value": "code",
+							"description": "Mandatory",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[allow_new_list_values]",
+							"value": "no",
+							"description": "Mandatory",
+							"type": "text"
+						},
+						{
+							"key": "data[update_or_replace]",
+							"value": "update",
+							"description": "Mandatory",
+							"type": "text"
+						},
+						{
+							"key": "project data",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[project_code]",
+							"value": "NEW_PR",
+							"type": "text"
+						},
+						{
+							"key": "PM",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "PM",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[project_manager][]",
+							"value": "Jule Manciet",
+							"type": "text"
+						},
+						{
+							"key": "data[project_manager][]",
+							"value": "Huynh GS",
+							"type": "text"
+						},
+						{
+							"key": "data[read_access][]",
+							"value": "Anna S",
+							"description": "max 255",
+							"type": "text"
+						},
+						{
+							"key": "data[chief_business][]",
+							"value": "Quan Innovation",
+							"description": " ",
+							"type": "text"
+						},
+						{
+							"key": "data[chief_business][]",
+							"value": "quan pm",
+							"type": "text"
+						},
+						{
+							"key": "data[functional_leader][]",
+							"value": "Kevin A",
+							"type": "text"
+						},
+						{
+							"key": "data[uat_manager][]",
+							"value": "ed cp",
+							"type": "text"
+						},
+						{
+							"key": "data[technical_manager][]",
+							"value": "david H",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{WS}}/ws/update_project",
+					"host": [
+						"{{WS}}"
+					],
+					"path": [
+						"ws",
+						"update_project"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Update Project- update select fields",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.test(\"Status is success\", function () {\r",
+							"    pm.expect(jsonData.status).to.eql('success');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"change \\'updated\\' value\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"last_modified\");\r",
+							"});\r",
+							"pm.test(\"list_2 is updated\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"list_2\");\r",
+							"});\r",
+							"pm.test(\"Team is updated\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"team\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data[auth_code]",
+							"value": "{{auth_code}}",
+							"type": "text"
+						},
+						{
+							"key": "data[access_token]",
+							"value": "{{token}}",
+							"type": "text"
+						},
+						{
+							"key": " configs",
+							"value": "",
+							"description": "Mandatory,",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[identifier]",
+							"value": "code",
+							"description": "Mandatory",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[allow_new_list_values]",
+							"value": "no",
+							"description": "Mandatory",
+							"type": "text"
+						},
+						{
+							"key": "data[update_or_replace]",
+							"value": "update",
+							"description": "Mandatory",
+							"type": "text"
+						},
+						{
+							"key": "project data",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[project_code]",
+							"value": "NEW_PR",
+							"type": "text"
+						},
+						{
+							"key": "PM",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[list_2]",
+							"value": "FROM_API",
+							"type": "text"
+						},
+						{
+							"key": "data[project_type]",
+							"value": "TECHNIQUE",
+							"type": "text"
+						},
+						{
+							"key": "data[project_sub_type]",
+							"value": "T1",
+							"type": "text"
+						},
+						{
+							"key": "data[team]",
+							"value": "Pilotage",
+							"description": "max 255",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{WS}}/ws/update_project",
+					"host": [
+						"{{WS}}"
+					],
+					"path": [
+						"ws",
+						"update_project"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Update Project- Add new select field",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.test(\"Status is success\", function () {\r",
+							"    pm.expect(jsonData.status).to.eql('success');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"change \\'updated\\' value\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"last_modified\");\r",
+							"});\r",
+							"pm.test(\"PM is updated\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"project_sub_type_id\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data[auth_code]",
+							"value": "{{auth_code}}",
+							"type": "text"
+						},
+						{
+							"key": "data[access_token]",
+							"value": "{{token}}",
+							"type": "text"
+						},
+						{
+							"key": " configs",
+							"value": "",
+							"description": "Mandatory,",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[identifier]",
+							"value": "code",
+							"description": "Mandatory",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[allow_new_list_values]",
+							"value": "yes",
+							"description": "Mandatory",
+							"type": "text"
+						},
+						{
+							"key": "data[update_or_replace]",
+							"value": "update",
+							"description": "Mandatory",
+							"type": "text"
+						},
+						{
+							"key": "project data",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[project_code]",
+							"value": "NEW_PR",
+							"type": "text"
+						},
+						{
+							"key": "data[project_sub_type]",
+							"value": "T3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{WS}}/ws/update_project",
+					"host": [
+						"{{WS}}"
+					],
+					"path": [
+						"ws",
+						"update_project"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Update Project - Boolean fields",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data[auth_code]",
+							"value": "{{auth_code}}",
+							"type": "text"
+						},
+						{
+							"key": "data[access_token]",
+							"value": "{{token}}",
+							"type": "text"
+						},
+						{
+							"key": " configs",
+							"value": "",
+							"description": "Mandatory,",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[identifier]",
+							"value": "code",
+							"description": "Mandatory, code/project_name",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[allow_new_list_values]",
+							"value": "no",
+							"description": "Mandatory, Yes/no",
+							"type": "text"
+						},
+						{
+							"key": "data[update_or_replace]",
+							"value": "update",
+							"description": "Mandatory: Allow update / replace",
+							"type": "text"
+						},
+						{
+							"key": "data[project_code]",
+							"value": "{{project_code}}",
+							"type": "text"
+						},
+						{
+							"key": "data[project_name_new]",
+							"value": "New Project edited",
+							"type": "text"
+						},
+						{
+							"key": " Boolean, Allow values - Yes/Y/1, No/N/0",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[bool_1]",
+							"value": "Yes",
+							"type": "text"
+						},
+						{
+							"key": "data[bool_2]",
+							"value": "No",
+							"type": "text"
+						},
+						{
+							"key": "data[bool_3]",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "data[bool_4]",
+							"value": "No",
+							"type": "text"
+						},
+						{
+							"key": "data[yn_1]",
+							"value": "N",
+							"type": "text"
+						},
+						{
+							"key": "data[yn_2]",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "data[yn_3]",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "data[yn_4]",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "data[yn_5]",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "data[yn_6]",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "data[yn_7]",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "data[yn_8]",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "data[yn_9]",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[Yes/No 9]",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{WS}}/ws/update_project",
+					"host": [
+						"{{WS}}"
+					],
+					"path": [
+						"ws",
+						"update_project"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7. Update Project- input ID",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.test(\"Status is success\", function () {\r",
+							"    pm.expect(jsonData.status).to.eql('success');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"change \\'updated\\' value\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"last_modified\");\r",
+							"});\r",
+							"pm.test(\"Project Name is updated\", function () {\r",
+							"    pm.expect(jsonData.data.Project.project_name).to.eql('Project edited');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data[auth_code]",
+							"value": "{{auth_code}}",
+							"type": "text"
+						},
+						{
+							"key": "data[access_token]",
+							"value": "{{token}}",
+							"type": "text"
+						},
+						{
+							"key": " configs",
+							"value": "",
+							"description": "Mandatory,",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[allow_new_list_values]",
+							"value": "no",
+							"description": "Mandatory",
+							"type": "text"
+						},
+						{
+							"key": "data[update_or_replace]",
+							"value": "update",
+							"description": "Mandatory",
+							"type": "text"
+						},
+						{
+							"key": "project data",
+							"value": "",
+							"description": "Mandatory",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[id]",
+							"value": "6381",
+							"type": "text"
+						},
+						{
+							"key": "data[project_code]",
+							"value": "TESTCODE",
+							"type": "text"
+						},
+						{
+							"key": "data[project_name_new]",
+							"value": "Project edited",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{WS}}/ws/update_project",
+					"host": [
+						"{{WS}}"
+					],
+					"path": [
+						"ws",
+						"update_project"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7. Update Project- input Code",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.test(\"Status is success\", function () {\r",
+							"    pm.expect(jsonData.status).to.eql('success');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"change \\'updated\\' value\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"last_modified\");\r",
+							"});\r",
+							"pm.test(\"Project Name is updated\", function () {\r",
+							"    pm.expect(jsonData.data.Project.project_name).to.eql('Project edited 2');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data[auth_code]",
+							"value": "{{auth_code}}",
+							"type": "text"
+						},
+						{
+							"key": "data[access_token]",
+							"value": "{{token}}",
+							"type": "text"
+						},
+						{
+							"key": " configs",
+							"value": "",
+							"description": "Mandatory,",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[allow_new_list_values]",
+							"value": "no",
+							"description": "Mandatory",
+							"type": "text"
+						},
+						{
+							"key": "data[update_or_replace]",
+							"value": "update",
+							"description": "Mandatory",
+							"type": "text"
+						},
+						{
+							"key": "project data",
+							"value": "",
+							"description": "Mandatory",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[project_code]",
+							"value": "TESTCODE",
+							"type": "text"
+						},
+						{
+							"key": "data[project_name_new]",
+							"value": "Project edited 2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{WS}}/ws/update_project",
+					"host": [
+						"{{WS}}"
+					],
+					"path": [
+						"ws",
+						"update_project"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7. Update Project- input name",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.test(\"Status is success\", function () {\r",
+							"    pm.expect(jsonData.status).to.eql('success');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"change \\'updated\\' value\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"last_modified\");\r",
+							"});\r",
+							"pm.test(\"Project Name is updated\", function () {\r",
+							"    pm.expect(jsonData.data.Project.project_name).to.eql('Project edited');\r",
+							"});\r",
+							"pm.test(\"Project Name is updated\", function () {\r",
+							"    pm.expect(jsonData.data.Project.project_code_1).to.eql('UPDATED_CODE');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data[auth_code]",
+							"value": "{{auth_code}}",
+							"type": "text"
+						},
+						{
+							"key": "data[access_token]",
+							"value": "{{token}}",
+							"type": "text"
+						},
+						{
+							"key": " configs",
+							"value": "",
+							"description": "Mandatory,",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[allow_new_list_values]",
+							"value": "no",
+							"description": "Mandatory",
+							"type": "text"
+						},
+						{
+							"key": "data[update_or_replace]",
+							"value": "update",
+							"description": "Mandatory",
+							"type": "text"
+						},
+						{
+							"key": "project data",
+							"value": "",
+							"description": "Mandatory",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "data[project_name]",
+							"value": "Project edited 2",
+							"type": "text"
+						},
+						{
+							"key": "data[project_name_new]",
+							"value": "Project edited",
+							"type": "text"
+						},
+						{
+							"key": "data[project_code_new]",
+							"value": "UPDATED_CODE",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{WS}}/ws/update_project",
+					"host": [
+						"{{WS}}"
+					],
+					"path": [
+						"ws",
+						"update_project"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "project_name",
+			"value": ""
+		},
+		{
+			"key": "project_code",
+			"value": ""
+		},
+		{
+			"key": "program",
+			"value": ""
+		},
+		{
+			"key": "pm_name",
+			"value": ""
+		}
+	]
+}

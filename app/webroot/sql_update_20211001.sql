@@ -1,0 +1,1 @@
+ALTER table `vision_task_exports` ADD COLUMN `translation_id`  int(11) NULL DEFAULT NULL AFTER `company_id`;

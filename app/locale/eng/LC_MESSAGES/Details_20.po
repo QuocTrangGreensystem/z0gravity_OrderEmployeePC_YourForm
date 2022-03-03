@@ -1,0 +1,114 @@
+msgid "Program"
+msgstr ""
+
+msgid "Sub program"
+msgstr ""
+
+msgid "Project Name"
+msgstr ""
+
+msgid "Project Manager"
+msgstr ""
+
+msgid "Issues"
+msgstr ""
+
+msgid "Primary Objectives"
+msgstr ""
+
+msgid "Constraint"
+msgstr ""
+
+msgid "Last Update: {time} {date} by {resource}"
+msgstr ""
+
+msgid "List 1"
+msgstr ""
+
+msgid "Project details"
+msgstr ""
+
+msgid "Current Phase"
+msgstr "Phase courante"
+
+msgid "List 2"
+msgstr ""
+
+msgid "List 3"
+msgstr ""
+
+msgid "Technical manager"
+msgstr ""
+
+msgid "Yes/No 1"
+msgstr ""
+
+msgid "Yes/No 2"
+msgstr ""
+
+msgid "List 4"
+msgstr ""
+
+msgid "Yes/No 3"
+msgstr ""
+
+msgid "Number 2"
+msgstr ""
+
+msgid "Yes/No 4"
+msgstr ""
+
+msgid "Number 1"
+msgstr ""
+
+msgid "Project Code 1"
+msgstr ""
+
+msgid "Project Code 2"
+msgstr ""
+
+msgid "Free 1"
+msgstr ""
+
+msgid "Price 1"
+msgstr ""
+
+msgid "Price 2"
+msgstr ""
+
+msgid "Free 2"
+msgstr ""
+
+msgid "Price 3"
+msgstr ""
+
+msgid "Free 3"
+msgstr ""
+
+msgid "Price 4"
+msgstr ""
+
+msgid "Priority"
+msgstr ""
+
+msgid "Project Objectives"
+msgstr ""
+
+msgid "Date 1"
+msgstr ""
+
+msgid "Price 5"
+msgstr ""
+
+msgid "Price 6"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Date 2"
+msgstr ""
+
+msgid "Free 5"
+msgstr ""
+

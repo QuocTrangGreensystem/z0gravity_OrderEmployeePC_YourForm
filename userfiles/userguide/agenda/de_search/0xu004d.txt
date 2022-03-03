@@ -1,0 +1,10 @@
+MANUEL
+ 2
+MISE
+ 2
+MODIFIER
+ 3
+MON
+ 3
+MÊME
+ 3

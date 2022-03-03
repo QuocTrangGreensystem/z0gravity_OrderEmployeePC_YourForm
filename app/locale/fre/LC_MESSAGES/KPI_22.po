@@ -1,0 +1,75 @@
+msgid "Comment"
+msgstr "Avancement"
+
+msgid "Planning"
+msgstr ""
+
+msgid "Progress"
+msgstr "Avancement"
+
+msgid "Budget"
+msgstr ""
+
+msgid "Staffing"
+msgstr ""
+
+msgid "Risk"
+msgstr "Risque"
+
+msgid "Issue"
+msgstr "Problème"
+
+msgid "Log Comment"
+msgstr "Historique"
+
+msgid "Customer Point Of View"
+msgstr "Vue client"
+
+msgid "Done"
+msgstr "Réalisé"
+
+msgid "To Do"
+msgstr "A faire"
+
+msgid "Acceptance"
+msgstr "Recette"
+
+msgid "Progress %"
+msgstr "% avancement"
+
+msgid "Information"
+msgstr ""
+
+msgid "Budget status"
+msgstr "Budget"
+
+msgid "Planning status"
+msgstr "Planning"
+
+msgid "Risk status"
+msgstr "Risque"
+
+msgid "Staffing status"
+msgstr "Allocation ressource"
+
+msgid "Issue status"
+msgstr "Problème"
+
+msgid "Trend"
+msgstr "Tendance"
+
+msgid "Delay"
+msgstr "Retard en J"
+
+msgid "Created"
+msgstr ""
+
+msgid "Updated"
+msgstr ""
+
+msgid "Weather"
+msgstr "Météo"
+
+msgid "Action"
+msgstr ""
+

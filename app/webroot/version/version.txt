@@ -1,0 +1,1958 @@
+﻿@Version: 11.0
+@Updatedate: 2020-05-14
+@News:
+ Enhancement:
+    9806 Forecast - Display only the members of the team not the manager if the manager is not member of the team
+	9807 Forecast - Team workload screen: Apply new Design for Popup NCT workload
+	9816 Display data view absence by week on one screen
+	9836 Apply popup comment for Risks Screens
+	9852 Milestone - Add a date field Initial Date.
+	9904 Yourform - Display only status "EN COURS" and "ARCHIVED" when a project have consumed or consumed waiting for validation or at least task selected in the timesheet.
+	9908 Aplly new design for login screen
+ Bug:
+    9827 Impossible add message tasks
+    9830 Document - Fix issue filter doesn't work
+	9841 Lost ressource when edit the task, all resource has end date in profile.
+	9902 Absence - Fix error select date: select 1 jully , June is displayed
+@endversion
+---------------------
+@Version: 10.11
+@Updatedate: 2020-03-27
+@News:
+ Enhancement:
+    9244 Update new design for Indicator
+	9248 When create a sub program create automaticcaly the sub family if the sub family doesn't exist.
+	9304 Apply new design for popup staffing.
+	9308 Update function caculator Activity Request.
+	9321 Vision staffing - Do not display TOTAL column if only display 1 years.
+	9332 Vision staffing - If "Day not validates" there are value < 0 then value = 0.
+	9402 Activity forecast - Apply new design for Activity forecast +.
+	9410 Admin/Resource/Profile - Add TJM in profil
+	9426 Activity forecast+ - Get and display data resouce Not Affected
+	9514 Add 4 options setting in admin translate of project budget internal screen
+	9616 Update new design for Synthesis screen.
+	9621 Add an additionnal sub sub type field in the project list
+	9627 Internal budget - Add graph by line in Internal screen.
+	9708 Finance+ - Add 2 New dashboard  in Finance+
+	9718 External budget - Update new design for External Budget
+	9729 Apply new design for Ticket screen
+	9734 User guide - Create menu view document userguide
+	9742 Synthesis - Update new design for Graph
+	9745 Indicator - Add widget Finance+
+ Bug:
+    9313 Difference between timesheet late in the assistant popup and Activity/Not send yet
+	9337 Project Task - Switch doesn’t work.
+	9343 Activity - Impossible to export activity
+	9363 Project Part - Parts not duplicated when you duplicate a project model
+	9415 Vision staffing - Fix issue load time 50s when open vision staffing by team
+	9637 Fix issue not check conditions update data when update value Budget M.D smaller Provisional
+	9707 PDC workload - Fix issue impossible to export excel
+	9720 Absence - Absence email send wrong information
+	9752 Project task - Display popup edit tasks/save task loading very bad
+	9754 Project task - Save estimated for employees assigned when add / update task
+@endversion
+---------------------
+@Version: 10.10
+@Updatedate: 2019-10-12
+@News:
+ - Update new design for Indicator
+ - Update new design for Project
+ - Fix issue in Activity Request
+ - Update new design for Activity/Forecast
+ - Other minor fix bug/issues
+@endversion
+---------------------
+@Version: 10.1
+@Updatedate: 2019-01-18
+@News:
+ - Fix issue in Personalized Views screen
+ - Update new design for Project/Indicator
+ - Enhancement in Project
+ - Update new design for Project/Task
+ - Update new design for Project/Document
+ - Enhancement in old design
+ - Other minor fix bug/issues
+@endversion
+---------------------
+@Version: 10.0
+@Updatedate: 2018-08-01
+@News:
+ - Fix issue in Project/Task Kanban screen
+ - Update new design for Project/Created Value screen
+ - Fix issue for Project/Staffing++ screen
+ - Update new design for Project
+ - Update new design for Project/Task
+ - Update new design for Project/Flash++
+ - Other minor fix bug/issues
+@endversion
+---------------------
+@Version: 9.3
+@Updatedate: 2018-04-02
+@News:
+ - Fix issue in Opportunity/Detail
+ - Change information email when send notification
+ - Other minor fix bug/issues
+@endversion
+---------------------
+@Version: 9.2
+@Updatedate: 2018-01-26
+@News:
+ - Fix issue in Staffing+
+ - Authorized technical manager or business , UAT manager can modify Your Form screen
+ - Other minor fix bug/issues
+@endversion
+---------------------
+@Version: 9.1
+@Updatedate: 2018-01-10
+@News:
+ - Activate the function notification in ZogMsg
+ - Fix issue not display task in Assistant
+ - Other minor fix bug/issues
+@endversion
+---------------------
+@Version: 9.0
+@Updatedate: 2017-12-08
+@News:
+ - Fix a few bug/issues on Smartphone and Tablet
+ - Enhancement in Your Form++
+ - Enhancement in Resource
+ - Enhancement in Project/Task
+ - Enhancement in ZogMsg
+ - Other minor fix bug/issues
+@endversion
+---------------------
+@Version: 8.3
+@Updatedate: 2017-09-30
+@News:
+ - Enhancements in Dependancies
+ - Enhancements in Deliverables
+ - Create a new way to create a profile in Administration
+ - Create new screen Financement++
+ - Enhancements in Project/Task
+ - Other minor fix bug/issues
+@endversion
+---------------------
+@Version: 8.2
+@Updatedate: 2017-07-28
+@News:
+1) PROJECT
+ - Optimize the time when open a NTC task
+ - When create a NTC, fill automatically the start date and end date and the status
+ - When select Global View do not open in full screen.
+ - Display the picture in the center without proportion modification
+ - Add new interface grid view display project list
+ - The weather doesn’t correspond to the project’s weather and trend.
+ - As all screens, delete the SAVE button, save the data field by field
+ - Display the both icons in the same time
+ - Display only the projects filter in project list, when select one of the 3 icons
+ - Add the icon resource only for admin and project manager with the right "manage resources" to display resource screen
+ - Upper part of the screen frozen even if scroll down the screen.
+ - At the bottom of the screen, delete the white part with the blue bar
+ - Remove the scroll bar on the right hand side of the screen
+ - When the “teams” tab is not displayed, display all the teams and resources in the “assigned to list on the task"
+2) YOUR FORM+
+ - Add the widgets Progression, Budget, Acceptance if the widgets are displayed in KPI+
+ - Add the date of created document with the name of the person who has generated the PDF
+ - Name the file generated as following project name, date, person, time
+ - Store the document generated in "Deliverable" if the screen has been displayed
+ - The % are not displayed
+ - Display not correctly in IE browser.
+ - Display project name not correctly
+ - Remove name and date in PDF file
+ - Optimize the time response of YOURFORM +
+ - Export PDF of YOURFORM+ generates a blank page
+ - Your Form+ screen, the value progression not display in PDF file.
+ - Impossible to see the document attachment
+ - Cannot displayed yourform+ in project list
+ - Optimize the time response of Project list/Yourform +
+ - Center the picture, do not display the frame, display the frame only if there is not picture
+ - Display only the project selected in project list
+ - Keep in memory the last screen selected when logoff and display the last screen displayed when logon
+ - Reduce the reponse time, less than 4 secondes when select the picture and display the dashboard
+ - Autorize to move the dashboard and store the position
+ - Add icon select display project list.
+ - Page break in progress
+ - The planning is not displayed correctly
+ - Delete SAVE and PDF icon will be generated only in YOURFORM +, display the project name in orange
+ - Delete the "backup" in project manager, technical manager …
+ - Center the picture, no border, no label , "full screen" icon  after "Delete" icon, name of the project in orange
+ - If the screen "Team" is not displayed then in task screen when you selected "assigned to" display all resources with the status "actif"
+ - Delete the id in project list
+ - The scroll bar in only for the list of project, the top of the screen does not move
+ - Display the amount with a distinction between the thousands
+@endversion
+---------------------
+@Version: 8.1
+@Updatedate: 2017-05-31
+@News:
+1) PROJECT
+ - In export vision task : add the field milestone
+ - Create a new tab in administration/project named Milestone /Jalon
+ - Add a screen color indicator Blocking/Bloquant in admin/project/Issue
+ - Add an indicator if closing date is late
+      + Add status field (closed, in progress) to know if the issue is opened or not
+      + If select status = CLOSED automatically fill the date of “date closing”
+ - When duplicate a project from a model, keep the assignments of the tasks.
+ - When duplicate the assignment, check if the ressources are active or not.
+      + not active, then do not duplicate the assignment.
+      + duplicate only the active ressources and the teams.
+2) EXPECTATION
+ - Create a new entry in admin/project/ expectations(attendus)
+ - Add field Attached document, Text.
+ - Add 3 field "assigned to" in Administration/Project/Expectations.
+ - Add 3 screen expectation 4 to 6
+ - Add 5 screen list color 1 to 5 for select color display in Project/Expectation
+ - Add an icon Vision Attendus/Expectations in Project screen.
+ - When select Vision Expectation then display popup.
+ - In Vision Expectations, when select a "screen" display the information with the same display of the screen and add a first column the name of project.
+ - Create two new entries in Your Form "next milestone in Week" and "next milestone in Day"
+ - In Project/Issue, add the color indicator in file export
+ - Modify the your form+, do not displayed txt and upload documents
+3) YOUR FORM+
+ - Display only the information of the screens used
+ - Do not display txt and upload in risk dashboard
+ - Keep the proportion of the picture
+ - Add your form+ in admin/screen
+ - Add setting to setup the widget to display, change the order, select the status to display information
+ - Add name company in Your form+ screen
+ - Add Phase screen in Your form + screen
+ - Not display full screen
+ - Display the date style DD-MM-YY
+ - Information are missing , the policy is not visible in PDF file
+4) FINANCEMENT+
+ - Add KPI in your form+ only the field "Avancement" "Planning" "Risque".
+ - Increase the line spacing for financement before and after.
+ - Dicrease the size of the circle of 20%.
+ - For phase display the same display of phase screen.
+ - Task in your form+ display not correctly.
+ - Add full screen icon in Your form +.
+5) WEB SERVICE
+ - Display the task(s) when the issue is detected with resources assigned and workload, the date of update, who is modified the task
+@endversion
+---------------------
+@Version: 8.0
+@Updatedate: 2017-04-04
+@News:
+1) ASSISTANT
+ - Fix issue tasks missing on My Assistant.
+2) PROJECT
+ - Do not display J.H or € when export data in Excel.
+ - Add 3 new field in task "Unit Price €", "Consumed €", "Remain €".
+ - Add a new field named "workload €" equal UNIT PRICE * WORKLOAD.
+ - In financement+ screen:
+           + Add the name of the project.
+           + Keep in memory the size of the width.
+           + Copy and Past with firefox doesn't work.
+ - In Project/Dependency
+           + Add ( arrow ) in order to know the way the link
+           + If user is admin possibility to add a type of dependency directly
+           + Display the list by order
+ - Error message that appears in English when you want to delete the dependency.
+ - Keep in memory the sizing of the columns defined in Financement+.
+ - In Dependance tab, keep in memory the display of the links between the projects, in order not to have to reorganize them each time.
+ - Enhancements in the "Geolocalization screen"
+ - When click on the Number open the project
+ - When keep the mouse ( 3s ) on icon "image" open a window and display the Global View like in project list.
+ - Display the image without the scroll bar and the white screen
+ - Do not display a icon when there is no pictures on globaview
+ - Issue display on project list and planning and impossible to display a GANTT.
+ - Add new field Estimated € = Initial workload*unit price.
+ - Add in personalized view the field Workload in €, Consumed in € , Remain €
+ - Consumed not take into account the consumed of task continious
+ - Task missing when select team.
+ - Consumed not correct in export
+ - PDC team screen display not correctly
+ - Don't autorise the shift click on sort
+ - Can't add a task and modify a task when user is a project manager.
+ - Can't modify a task on Firefox browser.
+ - Fix issue not move popup after select planning to enlarge it in project screen.
+ - Fix the width of the page
+    + Add an icon create a PDF
+    + Add the possibility to add these items in Your Form: Weather, Gantt, Risk, Localization, Dependency, Issue, Globalview, Movie, Budget.
+ - Do not display the scroll bar in popup "global view" when hover mouse on name project.
+ - In export file of project screen, save the number as number not as text
+ - In NCT task, do not authorize to enter date
+3) OPPORTUNITY
+ - Can't transfer a project from:
+        + opportunity to model, project, archived
+        + project to opportunity, archived
+4) ACTIVITY
+ - Update the formula "total consommes".
+ - Fix issue Activity/PDC Equipe screen display not correctly.
+ - Field Total Consommes display RED.
+ - Display a zero in order to update the value.
+ - The export of workload is not correct.
+ - Missing consumed ( task contious ) when you export file "CONSUMED".
+ - Add button when click can see full screen.
+ - Capacity not correctly.
+ - Display in orange when a filter or order is selected.
+ - Displayed € and justified on right for workload €  and remain €
+ - Value consumed display not correctly.
+ - Add field estimated J.H in project/task
+ - Display the GLOBALVIEW without  scroll bar as MAP in case of picture
+ - Authorize the sort, the sort is done on workload
+ - When display the fullscreen display the filter
+ - In Activity, when a task is empty, delete automatically the line if the timesheet has the status “in progress”, and try the reason the task is empty
+ - When change the status of a project, do not authorize to have the same activity name
+5) ABSENCE
+ - Absence not yet validated not displayed in "to validate"
+ - Do not display the resource who is left the company in Absence/synthesis
+6) WEB SERVICE
+ - When "staffing +" is selected in project or activity
+         - Enhancement this function, check staffing before display the information.
+ - When "Vision staffing +" is selected
+         - Enhancement this function, check staffing before display the information only the "project in progress".
+ - Develop a web service
+         - Create function check staffing all projects "in progress".
+@endversion
+---------------------
+@Version: 7.0
+@Updatedate: 2017-02-13
+@News:
+1) ACTIVITY
+ - Fix issue duplicate project
+ - Fix issue action log screen not display.
+2) ADMINISTRATION
+ - Add all fields of task in vision task.
+ - Keep the  line break in text project/task.
+2) PROJECT
+ - Create icon hide/show menu.
+ - Fix issue project name is not displayed.
+ - When change the tab in sub menu do not display the menu of the menu is not selected
+3) PROJECT/TASK
+ - Create task by day same that week, month
+4) OPPORTUNITY
+ - Fix issue when modify one task:
+    + The task is not updated.
+    + Staffing + not display
+    + Staffing system error
+5) RESOURCE
+6) WEBSERVICE
+7) TICKET
+ - Fix issue action log screen not display.
+@endversion
+---------------------
+@Version: 6.0
+@Updatedate: 2016-10-14
+@News:
+1) ACTIVITY
+ - Fix issue feature Activity/Export not active.
+ - Impossible to send a timesheet with absence or not.
+2) PROJECT
+ - Fix issue when create a project, screen will be "your form"
+ - Fix issue impossible to close project/staffing screen.
+ - Change KPI screen
+ - In project list possibility to change value of the weather directly and the fields defined in Your Form.
+ - Fix issue the weather can be change on IE.
+ - Display the weather as a list ( not increase the width of the field )
+ - Can update all field of your form not only the list ( TEXT, Date … )
+ - If the project manager has the right to update a your form then the project manager cannot modify the field in project list.
+ - Filter Weather filed activity not correctly
+3) PROJECT/TASK
+ - Impossible to enter a date.
+ - Fix issue NCT task screen display not correctly.
+4) OPPORTUNITY/TASK
+ - Fix issue impossible save when change value of task.
+5) RESOURCE
+ - Fix issue start date is not the start date on the dashboard
+6) WEBSERVICE
+ - Fix issue limit memory.
+@endversion
+---------------------
+@Version: 5.09
+@Updatedate: 2016-10-11
+@News:
+1) ADMINISTRATION
+ - Action logs don't activity.
+ - Fix issue can't rebuild staffing, the values of workload/consumed in project/task are not that the values of staffing + and vision staffing +
+ - Display in orange the filter and by default select ascending mode in Activity/Requests.
+ - Order of the screen not stored
+ - Add in Action Logs screen a message when update on task of Task, workload team, forecard screen.
+         - Modification value.
+         - Delete value
+         - Remove a resource
+         - Add a resource
+ - Add data in Admin/Traduction/Fiche screen.
+2) RESOURCES
+ - Fix issue calculator total multiple resource is not correctly.
+ - Fix issue language when export excel in Resource screen
+ - Add a flag in resource to authorize or not the project manager to change the status
+3) BUSINESS
+ - Fix issue business screen display is not correctly.
+4) PROJECT
+ - Fix issue display value on "status" field in Project list screen on Prod site.
+ - Do not display the value with zero.
+ - Regroup some team will be defined after
+ - When change end date of NCT task, the modification does not update the end date of the project.
+ - Export excel Project/Staffing/Team+
+ - Display message when create a NCT task.
+ - The filter of field "created date" doesn't work.
+ - Fix issue team+ do not display one month before and one month after.
+ - TEAM + display the TEAM even if there is no workload and not consumed.
+ - If your form is selected display ONLY the fields displayed in admin/traduction.
+ - KPI  displayed only the information selected on admin/traduction/KPI
+ - Budget only displayed the information of the screen displayed in admin/project/screen
+ - Simplify the order by drag and drop
+ - Select a weather it doesn’t work.
+ - Some views of Personalized View screen don’t work.
+ - Impossible to add a document in deliverables
+ - Authorize .msg in deliverables
+ - Align the graph in KPI
+ - Move icon display not correctly in KPI
+ - Impossible to select a project on IE browser.
+ - Fix issue display error when change view in project screen.
+ - Replace button by YES/NO when create new project.
+ - The weather can be change on IE.
+ - Display the weather as a list ( not increase the width of the field )
+ - Can update all field of your form not only the list ( TEXT, Date … )
+ - If the project manager has the right to update a your form then the project manager cannot modify the field in project list.
+ - Display the new field when click on the icon texte
+ - The message is not displayed when cursor on the icon texte.
+ - Not open new screen when cursor on the name project.
+5) OPPORTUNITY
+ - In opportunity the project manager doesn’t see project when "Project Managers see all projects" is NO.
+ - Impossible to change the status even if the project is link to a family
+6) ACTIVITY
+ - Can't export excel at Activity/Exporter en Excel screen.
+ - Automatically fill the same value in several cells if you drag the value.
+ - Display in orange the filter and by default select ascending mode in Activity/Requests.
+ - Check issue values of workload/consumed in project/task unlike values of staffing+ and vision staffing+.
+7) ACTIVITY/TEAM WORKLOAD
+ - Modify the message:
+            + TASK or PDC or FORECAST.
+            + UPDATE or CREATE   or DELETE.
+            + In case of UPDATE ( update STATUS or WORKLOAD or Resource or … ).
+            + When the workload value  is changed X to Y.
+            + When change the ressource affected display message affected to RESOURCE or to TEAM ( affected to YANN ALLOUCHERIE or TEAM_POFT ).
+ - Fix issue in PDC screeen the value in the log is not correct.
+8) MY DIARY
+ - Message on task not displayed on agenda.
+ - Not saved message when modify the message on agenda.
+9) TICKET
+ - Impossible to add a document in deliverables
+Authorize .msg in deliverables
+10)  UI SMARTPHONE
+ - Login in landscape not in the middle of the screen.
+ - Icon Menu in landscape unequal.
+ - Color of top menu displayed not correctly.
+ - The screen is not displayed in full screen.
+ - Display the same screen for activity, absence, agende as the tablet version.
+11) UI WEB
+ - Change color all field in Project/Phase/Gantt+
+ - Change display the picture and the resource name.
+12) WEB SERVICE
+ - Add ID1 field and PROJECT CODE field for the WS.
+ - Add all fields of task in output of WS
+@endversion
+---------------------
+@Version: 5.08
+@Updatedate: 2016-09-29
+@News:
+1) ADMINISTRATION
+ - In admin add an entry to manage multi country, manage hours.
+ - Fix issue Admin/Project/Screen Setting display not exactly.
+ - Fix issue Administration/Resource do not display.
+ - Impossible to select delegation or responsible
+ - Impossible to select several people in field "delegation" in Administration/Resource.Equipe.
+ - Fix issue selected resources haven’t access to the screens as a manager.
+2) PROJECT
+ - Fix issue missing value when export excel.
+ - Fix issue language when export excel.
+ - Fix issue AGENDA is not available when not RMS
+ - Fix issue do not display symbol in project list.
+ - In the big screen use the size of the screen for PDC screen.
+ - Create a new entry named "Team+".
+ - Simply the screen display only workload and consumed.
+ - Fix issue display menu and background color not correctly in smartphone.
+3) PROJECT/FINANCEMENT
+ - End date is lost data are not filled in the screen.
+ - Change weather icon.
+4) PROJECT/TASK
+ - Filter is not available in task
+ - Skip NCT tasks
+ - ENTER doesn't work in NCT task.
+ - Add 3 field "validated by month, week, day" in NCT task.
+5) PROJECT/PICTURE
+ - Fix issue impossible to see the picture.
+6) PROJECT/ACCEPTANCE
+ - Fix issue the project name is not displayed.
+7) PERSONALIZED VIEWS
+ - Fix issue default value when create user or personalized view.
+ - Fix issue do not display ticket.
+ - Fix issue translation in Personalized View
+ - Fix issue project manager cannot modify his view.
+ - Fix issue project manager of a project cannot add a project manager in my form.
+ - Authorize project manager to access to financement +.
+ - Fix issue several field name not correct in project list.
+ - Fix issue do not display select menu in opportunity if select "modele" in project view.
+ - Fix issue missing data on export task.
+8) ACTIVITY
+ - Fix issue not display percentage column when export.
+ - Keep the current week even if change the team
+ - Change color of field in Activity/Request, My Audit, Absence/Request.
+ - When select the cell automatically select the value.
+ - Authorize the tab ( tab = enter) save and go to the next cell  in the previous screen.
+ - Create order forecast list in Activity/Forecast follow Project and Task name.
+ - TAB in Team Workload screen.(TAB = ENTER and GO to the next cell of the the same screen. If you are on the last cell = OK)
+ - Do not authorize select by month in Activity/Request screen.
+ - Fix issue not change month in Activity/Request screen and Activity/Validation screen.
+ - On PDC popup  if you select TAB ( save and next cell ).
+ - Translation "Value By Day/Week/Month" by "Valeur par Jour/Semmaine/Mois".
+9) ACTIVITY/FORECAST
+ - Some tasks are displayed this the profil ADMIN not with manager.
+10) ABSENCE
+ - Fix issue display validated Absence is not exactly.
+ - Keep the current week even if change the team
+ - Month is not save on absence.
+ - The width of field in Absence/Request same with Activity/Request.
+ - For the organigramme the background is not correct.
+11) RESOURCES
+ - When change a name of programme or a sub programme and if "Activate family linked to a program" = YES. Do not create a new programme or sub program  but rename the existing family or sub family.
+Fix issue move and save Zogmsg it is not work.
+ - Fix issue when modify Admin/Project/setting the default screen is lost.
+ - Fix issue do not authorize to delete a resource if the resource is assigned to a task.
+ - Add popup when change end date of startdate.
+ - Fix issue language when export excel.
+ - Fix issue language when export excel in Resource screen.
+12) TICKET
+ - Change the message of email ticket.
+ - Fix issue the view is not stored.
+13) IU
+ - Change interface login page, icon page, top page, bottom page.
+ - Keep old icon Opportunity.
+ - Logo do not display.
+ - Increase icon size and font size.
+ - Change color menu in project screen.
+ - Roll back to the black color of the menu.
+ - Color defined in admin screen not used on activity.
+ - Increase the size of the policy.
+ - The background have to a unique color.
+ - Use the same color background for ZogMsg screen.
+ - The line has not the same thing.
+ - Change color in Project/Dependancy screen.
+14) WEB SERVICE
+ - Create a web service on a server and client to test it
+ - If on web server a certificat is installed, the client has to installed a certificat
+ - SSL mode
+ - An entry is the request name ( update user, create user … ) mandatory
+ - An entry is the id of company mandatory
+ - An entry is user company mandatory only admin can execute a web service
+ - An entry is password company mandatory
+ - Other fields according to the request name
+ - Create a new role WS
+@endversion
+---------------------
+@Version: 5.07
+@Updatedate: 2016-07-14
+@News:
+1) ADMINISTRATION
+ - Fix issue translation, change "workday has been saved" by "Sauvegardé".
+ - Fix issue translation, change "taaaches" by "tâches".
+ - Even if RMS module is not activated , display the absence ICON.
+ - Add 5 field Text with editor ( possibility to add  pictures ).
+2) PROJECT/OPPORTUNITY
+ - Fix issue display field "Manual Consumed" even if status is "NO".
+ - Translation : keep the duration in FR = "Conservée la tâche".
+ - Display the message when user enter a duration.
+ - Fix issue impossible to display the screen task.
+ - Fix issue the order of task is not the same between task screen and GANTT.
+ - Fix issue lost translation in your form.
+ - Fix issue task is not displayed.
+ - Fix issue number displayed on the top.
+ - Fix issue error of display of the field and add filter list.
+ - Change message "Project manager data is not valid. Please input again" by "please select at least a project manager without the flag backup".
+ - Fix issue display on screen only the task according to the filter.
+ - Fix issue all task are not display on screen.
+ - Fix issue format of date.
+ - Fix issue when duplicate a project and select your form on admin. The screen displayed is not your form.
+ - Add a filter on assigned to, task, date.
+ - Add a icon "reset filter".
+ - Fix issue missing value when export excel.
+3) PROJECT/FINANCEMENT
+ - Add new screen named  financement+.
+ - Translate: change "save" by "enregistrer".
+ - Missing field when change screen.
+ - Fix issue value display the left cell.
+ - Add the field on perzonalized view.
+4) PERSONALIZED VIEWS
+ - Authorize the admin  to modify a view even if the admin is not the owner of the view.
+5) RESOURCES
+ - When create resource then default "Actif" = Actif, "Start date" = current date, "Role" = Project Manager.
+ - When create a view select by default In progress and Opportunity.
+ - When rename a project name and if the project is linked to an activity , ask to rename the activity linked.
+ - Do not display company in organization chart.
+ - Fix issue when modify Admin/Project/setting the default screen is lost.
+6) TICKET
+ - Possibility to modify the status directly on ticket list.
+ - When the status is modified update the chat.
+ - Fix issue impossible to export in Excel.
+ - Fix issue customer not authorization select all status if user is customer LV3.
+ - Fix issue not memory the view selected.
+ - Change the message of email ticket.
+@endversion
+---------------------
+@Version: 5.06
+@Updatedate: 2016-06-30
+@News:
+1) ACTIVITY
+ - Displayed the project by order ( name of project ).
+ - Fix issue when select not affected, do not display task not affected to a resource and not affected to a team but display the task affected to a team.
+ - Fix issue last filter lost.
+ - Fix issue not display Activity/Review.
+ - Fix issue the result is not the same if you select each item or any.
+ - Fix issue white screen when export excel.
+2) PROJECT/OPPORTUNITY
+ - Add field picture in Project/Team and organisation chart.
+ - Add setting in admin to control display image/ avatar in other screen.
+ - The organigram display only the pictures of manager, select a team display the pictures of the team.
+ - Display the picture on staffing +, picture and after the name.
+ - Activity/Validation display the picture and after the name.
+ - Activity/ A valider display the picture and after the name.
+ - Activity/ Non envoyée display the picture and after the name.
+ - Agenda display the picture and after the name.
+ - Fix issue not uploaded attachment files.
+ - Fix issue missing data when export excel in Project/Phase screen.
+ - Fix issue duration not take into account.
+ - Fix issue the duration is modified when change a start date.
+ - Display message when modify the start date and keep the duration to calculate the end date.
+ - Add a field beside predecessor the value by default of +/- field = 0.
+ - Fix issue the risk note and problem note column don't work properly.
+ - When task is closed start date = green even if there is no consumed.
+ - Fix issue possibility to select several phase in your form.
+ - Impossible to deselect, impossible to see the first item in "Phase Courante" field.
+ - Fix issue impossible to upload this document.
+ - Fix issue impossible to save a task.
+ - Fix issue field "manual consume" status "NO".
+ - Add new screen name "Vision task".
+ - Translation:X task(s) found US, X tâche(s) trouvée(s) FR
+ - Fix issue date is not correct.
+ - Add button export excel and button display the information in project list.
+ - Change message, if no data display message in the popup.
+ - Add button export excel and button display the information in project list.
+ - Fix issue impossible to see my task on my agenda.
+ - Fix issue impossible to add a text.
+3) ABSENCE
+ - Fix issue the holidays are not materialized by the yellow color when looking in the past.
+ - Fix issue Absence screen display exactly on Firefox browser.
+ - In Firefox impossible to see the last line.
+ - Fix issue excel not work properly.
+4) PERSONALIZED VIEWS
+ - Fix issue PM cannot save a Personalized Views.
+ - Fix issue when clone company, do not clone the view of personalized view.
+@endversion
+---------------------
+@Version: 5.05
+@Updatedate: 2016-05-30
+@News:
+1) ADMINISTRATION
+ - Fix issue "Page not found" when click Admin/Resource/External on backup site.
+2) BUSINESS
+ - Create a customer in Business/Lead but not display in customer list.
+ - Can not save a commentary on the LEAD screen.
+ - The screen freezes after pressing ENTER.
+ - Order by name and add a filter in Business/Lead/Client field.
+ - Reoder maturite and phase.
+3) ACTIVITY
+ - Fix issue when the field not enough then data are not counted and system hangs.
+ - Some resources attached in team are not displayed
+ - Fix issue do not displayed the manager if the manager is not attached to the team
+ - When display a resource, do not display the activity only workload and consumed
+ - When select a team, display the activity
+ - Display of consumed is not correct when select a team.
+ - Fix issue the filter is not stored in firefox.
+ - Fix issue when select directly the team then open a new page with all information.
+ - Display the name of the profit center selected.
+ - Add a icon "+" beside resource to display the information of activity ( family ).
+ - When display a resource display the family directly.
+ - When select a resource, display in the same screen not in the other tab.
+ - Fix issue the information of activity are false.
+ - Fix issue do not display default if workload and consumed = 0.
+ - Fix issue when click star March then consumed of February change.
+ - Fix issue the resultant is the different for the same team.
+ - Fix issue the family data are not correct.
+ - Workload in vision staffing + not same with workload in NCT task.
+ - Fix issue the value "day not validated" and "Absence" display not exactly.
+ - Fix issue the titles of the lines of absence and holidays are unreadable.
+ - Fix issue when change the status from closed to opened then task not display in "copy forecast".
+ - If user is backup of PC then  authorize to user to select these team in workload team.
+ - Fix issue export excel on Activity/Request and Vision Staffing/Activity.
+ - When you select not affected , the projects are not displayed.
+ - The not affected have not the same value.
+ - Add a check button "not affected".
+4) PROJECT/OPPORTUNITY
+ - Display the your form if your form is displayed as default screen.
+ - Fix issue when calculating the charge of a non-continuous task.
+ - Fix issue "Page not found" when click Admin/Resource/External on prod site.
+ - Replace Enterprise company in FR “Entreprise externe” US “External company“ in and display a rectangle around Externe and Entreprise externe.
+ - Fix issue in the display project list, the Activity column is empty (for all projects).
+ - Fix issue when calculating the charge of a non-continuous task.
+ - Fix issue display value not exactly in Project/Task screen.
+ - Fix issue undisplayed priority field in the list for certain projects.
+ - Fix issue filters doesn't work on project list.
+ - Fix issue value of filter not exactly when sort.
+ - Fix issue administrator profile can't delete project.
+ - Fix issue value of "exception spirou" field is not empty even if value is 0.
+5) ABSENCE
+ - When a column contains ‘PREVISIONNEL’ then rows skewed.
+ - Fix issue display GANTT in Project/Staffing screen.
+6) RESOURCES
+ - Add total consumed of team by task.
+ - Fix issue when click Administration/Resources/Profile then redirected "Resources".
+@endversion
+---------------------
+@Version: 5.04
+@Updatedate: 2016-05-05
+@News:
+1) ADMINISTRATION
+ - Fix issue Activity/Audit and Business are not activated.
+ - Fix issue when export in excel, display only the following fields.
+ - Don’t log the conne​ction in database of admin SAS
+ - Create a way to activate the log in order to analyse the issue
+ - Create a way to upload  the log" ý là import file log vào database
+ - See the configuration
+ - Create a way to see the files on the server
+ - Display the config file
+ - Impossible to update an item Admin/Project/Implementation complexity.
+ - Create new entry in admin SQL.
+ - SQL is only manager by admin company.
+ - Can select one or several Companies.
+ - Can select one or several resources, display only the resources of the companies selected.
+ - Fix issue "Page not found" when select SQL.
+ - Fix issue icon not display.
+ - Fix issue when request data.
+ - Replace "Module Activé" by "Modules".
+ - Fix issue project error even if user select "rebuild"
+2) PERSONALIZED VIEWS
+ - Fix issue in Personalized views/activity screen, some views are set up to public but not accessible on menu view.
+3) ACTIVITY
+ - Fix issue Activity/Management not activity.
+ - Fix issue Activity/Review not display with Project Manager.
+ - The filters green and red don't work.
+ - Sort by project or activity.
+ - Authorize to change the width.
+ - Fix issue in vision staffing when you export in EXCEL export only the data on the screen.
+ - Fix issue screen display not correctly with some user.
+ - Fix issue can't update task.
+ - Fix issue last filter lost.
+ - Fix issue not display result when select PC "President" in Activity/Validation.
+ - Fix issue sum not display.
+ - Fix issue when want to delete a line in activity request user have to click twice.
+ - Fix issue lost the name of the task
+ - Fix issue modify the display of Activity detail screen.
+ - Add the option "display 0", if YES export line with 0 else not export line with consumed = 0
+ - Add control hide the menu Team Workload.
+ - Error on database date when create a project with template.
+ - Fix issue can't export excel in Team Work screen.
+ - Fix issue impossible to display information.
+ - Add new screen "Team Workload".
+ - Fix issue "Team Workload" screen is not displayed correctly.
+ - Fix issue in capacity in vision staffing.
+ - Translation "Team Workload" by "PDC equipe".
+ - Fix issue impossible to deselect assign to in NCT task.
+ - Fix issue when export excel then resource information is lost.
+ - Fix issue the workload counter not corresponding to tasks setup.
+ - Fix issue result is not display correctly.
+ - Fix issue scroll bar is not display correctly.
+ - Fix issue display Phase, Task in the same order of task screen.
+ - Fix issue display the consumed in the popup.
+ - Display orange line have value consumed NCT + Task.
+ - Fix issue dupplicate month in NCT task screen.
+ - Fix issue system hangs when export in Activity/Export.
+ - Fix issue auto "assign to" resource when create a new task.
+ - Re-activate screen by month in Activity/Request screen.
+ - Fix issue result consumed in export excel not exactly.
+ - Fix issue when no consumed then display screen not exactly.
+ - On FireFox browser, the values are not saved.
+ - Move the consumed in column charge totale.
+ - When there is no workload and there is consumed on task then workload = consumed.
+ - Consumed display on the total workload
+ - Orange Consumed = total consumed of task continuous of the selected team    ( do not take into account the NCT task )
+ - Fix the issue of display only the level selected on vision staffing +.
+ - Fix issue if select the total consumed no consumed is displayed.
+ - Fix issue not display result in "Not send yet" screen.
+4) PROJECT
+ - Fix issue not display value in staffing screen.
+ - Fix issue Project/Phase not display value.
+ - Fix issue Activity/Review not display value.
+ - Fix issue Activity/Staffing not display value.
+ - Fix issue Task workload not displayed.
+ - Fix issue Project Manager not see the project budget screen.
+ - Use white color in cell of Activity/Request and Black color of login screen.
+ - Fix issue as a project manager, the risk note and problem note column don't work properly and the same problem in export excel.
+ - Fix issue value in field "in used/not validated" not same value when click on the figure to have the detail.
+ - Fix issue add a month all data are lost.
+ - Fix issue blank resource.
+ - Fix issue consumed in vision staffing is not correct for these projects.
+ - Create field "Period" in NCT task.
+ - Fix issue value in field Budget Provisional of Project screen is not correctly.
+ - Fix issue project manager, not update internal cost in budget page.
+ - Create SQL script for the projects with the status “in progress”  in order to set Timesheet filling activated" = YES
+ - Fix issue the non-continuous task not opened.
+ - Fix issue when the workload data is equal to the consumed data, the test icon is displayed on red.
+ - Fix issue as a project manager,  impossible when want to upload an attachement into "attachement" column.
+ - Fix issue project manager can't export of PROJECT/PART screen on IE browser
+ - Develop new architecture of ZOG's installation files.
+ - Fix issue when Project Manager export the information of the milestone screen then new column "Part".
+ - Edit Gantt+ and Format project
+ - Edit color on header
+ - Add month in column of year
+ - Edit current month
+ - Add function milestone in project
+ - Add check box milestones in personalized views.
+ - Add action delete/edit in project screen.
+ - Fix issue value of "budget provisional" in project screen and file excel not same.
+ - Some tasks are not displayed in task screen
+5) ABSENCE
+ - Fix issue the period display not correspond to the year selected.
+ - Fix issues on absence counters dispayed when request the first june.
+ - Fix issue the remain counter is not displayed correctly.
+ - Fix issue the remain counter is not displayed correctly
+6) RESOURCES
+ - Fix issue the profile picture don't display correctly.
+ - Fix issue automatically replaces 0.5 by 1.
+ - Fix issue menu does not displayed.
+ - Fix issue when use the import csv on Resources screen, the external data were scratched to a null value when we specify 0 value.
+ - Fix issue not display button "reject" and "validation" when consultant login
+7) BUSINESS
+ - Add in personalized view the last message for Lead and Deal
+ - Only admin company and sales director see the screen administrator
+ - Only Sales director, Sales manager can add/modify Customer screen, Contact screen 
+ - Impossible to add a contact
+ - Reference is not correct
+@endversion
+---------------------
+@Version: 5.03
+@Updatedate: 2016-02-26
+@News:
+1) ADMINISTRATION
+ - Impossible to select a sub-family.
+ - Impossible to modify a sub family and sub program.
+ - Replace "Activate family linked to a program" by "Activer le lien programme et famille".
+ - Display in the error message the project list of the projects linked to this PC when delete PC.
+ - Error message when send timesheet.
+2) PERSONALIZED VIEWS
+ - Add in personalized view the field opportunity/in progress/archived/model.
+ - Possibility to translate the field Budget provisional.
+3) ACTIVITY
+ - The value in activity/request is not correctly.
+ - Don't display resource when a resource is leaving the company.
+ - Don't send any email when a ressource send its timesheet.
+ - When select family, sub family, let the item selected highlighted to see your selection.
+ - Fix issue number of resource/ workload not correct when you select a team in the filter.
+ - Fix isssue value budget.
+ - To disable by day, by week during the Tet holiday in vision staffing +.
+ - In NOT SEND impossible to send a message to several resources.
+ - Fix issue value "Day not validated" was always equal to 0.
+ - Deactivate also the validation by month for activity/validation.
+ - The consumed in view is correct not in vision staffing.
+ - Fix issue one project are linked to 2 activities.
+ - Vision staffing of team and not team is not same.
+ - Missing project.
+ - The sum of budget is not correct.
+4) PROJECT
+ - Task doesn't appear in the copy Forecast and the project name doesn't appear in the list of project under the date.
+ - Possibility to select in the timesheet closed tasks.
+ - Impossibility to rename a task with sub tasks.
+ - Day off not taken into account.
+ - Don’t preselect the sub program in your form when you select a program.
+ - Remove definitively  the item  “congès prévisionnel”.
+ - Display the screen FINANCEMENT for the profil project manager not only for admin.
+ - Error message for project manager if he selects GOOGLE in project list.
+ - TASK CLOSED is displayed in timesheet: do not displayed the task closed in timesheet.
+ - Can't create not-continuous task for all projects.
+ - When change and end date on resource, if the resource has task assigned, displayed a warning message
+ - Error of consumed for NCT.
+ - Error of workload of project screen and  project/task not same.
+ - Don’t authorize to select the list.
+ - The consumed is not displayed on NCT task.
+ - Authorize to modify the name of task even if the task has consumed.
+5) ABSENCE
+ - When click on "Absence", and then "To Validate", select a team, and after redirected on "requests".
+ - DAY OFF not taken into account in ABSENCE REQUEST.
+ - When select the link in message send my z0G the display is the following.
+@endversion
+---------------------
+@Version: 5.02
+@Updatedate: 2016-02-01
+@News:
+1) OPPORTUNITY
+ - When no program and sub problem do not select by default in family, sub family when change the status to Opportunity to In progress.
+ - For a project in progress, when change program and sub program automatically change the family and sub family.
+ - For the list add the field displayed/not displayed.
+ - Translation "Program is mandatory to change the status" by "Pour changer le statut d’opportunité à en cours, le projet doit être associé à un programme".
+ - Translation "Add an item" by " Ajouter une ligne".
+ - In team screen, when select the name of team it doesn’t work.
+ - Project Manager can select the family and sub family manually if program and sub program is not linked to a family or sub family.
+2) PROJECT
+ - Limit the number of characters  the project name in detail to 124 characters.
+ - In GANTT add 10 years
+ - Fix issue in Vision Portfolio screen, the export excel don't work.
+ - In detail and your form, when create a project, for all lists set “select” by default as LIST2.
+ - Sort the field implement complexity in my form in alphabetic order.
+ - Replace "Years" by "Années.
+ - Translation "Cannot be deleted, type of absence already selected" by "Ne peut être supprimé, motif d’absence utilisé".
+ - Translation "Select a resource" by "Sélectionner une ressource".
+ - When a project manager enter a data and do “ENTER”, move on the right side not on bottom.
+ - Impossible to delete the task even if task has no consumed.
+ - Create a scroll bar on top in Project/Budget/Provisional.
+ - In phase, automatically  the end date after the start date.
+ - In NCT task, default select by month.
+ - If the user do enter or select a cell after to have filled a cell automatically edit the cell.
+ - When display the provisional, take into account the date of phase when there is no tasks.
+ - Display the calendar with last month with the last value.
+ - Impossible to enter an end date.
+ - Fix issue number are exported as number not in characters.
+ - Create a new screen named Video/Movie  as Pictures screen.
+ - Fix issue sort filter on code project field in project screen.
+ - Add icon (+) in team, phase, Jalon, recette, risque, problem, decision, deliverables screen.
+ - For screen team, phase, Jalon, recette, risque, problem, decision, deliverables, when a project manager enter a data and do “ENTER”, move on the right side  not on bottom.
+ - Fix issue the budget = 0 and the provisional <> 0.
+ - Translation "Data filled in provisional screen" by "Données saisies dans l’écran prévisionnel".
+ - Translation "Availability" by "Disponibilité".
+ - For project manager the phases are not created in the good order.
+ - Fix issue impossible to delete the line or modified the value.
+ - Fix issue value are not in the standard format.
+ - Fix issue cannot select a program in detail if the program is not linked to a family.
+ - Fix issue when user are not the PM of the Project, display the task screen but don't autorize the modifications.
+ - Fix issue impossible to delete a line or impossible to change the value.
+ - Change when deactivate a phase, the name of phase no change.
+ - Fix issue impossible to select a view.
+ - Project Manager can select the family and sub family manually if program and sub program is not linked to a family or sub family.
+ - New fields List1 to List4  in project list, the filter doesn’t work.
+3) ACTIVITY
+ - The language is not saved  when user are admin.
+ - Keep the setting of vision staffing + after logoff.
+ - Add popup when click email icon.
+ - Fix issue display vision staffing screen is not correctly.
+ - When active “theoretical  capacity” display vision staffing for a resource.
+ - Add a screen named “Not send yet ”  “Non envoyée”.
+ - Fix issue impossible to display the vision staffing +/profit center.
+ - Fix issue workload is not the same between staffing + and vision staffing + for a team.
+ - Add filter and order famille/sous famille/type.
+ - Have the same behaviour when use mouse.
+ - Fix issue display menu is not correctly.
+ - Fix issue value are not displayed in the screen “NOT SEND YET”.
+ - CP is displayed instead of ABSENCE.
+ - Filter not take into account in export file "Activity"/"Budget".
+ - The consumed is not totally taken into account in vision staffing + /profit center.
+ - Fix issue the day off is not take into account in January.
+ - Replace "Feuille de temps de 3 non validée" by "Feuille de temps de la semaine 3 non validée".
+4) RESOURCES
+ - When an admin create a multiple resource:
+    + Start Date and End Date are mandatory.
+    + Display on the bottom of resource screen a tab to enter the value day by day between the start date and the end date.
+ - Replace “​Mon Profile” by “Mon profil z0G”
+ - Issue impossible change end date of resource.
+ - Can be modified by a project manager with the flag “modify your form”  not selected.
+ - If  "Modifier votre fiche" is not selected all fields in "your form" are in grey ( cannot be modified), if  "Modifier votre fiche" is selected all fields of "your form" can be modified.
+5) ADMINISTRATION
+ - Add in translation fiche the possibility to translate.
+ - Impossible change the day off in working day.
+ - Just replace “Programme”  by the translation in “Translation/detail”.
+ - Fix issue impossible to set the holiday.
+ - Translation "Charge, Date début, Date de fin, Prédécesseur ne peuvent être modifiés".
+ - In admin/activity add a new parameter “Copy in activity list, the tasks affected to the team” YES/NO.
+ - Add filter for field "Project" and "Task" in Copy Forecast.
+6) ABSENCE
+ - Fix issue impossible to send an absence.
+ - CP is displayed instead of ABSENCE
+ - Change "Azuree" by "z0G".
+ - Add text FR "la semaine" US "week" is missing.
+ - Authorize a user to remove an absence while the timesheet is "in progress" or "rejected".
+ - Don’t display the screen if “budget n’est pas affiché” is selected.
+7) MOBILE VERSION
+ - Resize the screen of NTC.
+8) [AZURE-143] PROJECT - VISION PORTFOLIO - The export excel don't work.
+9) [AZURE-149] ACTIVITY - REQUEST - Impossible to input day activities - Blocking point.
+@endversion
+---------------------
+@Version: 5.01
+@Updatedate: 2016-01-08
+@News:
+1) ADMINISTRATION
+ - Fix issue when import file in Administration/Resource/Profit Center screen then manager and backup manager are not identified.
+ - Add a new entry in admin/resource named setting to manage several settings.
+ - Create a new setting in admin/activity/settings.
+ - In Administration/Translation, add Resource/Ressource.
+ - Replace "Date de find" by "Date de fin".
+ - Resource manager and project manager : even if the setup is YES then cannot modified the task.
+ - Fix issue the resource cannot change the status.
+ - When a resource can see only his task and the task of his team display the project without task.
+ - If "Every project manager see the budget" = YES, project manager see and modify  budget in KPI, TASK, PERSONALIZED,BUDGET.
+ - Add checkbox "Business" and "Report" when create a company.
+2) RESOURCES
+ - Add multiple resource in External fields in Resource screen.
+ - Fix issue duplicate resource in organisation chart.
+ - Fix issue when export organisation chart then capture one piece.
+ - Fix issue display field "City" and "Country".
+ - When login by admin, when change an item and click save, don’t ask the password.
+ - In Resource detais, create 4 select box.
+3) PROJECT
+ - Display your form selected when create project.
+ - Replace “Mission” by “Description de la mission” and delete TJM.
+ - Add the field PC and Funder in Provisional screen.
+ - Replace "Non externe" par "Interne".
+ - Change display my profile and resource.
+ - Fix issue task named cannot be modified.
+ - In diary if the workload of the task = 0 the task is not displayed on diary , display the task even if the workload = 0.
+ - Replace "Cette phase du projet est exister" by "La phase est déjà sélectionnée".
+ - Replace "En cours et opportunitée" by "En cours et opportunité".
+ - Display an exclamation point if the project manager enter an existing code for code project 1.
+ - Fix issue not display value field "Budget Provisional M.D".
+ - Fix issue for all fields don’t display the M/D or €.
+ - Fix issue display resource when date of task are between the startdate and enddate of the resource.
+ - Fix issue can select the resource in task is created when  employee  will leave the company.
+ - Fix issue sort the field implement complexity in my form in alphabetic order.
+ - Fix issue when move the scroll bar on bottom then screen is frozen.(On IE browser).
+4) PROJECT/TASK
+ - Fix issue workload is not correct.
+ - Add the following field the Text can be modified, the document can be uploaded and replace.
+ - Add 2 button: 
+    + Create all lines automatically without workload.
+    + Fill automatically the cell with  the value enter.
+ - When enter a text, display text with name creator and time created.
+ - Holiday is not taking into account in duration.
+5) ACTIVITY
+ - In diary for a consultant or project manager or manager  impossible to change the value of task.
+ - Display the tasks not assigned to any PC on the top level of the organization.
+ - Fix issue don't display budget in staffing screen.
+ - Timesheet of the week ( 28 dec - 31 dec) can not save.​​
+ - Fix issue display "Budget" value display not correctly.
+ - Add some sub team take the values of the top team.
+6) ABSENCE
+ - Fix issue Autovalidation feature not activity.
+ - Fix issue of display absence validation.
+ - Move the screen A valider after validation in Absence.
+ - Fix issue when validation absence and timesheet week 53.
+7) REPORT
+ - Display Report only for admin.
+8) MOBILE VERSION
+ - Add the icon menu to select the type of absence in mobile version and add this icon also in web version.
+ - When select absence the default screen is request.
+ - Fix issue don’t display the bottom select items.
+ - Fix issue in activity web, tablet, smartphone add the following icon to select an activity.
+9) [AZURE-101] PROJECT / BUDGET / SYNTHESIS / The progress of the External costs aren't updated in synthesis view - REGRESSION 4.9.18.
+10) [AZURE-138] ACTIVITY - VALIDATION - timesheet validation with wrong inputs.
+11) [AZURE-139] ACTIVITY - RESOURCES - The option Copy timesheet don't work correctly. - REGRESSION 4.9.18.
+12) [AZURE-145] AZURE/PROJECT VIEW - Last filter in the Azure Project View is lost.
+@endversion
+---------------------
+@Version: 4.9.19
+@Updatedate: 2015-12-03
+@News:
+1)OPPORTUNITY
+ - Fix issue import file with PART.
+ - Fix issue value "Duration" column display is not correctly.
+ - The data in budget/provisional are not saved
+ - Remove a constraint delete the phase even if it is the current phase
+ - Fix issue when delete a project linked to an activity delete the project and the activity linked.
+ - Fix issue when import file in task screen then not display date in phase screen.
+ - Field "Family" and "Sub Family" display in grey.
+ - Fix issue impossible to change the status opportunity in progress.
+ - Replace "Project milestone has been deleted" by "deleted".
+ - The project is not displayed  in the activity ACTIVATED.
+2) OPPORTUNITY/BUDGET
+ - In internal screen: display all fields like in project budget internal.
+3)ADMINISTRATION
+ - Replace "Do all action" by "Do all" "Tout exécuter".
+ - Fix issue impossible to import: resource not found.
+ - Translation not take into account funder modification.
+ - Add several field like free 1 to 6.
+ - Replace "Warning: When you are changing the value in this display, then you must rebuild Staffing" by "Warning : If you change one parameter, the staffing has to be re-build".
+ - Fix issue can’t change the name in french nor in english of the sub program and sub type.
+ - Move “status” and “priority”  in​to​ task.
+ - Fix issue time out when import CSV file.
+ - Display Sub-family of Family selected in Administration/Sub Program.
+4) PROJECT
+ - Fix issue value "Capacity" field is not correctly.
+ - The total columns with amounts are not recalculated when changing the priority projects.
+ - Fix issue sorting the column should follow the weather display is not correctly.
+ - Fix issue when the PRIORITY is displayed , authorize the modification of the priority.
+ - When selecting the earth button, display only projects in the project list.
+ - Fix issue Project Manager cannot create a project.
+ - The sub program field is not translated.
+ - The field “ACTIVATED” is not translated.
+ - Fix issue information of "StartDate" and "EndDate" are missing.
+5) PROJECT/PHASE
+ - Fix issue when remove the 3 phases not have task then display error message.
+6) PROJECT/TASK
+ - Fix issue sub task not created when import csv file.
+ - Fix issue cannot delete task.
+ - Change the rules for indicator of start date: RED  if start date > current date and workload > 0 and consumed = 0 THEN RED.
+ - When positioning the mouse on the field TEXT, the contained is not displayed.
+7) PROJECT/BUDGET
+ - Fix issue value "Budget M.D" column in Project screen and Project/Budget is different
+8) ACTIVITY
+ - Fix issue "Copy Forecast" feature do not work.
+ - Fix issue the task assigned to a team is not displayed in forecast +.
+ - FIx issue impossible to change the status.
+ - Add the field “ Timesheet Filling activated”.
+ - Authorized also the double click on a task already assigned
+ - The field "Activity" in detail is not taking into account in activity/management
+ - When drag and drop a task the system hangs, after refresh screen then task is duplicated.
+9) ACTIVITY/STAFFING
+ - Add a filter "priority".
+10) ACTIVITY/FORECAST+
+ - Fix the width of first column.
+ - In cell, display Project/part/phase as in activity request.
+ - In the last line, display tasks assigned to the team but not affected to a resource ( Not affected, non affecté ).
+ - When right click on one task “not affected”  open a window to give the possibility to assign the task to one or several  member of the team as in the task screen.
+ - When right click on a task display the fields of the task screen so can modify directly the fields (never display duration, Predecessor)
+ - When the task is closed display an icon closed.
+11) RESOURCES
+ - The automatic copy is not taking into account
+ - Replace "Password rules" by "Règles du mot de passe" in FR.
+ - Replace "Activer la copie dans la feuille de la temps" by "Activer la copie dans la feuille de temps" "Activer la copie dans la feuille de la temps".
+ - Minor change: When create a resource only the field "FirstName" "LastName" "Role" "External" is mandatory.
+12) PERSONALIZED VIEWS
+ - Replace "User view was deleted" by "Deleted".
+ - Fix issue when create personalized  impossible to move up/down the field.
+13) ABSENCE
+ - Fix issue Consultant do not send absences.
+ - Minor change: Consultant not resend the email and not display the error message.
+14) MY DIARY
+ - Fix issue "Page not found" when Consultant new click on "My Diary".
+15) [AZURE-121] ABSENCE - SYNTHESIS - Issue on scrollbar with mouse position.
+16) [AZURE-146] ACTIVITY - REVIEW - Overload not displayed
+@endversion
+---------------------
+@Version: 4.9.18
+@Updatedate: 2015-11-04
+@News:
+1) BUSINESS
+ - Add a new entry name "Provider/Fournisseur" in business menu
+2) ADMINISTRATION
+ - In Administration/Budget/Setting, add select box name "Every project manager see the budget YES/NO", in FR "Tous les chefs de  projet visualisent les informations budget OUI/NON"
+ - If "every project manager see the budget" = YES the no change else in Resource screen, add a check button "see budget". If "every project manager see the budget" = NO and "see budget" is selected in resource, then no change for user connected else ("see budget"is not select) the budget and finance screen tab are not displayed in KPI, the budget part is not displayed, in personalized view the budget and finance part are not displayed.
+ - Fix issue "administration/security/action logs" is no active
+ - Fix issue when importing a CSV file in Project/Import Project, cannot import with the Project Manager name, even if it exists
+ - Fix issue display error Resources when import CSV file in Administration/Project/Project/Import Task
+ - Translation not take into account funder modification 
+ - In administration/project/screen setting, if Sale fields select is NO then "project/budget/synthesis" and "project/KPI" screen not display "Sales", if Internal fields select is NO then "project/budget/synthesis" and "project/KPI" screen not display "Total Costs" and "Internal Cost", if External fields select is NO then "Project/Budget/Synthesis" and "Project/KPI" screen not display "Total Costs" and "External Cost"
+ - Add in administration/project/phase/fields (Gestion des champs) in order manage the display and order of the fields
+ - In administration/project/project/status, add field "status" with value "In progress" and "Closed" by default "In progress".
+3) OPPORTUNITY
+ - In phase only the phase is mandatory
+ - Replace message when delete picture is "deleted"
+ - Fix issue project in opportunity the data in budget/provisional are not save
+ - When delete a project in opportunity, don’t stay in opportunity list
+4) OPPORTUNITY/PHASE
+ - Move "Part" column in first column
+ - Please rename "Activée" by "Activer saisie des temps" "Activate timesheet filling"
+ - Delete the name of popup
+ - When delete phase then opportunity/task display is not correctly
+ - Replace message when delete phase is "deleted" "supprimé"
+ - Fix issue delete phase is not possible
+ - Fix issue when the PART are not created , the import detected the PART but the PART are not created and the import failed
+ - Remove a constraint delete the phase even if it is the current phase
+5) PROJECT
+ - Fix issue when duplicate a project when to create the project then button "OK" is no action
+ - ​Fix issue when select a view with GANTT, move the scroll bar on bottom, the screen is frozen
+ - Fix issue cannot upload the PNG pictures in "globalview" and "pictures"
+ - Put in Red the contour of mandatory fields only the manager, project name
+ - Fix issue impossibe to import in task the attached file
+ - Fix issue the value of "Budget M.D" column in "Project" screen and "Project/Budget/Internal Cost" screen is difference
+ - Fix issue the value capacity display is not correctly
+ - Fix issue when delete a project linked to an activity delete the project and the activity linked
+6) PROJECT/DETAILS
+ - Authorize 256 characters for project name
+ - Put in grey the "Created Value", "Start Date", "End Date"
+6) PROJECT/YOUR FORM
+ - Fix issue a backup of manager cannot modify "your form" even if is PM
+ - Replace the error message by "Non enregistré” , “Not saved”
+ - Authorize 256 characters for project name
+ - Put in grey the "Created Value", "Start Date", "End Date"
+7)PROJECT/GLOBAL VIEW
+ - Details the extension authorize and size when import file
+7) PROJECT/TASK
+ - In task displayed red and green icon
+    + Before Start date: RED if no consumed or manual consumed and the current date > start date else GREEN, When move the cursor in the icon and the icon is red displayed the following message "No consumed and the current date > start date"
+    + Before End date: RED if task not closed and the current date > end date else GREEN, When move the cursor in the icon and the icon is red displayed the following message "task not closed and the current date > end date"
+    + Before Workload: RED if "Consumed > Workload" else GREEN, When move the cursor in the icon and the icon is red displayed the following message "Consumed > Workload"
+ - Fix issue the field is set as not display but displayed in task
+ - Fix issue translation doesn’t work with all companies
+ - Fix issue only for march a little issue of translation
+ - Add 5 fields by default the fields are not displayed
+    + Amount € /Montant € 0.00€
+    + % progress order / % avancement commande  00.00%
+    + % progress order €/ % avancement commande € 000 000.00 € = Amount * % progress order
+    + Free text 124 characters
+    + File/document  display an icon when select icon will display popup select file
+ - Replace "Unfreeze" by "Capture", "Refresh Menu" by "Rafraichir le menu", "Copy Forecast" by "Copie du forecast"
+ - Fix issue don't authorize to select an end date < start date
+ - Fix issue display of task in case of lot lines when a new task
+ - Fix issue when create a task and delete quickly cannot delete the task
+ - Display black color for icons of the Part
+ - Adapt the number of line according to the screen
+ - Fix issue when see full screen task then used all the screen
+ - Replace red circle by red triangle, replace green circle by green square when a triangle or the square are selected highlight the triangle or the square
+ - FREEZE display only the icons if FREEZE function are selected
+ - Fix issue not display task when imported CSV file in Administration/Project/Project/Import Task
+8) PROJECT/PHASE
+ - Replace "Change linked Phases" by "Update the dates of the phases linked to this phase?"
+ - Authorize to select a day off
+ - Create new entry in case of project with a duration 2 years, 3 years, 4 years, 5 years
+ - Fix issue don't authorize to select an end date < start date
+9) PROJECT/TEAM
+ - Fix issue impossible to display the list of resources
+10) RESOURCES
+ - Fix issue sort doesn't work
+ - Display “Auto validate by himself” check box for manager, project manager, consultant
+11) PERSONALIZED VIEWS
+ - Replace by “ You are not the owner of this view” “ Vous ne pouvez pas modifier cette vue”
+ - Replace message when delete user view "User view was deleted" by "deleted"
+ - Fix issue when create personalized  impossible to move up/down the field
+12) ACTIVITY
+ - Fix issue in activity/budget, the value display is not correctly
+ - Fix issue in activity/staffing, when select "profit center" and not select "show summary" then value display is not correctly
+ - Fix issue in activity/budget, when select arrow then activity/budget display is not correctly
+ - Fix issue the filter in Activity/Management screen doesn't work
+ - Fix issue when "copy forecast"
+ - Fix issue auto copy when select button "Activate COPY in timesheet" in Resource screen is no active
+ - Fix issue when "auto validation" in Resource screen is activated then display error in Administration/Staffing system
+13) Web app responsive
+ - In Project screen, remove button "Tri Multiple" "Vision staffing+" "Vision portfolio" "Portfolio" and "Export excel"
+ - Increase the numbers of items of the list ( idem for project list, lot, phase, jalons, recette , decision, deliverables … )
+ - In Project/Picture, remove button "Add" and list picture
+ - Fix issue all icons in start screen are not displayed
+ - Fix issue in KPI screen, have a lot of TAB are not displayed
+ - When display a project list with GANTT, decrease the size to display more information
+ - When display a project list with GANTT, authorize to move the display with finger ( vertical and horizontal )
+ - Activity request/validation issue of display name of activity
+ - Absence request : find a way the select several cells and select a the type of absence
+ - Fix issue display is not correctly in Project/Budget/FY Budget screen and Administration/Security/Action Logs screen do not work
+ - Fix issue project list display is not correctly
+ - In Personalized View, authorized when select MOBILE  to select all options ( GANTT, Milestones … )
+ - Create User View in Personalized Views the default view for mobile ( tablet and smartphone )
+ - Fix issue when have the possibility to “In the column # drag and drop to reorder”, possibility with the finger to move an item
+ - Default select YEAR when display a GANTT
+ - Display issue on the top of the Project/Dependency screen
+ - Fix issue in Internal Cost and External Cost impossible to display the keyboard when add a new line in case no line already created
+ - The first column is fixed for Milestones, Risk, Issue, Decision, Deliverables, Evolution screens
+ - The first column is fixed for Budget and Acceptance screen
+ - To arrange icons alignment in all screen
+ - Fix issue impossible to display the keyboard, impossible to select the an item when enter value in Milestones, Risk, Issue, Decision, Deliverables, Evolution screens
+ - Remove Action column when Gantt display
+14) [AZURE-138] ACTIVITY - VALIDATION - timesheet validation with wrong inputs
+@endversion
+---------------------
+@Version: 4.9.17
+@Updatedate: 2015-09-28
+@News:
+1) PROJECT
+ - Fix issue if modified the name of the company, can't access to the globalview, delivareables
+ - Replace "New task" by "Tâche", "Select Priority" by "Priorité", "Select Status" by "Statut", "Select Employees" by "Ressource", "Update" by "Enregister, "Cancel" by "Annuler", "Saved" by "Enregistré"
+ - Add “In the column #, drag and drop to reorder” in Milestones
+ - Fix issue impossible to select a project 
+ - Fix issue duplicate a project impossible to create the project
+ - Create button display several projects on the map
+ - Remove all constraints in the following screen Risk, Problem, Deliverables, Evolution. Only one field are mandatory, RISK:mandatory field Risk; Issue: mandatory field Issue; Decision : mandatory field decision; Deliverable : mandatory field Name; Evolution : mandatory field Evolution
+2) PROJECT - TASK
+ - Add a filter on field status, in order to see only for example the task opened, keep in memory the filter
+ - In tablet and smartphone don’t display duration field and completed
+ - Keep in memory the width of column and order
+ - Possibility to expand by phase ( display only phase ) , keep in memory the display
+ - Skip enter a value or specify the date of start date by calendar
+ - “In used”, when select the value “in used “display the information as consumed
+ - On project, Opportunity some screens are displayed ( globalview, budget, created value ) when mouse stays on the project name. In profile set a check button to authorize or not the display
+ - Fix issue size of column not change after reload screen
+ - Fix issue display name column "Manual consumed" is correctly in FR
+ - Fix issue when import the field "Assigned to" is not taking into account
+ - Add field "manual consumed" in the import file
+ - When import a file, when the task exists then update the field
+ - Fix issue FR translation lost in NCT task
+ - Fix issue the filter of "Statut" column does't work
+ - Fix issue add a task
+ - Display of the GANTT in TASK of current month in center
+ - Display the popup only when the cursor stays on “workload” not “Assigned to” and displays the popup only when there are several resources or profit centre in “assigned to”
+ - Fix issue when modify a task the task is displayed twice
+ - Take into account status in import file ( create and update )
+ - Fix issue freeze date are not copied
+ - Displayed the message on the top ( not a popup )
+ - Fix issue display value "remain" is not correctly
+ - Freeze is not activated and the text is displayed
+ - Fix issue value of overload is not correctly
+ - Fix issue the "assigned to" is not displayed in task screen
+3) PROJECT - TEAM
+ - Fix issue impossible to delete an item in team ( try to remove default )
+4) PROJECT - ACCEPTANCE
+ - Fix issue can't edit or delete an existing line
+5) PROJECT - DEPENDENCY
+ - Don't display "(+)" icon if there is no link
+6) PROJECT - ISSUES
+ - Add a field name "Created Date", "Date de création" before "Date of closing"
+7) PROJECT - KPI
+ - Display and reorder by default all items are display: Customer point of view, Comment, Done, To do, Planning, Progress, Budget, Staffing, Acceptance, Risk, Issue, Log comment
+ - Display of the GANTT in KPI of current month in center
+8) PROJECT - DELIVERABLES
+ - Fix issue impossible to create a second deliverables
+9) RESOURCES
+ - Add selectbox "Validation by himself"
+ - Replace "data n'a pas été trouvé, Veuillez recommencer" by "Merci de recommemcer"
+ - Create 2 users: the user "see no project" and user "see one project", case 1: "see all project" = YES then resource screen doesn't display the check button "see all project", case 2: "see all project" = NO then resource screen display the check button "see all project"
+10) OPPORTUNITY - PHASE
+ - Change display the milestone in GANTT, split the screen in PART
+11)ACTIVITY - VISION STAFFING
+ - Fix issue workload display is not correctly
+12) ACTIVITY
+ - Replace "Validated" by "Validé", "Project/Activity" by "Projet/Activité", "Please wait, Copy Forecast..." by "En cours...", "No more value is allowed" by "Maximun atteint", "waiting" by "En attente", "Validate" by"Valider", "paramètres de visibilité" by "visualiser par", "Show summary" by "Synthèse", "from" by "De", "to" by "à", "activity name" by "activité, "Sous family" by "Sous famille"
+ - Fix issue when "budget team" = NO then display the creen budget in activity and display line budget in vision staffing
+13) ADMINISTRATION
+ - Replace "Save" by "Enregister", "Contract Types" by "Type de contrat", "Day Established" by "Date de démarrage", "Manager Backup" by "Délégation", "Profile Name" by "Nom du profit", "Color" by "Couleur", "Project setting" by "Freeze"
+14) ADMINISTRATION - PROJECT - TASK
+ - Fix issue when "Display synthesis" is YES but "Project/Task" not display systhesis.
+15) ADMINISTRATION - PROJECT - SECURITY
+ - Add selectbox "see all project" YES/NO by default YES, if NO then add in DETAILS one field named Read access, in this field can select a resource or an profit center
+16) Web app responsive
+ - If select “Validation” keep the desktop version 
+ - To validate if change “year” or “profit center” automatically update the screen
+ - If the timesheet is validated can request new absence L , don’t authorize to request an absence the timesheet is validated
+ - In the menu in FR Request = “demande”
+ - When have a message “The message is AlerifyJS” don’t display this message
+ - When select FR, the message is displayed in US please display FR message US : Favourite list FR “Vos favoris”
+ - In FR “No saved task” = “non enregistré”
+ - In FR when select the calendar the display is in US ( July )
+ - In FR delete icon “ filter” “filtre”
+ - In FR when select a Forecast Family = Famille, Sub family = sous famille
+ - In don’t understand how can switch a forecast task in entry task
+ - When select the menu to select a task, display the menu on middle of the screen
+ - In FR when select Copy forecast = Copie du forecast
+ - In Fr when select sent the message are in US
+ - If select To validate if change “year” or “profit center” automatically update the screen
+ - If select validation in tablet or smartphone display the screen of desktop
+ - In FR the agenda is displayed if US
+ - If select the calendar the display is in US
+ - Fix issue labels of the field are not displayed in project/task screen
+17) [AZURE-130] ACTIVITY - VISION STAFFING + - Informations not display
+18) [AZURE-133] ACTIVITY - COPY FORECAST - Issue after selection and validation 
+19) [AZURE-134] ACTIVITY - TO VALIDATE - The time order is not good.
+20) [AZURE-135] ABSENCE - REQUEST - Issue on request Absence.
+21) [AZURE-137] ACTIVITY - VALIDATION - All manager can reject a timesheet
+@endversion
+---------------------
+@Version: 4.9.16
+@Updatedate: 2015-08-04
+@News:
+1) ACTIVITY
+ - The Activity/View screen not display correctly.
+ - The Activity/Review with "Activated and not Activated" filter not display correctly.
+2)ACTIVITY, ABSENCE
+ - Fix issue  value not correctly of the financial period of one month is not a complete month
+ - In vision staffing +,  family and PC when select week, constraint start date is Monday, end-date is Sunday.
+ - Create a new screen named “To validate” ( “A valider” ), only by week list the resource whom have a request not yet validated.
+3)ACTIVITY/TO VALIDATE
+ - Translation "To validate : A valider", "FROM xxx TO : DU xxx AU"
+ - In activity and absence, don't display the label "check all" or "select all", just display the check button align with the others
+ - The identity of the validator is not specified in the absence screen or in security log.
+4)VISION STAFFING+
+ - Fix when select by week the end date is a Sunday not Saturday
+ - Fix issue not check value of Real FTE by year
+ - Total "Days not validated" of group is not the sum of its sub groups
+ - Calculate on Staffing issue not correctly
+5) Web app responsive
+ - Login, Absence request, Absence validation, My diary, Activity, Activity request, KPI+, Project/Opportunity screen for mobile
+ - Replace "Project management" by "AZUREE" (login and similar screens)
+ - Enhancement on absence request screen
+ - Fix issue responsive in some screen
+ - Fix issue display KPI+ screen in IPAD
+ - Fix issue display menu in IPAD and smartphone
+ - On IPAD the screen not used the landscape  mode
+ - Issue on tactile device, can't move the scroll bar with the finger on the screen
+ - Fix issue menu on IPAD and Smartphone
+ - Fix issue Validation absence and activity add the new screen “to validate”
+ - Replace "Project Management" with "AZUREE"
+ - Fix issue display progress
+ - Fix issue Absence request
+ - Report
+ - Fix issue display always the label
+ - Don’t display the following column : order, priority, profile, in used, ID, predecessor
+ - TASK in IPAD, smartphone impossible to edit a task
+ - On tablet and smartphone if select icon version, go to mobile version ( not the footer of the page )
+ - Add TO VALIDATE for ABSENCE (remove Validate)
+ - Use the same menu everywhere
+ - Don't select the absence already validated or waiting validation
+ - Impossible to remove an activity, if have a lot of activities, don't see icon menu
+ - Remove Workload an capacity
+ - Already display the complete label in this case wor..., start
+ - Absence request please add calendar
+6) PROJECT, PERSONALIZED VIEWS
+ - Display popup warning unresponsive in project screen
+ - There's a little incoherence in the "Save" button on the page "Personalized view"
+ - There's a gap between project list and GANTT, there are lines missing between months in the gantt
+ - Auto logout when refresh the page
+7) PROJECT/TASK, PROJECT/PHASE
+ - Error message when checking consumed in Project/Task screen
+ - Fix issue when create an opportunity with several parts and phase, can't change their order in "Tasks"
+8) OPPORTUNITY
+ - Not possible to assign resources to an opportunity
+9) [AZURE-127] ACTIVITY - REVIEW - The screen in french don't work properly
+10) [AZURE-128] ACTIVITY - TO VALIDATE - Some resources missing on display
+11) [AZURE-129] ACTIVITY - VIEW - The screen is not display
+12) [AZURE-131] ACTIVITY - REVIEW - Export not work correctly
+@endversion
+---------------------
+@Version: 4.9.15
+@Updatedate: 2015-07-09
+@News:
+1) PROJECT - TASKS
+ - When create a sub task, the sub task is not created
+ - Fix issue when import XML file then no task or sub task have been created
+ - In the XML file when the task has the parameter <Milestone>1<Milestone> : create in MILESTONES SCREEN a milestone. If the milestones exits just update the date if the date is different
+ - When import a MS PROJECT file, test if the task in xml file are already created in AZUREE. If yes update the task
+ - Fix issue impossible to import a XML file  MS Project
+ - In import MS project If manually achievement = YES
+Field automatically the % achived
+ - Consumed in task not correct
+ - Add a drop box to select date type DAY, WEEK, MONTH, if date type = WEEK or MONTH, user select weeks or months
+ - Fix issue value is not correctly in workload calculation
+ - Fix issue error message when checking consumed
+2) PROJECT - PICTURES
+ - Fix issue not display pictures
+3) PROJECT - PHASE
+ -If manually achievement = YES  then display in project/phase a field name %achieve US % FR
+   Value is % 0.00    0 >=  value <= 100%
+ - If manually achievement = YES
+   % achieved us used in gantt
+ - Fix issue % achieved is not correctly
+4) PROJECT - BUDGET
+ - Alignment problem
+ - Apply ROI + label relevant
+5) PROJECT - STAFFING+, ACTIVITY - STAFFING+
+ - Fix issue display message staffing+ screen
+ - Add two lines "Resources" and  "FTE"
+ - Replace display data staffing follow "Family" by display data staffing follow "Profile"
+ - Create a button export excel in the data display screen
+6) BUSINESS - CUSTOMER
+ - Fix issue impossible to create a customer in business
+7) ADMINISTRATION
+ - Function "Staffing System" don't work correctly
+8) ADMINISTRATION - PROJECT - PHASE
+ - In admin/project phase create a switch button : default value No
+9) RESOURCE
+ - Can't modify end date
+ - Fix issue change "end-date" of Resource not correctly with workload
+ - Fix issue data not found when copy forecast with IE
+10) RESOURCE - RESOURCE - PROFILE, OPPORTUNITY - STAFFING+
+ -After the resource,  add a line “theoretical resource” “ressource théorique”
+ -In case of Not affected move the information “not affected” in the bottom of the list
+ -Traduction in FR
+               Charge
+               Capacité theorique
+               Charge totale
+               Ressource
+               Ressource théorique
+               ETP +/-
+11) PERSONALIZED VIEWS, PROJECTS, ACTIVITY
+ - Add workload and consumed
+ - Fix issue when create a company, can't copied setting of employee
+ - GANTT displayed on bottom of screen
+ - Label of milestone not display
+ - Display popup warning unresponsive in project screen
+ - There's a little incoherence in the "Save" button on the page "Personalized view"
+ - There's a gap between project list and GANTT, there are lines missing between months in the gantt
+ - Auto logout when refresh the page
+12) OPPORTUNITY
+ - Fix issue not possible to assign resources to an opportunity
+13) [AZURE-92] Can't desactivate a profile
+14) [AZURE-96] Display of results
+15) [AZURE-113] Real and theoretical capacity is not display for all filters
+16) [AZURE-114] The informations results of modification are wrong
+17) [AZURE-115] The sum of inputs is wrong
+18) [AZURE-116] Displaying of theoretical capacity is not sexy
+19) [AZURE-117] The calcul of theoretical capacity have dysfonctions
+20) [AZURE-118] Add data "Capacity/year" in export file and CSV import file
+21) [AZURE-119] Wrong information on export result
+22) [AZURE-120] Days not validated are wrong on Activity and Family filter
+23) [AZURE-121]  Issues on scrollbars who are not correspond with the mouse position
+24) [AZURE-122] Export "only summary" is wrong
+25) [AZURE-123] The settings are not taken into Vision Staffing+ for Activity mode
+26) [AZURE-124] ADMINISTRATION - Function "Staffing System" don't work correctly
+27) [AZURE-125] Issue not display phase name, periode's name, summary  
+28) [AZURE-126] ACTIVITY - VISION STAFFING + - Export excel is not complete
+@endversion
+---------------------
+@Version: 4.9.14
+@Updatedate: 2015-06-02
+@News:
+1) [AZURE-88] Fix issue memory exceeded when export
+2) [AZURE-101] The progress of the External costs aren't updated in synthesis view
+3) [AZURE-103] The creation screen not work correctly
+4) PROJECT
+- Add case select "in progress + opportunity" in the select list ( in progress, archived, model )
+- Fix issue with IE8 impossible to add a post in comment
+5) PROJECT - TASKS - Add a new field "Profile" after the field "Status". ( will display if activate is "YES" )
+6) PROJECT - STAFFING+ - Replace skill by profiles.
+7) PROJECT - PHASE 
+- Add a new column named KPI/Indicateur after the Phase name, KPI = RED if Plan end date > Real end date Else GREEN
+- Add two know a new field name "Profile" in US and "Profil" in FR after the field "Predecessor"( will display if activate Profile is "YES" )
+8) PROJECT - BUDGET
+- In external budget, add 4 new fields after reference 2
+    + reference 3 and reference 4 (free)
+    + 2 fields dates : expected date, due Date
+- Fix issue in budget provisional,  there are 2 screens
+9) PROJECT - BUDGET - EXTERNAL - Fix issue the progress in % is false in case of M.D
+10) PROJECT - BUDGET - PROVISIONAL : 
+- Update move the scroll
+- Remove status
+- Issue not display acceptance and budget/provisional in few company
+11) ADMINISTRATION - Created Activity column list, which is "input" which is "description"
+12) ADMINISTRATION - RESOURCES - Create a new tab name "profile"
+13) ADMINISTRATION - PROJECT - Issue when create new company then "Acceptance" menu not insert at menu setting
+14) ADMINISTRATION - PROJECT - PHASE - Add a field name "profile" and combo-box "profile". ( will display if activate profile is "YES" )
+15)ABSENCE - SYNTHESIS - Fix issue that causes the error "data not found" appears when logging in with PM having "Control resource" permission
+16) GANTT :
+- The GANTT is not display like in progress view
+- When selected GANTT in Personalized Views but column "start date" and "end date" are not display value
+- Fix issue when display the milestone, width of project list no change when width milestone change
+17) PROFILE
+- ACTIVITY - REQUEST - VALIDATION - Automatically validate timesheet
+- ABSENCE - REQUEST - VALIDATION - Automatically validate absence
+18) VISION PORTFOLIO 
+- When select the name of project open the project in another screen
+19) RESOURCES 
+- Fix import resources: error message on start date / end date though they are correct
+- Add a new field name profile ( will display if activate profile is "YES" )
+- Display in profile only for manager   
+- In FR, align the button
+- In FR, translation is "Validation automatique des feuilles de temps" and "Validation automatique des absences"
+@endversion
+---------------------
+@Version: 4.9.13
+@Updatedate: 2015-05-14
+@News:
+1) Fix bug : [AZURE-100] ACTIVITY - REVIEW - TASKS - The summary is different than Project/Tasks summary.
+2) Minor change : set month by default and display automatically in the center the current month.
+@endversion
+---------------------
+@Version: 4.9.12
+@Updatedate: 2015-05-05
+@News:
+1) Build Budget Funder screen 
+2) Add two field profit center, funder to screens : 
+Project budget internal
+Project budget external
+Activity budget internal
+Activity budget external
+3) Add new screens: Project/Acceptance, Administration/Acceptance
+4) Personalized view:
++ Add "To DO" & "Done"
++ Remove Devise, Perimeter
+5) Translation:
++ Fix empty text
++ In KPI, add words: Customer Point Of View, Done, To Do, Acceptance, Progress %, Information, Action, Budget status, Planning status, Risk status, Staffing status, Issue status, Trend, Delay, Created, Updated
+@endversion
+---------------------
+@Version: 4.9.11
+@Updatedate: 2015-04-25
+@News:
+1) Fix bug : [AZURE-57] ABSENCE - VALIDATION / ACTIVITY - VALIDATION - Issue on scrollbar with mouse position.
+2) Fix bug : [AZURE-70] ACTIVITY - EXPORT - Rules of access for non admin profile.
+3) Fix bug : [AZURE-72] ABSENCE - REQUEST - EVOL 59 - Attache file on request Absence.
+4) Fix bug : [AZURE-74] ACTIVITY - VISION STAFFING + - Issue on results.
+5) Fix bug : [AZURE-75] RESOURCES - Import csv don't works correctly.
+6) Fix bug : [AZURE-78] AZURE - Issue on url link to help online.
+7) Fix bug : [AZURE-80] AZURE - Issue on display Photo - the profile picture don't work properly.
+8) Fix bug : [AZURE-81] ADMINISTRATION - PROFIT CENTER - The error file import was empty.
+9) Minor change :  [AZURE-84] ACTIVITY - VALIDATION - All resources are not displayed with add button list.
+10) Fix bug : [AZURE-85] ABSENCE - VALIDATION - Scrollbar error with IE8.
+11) Fix bug : [AZURE-86] ABSENCE - SYNTHESIS - Extract Excel not work properly.
+12) Fix bug : [AZURE-87] ADMINISTRATION - ABSENCE - Holidays definition.
+13) Fix bug : [AZURE-88] ADMINISTRATION - SECURITY - The buffer for extraction is too small.
+14) Fix bug : [AZURE-89] ADMINISTRATION - SECURITY - Action logs, the filter don't work properly.
+15) Fix bug : [AZURE-90] ADMINISTRATION - SECURITY - Action logs, the filter ID not refresh properly.
+16) Fix bug : [AZURE-91] RESOURCES - Create new profile not possible.
+17) Fix bug : [AZURE-92] RESOURCES - Desactivate profile not possible.
+18) Fix bug : [AZURE-96] ACTIVITY / REVIEW - Issue on display of results.
+19) Fix: PMS - [AZURE-98] ACTIVITY - VISION STAFFING + - The filter "Activity Name" don't work correctly
+@endversion
+---------------------
+@Version: 4.9.10
+@Updatedate: 2015-03-19
+@News: 
+1) Update import project
+when change the status in opportunity ( and if there is no consumed ) delete the activity.
+When change the status of project “in progress” to “archived “ set the activity = “no activated” if the project is linked to an activity
+2) dis-allow anonymous to download sale lead attachments
+3) Add icon transfer
+When select transfer icon display the list of projects . select one project , copy the evolution in the selected project, delete the evolution of the old project.
+4) Enhancement in personalized view and activity columns
+Add 12 workload Y+/-i Consumed Y+/-i fields in activity columns and personalized view: 
+change 8 screens: view + 8 export excel
+- 2 screen projects, opportunity.
+- 2 screen activity view & activity review.
+- 2 screen personalized view for project.
+- 2 screen personalized view for activity.
+5) [AZURE-69] PROJECT - DELIVERABLES - Files attachment
+6) Full screen vision staffing +/profit center
+7) GANTT + : default value by month
+@endversion
+---------------------
+@Version: 4.9.9
+@Updatedate: 2015-03-16
+@News: Update security 
+1) sas privilege escalation 
+2) multiple authorization bypass
+3) project attachments arbitrary direct access
+4) sale attachments authorization bypass
+5) users’ password hash is disclosed 
+6) arbitrary user’s password reset 
+7) direct access to generated spreadsheets
+8) excel export parameter tampering
+9) sale attachment files direct access
+10) employee list arbitrary access 
+11) php information disclosure
+@endversion
+---------------------
+@Version: 4.9.8
+@Updatedate: 2015-03-12
+@News:
+1) For resource with “allow managing resources” authorized to “reject timesheet “
+2) Vision staffing + activity with filter profit center
+3) Issue "days not validated" in vision staffing
+4) Import data timesheet
+If the WORKLOAD day by day < 1 - result is incorrect
+Start date/end date : for all resources in the import, fill automatically the day without consumed
+Start date/end date with automatically validate ( send and validation ) the timesheet of resources of the import file
+a) Input start-date end-date of Import CSV screen: add OUT task to full-fill the missing workload
+b) S1- Import timesheets between a start date and end date. ( start date has to be a Monday, end date has to be a Friday). Once imported, fill automatically the day not filled to 100% with the activity OUT.
+S2-Create a new function in admin/activity “Send timesheet” between two dates . ( start date has to be a Monday, end date has to be a Friday). The status of The timesheet filled to 100% with the status in progress, rejected are changed to “Send”
+@endversion
+---------------------
+@Version: 4.9.7
+@Updatedate: 2015-03-09
+@News:
+1) Fix issue: impossible de modifier/soumettre le timesheet
+2) [AZURE-77] ABSENCE - the remain counters are not good
+3)Fix issue loss session choose role of admin SAS
+4)Fix issue import task
+5) Task deleted/modified not take into account in staffing +
+6) When import projects “in progress” PMS=YES is not set
+7) For resource with “allow managing resources” authorized to “reject timesheet “
+8) Data not found
+9) FREEZE if modify for one company the status of FREEZE, modify status of freeze of all others companies
+10) delete the rule in administration/absence/absences : possibility for code 2 to have several identical code
+@endversion
+---------------------
+@Version: 4.9.6
+@Updatedate: 2015-03-04
+@News:
+- ENHANCEMENT : In export - Add MERGE option to collapse all tasks linked to the same phase in 1 day then get sum
+In case merge = Yes, these 2 lines will merge in 1 line in export file
+- Fix issue update document in absence screen on IE 8 (azure-71) - Fix issue on email message/ attache file (azure-54, azure-73) - Import data
+1. Import project detail enhancement (admin/projects/import projects) - allow to update 
+2. Import tasks (admin/projects/import tasks)
+3. Import PC (admin/resources/profit centers)
+- update version control file (.txt) which contain all version
+@endversion
+---------------------
+@Version: 4.9.5
+@Updatedate: 2015-03-03
+@News:
+- Fix issue Staffing by profit Center
+- Fix issue [AZURE-75] RESOURCES - Import csv don't works correctly
+- The ROI calculated is not the good on project list
+@endversion
+---------------------
+@Version: 4.9.4
+@Updatedate: 2015-03-02
+@News:
+Update item  In export take into account cell = 0
+Fix issue azuree-71, 72, 73
+@endversion
+---------------------
+@Version: 4.9.3
+@Updatedate: 2015-02-10
+@News:
+Fix 
+[AZURE-50] ACTIVITY - VALIDATION - Impossible to send a timesheet in ADD view button.
+[AZURE-51] ADMINISTRATION - Backup definition and vision of Manager of Profit Center
+[AZURE-53] ADMINISTRATION - Definition of Manager Backup
+[AZURE] INC0004640 - Receive mail from demo.yourpmstrategy.com
+[AZURE-54] ABSENCE / VALIDATION - The validation mail not send everytime
+[AZURE-55] ABSENCE / REQUEST - Issue to declare an absence with IE8
+[AZURE-56] ACTIVITY - REQUEST - Error message on overload input
+[AZURE-47] ACTIVITY - REVIEW - enhancement the input (Allow the comma in the format number/ display a message when there is an incorrect input with a comma/ delete the comma and the decimal number when there is an incorrect input with a comma)
+Issue vision staffing +/activity with filter profit center
+Issue in Projects/ list deliverables, column date de livraison - sorting function
+Icon export OUTLOOK disappears in my diary
+Update the import resource of company, auto activate employee by start-date, end-date of contract to take into account in staffing+
+Update the import project detail for new company function.
+Update enhancement export activity - add Merge option to merge the output of export file, the task has the same phase will be merged
+@endversion
+---------------------
+@Version: 4.9.2
+@Updatedate: 2015-02-09
+@News:
+1. Add commentaire field in FINANCE
+2. [AZURE-47] ACTIVITY - REVIEW - Different result on "Avancement à date %" data
+3. Pictures
+4. Error start date, end date in import task
+5. Add in audit log all modifications of parameters in administration screen.
+6. [AZURE-42] ACTIVITY - VALIDATION - Error on timesheet status (cont.)
+7. [AZURE-48] PROJECT - DETAIL - Same Wording for 2 different data
+@endversion
+---------------------
+@Version: 4.9.1
+@Updatedate: 2015-02-09
+@News:
+1) Set default screen is Absence Request for Absence Menu
+2) Update translate gantt in task, kpi+, vision portfolio...
+3) Fix issue negative value on days not validated.
+4) Fix issue lost DATA of technical manager detail
+5) Update Module Export Activity: Update  memory limit evreytime write file excel
+6) Fix issue Activity Forecast/My Diary:
+7) Fix issue: Date closing not save well.
+8) Fix issue: Error on timesheet status cont
+@endversion
+---------------------
+@Version: 4.9
+@Updatedate: 2015-02-09
+@News:
+Fix issue:
+1) [AZURE-42] ACTIVITY 1) VALIDATION 1) Error on timesheet status
+2) [AZURE-44] ACTIVITY 1) TASKS 1) Issue on display counter "in use"
+3) Export Excel Activity
+4) Other minor bug and enhancement
+@endversion
+---------------------
+@Version: 4.8
+@Updatedate: 2015-01-28
+@News:
+1) Fix issue: The export excel don't work
+2) Minor change: Update User Guide V5
+3) Fix issues: Error when we select a resource after select ADD button
+4) Fix issues: The counters in Synthesis screen not correct
+5) Fix issues: issue on stask status loss and task not display in forecast timesheet 1) issue #1
+6) Fix issues: Minor change: Bad management in group of tasks
+7) Fix issues: Management of Activity columns is not possible
+8) Fix issues: The Excel export don't take last update
+9) Fix Issue Project/vision staffing: Remove skill/function, fix Vision Staffing Filter 1) don’t see on the list the admin who can be project manager
+10) Fix Issue Vision Staffing: 1) workload of Activity with no-sub family Name
+11) Fix Issue in KPI screen/ the internal cost takes into account external cost
+12) Fix issue "Data not found" when click button week, next, previous, go in Activity Request and in Absence request.
+13) Fix issue time-out request in Vision Staffing show by Profit Center
+14) Minor change: Update permission authorize PM to access synchronise function in Phase
+15) Minor change: Update permission authorize consultant and PM access to user guide and Aide en ligne
+16) Minor change: Update permission authorize PM to access to project/vision staffing+
+17) Minor change: Add close button to close the graph window in Vision Staffing
+18) Fix issue data not found when change week in admin/absence/holiday
+19) Fix issues: Only authorize user could acess User Guide Access
+20) Fix issues: Activity / vision staffing+ / resource of other company display in the filter
+21) Fix issues: New system configuration in Admin to config FTP server upload files
+22) Minor change: Activate staffing detail resource for PM
+23) Fix issues: Take into account the start-date of the resource when calculate workload/capacity in Staffing
+24) Fix issues: Check-box take into account workload of opportunity project in Staffing
+25) Fix issues: Phase synchronise from real start-date/ end-date to plan start-date/end-date and/or synchronize back from plan start/end-date to real start/end date.
+@endversion
+---------------------
+@Version: 4.7
+@Updatedate: 2015-01-28
+@News:
+Update:
+1) Fix issue in  activity request AZURE-27-PJ01 1) wrong pop up send mail message
+3) Fix issue Excel export don't take last update Post comment
+4) Minor change: Update Possibility to synchronize PHASE ( real to plan ) only in opportunity accessible by PM
+@endversion
+---------------------
+@Version: 4.6
+@Updatedate: 2015-01-28
+@News:
+Fix issues: 
+1) Minor change: Auto-re-size the width of column, 
+2) Minor change: Absence validation, 
+3) Minor change: Response time for validation of timesheet , 
+4) Minor change: Response time update a task Rename “Replace” by “Delete” Remplacer by Supprimer. 
+5) Minor change: When select “Delete” delete the URL or file display activity validation display tasks management. workload staffing 
+6) Minor change: Add a check button ( the button is displayed only for “project manager” ) in resource screen 
+7) Minor change: Add an icon in task only if the project is on opportunity : when select icon all start date/end date of tasks/sub tasks are equal to start date and end date of the associated phases 
+8) Minor change: Export GANTT 
+9) Minor change: Delete PC not in used
+10) Minor change: Project detail, Project global view 
+11) Fix issues: IE 8 compatibility Activity request not display 
+12) Fix issues: Resource , start date end date not take into account in staffing 
+13) Fix issues: KPI Post displayed several times 15/1
+@endversion
+---------------------
+@Version: 4.5
+@Updatedate: 2015-01-13
+@News:
+Update task
+1) Minor change: If the task is created under a phase, default value of start date and date of task = start date and end date of phase  
+2) Minor change: If the task is created under a task, default value of start date and date of sub task = start date and end date of task
+3) Minor change: One more case add new activity task parent
+  +Default value of start date = min start date of tasks in activity
+  +Default value of end date = max end date of tasks in activity
+  +If start date > end date : end date = start date
+@endversion
+---------------------
+@Version: 4.4
+@Updatedate: 2015-01-13
+@News:  
+1) Minor change: If an email account is used in different companies, in the login process, ask to select a company, to authenticate and authorize the role of the account.
+2) Minor change: Add confirm & control the complexity of password
+@endversion
+---------------------
+@Version: 4.3
+@Updatedate: 2015-01-13
+@News:
+1) Minor change: Order in Phase.
+2) Minor change: Update Absence Enhancement
+3) Minor change: Vision Staffing Add an Expand on the activity , display WORLOAD/CONSUMED the resource by resource
+4) Minor change: Add (expand) in activity/validation/forecast, absence/Validation/synthesisto display all resources of this profit center ( even the resource of sub profit center and sub sub … )
+5) Minor change: In absence/synthesis add export excel
+@endversion
+---------------------
+@Version: 4.2
+@Updatedate: 2015-01-13
+@News:
+1) Fix minor issues and update enhancement.
+@endversion
+---------------------
+@Version: 4.0
+@Updatedate: 2015-01-13
+@News:
+1) Fix issue negative vallue in Staffing+
+2) Minor change the summary section of the staffing+ have to adding "Working days" and "absence"
+3) Minor change when clicking on + to expand a category, it should only expand it one level 
+4) Fix issue selection screen for families wrongly displays sub-families as well.
+5) Fix issue on line report : consumed data not brought-up : always shows "NA" :
+6) Minor change: Export data Labels should be left justified and numbers right justified with 2 digits
+7) Minor change: separate columns for family & subfamilies & Skills and also add the column short name.
+@endversion
+---------------------
+@Version: 3.7.6
+@Updatedate: 2014-07-28
+@News:
+1) Minor change: Update the personalized view for activity management
+2) Minor change: Update User Guide Link and HTML
+3) Minor change: Update validation constrain for Admin SAS
+4) Minor change: Update Task+ right side align for digit number, add M.D in workload value
+5) Minor change: Update Detail availability and Staffing+ by do not display Project without "Family"
+6) Minor change: Update Task, KPI+, selected display Real Time by default
+7) Minor change: Update Activity validation status, in progress in red, waiting in orange, validated in green
+@endversion
+---------------------
+@Version: 3.7.5
+@Updatedate: 2014-07-28
+@News:
+1) Fix the issue Project Manager can not access to KPI+ screen. Note: only Project Manager of Project / Admin company could edit project detail
+2) Fix issue Admin Companu can not modify project status
+@endversion
+---------------------
+@Version: 3.7.4
+@Updatedate: 2014-07-24
+@News:  
+1) Minor change: Update the version control of application in admin and footer.
+@endversion
+---------------------
+@Version: 3.7.3
+@Updatedate: 2014-07-24
+@News:
+1) Fix issue negative value in Vision Staffing
+@endversion
+---------------------
+@Version: 3.7.2
+@Updatedate: 2014-07-24
+@News:
+1) Minor change: Justify action Update, Delete, Cancel in project task and activity task
+@endversion
+---------------------
+@Version: 3.7.1
+@Updatedate: 2014-07-24
+@News:
+1) Fix issues: AZURE-15 ACTIVITY/Validation 
+2) Fix issues: Delete Task.
+@endversion
+---------------------
+@Version: 3.6.6
+@Updatedate: 2014-07-24
+@News:
+1) Fix issues: AZURE-17 1) ACTIVITY / MANAGEMENT 1) Activity can't be deleted
+@endversion 
+---------------------
+@Version: 3.6.5
+@Updatedate: 2014-07-24
+@News:
+1) Fix issues: AZURE-15 ACTIVITY/Validation
+2) Fiz issues: Delete Task issue
+@endversion
+---------------------
+@Version: 3.6.4
+@Updatedate: 2014-07-24
+@News:
+1) Fix issues can not delete record in timesheet in activity request screen
+2) Minor change: Change name from WFV to "In Used" in Project Task and Activity Task screen
+3) Minor change: "In Used" used to store value of activity task in timesheet with status "in progress", "waiting for validate", "rejected"
+4) Minor change: When activity task in used, do not allow to change name or delete
+5) Minor change: Update budget data when link project and activity
+6) Fix issue on calculation of cost ( total, internal, external ).
+@endversion
+---------------------
+@Version: 3.6.3
+@Updatedate: 2014-07-24
+@News:
+1) Minor change: Constrain do not authorized to delete task if it is in used in timesheet ( status in progress, waiting for validation, validated)
+2) Minor change: Add new column named WFV (waiting for validation) into 2 screens Project Task and Activity Task.
+3) Minor change: Update the Export Excel in Project Task and Activity Task
+@endversion
+---------------------
+@Version: 3.6.2
+@Updatedate: 2014-07-24
+@News:
+1) Minor change: Deactivate the KPI screen, replace by KPI+.
+@endversion
+---------------------
+@Version: 3.6.1
+@Updatedate: 2014-07-24
+@News:
+1) Fix issue 12 take into account the closing date in Risk screen, updating dashboard
+2) Fix issue 13 fix attachment URL link in Project Deliverable screen
+3) Fix issue 14 do not display "%assign to employee" and "%assign to profit center" in KPI screen
+4) Minor change: Update company for staffing system. Update company for tmp tables.
+@endversion
+---------------------
+@Version: 3.6.0
+@Updatedate: 2014-07-24
+@News:
+1) Fix issue : Selection list is not the same as organization in activity management screen
+2) Fix issue: ACTIVITY/Validation for collaborator 1) wrong timesheet navigation when change month/week.
+@endversion
+---------------------
+@Version: 3.5.4
+@Updatedate: 2014-07-24
+@News:
+1) Fix issue: export excel in activity review
+2) Fix issue: list of Profit center in Activity Management display as the same in all screens.
+@endversion
+---------------------
+@Version: 3.5.3
+@Updatedate: 2014-07-24
+@News:
+1) Fix issue grant permission for consultant role, only display projects/ opportunity which employee with role consultant defined in Project Team.
+@endversion
+---------------------
+@Version: 3.5.2
+@Updatedate: 2014-07-24
+@News:
+Update the validation constrains in administration:
+1) Do not allow to input duplicate ( City, City Code, Country, Contract type, Project Phase, Project Status, Priority, Currency, Project Type, Project Sub Type, Project Complexity, Project Function, Profit Center, Project Phase Status, Project Risk Severity, Project Risk Occurrence, Project Issue status, Project     livrable category, Project evolution type, Project impact, Project AMR Program, Project AMR Sub Program, Project AMR category, Project AMR sub category, Project AMR Status, Project AMR Cost Control, Budget Customer, Budget Provider, Budget Type, Absence Code1 code2, absence, Activity Family, Activity).
+2) Do not allow to delete record in case record already in use ( City, City Code, Country, Contract type, Project Phase, Project Status, Priority, Currency, Project Type, Project Sub Type, Project Complexity, Project Function, Profit Center, Project Phase Status, Project Risk Severity, Project Risk Occurrence, Project Issue status, Project livrable category, Project evolution type, Project impact, Project AMR Program, Project AMR Sub Program, Project AMR category, Project AMR sub category, Project AMR Status, Project AMR Cost Control, Budget Customer, Budget Provider, Budget Type, Absence Code1code2, absence, Activity Family, Activity).
+@endversion
+---------------------
+@Version: 3.5.1
+@Updatedate: 2014-07-24
+@News:
+1) Fix issue set default status = Opportunity when creating project
+2) Fix issues export ecel in project, euro symbol
+@endversion
+---------------------
+@Version: 3.5.0
+@Updatedate: 2014-07-24
+@News:
+1) Fix issue list of Profit Center in all screen in the same display
+2) Multi-sort like excel in Projects/ Opportunity/ Activity Review
+3) Fix issues missing Company ID in Activity
+4) Enhancement in code, separate js, css from php code
+5) Improve the performance of send activity request, reject timesheet, validate timesheet (one or many)
+6) Update license key for 3 sites
+@endversion

@@ -1,0 +1,115 @@
+.wd-title .wd-customer-logo{
+	    position: relative;
+}
+.wd-title .wd-customer-logo .wd-popup-customer-logo{
+    position: absolute;
+    z-index: 3;
+    background: #fff;
+    top: 80px;
+    background: #FFFFFF;
+    padding: 15px;
+	padding-right: 12px;
+    box-shadow: 0px 4px 12px #ddd;
+    left: -15px;
+	display: none;
+}
+.wd-title .wd-customer-logo.active .wd-popup-customer-logo{
+	display: block;
+}
+.wd-title .wd-customer-logo img{
+	vertical-align: middle;
+}
+.wd-title .wd-customer-logo ul li {
+	border: 1px solid #ddd;
+    padding: 7px;
+    border-radius: 3px;
+    cursor: pointer;
+    min-width: 150px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    position: relative;
+    line-height: 60px;
+	min-height: 80px;
+}
+.wd-title .wd-customer-logo ul li:hover {
+	border: 1px solid #BCD8ED;
+}
+.wd-title .wd-customer-logo ul li:not(:last-child){
+	 margin-bottom: 8px;
+}
+.wd-title .wd-customer-logo ul{
+    max-height: 300px;
+    overflow: auto;
+    padding-right: 3px;
+}
+.wd-title .wd-customer-logo label{
+	cursor: pointer;
+	display: flex;
+}
+.wd-title .wd-customer-logo label input{
+	opacity: 0;
+	display: inline-block;
+	position: absolute;
+}
+.wd-title .wd-customer-logo .wd-logo-checkbox{
+	display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    border: 1px solid #eee;
+    margin-left: 5px;
+    margin-right: 10px;
+    position: relative;
+    vertical-align: middle;
+	top: 22px;
+}
+.wd-title .wd-customer-logo .wd-logo-checkbox:before{
+	content: '';
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 16px;
+    height: 16px;
+    background: white;
+    z-index: 2;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.wd-title .wd-customer-logo .wd-logo-checkbox:hover{
+	background-color: #F6FAFD;
+}
+
+.wd-title .wd-customer-logo .wd-logo-checkbox.checked:before{
+	background-color: #217FC2;
+}
+.wd-title .wd-customer-logo:hover{
+	background-color: F6FAFD;
+}
+.wd-title .wd-customer-logo .wd-logo-close{
+	display: block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.wd-title .wd-customer-logo .wd-logo-close img{
+	width: 14px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+}
+.wd-title .wd-customer-logo .wd-popup-logo-item .wd-logo-checkbox:after{
+	content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    background: rgba(255,255,255,0.5) url(/img/ajax-loader.gif) center center no-repeat;
+    top: 0;
+    left: 0;
+	opacity: 0;
+}
+.wd-title .wd-customer-logo .wd-popup-logo-item.loading .wd-logo-checkbox:after{
+	opacity: 1;
+}

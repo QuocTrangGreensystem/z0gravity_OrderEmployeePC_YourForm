@@ -1,0 +1,42 @@
+#pager,.slick-pager {
+  width: 100%;
+  border-top: 0;
+  vertical-align: middle;
+  background: url("../../img/front/bg-footer-table.png") repeat-x scroll 0 0 transparent;
+  height: 35px;
+  color:#fff;
+  border-radius:0 0 5px 5px;-moz-border-radius:0 0 5px 5px;-webkit-border-radius:0 0 5px 5px;
+}
+
+.slick-pager .slick-pager-status {
+  display: inline-block;
+  padding: 9px 2px;
+} 
+
+.slick-pager .ui-icon-container {
+  display: inline-block;
+  margin: 3px;
+  border-color: #E0E0E0;
+  vertical-align: middle;
+}
+.slick-pager .slick-pager-settings .ui-icon-container {
+  margin: 5px;
+}
+.slick-pager .slick-pager-nav {
+  display: inline-block;
+  float: left;
+  padding: 6px;
+}
+
+.slick-pager .slick-pager-settings {
+  display: block;
+  float: right;
+  padding: 4px;
+}
+.slick-pager .slick-pager-settings a {
+  padding: 0 2px;
+  cursor: pointer;
+  color:#fff;
+  font-weight:normal;
+}
+.slick-pager-settings-expanded{padding:2px 0;}

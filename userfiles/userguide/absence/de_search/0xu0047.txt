@@ -1,0 +1,10 @@
+GESTION
+ 4,6
+GRAVITY
+ 2,6,3
+GRÂCE
+ 5
+GUIDE
+ 1
+GÉRER
+ 3

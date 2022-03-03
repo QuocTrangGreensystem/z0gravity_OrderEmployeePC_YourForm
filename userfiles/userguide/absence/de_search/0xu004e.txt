@@ -1,0 +1,16 @@
+N
+ 5,6
+NE
+ 5,6
+NOM
+ 5
+NON
+ 5
+NÉCESSAIRE
+ 6,5,4
+N’AURAIT
+ 6
+N’EST
+ 5
+N’IMPORTE
+ 5

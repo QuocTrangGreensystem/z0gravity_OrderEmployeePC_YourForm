@@ -1,0 +1,5651 @@
+msgid  "Inform your manager by email"
+msgstr "Inform your manager by email"
+
+msgid  "An email has been sent to your manager"
+msgstr "An email has been sent to your manager"
+
+#----------------------------------------- UNTRANSLATED -------------------------------------------
+
+msgid  "PMS"
+msgstr "PMS"
+
+msgid  "RMS"
+msgstr "RMS"
+
+msgid  "PMS & RMS"
+msgstr "PMS & RMS"
+
+msgid  "Email or password is not match!"
+msgstr "Email or password is not match!"
+
+msgid  "Access denied"
+msgstr "Access denied"
+
+msgid  "Access denied."
+msgstr "Access denied."
+
+msgid  "Please login to access this action"
+msgstr "Please login to access this action"
+
+msgid  "The project "#%s" was not found, please try again"
+msgstr "The project "#%s" was not found, please try again"
+
+msgid  "You can not edit or delete data of <b>%s</b> project. Please contact administrator for more information"
+msgstr "You can not edit or delete data of <b>%s</b> project. Please contact administrator for more information"
+
+msgid  "Your account do not have a company to request a absence."
+msgstr "Your account do not have a company to request a absence."
+
+msgid  "Provisional day off"
+msgstr "Provisional day off"
+
+msgid  "Timesheet : "%s" for this week. So you cannot request a absence for this week."
+msgstr "Timesheet : "%s" for this week. So you cannot request a absence for this week."
+
+msgid  "Requested"
+msgstr "Requested"
+
+msgid  "Validated"
+msgstr "Validated"
+
+msgid  "Data not found to validation absences."
+msgstr "Data not found to validation absences."
+
+msgid  "The request has been saved."
+
+msgstr "SAVED"
+
+msgid  "Some request could not be saved because invalidate. Please check the limitation of your day-off and Begin of Period parameter !""
+msgstr "Some request could not be saved because invalidate. Please check the limitation of your day-off and Begin of Period parameter !""
+
+msgid  "The data has been submited to server is invaild."
+msgstr "The data has been submited to server is invaild."
+
+msgid  "The comment has been saved."
+msgstr "SAVED"
+
+msgid  "Some comment could not be saved because invalidate."
+msgstr "Some comment could not be saved because invalidate."
+
+msgid  "Some request could not be saved because invalidate."
+msgstr "Some request could not be saved because invalidate."
+
+msgid  "The data was not found, please try again"
+msgstr "The data was not found, please try again"
+
+msgid  "The company "#%s" was not found, please try again"
+msgstr "The company "#%s" was not found, please try again"
+
+msgid  "The Absence has been saved."
+msgstr "SAVED"
+
+msgid  "The Absence could not be saved. Please, try again."
+msgstr "The Absence could not be saved. Please, try again."
+
+msgid  "Invalid id for absence"
+msgstr "Invalid id for absence"
+
+msgid  "Absence has been deleted"
+msgstr "Absence has been deleted"
+
+msgid  "Absence was not deleted"
+msgstr "Absence was not deleted"
+
+msgid  "Your account do not have a company to management activity."
+msgstr "Your account do not have a company to management activity."
+
+msgid  "The %s is not blank"
+msgstr "The %s is not blank"
+
+msgid  "The Profit Center ID '%s' does not exist"
+msgstr "The Profit Center ID '%s' does not exist"
+
+msgid  "The Family ID '%s' does not exist"
+msgstr "The Family ID '%s' does not exist"
+
+msgid  "The Subfamily ID '%s' does not exist"
+msgstr "The Subfamily ID '%s' does not exist"
+
+msgid  "The Family was not found"
+msgstr "The Family was not found"
+
+msgid  "The start date is invalid."
+msgstr "The start date is invalid."
+
+msgid  "The end date is invalid."
+msgstr "The end date is invalid."
+
+msgid  "The start date conflict with end date."
+msgstr "The start date conflict with end date."
+
+msgid  "The data to export was not found. Please try again."
+msgstr "The data to export was not found. Please try again."
+
+msgid  "The activities has been imported %s/%s."
+msgstr "The activities has been imported %s/%s."
+
+msgid  "The Activity has been saved."
+msgstr "SAVED"
+
+msgid  "The Activity could not be saved. Please, try again."
+msgstr "The Activity could not be saved. Please, try again."
+
+msgid  "Invalid id for activity"
+msgstr "Invalid id for activity"
+
+msgid  "An activity cannot be deleted if this activity is used. However you can deactivate this activity."
+msgstr "An activity cannot be deleted if this activity is used. However you can deactivate this activity."
+
+msgid  "Activity has been deleted"
+msgstr "DELETED"
+
+msgid  "Activity was not deleted"
+msgstr "Activity was not deleted"
+
+msgid  "The Activity Column has been saved."
+msgstr "SAVED"
+
+msgid  "The Activity Column could not be saved. Please, try again."
+msgstr "The Activity Column could not be saved. Please, try again."
+
+msgid  "Invalid id for Activity Column"
+msgstr "Invalid id for Activity Column"
+
+msgid  "Activity Column has been deleted"
+msgstr "DELETED"
+
+msgid  "Activity Column was not deleted"
+msgstr "Activity Column was not deleted"
+
+msgid  "The Activity Family has been saved."
+msgstr "SAVED"
+
+msgid  "The Activity Family could not be saved. Please, try again."
+msgstr "The Activity Family could not be saved. Please, try again."
+
+msgid  "Invalid id for Activity Family"
+msgstr "Invalid id for Activity Family"
+
+msgid  "Activity Family has been deleted"
+msgstr "DELETED"
+
+msgid  "Activity Family was not deleted"
+msgstr "Activity Family was not deleted"
+
+msgid  "The data has been saved."
+msgstr "SAVED"
+
+msgid  "Some data could not be saved because the time sheets have been requested.""
+msgstr "Some data could not be saved because the time sheets have been requested.""
+
+msgid  "Some data could not be saved because invalidate.""
+msgstr "Some data could not be saved because invalidate.""
+
+msgid  "The request is invalid because the time sheet is "%s""
+msgstr "The request is invalid because the time sheet is "%s""
+
+msgid  "You can not change the status, because it already sent"
+msgstr "You can not change the status, because it already sent"
+
+msgid  "The request validate has been sent."
+msgstr "SENT"
+
+msgid  "The request validate could not sent, please try again"
+msgstr "The request validate could not sent, please try again"
+
+msgid  "The data has been deleted"
+msgstr "DELETED"
+
+msgid  "The data was not deleted"
+msgstr "The data was not deleted"
+
+msgid  "Invalid employee"
+msgstr "Invalid resource"
+
+msgid  "Invalid city"
+msgstr "Invalid city"
+
+msgid  "The city has been saved"
+msgstr "SAVED"
+
+msgid  "The city could not be saved. Please, try again."
+msgstr "The city could not be saved. Please, try again."
+
+msgid  "No data submmited"
+msgstr "No data submmited"
+
+msgid  "%s city has been saved."
+msgstr "SAVED"
+
+msgid  "%s city could not be saved. Please, try again."
+msgstr "%s city could not be saved. Please, try again."
+
+msgid  "Invalid id for city"
+msgstr "Invalid id for city"
+
+msgid  "The city has been deleted"
+msgstr "DELETED"
+
+msgid  "The city has not deleted"
+msgstr "The city has not deleted"
+
+msgid  "Invalid company"
+msgstr "Invalid company"
+
+msgid  "The company has been saved"
+msgstr "SAVED"
+
+msgid  "The company could not be saved. Please, try again."
+msgstr "The company could not be saved. Please, try again."
+
+msgid  "Invalid id for company"
+msgstr "Invalid id for company"
+
+msgid  "The company %s has been saved"
+msgstr "SAVED"
+
+msgid  "Access denied : delete a company"
+msgstr "Access denied : delete a company"
+
+msgid  "Company %s deleted"
+msgstr "DELETED"
+
+msgid  "Company %s was not deleted"
+msgstr "Company %s was not deleted"
+
+msgid  "Invalid company employee reference"
+msgstr "Invalid company resource reference"
+
+msgid  "The company employee reference has been saved"
+msgstr "SAVED"
+
+msgid  "The company employee reference could not be saved. Please, try again."
+msgstr "The company resource reference could not be saved. Please, try again."
+
+msgid  "Invalid id for company employee reference"
+msgstr "Invalid id for company resource reference"
+
+msgid  "Invalid id for employee"
+msgstr "Invalid id for resource"
+
+msgid  "Access denied : delete an employee"
+msgstr "Access denied : delete an resource"
+
+msgid  "The employee was deleted"
+msgstr "DELETED"
+
+msgid  "Company employee reference was not deleted"
+msgstr "Company resource reference was not deleted"
+
+msgid  "Cannot delete %s because this user is now a project manager of: %s"
+msgstr "Cannot delete %s because this user is now a project manager of: %s"
+
+msgid  "Invalid country"
+msgstr "Invalid country"
+
+msgid  "The country has been saved"
+msgstr "SAVED"
+
+msgid  "The country could not be saved. Please, try again."
+msgstr "The country could not be saved. Please, try again."
+
+msgid  "%s country has been saved."
+msgstr "SAVED"
+
+msgid  "%s country could not be saved. Please, try again."
+msgstr "%s country could not be saved. Please, try again."
+
+msgid  "Invalid id for country"
+msgstr "Invalid id for country"
+
+msgid  "The country has been deleted"
+msgstr "DELETED"
+
+msgid  "The country has not deleted"
+msgstr "The country has not deleted"
+
+msgid  "Invalid currency"
+msgstr "Invalid currency"
+
+msgid  "The currency has been saved"
+msgstr "SAVED"
+
+msgid  "The currency could not be saved. Please, try again."
+msgstr "The currency could not be saved. Please, try again."
+
+msgid  "%s sign currence has been saved."
+msgstr "SAVED"
+
+msgid  "%s sign currence could not be saved. Please, try again."
+msgstr "%s sign currence could not be saved. Please, try again."
+
+msgid  "Invalid id for currency"
+msgstr "Invalid id for currency"
+
+msgid  "Currency deleted"
+msgstr "DELETED"
+
+msgid  "Currency was not deleted"
+msgstr "Currency was not deleted"
+
+msgid  "Absence has been set on default"
+msgstr "Absence has been set on default"
+
+msgid  "Absence could not set on default"
+msgstr "Absence could not set on default"
+
+msgid  "The employee %s %s has been saved"
+msgstr "SAVED"
+
+msgid  "The employee %s %s could not be saved. Please, try again."
+msgstr "The resource %s %s could not be saved. Please, try again."
+
+msgid  "The employee was not found."
+msgstr "The resource was not found."
+
+msgid  "Access denied  "
+msgstr "Access denied  "
+
+msgid  "The employee %s %s has been edited"
+msgstr "The resource %s %s has been edited"
+
+msgid  "The employee could not be saved. Please, try again."
+msgstr "The resource could not be saved. Please, try again."
+
+msgid  "Profil saved"
+msgstr "Profil saved"
+
+msgid  "Your profile cannot  be saved. Please, try again."
+msgstr "Your profile cannot  be saved. Please, try again."
+
+msgid  "Employee %s has been deleted"
+msgstr "DELETED"
+
+msgid  "Employee was not deleted"
+msgstr "Resource was not deleted"
+
+msgid  "Cannot delete %s because this user is now a project manager of:%s"
+msgstr "Cannot delete %s because this user is now a project manager of:%s"
+
+msgid  "Please enter your email was register to get new password!"
+msgstr "Enter your email"
+
+msgid  "Sorry but that email address is not in our records, please try again."
+msgstr "Sorry but that email address is not in our records, please try again."
+
+msgid  "Please choose you company role to continues!"
+msgstr "Please choose you company role to continues!"
+
+msgid  "%s--Select--%s"
+msgstr "%s--Select--%s"
+
+msgid  "The Company ID does not exist"
+msgstr "The Company ID does not exist"
+
+msgid  "The Function ID '%s' does not exist"
+msgstr "The Function ID '%s' does not exist"
+
+msgid  "The Profit Center '%s' does not exist"
+msgstr "The Profit Center '%s' does not exist"
+
+msgid  "The Average Daily Rate is invalid."
+msgstr "The Average Daily Rate is invalid."
+
+msgid  "The %s must be number"
+msgstr "The %s must be number"
+
+msgid  "Home phone"
+msgstr "Home phone"
+
+msgid  "Work phone"
+msgstr "Work phone"
+
+msgid  "Mobile phone"
+msgstr "Mobile phone"
+
+msgid  "Fax number"
+msgstr "Fax number"
+
+msgid  "Post code"
+msgstr "Post code"
+
+msgid  "The City ID does not exist"
+msgstr "The City ID does not exist"
+
+msgid  "The Country ID does not exist"
+msgstr "The Country ID does not exist"
+
+msgid  "The Role ID does not exist"
+msgstr "The Role ID does not exist"
+
+msgid  "The Email ID is invalid or already exists in the file."
+msgstr "The Email ID is invalid or already exists in the file."
+
+msgid  "The employees has been imported %s/%s."
+msgstr "Resources have been imported %s/%s."
+
+msgid  "The employees has been created with the corresponding profit center!"
+msgstr "The resources have been created with the corresponding profit center!"
+
+msgid  "Some data could not be saved because invalidate."
+msgstr "Some data could not be saved because invalidate."
+
+msgid  "All Cache has been cleanup."
+msgstr "All Cache has been cleanup."
+
+msgid  "Invalid profit center"
+msgstr "Invalid profit center"
+
+msgid  "The profit center has been saved"
+msgstr "SAVED"
+
+msgid  "The profit center could not be saved. Please, try again."
+msgstr "The profit center could not be saved. Please, try again."
+
+msgid  "The profit center %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for profit center"
+msgstr "Invalid id for profit center"
+
+msgid  "Profit center was deleted"
+msgstr "DELETED"
+
+msgid  "Profit center was not deleted"
+msgstr "Profit center was not deleted"
+
+msgid  "Profit centers was updte lft and rght"
+msgstr "Profit centers was updte lft and rght"
+
+msgid  "Invalid project amr category"
+msgstr "Invalid project amr category"
+
+msgid  "The project amr category has been saved"
+msgstr "SAVED"
+
+msgid  "The project amr category could not be saved. Please, try again."
+msgstr "The project amr category could not be saved. Please, try again."
+
+msgid  "The project amr category %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for project amr category"
+msgstr "Invalid id for project amr category"
+
+msgid  "Project amr category deleted"
+msgstr "DELETED"
+
+msgid  "Project amr category was not deleted"
+msgstr "Project amr category was not deleted"
+
+msgid  "Invalid project amr cost control"
+msgstr "Invalid project amr cost control"
+
+msgid  "The project amr cost control has been saved"
+msgstr "SAVED"
+
+msgid  "The project amr cost control could not be saved. Please, try again."
+msgstr "The project amr cost control could not be saved. Please, try again."
+
+msgid  "The project amr cost control %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for project amr cost control"
+msgstr "Invalid id for project amr cost control"
+
+msgid  "Project amr cost control deleted"
+msgstr "DELETED"
+
+msgid  "Project amr cost control was not deleted"
+msgstr "Project amr cost control was not deleted"
+
+msgid  "Invalid project amr organization"
+msgstr "Invalid project amr organization"
+
+msgid  "The project amr organization has been saved"
+msgstr "SAVED"
+
+msgid  "The project amr organization could not be saved. Please, try again."
+msgstr "The project amr organization could not be saved. Please, try again."
+
+msgid  "The project amr organization %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for project amr organization"
+msgstr "Invalid id for project amr organization"
+
+msgid  "Project amr organization deleted"
+msgstr "Project amr organization deleted"
+
+msgid  "Project amr organization was not deleted"
+msgstr "Project amr organization was not deleted"
+
+msgid  "Invalid project amr perimeter"
+msgstr "Invalid project amr perimeter"
+
+msgid  "The project amr perimeter has been saved"
+msgstr "SAVED"
+
+msgid  "The project amr perimeter could not be saved. Please, try again."
+msgstr "The project amr perimeter could not be saved. Please, try again."
+
+msgid  "The project amr perimeter %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for project amr perimeter"
+msgstr "Invalid id for project amr perimeter"
+
+msgid  "Project amr perimeter deleted"
+msgstr "Project amr perimeter deleted"
+
+msgid  "Project amr perimeter was not deleted"
+msgstr "Project amr perimeter was not deleted"
+
+msgid  "Invalid project amr plan"
+msgstr "Invalid project amr plan"
+
+msgid  "The project amr plan has been saved"
+msgstr "SAVED"
+
+msgid  "The project amr plan could not be saved. Please, try again."
+msgstr "The project amr plan could not be saved. Please, try again."
+
+msgid  "The project amr plan %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for project amr plan"
+msgstr "Invalid id for project amr plan"
+
+msgid  "Project amr plan deleted"
+msgstr "Project amr plan deleted"
+
+msgid  "Project amr plan was not deleted"
+msgstr "Project amr plan was not deleted"
+
+msgid  "Invalid project amr problem control"
+msgstr "Invalid project amr problem control"
+
+msgid  "The project amr problem control has been saved"
+msgstr "SAVED"
+
+msgid  "The project amr problem control could not be saved. Please, try again."
+msgstr "The project amr problem control could not be saved. Please, try again."
+
+msgid  "The project amr problem control %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for project amr problem control"
+msgstr "Invalid id for project amr problem control"
+
+msgid  "Project amr problem control deleted"
+msgstr "Project amr problem control deleted"
+
+msgid  "Project amr problem control was not deleted"
+msgstr "Project amr problem control was not deleted"
+
+msgid  "Invalid project amr program"
+msgstr "Invalid project amr program"
+
+msgid  "The project amr program has been saved"
+msgstr "SAVED"
+
+msgid  "The project amr program could not be saved. Please, try again."
+msgstr "The project amr program could not be saved. Please, try again."
+
+msgid  "The project amr program %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for project amr program"
+msgstr "Invalid id for project amr program"
+
+msgid  "Project amr program deleted"
+msgstr "Project amr program deleted"
+
+msgid  "Project amr program was not deleted"
+msgstr "Project amr program was not deleted"
+
+msgid  "Invalid project amr risk control"
+msgstr "Invalid project amr risk control"
+
+msgid  "The project amr risk control has been saved"
+msgstr "SAVED"
+
+msgid  "The project amr risk control could not be saved. Please, try again."
+msgstr "The project amr risk control could not be saved. Please, try again."
+
+msgid  "The project amr risk control %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for project amr risk control"
+msgstr "Invalid id for project amr risk control"
+
+msgid  "Project amr risk control deleted"
+msgstr "Project amr risk control deleted"
+
+msgid  "Project amr risk control was not deleted"
+msgstr "Project amr risk control was not deleted"
+
+msgid  "Invalid project amr status"
+msgstr "Invalid project amr status"
+
+msgid  "The project amr status %s has been saved"
+msgstr "SAVED"
+
+msgid  "The project amr status could not be saved. Please, try again."
+msgstr "The project amr status could not be saved. Please, try again."
+
+msgid  "Invalid id for project amr status"
+msgstr "Invalid id for project amr status"
+
+msgid  "Project amr status deleted"
+msgstr "Project amr status deleted"
+
+msgid  "Project amr status was not deleted"
+msgstr "Project amr status was not deleted"
+
+msgid  "Invalid project amr sub category"
+msgstr "Invalid project amr sub category"
+
+msgid  "The project amr sub category has been saved"
+msgstr "SAVED"
+
+msgid  "The project amr sub category could not be saved. Please, try again."
+msgstr "The project amr sub category could not be saved. Please, try again."
+
+msgid  "The project amr sub category %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for project amr sub category"
+msgstr "Invalid id for project amr sub category"
+
+msgid  "Project amr sub category deleted"
+msgstr "Project amr sub category deleted"
+
+msgid  "Project amr sub category was not deleted"
+msgstr "Project amr sub category was not deleted"
+
+msgid  "Invalid project amr sub program"
+msgstr "Invalid project amr sub program"
+
+msgid  "The project amr sub program has been saved"
+msgstr "SAVED"
+
+msgid  "The project amr sub program could not be saved. Please, try again."
+msgstr "The project amr sub program could not be saved. Please, try again."
+
+msgid  "The project amr sub program %s has been saved"
+msgstr "SAVED"
+
+msgid  "The input project ARM sub programs already exists. Please enter another value!"
+msgstr "The input project ARM sub programs already exists. Please enter another value!"
+
+msgid  "Invalid id for project amr sub program"
+msgstr "Invalid id for project amr sub program"
+
+msgid  "Project amr sub program deleted"
+msgstr "Project amr sub program deleted"
+
+msgid  "Project amr sub program was not deleted"
+msgstr "Project amr sub program was not deleted"
+
+msgid  "The project AMR has been saved"
+msgstr "SAVED"
+
+msgid  "The project AMR could not be saved. Please try again enter informations for (*) fields match."
+msgstr "The project AMR could not be saved. Please try again enter informations for (*) fields match."
+
+msgid  "%s--Select sub program--%s"
+msgstr "%s--Select sub program--%s"
+
+msgid  "%s--Select sub category--%s"
+msgstr "%s--Select sub category--%s"
+
+msgid  "Save data before export"
+msgstr "Save data before export"
+
+msgid  "Invalid project status"
+msgstr "Invalid project status"
+
+msgid  "The project status %s has been saved"
+msgstr "SAVED"
+
+msgid  "The project status could not be saved. Please, try again."
+msgstr "The project status could not be saved. Please, try again."
+
+msgid  "Invalid Implementation Complexity"
+msgstr "Invalid Implementation Complexity"
+
+msgid  "Implementation Complexity %s has been saved"
+msgstr "SAVED"
+
+msgid  "Implementation Complexity could not be saved. Please, try again."
+msgstr "Implementation Complexity could not be saved. Please, try again."
+
+msgid  "Invalid id for implementation complexity"
+msgstr "Invalid id for implementation complexity"
+
+msgid  "Implementation complexity was deleted"
+msgstr "Implementation complexity was deleted"
+
+msgid  "Implementation complexity was not deleted"
+msgstr "Implementation complexity was not deleted"
+
+msgid  "Invalid project phase"
+msgstr "Invalid project phase"
+
+msgid  "The project phase has been saved"
+msgstr "SAVED"
+
+msgid  "The project phase could not be saved. Please, try again."
+msgstr "The project phase could not be saved. Please, try again."
+
+msgid  "Invalid project created value"
+msgstr "Invalid project created value"
+
+msgid  "%s created value has been saved."
+msgstr "SAVED"
+
+msgid  "%s created value could not be saved. Please, try again."
+msgstr "%s created value could not be saved. Please, try again."
+
+msgid  "Invalid id for project created value"
+msgstr "Invalid id for project created value"
+
+msgid  "Project created value deleted"
+msgstr "Project created value deleted"
+
+msgid  "Project created value was not deleted"
+msgstr "Project created value was not deleted"
+
+msgid  "The Decision has been saved."
+msgstr "SAVED"
+
+msgid  "The Decision could not be saved. Please, try again."
+msgstr "The Decision could not be saved. Please, try again."
+
+msgid  "Invalid project decision"
+msgstr "Invalid project decision"
+
+msgid  "The project decision has been saved"
+msgstr "SAVED"
+
+msgid  "The project decision could not be saved. Please, try again."
+msgstr "The project decision could not be saved. Please, try again."
+
+msgid  "The project decision %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for project decision"
+msgstr "Invalid id for project decision"
+
+msgid  "Project decision has been deleted"
+msgstr "Project decision has been deleted"
+
+msgid  "Project decision was not deleted"
+msgstr "Project decision was not deleted"
+
+msgid  "Invalid project evolution impact"
+msgstr "Invalid project evolution impact"
+
+msgid  "The project evolution impact has been saved"
+msgstr "SAVED"
+
+msgid  "The project evolution impact could not be saved. Please, try again."
+msgstr "The project evolution impact could not be saved. Please, try again."
+
+msgid  "The project evolution impact %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for project evolution impact"
+msgstr "Invalid id for project evolution impact"
+
+msgid  "Project evolution impact was deleted"
+msgstr "Project evolution impact was deleted"
+
+msgid  "Project evolution impact was not deleted"
+msgstr "Project evolution impact was not deleted"
+
+msgid  "Invalid project evolution type"
+msgstr "Invalid project evolution type"
+
+msgid  "The project evolution type has been saved"
+msgstr "SAVED"
+
+msgid  "The project evolution type could not be saved. Please, try again."
+msgstr "The project evolution type could not be saved. Please, try again."
+
+msgid  "The project evolution type %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for project evolution type"
+msgstr "Invalid id for project evolution type"
+
+msgid  "Project evolution type was deleted"
+msgstr "Project evolution type was deleted"
+
+msgid  "Project evolution type was not deleted"
+msgstr "Project evolution type was not deleted"
+
+msgid  "The Evolution has been saved."
+msgstr "SAVED"
+
+msgid  "The Evolution could not be saved. Please, try again."
+msgstr "The Evolution could not be saved. Please, try again."
+
+msgid  "Invalid project evolution"
+msgstr "Invalid project evolution"
+
+msgid  "The project evolution has been saved"
+msgstr "SAVED"
+
+msgid  "The project evolution could not be saved. Please, try again."
+msgstr "The project evolution could not be saved. Please, try again."
+
+msgid  "The project evolution %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for project evolution"
+msgstr "Invalid id for project evolution"
+
+msgid  "Project evolution deleted"
+msgstr "Project evolution deleted"
+
+msgid  "Project evolution was not deleted"
+msgstr "Project evolution was not deleted"
+
+msgid  "Invalid project function"
+msgstr "Invalid project function"
+
+msgid  "The project function has been saved"
+msgstr "SAVED"
+
+msgid  "The project function could not be saved. Please, try again."
+msgstr "The project function could not be saved. Please, try again."
+
+msgid  "The project function %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for project function"
+msgstr "Invalid id for project function"
+
+msgid  "Project function was deleted"
+msgstr "Project function was deleted"
+
+msgid  "Project function was not deleted"
+msgstr "Project function was not deleted"
+
+msgid  "File system save failed."
+msgstr "File system save failed."
+
+msgid  "The attachment has been uploaded."
+msgstr "The attachment has been uploaded."
+
+msgid  "The attachment could not be uploaded."
+msgstr "The attachment could not be uploaded."
+
+msgid  "File not found."
+msgstr "File not found."
+
+msgid  "Invalid id for project delivrable"
+msgstr "Invalid id for project delivrable"
+
+msgid  "Project delivrable was deleted"
+msgstr "Project delivrable was deleted"
+
+msgid  "Project delivrable was not deleted"
+msgstr "Project delivrable was not deleted"
+
+msgid  "Invalid project issue severity"
+msgstr "Invalid project issue severity"
+
+msgid  "The project issue severity has been saved"
+msgstr "SAVED"
+
+msgid  "The project issue severity could not be saved. Please, try again."
+msgstr "The project issue severity could not be saved. Please, try again."
+
+msgid  "The project issue severity %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for project issue severity"
+msgstr "Invalid id for project issue severity"
+
+msgid  "Project issue severity was deleted"
+msgstr "Project issue severity was deleted"
+
+msgid  "Project issue severity was not deleted"
+msgstr "Project issue severity was not deleted"
+
+msgid  "Invalid project issue status"
+msgstr "Invalid project issue status"
+
+msgid  "The project issue status has been saved"
+msgstr "SAVED"
+
+msgid  "The project issue status could not be saved. Please, try again."
+msgstr "The project issue status could not be saved. Please, try again."
+
+msgid  "The project issue status %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for project issue status"
+msgstr "Invalid id for project issue status"
+
+msgid  "Project issue status was deleted"
+msgstr "Project issue status was deleted"
+
+msgid  "Project issue status was not deleted"
+msgstr "Project issue status was not deleted"
+
+msgid  "The Issue has been saved."
+msgstr "SAVED."
+
+msgid  "The Issue could not be saved. Please, try again."
+msgstr "The Issue could not be saved. Please, try again."
+
+msgid  "Invalid project issue"
+msgstr "Invalid project issue"
+
+msgid  "The project issue has been saved"
+msgstr "SAVED"
+
+msgid  "The project issue could not be saved. Please, try again."
+msgstr "The project issue could not be saved. Please, try again."
+
+msgid  "The project issue %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for project issue"
+msgstr "Invalid id for project issue"
+
+msgid  "Project issue deleted"
+msgstr "Project issue deleted"
+
+msgid  "Project issue was not deleted"
+msgstr "Project issue was not deleted"
+
+msgid  "Invalid project livrable category"
+msgstr "Invalid project livrable category"
+
+msgid  "The project livrable category has been saved"
+msgstr "SAVED"
+
+msgid  "The project livrable category could not be saved. Please, try again."
+msgstr "The project livrable category could not be saved. Please, try again."
+
+msgid  "The project livrable category %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for project livrable category"
+msgstr "Invalid id for project livrable category"
+
+msgid  "Project livrable category was deleted"
+msgstr "Project livrable category was deleted"
+
+msgid  "Project livrable category was not deleted"
+msgstr "Project livrable category was not deleted"
+
+msgid  "The Deliverables has been saved."
+msgstr "SAVED"
+
+msgid  "The Deliverables could not be saved. Please, try again."
+msgstr "The Deliverables could not be saved. Please, try again."
+
+msgid  "Unknown"
+msgstr "Unknown"
+
+msgid  "Error: The file attachment is larger than 25MB!"
+msgstr "Error: The file attachment is larger than 25MB!"
+
+msgid  "The project delivrable %s has been saved"
+msgstr "SAVED"
+
+msgid  "The project delivrable could not be saved. Please try again enter informations for (*) fields match."
+msgstr "The project delivrable could not be saved. Please try again enter informations for (*) fields match."
+
+msgid  "The project delivrable %s has been saved but file is not attached"
+msgstr "SAVED"
+
+msgid  "Invalid id for livrable of project"
+msgstr "Invalid id for livrable of project"
+
+msgid  "The attached file of the project livrable is deleted"
+msgstr "The attached file of the project livrable is deleted"
+
+msgid  "The file of the project livrable was not deleted"
+msgstr "The file of the project livrable was not deleted"
+
+msgid  "The Milestone has been saved."
+msgstr "SAVED"
+
+msgid  "The Milestone could not be saved. Please, try again."
+msgstr "The Milestone could not be saved. Please, try again."
+
+msgid  "Invalid project milestone"
+msgstr "Invalid project milestone"
+
+msgid  "The project milestone has been saved"
+msgstr "SAVED"
+
+msgid  "The project milestone could not be saved. Please, try again."
+msgstr "The project milestone could not be saved. Please, try again."
+
+msgid  "The project milestone %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for project milestone"
+msgstr "Invalid id for project milestone"
+
+msgid  "Project milestone has been deleted"
+msgstr "Project milestone has been deleted"
+
+msgid  "Project milestone was not deleted"
+msgstr "Project milestone was not deleted"
+
+msgid  "The Part has been saved."
+msgstr "SAVED"
+
+msgid  "The Part could not be saved. Please, try again."
+msgstr "The Part could not be saved. Please, try again."
+
+msgid  "Invalid id for project part"
+msgstr "Invalid id for project part"
+
+msgid  "Project part has been deleted"
+msgstr "Project part has been deleted"
+
+msgid  "Project part was not deleted"
+msgstr "Project part was not deleted"
+
+msgid  "The Phase planning has been saved."
+msgstr "SAVED"
+
+msgid  "The Phase planning could not be saved. Please, try again."
+msgstr "The Phase planning could not be saved. Please, try again."
+
+msgid  "Invalid id for project phase plan"
+msgstr "Invalid id for project phase plan"
+
+msgid  "%s could not be deleted because it is the current phase of this project."
+msgstr "%s could not be deleted because it is the current phase of this project."
+
+msgid  "Project phase plan deleted"
+msgstr "Project phase plan deleted"
+
+msgid  "Project phase plan was not deleted"
+msgstr "Project phase plan was not deleted"
+
+msgid  "Invalid project phase plan"
+msgstr "Invalid project phase plan"
+
+msgid  "The project phase plan has been saved"
+msgstr "SAVED"
+
+msgid  "The project phase plan could not be saved. Please, try again."
+msgstr "The project phase plan could not be saved. Please, try again."
+
+msgid  "The project phase plan %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid project phase status"
+msgstr "Invalid project phase status"
+
+msgid  "The project phase status has been saved"
+msgstr "SAVED"
+
+msgid  "The project phase status could not be saved. Please, try again."
+msgstr "The project phase status could not be saved. Please, try again."
+
+msgid  "The project phase status %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for project phase status"
+msgstr "Invalid id for project phase status"
+
+msgid  "Project phase status was deleted"
+msgstr "Project phase status was deleted"
+
+msgid  "Project phase status was not deleted"
+msgstr "Project phase status was not deleted"
+
+msgid  "%s phase has been saved."
+msgstr "SAVED"
+
+msgid  "%s phase could not be saved. Please, try again."
+msgstr "%s phase could not be saved. Please, try again."
+
+msgid  "Invalid id for project phase"
+msgstr "Invalid id for project phase"
+
+msgid  "Project phase deleted"
+msgstr "Project phase deleted"
+
+msgid  "Project phase was not deleted"
+msgstr "Project phase was not deleted"
+
+msgid  "Invalid project priority"
+msgstr "Invalid project priority"
+
+msgid  "The project priority has been saved"
+msgstr "SAVED"
+
+msgid  "The project priority could not be saved. Please, try again."
+msgstr "The project priority could not be saved. Please, try again."
+
+msgid  "%s priority has been saved."
+msgstr "SAVED"
+
+msgid  "%s priority could not be saved. Please, try again."
+msgstr "%s priority could not be saved. Please, try again."
+
+msgid  "Invalid id for project priority"
+msgstr "Invalid id for project priority"
+
+msgid  "Project priority deleted"
+msgstr "Project priority deleted"
+
+msgid  "Project priority was not deleted"
+msgstr "Project priority was not deleted"
+
+msgid  "Invalid project risk occurrence"
+msgstr "Invalid project risk occurrence"
+
+msgid  "The project risk occurrence has been saved"
+msgstr "SAVED"
+
+msgid  "The project risk occurrence could not be saved. Please, try again."
+msgstr "The project risk occurrence could not be saved. Please, try again."
+
+msgid  "The project risk occurrence %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for project risk occurrence"
+msgstr "Invalid id for project risk occurrence"
+
+msgid  "Project risk occurrence was deleted"
+msgstr "Project risk occurrence was deleted"
+
+msgid  "Project risk occurrence was not deleted"
+msgstr "Project risk occurrence was not deleted"
+
+msgid  "Invalid project risk severity"
+msgstr "Invalid project risk severity"
+
+msgid  "The project risk severity has been saved"
+msgstr "SAVED"
+
+msgid  "The project risk severity could not be saved. Please, try again."
+msgstr "The project risk severity could not be saved. Please, try again."
+
+msgid  "The project risk severity %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for project risk severity"
+msgstr "Invalid id for project risk severity"
+
+msgid  "Project risk severity was deleted"
+msgstr "Project risk severity was deleted"
+
+msgid  "Project risk severity was not deleted"
+msgstr "Project risk severity was not deleted"
+
+msgid  "The Risk has been saved."
+msgstr "SAVED"
+
+msgid  "The Risk could not be saved. Please, try again."
+msgstr "The Risk could not be saved. Please, try again."
+
+msgid  "Invalid project risk"
+msgstr "Invalid project risk"
+
+msgid  "The project risk has been saved"
+msgstr "SAVED"
+
+msgid  "The project risk could not be saved. Please, try again."
+msgstr "The project risk could not be saved. Please, try again."
+
+msgid  "The project risk %s has been saved."
+msgstr "SAVED"
+
+msgid  "Invalid id for project risk"
+msgstr "Invalid id for project risk"
+
+msgid  "Project risk has been deleted"
+msgstr "Project risk has been deleted"
+
+msgid  "Project risk was not deleted"
+msgstr "Project risk was not deleted"
+
+msgid  "Type Activity"
+msgstr "Type Activity"
+
+msgid  "Project Code"
+msgstr "Project Code"
+
+msgid  "Project Name"
+msgstr "Project Name"
+
+msgid  "Date"
+msgstr "Date"
+
+msgid  "Profit Center"
+msgstr "Profit Center"
+
+msgid  "Analytical"
+msgstr "Analytical"
+
+msgid  "Employee ID"
+msgstr "Resource ID"
+
+msgid  "Man Day"
+msgstr "Man Day"
+
+msgid  "Type"
+msgstr "Type"
+
+msgid  "Data phase of project not found or contain an error."
+msgstr "Data phase of project not found or contain an error."
+
+msgid  "This date value must between %1$s and %2$s"
+msgstr "This date value must between %1$s and %2$s"
+
+msgid  "The Project Code not found"
+msgstr "The Project Code not found"
+
+msgid  "The Project Code found, But not is this project."
+msgstr "The Project Code found, But not is this project."
+
+msgid  "The Project Center found, But not in team of this project."
+msgstr "The Project Center found, But not in team of this project."
+
+msgid  "The Profit center not found."
+msgstr "The Profit center not found."
+
+msgid  "The Type not found."
+msgstr "The Type not found."
+
+msgid  "The Manday is invalid."
+msgstr "The Manday is invalid."
+
+msgid  "Please use this date format: MM/yy or dd/mm/yy. For example Feb 12 or 30/1/2012."
+msgstr "Please use this date format: MM/yy or dd/mm/yy. For example Feb 12 or 30/1/2012."
+
+msgid  "The Employee ID found, But not in project team of this project."
+msgstr "The Resource ID found, But not in project team of this project."
+
+msgid  "The Employee not found."
+msgstr "The resource not found."
+
+msgid  "Can not processing file."
+msgstr "Can not processing file."
+
+msgid  "Please upload a file."
+msgstr "Please upload a file."
+
+msgid  "The staffing has been imported %s/%s."
+msgstr "The staffing has been imported %s/%s."
+
+msgid  "Invalid id for project status"
+msgstr "Invalid id for project status"
+
+msgid  "Project status was deleted"
+msgstr "Project status was deleted"
+
+msgid  "Project status was not deleted"
+msgstr "Project status was not deleted"
+
+msgid  "Invalid project sub type"
+msgstr "Invalid project sub type"
+
+msgid  "The project sub type has been saved"
+msgstr "SAVED"
+
+msgid  "The project sub type could not be saved. Please, try again."
+msgstr "The project sub type could not be saved. Please, try again."
+
+msgid  "The project sub type %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for project sub type"
+msgstr "Invalid id for project sub type"
+
+msgid  "Project sub type deleted"
+msgstr "Project sub type deleted"
+
+msgid  "Project sub type was not deleted"
+msgstr "Project sub type was not deleted"
+
+msgid  "The Task has been saved."
+msgstr "SAVED"
+
+msgid  "The Task could not be saved. Please, try again."
+msgstr "The Task could not be saved. Please, try again."
+
+msgid  "Invalid project task"
+msgstr "Invalid project task"
+
+msgid  "The project task %s has been saved."
+msgstr "SAVED"
+
+msgid  "The project task could not be saved. Please, try again."
+msgstr "The project task could not be saved. Please, try again."
+
+msgid  "Invalid id for project task"
+msgstr "Invalid id for project task"
+
+msgid  "Project task has been deleted"
+msgstr "Project task has been deleted"
+
+msgid  "Project task was not deleted"
+msgstr "Project task was not deleted"
+
+msgid  "(dd-mm-yyyy)(*)"
+msgstr "(dd-mm-yyyy)(*)"
+
+msgid  "The Project Team has been saved."
+msgstr "SAVED"
+
+msgid  "The Project Team could not be saved. Please, try again."
+msgstr "The Project Team could not be saved. Please, try again."
+
+msgid  "Invalid id for project team"
+msgstr "Invalid id for project team"
+
+msgid  "Project team deleted"
+msgstr "Project team deleted"
+
+msgid  "Project team was not deleted"
+msgstr "Project team was not deleted"
+
+msgid  "Invalid project type"
+msgstr "Invalid project type"
+
+msgid  "The project type has been saved"
+msgstr "SAVED"
+
+msgid  "The project type could not be saved. Please, try again."
+msgstr "The project type could not be saved. Please, try again."
+
+msgid  "The project type %s has been saved"
+msgstr "SAVED"
+
+msgid  "Invalid id for project type"
+msgstr "Invalid id for project type"
+
+msgid  "Project type deleted"
+msgstr "Project type deleted"
+
+msgid  "Project type was not deleted"
+msgstr "Project type was not deleted"
+
+msgid  "Invalid project"
+msgstr "Invalid project"
+
+msgid  "The project %s has been saved"
+msgstr "SAVED"
+
+msgid  "The project could not be saved. Please, try again."
+msgstr "The project could not be saved. Please, try again."
+
+msgid  "The project %s has saved."
+msgstr "The project %s has saved."
+
+msgid  "Invalid id for project"
+msgstr "Invalid id for project"
+
+msgid  "Project deleted"
+msgstr "Project deleted"
+
+msgid  "Project was not deleted"
+msgstr "Project was not deleted"
+
+msgid  "%s--Select sub type--%s"
+msgstr "%s--Select sub type--%s"
+
+msgid  "The project has saved."
+msgstr "The project has saved."
+
+msgid  "The current personalized view is: %s."
+msgstr "The current personalized view is: %s."
+
+msgid  "The #%s view does not exist!"
+msgstr "The #%s view does not exist!"
+
+msgid  "The view #%s was set default view does not exist, please set an default view!"
+msgstr "The view #%s was set default view does not exist, please set an default view!"
+
+msgid  "The project was copied."
+msgstr "The project was copied."
+
+msgid  "The project has not been copied."
+msgstr "The project has not been copied."
+
+msgid  "The Validation Constraint has been saved."
+msgstr "SAVED."
+
+msgid  "The Validation Constraint could not be saved. Please, try again."
+msgstr "The Validation Constraint could not be saved. Please, try again."
+
+msgid  "Invalid id for responseConstraint"
+msgstr "Invalid id for responseConstraint"
+
+msgid  "Validation Constraint has been set on default"
+msgstr "Validation Constraint has been set on default"
+
+msgid  "Validation Constraint could not set on default"
+msgstr "Validation Constraint could not set on default"
+
+msgid  "The %s view has been set as not default"
+msgstr "The %s view has been set as not default"
+
+msgid  "The %s view has been saved & set as default"
+msgstr "SAVED"
+
+msgid  "The %s view has been set as default"
+msgstr "The %s view has been set as default"
+
+msgid  "The user default view could not be saved. Please, try again."
+msgstr "The user default view could not be saved. Please, try again."
+
+msgid  "The user default view could not set as default. Please, try again."
+msgstr "The user default view could not set as default. Please, try again."
+
+msgid  "The %s view has been set as public view"
+msgstr "The %s view has been set as public view"
+
+msgid  "The %s view has been set as not public view"
+msgstr "The %s view has been set as not public view"
+
+msgid  "The user default view could not set as public view. Please, try again."
+msgstr "The user default view could not set as public view. Please, try again."
+
+msgid  "Invalid user view"
+msgstr "Invalid user view"
+
+msgid  "The %s view has been saved"
+msgstr "SAVED"
+
+msgid  "The user view could not be saved. Please, try again."
+msgstr "The user view could not be saved. Please, try again."
+
+msgid  "Invalid id for user view"
+msgstr "Invalid id for user view"
+
+msgid  "This view is the current default view. You can not delete it."
+msgstr "This view is the current default view. You can not delete it."
+
+msgid  "Deleted"
+msgstr "Deleted"
+
+msgid  "Not deleted"
+msgstr "Not deleted"
+
+msgid  "The Workday has been saved."
+msgstr "SAVED."
+
+msgid  "The Workday could not be saved. Please, try again."
+msgstr "The Workday could not be saved. Please, try again."
+
+msgid  "Invalid id for workday"
+msgstr "Invalid id for workday"
+
+msgid  "Workday  deleted"
+msgstr "Workday  deleted"
+
+msgid  "Workday not deleted"
+msgstr "Workday not deleted"
+
+msgid  "No file was uploaded."
+msgstr "No file was uploaded."
+
+msgid  "ID"
+msgstr "ID"
+
+msgid  "Name"
+msgstr "Name"
+
+msgid  "Long Name"
+msgstr "Long Name"
+
+msgid  "Short Name"
+msgstr "Short Name"
+
+msgid  "Family"
+msgstr "Family"
+
+msgid  "Subfamily"
+msgstr "Subfamily"
+
+msgid  "Profit Accessible"
+msgstr "Profit Accessible"
+
+msgid  "Profit Linked"
+msgstr "Profit Linked"
+
+msgid  "Code 1"
+msgstr "Code 1"
+
+msgid  "Code 2"
+msgstr "Code 2"
+
+msgid  "Code 3"
+msgstr "Code 3"
+
+msgid  "Start date"
+msgstr "Start date"
+
+msgid  "End date"
+msgstr "End date"
+
+msgid  "Price"
+msgstr "Price"
+
+msgid  "M.D"
+msgstr "M.D"
+
+msgid  "Consumed"
+msgstr "Consumed"
+
+msgid  "RAF"
+msgstr "RAF"
+
+msgid  "Forecast"
+msgstr "Forecast"
+
+msgid  "Avancement"
+msgstr "Avancement"
+
+msgid  "Real price"
+msgstr "Real price"
+
+msgid  "Open"
+msgstr "Open"
+
+msgid  "The city must be between 1 and 255 characters."
+msgstr "The city must be between 1 and 255 characters."
+
+msgid  "The company is not blank."
+msgstr "The company is not blank."
+
+msgid  "The country must be between 1 and 255 characters."
+msgstr "The country must be between 1 and 255 characters."
+
+msgid  "Company is not blank"
+msgstr "Company is not blank"
+
+msgid  "Please enter your currency"
+msgstr "Please enter your currency"
+
+msgid  "The last name is not blank!"
+msgstr "The last name is not blank!"
+
+msgid  "The first name is not blank!"
+msgstr "The first name is not blank!"
+
+msgid  "Please provide a valid email address."
+msgstr "Please provide a valid email address."
+
+msgid  "The email is avaiable, please enter another!"
+msgstr "The email is avaiable, please enter another!"
+
+msgid  "The password is not blank!"
+msgstr "The password is not blank!"
+
+msgid  "The postcode must be number"
+msgstr "The postcode must be number"
+
+msgid  "The workphone must be number"
+msgstr "The workphone must be number"
+
+msgid  "The homephone must be number"
+msgstr "The homephone must be number"
+
+msgid  "The mobilephone must be number"
+msgstr "The mobilephone must be number"
+
+msgid  "The fax must be number"
+msgstr "The fax must be number"
+
+msgid  "The name must be between 1 and 255 characters."
+msgstr "The name must be between 1 and 255 characters."
+
+msgid  "The project name is not blank!"
+msgstr "The project name is not blank!"
+
+msgid  "The project manager is not blank!"
+msgstr "The project manager is not blank!"
+
+msgid  "The project phase is not blank!"
+msgstr "The project phase is not blank!"
+
+msgid  "Only numbers allowed."
+msgstr "Only numbers allowed."
+
+msgid  "The Amr progression must be number!"
+msgstr "The Amr progression must be number!"
+
+msgid  "The AMR category must be between 1 and 255 characters."
+msgstr "The AMR category must be between 1 and 255 characters."
+
+msgid  "The AMR cost control must be between 1 and 255 characters."
+msgstr "The AMR cost control must be between 1 and 255 characters."
+
+msgid  "The AMR organization must be between 1 and 255 characters."
+msgstr "The AMR organization must be between 1 and 255 characters."
+
+msgid  "The AMR perimeter must be between 1 and 255 characters."
+msgstr "The AMR perimeter must be between 1 and 255 characters."
+
+msgid  "The AMR plan must be between 1 and 255 characters."
+msgstr "The AMR plan must be between 1 and 255 characters."
+
+msgid  "The AMR problem control must be between 1 and 255 characters."
+msgstr "The AMR problem control must be between 1 and 255 characters."
+
+msgid  "The AMR program must be between 1 and 255 characters."
+msgstr "The AMR program must be between 1 and 255 characters."
+
+msgid  "The AMR risk control must be between 1 and 255 characters."
+msgstr "The AMR risk control must be between 1 and 255 characters."
+
+msgid  "The AMR status must be between 1 and 255 characters."
+msgstr "The AMR status must be between 1 and 255 characters."
+
+msgid  "The AMR sub category must be between 1 and 255 characters."
+msgstr "The AMR sub category must be between 1 and 255 characters."
+
+msgid  "The name must be between 1 and 255 characters"
+msgstr "The name must be between 1 and 255 characters"
+
+msgid  "The amr program has not been selected yet"
+msgstr "The amr program has not been selected yet"
+
+msgid  "The description is not blank."
+msgstr "The description is not blank."
+
+msgid  "The value is not blank."
+msgstr "The value is not blank."
+
+msgid  "Please enter a number between 0 and 10"
+msgstr "Please enter a number between 0 and 10"
+
+msgid  "Your custom message here"
+msgstr "Your custom message here"
+
+msgid  "Decision is not blank"
+msgstr "Decision is not blank"
+
+msgid  "Decision maker is not blank"
+msgstr "Decision maker is not blank"
+
+msgid  "Invalid Project"
+msgstr "Invalid Project"
+
+msgid  "Project evolution is not blank"
+msgstr "Project evolution is not blank"
+
+msgid  "Type Evolution is not blank!"
+msgstr "Type Evolution is not blank!"
+
+msgid  "Applicant is not blank"
+msgstr "Applicant is not blank"
+
+msgid  "Supplementary budget must be number!"
+msgstr "Supplementary budget must be number!"
+
+msgid  "The evolution impact must be between 1 and 255 characters."
+msgstr "The evolution impact must be between 1 and 255 characters."
+
+msgid  "The type evolution must be between 1 and 255 characters."
+msgstr "The type evolution must be between 1 and 255 characters."
+
+msgid  "The project id of Global View is not found!"
+msgstr "The project id of Global View is not found!"
+
+msgid  "The project id is nummeric!"
+msgstr "The project id is nummeric!"
+
+msgid  "Global View attachment is not blank!"
+msgstr "Global View attachment is not blank!"
+
+msgid  "The project id of risk is not found!"
+msgstr "The project id of risk is not found!"
+
+msgid  "Project problem is not blank!"
+msgstr "Project problem is not blank!"
+
+msgid  "Severity of issue is not blank!"
+msgstr "Severity of issue is not blank!"
+
+msgid  "Status of issue is not blank!"
+msgstr "Status of issue is not blank!"
+
+msgid  "You must assign issue for employee!"
+msgstr "You must assign issue for resource!"
+
+msgid  "The project deliverable is not blank"
+msgstr "The project deliverable is not blank"
+
+msgid  "The deliverable responsible is not blank"
+msgstr "The deliverable responsible is not blank"
+
+msgid  "The deliverable status is not blank."
+msgstr "The deliverable status is not blank."
+
+msgid  "The progression must be a number!"
+msgstr "The progression must be a number!"
+
+msgid  "The deliverable category must be between 1 and 255 characters."
+msgstr "The deliverable category must be between 1 and 255 characters."
+
+msgid  "The milestone is not blank!"
+msgstr "The milestone is not blank!"
+
+msgid  "The milestone date is not blank!"
+msgstr "The milestone date is not blank!"
+
+msgid  "The project phase must be between 1 and 50 characters."
+msgstr "The project phase must be between 1 and 50 characters."
+
+msgid  "The phase is not blank!"
+msgstr "The phase is not blank!"
+
+msgid  "The start date is not blank!"
+msgstr "The start date is not blank!"
+
+msgid  "The end date is not blank!"
+msgstr "The end date is not blank!"
+
+msgid  "The name must be between 1 and 1024 characters."
+msgstr "The name must be between 1 and 1024 characters."
+
+msgid  "The priority must be between 1 and 50 characters."
+msgstr "The priority must be between 1 and 50 characters."
+
+msgid  "The Risk/Occurrence is not blank"
+msgstr "The Risk/Occurrence is not blank"
+
+msgid  "The risk severity is not blank"
+msgstr "The risk severity is not blank"
+
+msgid  "The risk occurrence is not blank."
+msgstr "The risk occurrence is not blank."
+
+msgid  "You must assign risk to employee."
+msgstr "You must assign risk to resource."
+
+msgid  "The task title is not blank"
+msgstr "The task title is not blank"
+
+msgid  "The phase is not blank"
+msgstr "The phase is not blank"
+
+msgid  "The task status is not blank."
+msgstr "The task status is not blank."
+
+msgid  "The task priority is not blank."
+msgstr "The task priority is not blank."
+
+msgid  "You must assign task to employee."
+msgstr "You must assign task to resource."
+
+msgid  "The task start date is not blank."
+msgstr "The task start date is not blank."
+
+msgid  "Date is not valid."
+msgstr "Date is not valid."
+
+msgid  "The task end date is not blank."
+msgstr "The task end date is not blank."
+
+msgid  "The task completed must be a number!"
+msgstr "The task completed must be a number!"
+
+msgid  "The function is not blank!"
+msgstr "The function is not blank!"
+
+msgid  "The profit center is not blank!"
+msgstr "The profit center is not blank!"
+
+msgid  "to Validate"
+msgstr "Validate "
+
+msgid  "Validate"
+msgstr "Validate"
+
+msgid  "Temporary validate"
+msgstr "Temporary validate"
+
+msgid  "Reject"
+msgstr "Reject"
+
+msgid  "Waiting validation"
+msgstr "Waiting"
+
+msgid  "Holiday"
+msgstr "Holiday"
+
+msgid  "Provisionnal day off"
+msgstr "Provisionnal day off"
+
+msgid  "View name cannot be not blank!"
+msgstr "View name cannot be not blank!"
+
+msgid  "Print"
+msgstr "Print"
+
+msgid  "Number by year"
+msgstr "Number by year"
+
+msgid  "Begin of period"
+msgstr "Begin of period"
+
+msgid  "No."
+msgstr "No."
+
+msgid  "Absence Requests"
+msgstr "Absence Requests"
+
+msgid  "AM"
+msgstr "AM"
+
+msgid  "PM"
+msgstr "PM"
+
+msgid  "You are view in :"
+msgstr "You are view in :"
+
+msgid  "Capacity"
+msgstr "Capacity"
+
+msgid  "Monday"
+msgstr "Monday"
+
+msgid  "Tuesday"
+msgstr "Tuesday"
+
+msgid  "Wednesday"
+msgstr "Wednesday"
+
+msgid  "Thursday"
+msgstr "Thursday"
+
+msgid  "Friday"
+msgstr "Friday"
+
+msgid  "Saturday"
+msgstr "Saturday"
+
+msgid  "Sunday"
+msgstr "Sunday"
+
+msgid  "Add a comment"
+msgstr "Add a comment"
+
+msgid  "Remove request"
+msgstr "Remove request"
+
+msgid  "Cannot connect to server ..."
+msgstr "Cannot connect to server ..."
+
+msgid  "Add new comments"
+msgstr "Add new comments"
+
+msgid  "Cancel"
+msgstr "Cancel"
+
+msgid  "btnCancel"
+msgstr "Cancel"
+
+msgid  "btnSave"
+msgstr "Save"
+
+msgid  "OK"
+msgstr "OK"
+
+msgid  "Absence Responses of Profit Center %s"
+msgstr "Absence Responses of Profit Center %s"
+
+msgid  "Employee"
+msgstr "Resource"
+
+msgid  "Summary"
+msgstr "Summary"
+
+msgid  "Absence Validation of Profit Center %s"
+msgstr "Absence Validation: Profit Center %s"
+
+msgid  "Absence Review %s"
+msgstr "Synthesis %s"
+
+msgid  "Absence Reviews %s of %s"
+msgstr "Synthesis %s: %s"
+
+msgid  "Part"
+msgstr "Part"
+
+msgid  "Description"
+msgstr "Description"
+
+msgid  "Employees"
+msgstr "Resources"
+
+msgid  "Projects"
+msgstr "Projects"
+
+msgid  "Absence management of %s"
+msgstr "Absence management of %s"
+
+msgid  "Activated"
+msgstr "Activated"
+
+msgid  "Display"
+msgstr "Display"
+
+msgid  "Action"
+msgstr "Action"
+
+msgid  "Yes"
+msgstr "Yes"
+
+msgid  "No"
+msgstr "No"
+
+msgid  "-- Any --"
+msgstr "-- Any --"
+
+msgid  "This information is not blank!"
+msgstr "This information is not blank!"
+
+msgid  "The code is avaiable, please enter another!"
+msgstr "The code is avaiable, please enter another!"
+
+msgid  "Clear"
+msgstr "Clear"
+
+msgid  "Are you sure you want to delete "%s"?"
+msgstr "Are you sure you want to delete "%s"?"
+
+msgid  "Select a company to managements"
+msgstr "Select a company to managements"
+
+msgid  "Activity Detail of %s"
+msgstr "Activity Detail of %s"
+
+msgid  "January"
+msgstr "January"
+
+msgid  "February"
+msgstr "February"
+
+msgid  "March"
+msgstr "March"
+
+msgid  "April"
+msgstr "April"
+
+msgid  "May"
+msgstr "May"
+
+msgid  "June"
+msgstr "June"
+
+msgid  "July"
+msgstr "July"
+
+msgid  "August"
+msgstr "August"
+
+msgid  "September"
+msgstr "September"
+
+msgid  "October"
+msgstr "October"
+
+msgid  "November"
+msgstr "November"
+
+msgid  "December"
+msgstr "December"
+
+msgid  "#"
+msgstr "#"
+
+msgid  "Import CSV File Review"
+msgstr "Import CSV File Review"
+
+msgid  "New Activites"
+msgstr "New Activites"
+
+msgid  "Update Activites"
+msgstr "Update Activites"
+
+msgid  "Error Activites"
+msgstr "Error Activites"
+
+msgid  "Info"
+msgstr "Info"
+
+msgid  "Export"
+msgstr "Export"
+
+msgid  "Add new"
+msgstr "Add new"
+
+msgid  "Update"
+msgstr "Update"
+
+msgid  "Do all action"
+msgstr "Do all action"
+
+msgid  "Activity management"
+msgstr "Activity management"
+
+msgid  "Import CSV"
+msgstr "Import CSV"
+
+msgid  "File:"
+msgstr "File:"
+
+msgid  "Close"
+msgstr "Close"
+
+msgid  "Submit"
+msgstr "Submit"
+
+msgid  "Activity review"
+msgstr "Activity review"
+
+msgid  "Activity management of %s"
+msgstr "Activity management of %s"
+
+msgid  "Activity Review of %s"
+msgstr "Activity Review of %s"
+
+msgid  "ActivityColumn management of %s"
+msgstr "ActivityColumn management of %s"
+
+msgid  "Original"
+msgstr "Original"
+
+msgid  "Translate"
+msgstr "Translate"
+
+msgid  "Calculate"
+msgstr "Calculate"
+
+msgid  "Activity Family/Subfamily management of %s"
+msgstr "Activity Family/Subfamily management of %s"
+
+msgid  "Parent"
+msgstr "Parent"
+
+msgid  "Activity Forecast Management"
+msgstr "Activity Forecast Management"
+
+msgid  "Short name"
+msgstr "Short name"
+
+msgid  "Long name"
+msgstr "Long name"
+
+msgid  "Activity Request Management"
+msgstr "Activity Request Management"
+
+msgid  "Activity Validate Management"
+msgstr "Activity Validate Management"
+
+msgid  "The Activity Request has been rejected by Your Manager"
+msgstr "The Activity Request has been rejected by Your Manager"
+
+msgid  "Validated by your manager"
+msgstr "Validated by your manager"
+
+msgid  "In progress"
+msgstr "In progress"
+
+msgid  "Request validate"
+msgstr "Send"
+
+msgid  "Reject Requested"
+msgstr "Reject"
+
+msgid  "Validation requested"
+msgstr "Validation requested"
+
+msgid  "Reject Activity request?"
+msgstr "Reject Activity request?"
+
+msgid  "Activity validate?"
+msgstr "Activity validate?"
+
+msgid  "Confirm"
+msgstr "Confirm"
+
+msgid  "Validate your time sheet?"
+msgstr "Validate your time sheet?"
+
+msgid  "Activity"
+msgstr "Activity"
+
+msgid  "Once validated, The timesheet couldn’t be modified. Confirm ?"
+msgstr "Once validated, The timesheet couldn’t be modified. Confirm ?"
+
+msgid  "Send request for validation"
+msgstr "Send request for validation"
+
+msgid  "Rejected"
+msgstr "Rejected"
+
+msgid  "Data not found."
+msgstr "Data not found."
+
+msgid  "Please select the employees."
+msgstr "Please select the resources."
+
+msgid  "You can not modify request activity of selected employees for this week when you send request. Are you sure?"
+msgstr "You can not modify request activity of selected resources for this week when you send request. Are you sure?"
+
+msgid  "Validate Activity request?"
+msgstr "Validate Activity request?"
+
+msgid  "Project Livrable Categories"
+msgstr "Project Livrable Categories"
+
+msgid  "Livrable Cat"
+msgstr "Livrable Cat"
+
+msgid  "Edit"
+msgstr "Edit"
+
+msgid  "Delete"
+msgstr "Delete"
+
+msgid  "Are you sure you want to delete # %s?"
+msgstr "Are you sure you want to delete # %s?"
+
+msgid  "Add new project livrable"
+msgstr "Add new project livrable"
+
+msgid  "Save"
+msgstr "Save"
+
+msgid  "Reset"
+msgstr "Reset"
+
+msgid  "Edit Livrable Category"
+msgstr "Edit Livrable Category"
+
+msgid  "Livrable Category (*)"
+msgstr "Livrable Category (*)"
+
+msgid  "Add City"
+msgstr "Add City"
+
+msgid  "Actions"
+msgstr "Actions"
+
+msgid  "List Cities"
+msgstr "List Cities"
+
+msgid  "List Employees"
+msgstr "List Resources"
+
+msgid  "New Employee"
+msgstr "New Resource"
+
+msgid  "Edit City"
+msgstr "Edit City"
+
+msgid  "Countries Listing"
+msgstr "Countries Listing"
+
+msgid  "Cities"
+msgstr "Cities"
+
+msgid  "Company"
+msgstr "Company"
+
+msgid  "Add a new City"
+msgstr "Add a new City"
+
+msgid  "Name (*)"
+msgstr "Name (*)"
+
+msgid  "-- Select -- "
+msgstr "-- Select -- "
+
+msgid  "Add a new city"
+msgstr "Add a new city"
+
+msgid  "Edit this city"
+msgstr "Edit this city"
+
+msgid  "City"
+msgstr "City"
+
+msgid  "Id"
+msgstr "Id"
+
+msgid  "Delete City"
+msgstr "Delete City"
+
+msgid  "New City"
+msgstr "New City"
+
+msgid  "Related Employees"
+msgstr "Related Resources"
+
+msgid  "Company Id"
+msgstr "Company Id"
+
+msgid  "First Name"
+msgstr "First Name"
+
+msgid  "Last Name"
+msgstr "Last Name"
+
+msgid  "Email"
+msgstr "Email"
+
+msgid  "Password"
+msgstr "Password"
+
+msgid  "Address"
+msgstr "Address"
+
+msgid  "Post Code"
+msgstr "Post Code"
+
+msgid  "Work Phone"
+msgstr "Work Phone"
+
+msgid  "Home Phone"
+msgstr "Home Phone"
+
+msgid  "Mobile Phone"
+msgstr "Mobile Phone"
+
+msgid  "Fax"
+msgstr "Fax"
+
+msgid  "City Id"
+msgstr "City Id"
+
+msgid  "Country Id"
+msgstr "Country Id"
+
+msgid  "View"
+msgstr "View"
+
+msgid  "Add Company"
+msgstr "Add Company"
+
+msgid  "List Companies"
+msgstr "List Companies"
+
+msgid  "Edit Company"
+msgstr "Edit Company"
+
+msgid  "Cities Listing"
+msgstr "Cities Listing"
+
+msgid  "Companies"
+msgstr "Companies"
+
+msgid  "Company name"
+msgstr "Company name"
+
+msgid  "Enabled Modules"
+msgstr "Enabled Modules"
+
+msgid  "All data belongs to this company will be also deleted totally. Are you sure you want to delete "%s"?"
+msgstr "All data belongs to this company will be also deleted totally. Are you sure you want to delete "%s"?"
+
+msgid  "Add a new company"
+msgstr "Add a new company"
+
+msgid  "Company Name"
+msgstr "Company Name"
+
+msgid  "Company Name (*)"
+msgstr "Company Name (*)"
+
+msgid  "Company Parent"
+msgstr "Company Parent"
+
+msgid  "---Select parent---"
+msgstr "---Select parent---"
+
+msgid  "Enable Modules"
+msgstr "Enable Modules"
+
+msgid  "Edit the company"
+msgstr "Edit the company"
+
+msgid  "Representative"
+msgstr "Representative"
+
+msgid  "Delete Company"
+msgstr "Delete Company"
+
+msgid  "New Company"
+msgstr "New Company"
+
+msgid  "Add Country"
+msgstr "Add Country"
+
+msgid  "List Countries"
+msgstr "List Countries"
+
+msgid  "Edit Country"
+msgstr "Edit Country"
+
+msgid  "Countries"
+msgstr "Countries"
+
+msgid  "Add a new country"
+msgstr "Add a new country"
+
+msgid  "Country"
+msgstr "Country"
+
+msgid  "Name(*)"
+msgstr "Name(*)"
+
+msgid  "Edit this country"
+msgstr "Edit this country"
+
+msgid  "Delete Country"
+msgstr "Delete Country"
+
+msgid  "New Country"
+msgstr "New Country"
+
+msgid  "Add Currency"
+msgstr "Add Currency"
+
+msgid  "List Currencies"
+msgstr "List Currencies"
+
+msgid  "List Projects"
+msgstr "List Projects"
+
+msgid  "New Project"
+msgstr "New Project"
+
+msgid  "Edit Currency"
+msgstr "Edit Currency"
+
+msgid  "Currencies Listing"
+msgstr "Currencies Listing"
+
+msgid  "Currencies"
+msgstr "Currencies"
+
+msgid  "Sign Currency"
+msgstr "Sign Currency"
+
+msgid  "Add a new type of currency"
+msgstr "Add a new type of currency"
+
+msgid  " Sign Currency"
+msgstr " Sign Currency"
+
+msgid  "Sign Currency (*)"
+msgstr "Sign Currency (*)"
+
+msgid  " Description"
+msgstr " Description"
+
+msgid  "Edit this type of currency"
+msgstr "Edit this type of currency"
+
+msgid  "Currency"
+msgstr "Currency"
+
+msgid  "Delete Currency"
+msgstr "Delete Currency"
+
+msgid  "New Currency"
+msgstr "New Currency"
+
+msgid  "Related Projects"
+msgstr "Related Projects"
+
+msgid  "Project Manager Id"
+msgstr "Project Manager Id"
+
+msgid  "Project Phase Id"
+msgstr "Project Phase Id"
+
+msgid  "Project Priority Id"
+msgstr "Project Priority Id"
+
+msgid  "Project Status Id"
+msgstr "Project Status Id"
+
+msgid  "Start Date"
+msgstr "Start Date"
+
+msgid  "Planed End Date"
+msgstr "Planed End Date"
+
+msgid  "End Date"
+msgstr "End Date"
+
+msgid  "Budget"
+msgstr "Budget"
+
+msgid  "Currency Id"
+msgstr "Currency Id"
+
+msgid  "Project Objectives"
+msgstr "Project Objectives"
+
+msgid  "Issues"
+msgstr "Issues"
+
+msgid  "Constraint"
+msgstr "Constraint"
+
+msgid  "Remark"
+msgstr "Remark"
+
+msgid  "Absences"
+msgstr "Absences"
+
+msgid  "Workdays"
+msgstr "Workdays"
+
+msgid  "Validation Constraints"
+msgstr "Validation Constraints"
+
+msgid  "Holidays"
+msgstr "Holidays"
+
+msgid  "Activity columns"
+msgstr "Fields"
+
+msgid  "Activity Families"
+msgstr "Families"
+
+msgid  "Activity Management"
+msgstr "Management"
+
+msgid  "Phases"
+msgstr "Phases"
+
+msgid  "Status"
+msgstr "Status"
+
+msgid  "Priorities"
+msgstr "Priorities"
+
+msgid  "Types"
+msgstr "Types"
+
+msgid  "Sub Types"
+msgstr "Sub Types"
+
+msgid  "Implementation Complexity"
+msgstr "Implementation Complexity"
+
+msgid  "Created Value"
+msgstr "Created Value"
+
+msgid  "Project Functions"
+msgstr "Project Functions"
+
+msgid  "Project Phase Status"
+msgstr "Project Phase Status"
+
+msgid  "Risk Severities"
+msgstr "Risk Severities"
+
+msgid  "Risk Occurrences"
+msgstr "Risk Occurrences"
+
+msgid  "Issue Severities"
+msgstr "Issue Severities"
+
+msgid  "Issue Status"
+msgstr "Issue Status"
+
+msgid  "Project Deliverable Categories"
+msgstr "Project Deliverable Categories"
+
+msgid  "Evolution Types"
+msgstr "Evolution Types"
+
+msgid  "Evolution Impacts"
+msgstr "Evolution Impacts"
+
+msgid  "KPI & Program Management"
+msgstr "KPI & Program Management"
+
+msgid  "Programs"
+msgstr "Programs"
+
+msgid  "Sub Programs"
+msgstr "Sub Programs"
+
+msgid  "Categories"
+msgstr "Categories"
+
+msgid  "Sub Categories"
+msgstr "Sub Categories"
+
+msgid  "KPI Status"
+msgstr "KPI Status"
+
+msgid  "KPI Cost Controls"
+msgstr "KPI Cost Controls"
+
+msgid  "KPI Organizations"
+msgstr "KPI Organizations"
+
+msgid  "KPI Plans"
+msgstr "KPI Plans"
+
+msgid  "KPI Perimeters"
+msgstr "KPI Perimeters"
+
+msgid  "KPI Risk Controls"
+msgstr "KPI Risk Controls"
+
+msgid  "KPI Problem Controls"
+msgstr "KPI Problem Controls"
+
+msgid  "Home"
+msgstr "Home"
+
+msgid  "Administrator"
+msgstr "Administrator"
+
+msgid  "Do you like duplicate project ?"
+msgstr "Do you like duplicate project ?"
+
+msgid  "Project List"
+msgstr "Project List"
+
+msgid  "Loading..."
+msgstr "Loading..."
+
+msgid  "Please select a project to copy"
+msgstr "Please select a project to copy"
+
+msgid  "Details"
+msgstr "Details"
+
+msgid  "Global View"
+msgstr "Global View"
+
+msgid  "Created value"
+msgstr "Created value"
+
+msgid  "Teams"
+msgstr "Teams"
+
+msgid  "Phase"
+msgstr "Phase"
+
+msgid  "Staffing"
+msgstr "Staffing"
+
+msgid  "Milestones"
+msgstr "Milestones"
+
+msgid  "Tasks"
+msgstr "Tasks"
+
+msgid  "Risks"
+msgstr "Risks"
+
+msgid  "Decisions"
+msgstr "Decisions"
+
+msgid  "Deliverables"
+msgstr "Deliverables"
+
+msgid  "Evolution"
+msgstr "Evolution"
+
+msgid  "KPI"
+msgstr "KPI"
+
+msgid  "Primary Objectives"
+msgstr "Primary Objectives"
+
+msgid  "General Comment"
+msgstr "General Comment"
+
+msgid  "Personalized Views"
+msgstr "Personalized Views"
+
+msgid  "Administration"
+msgstr "Administration"
+
+msgid  "Add Employee"
+msgstr "Add Resource"
+
+msgid  "My Profile"
+msgstr "My Profile"
+
+msgid  "Editable Status"
+msgstr "Status"
+
+msgid  "Success"
+msgstr "Success"
+
+msgid  "Pending"
+msgstr "Pending"
+
+msgid  "Error"
+msgstr "Error"
+
+msgid  "Loading"
+msgstr "Loading"
+
+msgid  "For adding new data, please scroll to last row of table"
+msgstr "For adding new data, please scroll to last row of table"
+
+msgid  "Sign out"
+msgstr "Sign out"
+
+msgid  "FAQ"
+msgstr "FAQ"
+
+msgid  "Trang <strong>%page%</strong>/%current% Tổng:<strong> %pages%</strong>"
+msgstr "Trang <strong>%page%</strong>/%current% Tổng:<strong> %pages%</strong>"
+
+msgid  "Project details"
+msgstr "Project details"
+
+msgid  "Project teams"
+msgstr "Project teams"
+
+msgid  "Phase planning"
+msgstr "Phase planning"
+
+msgid  "Deliverable"
+msgstr "Deliverable"
+
+msgid  "AMR"
+msgstr "KPI"
+
+msgid  "Absence"
+msgstr "Absence"
+
+msgid  "Requests"
+msgstr "Requests"
+
+msgid  "Your Absence Review"
+msgstr "Your Absence Review"
+
+msgid  "Validation"
+msgstr "Validation"
+
+msgid  "Absence Reviews"
+msgstr "Synthesis"
+
+msgid  "Management"
+msgstr "Management"
+
+msgid  "Review"
+msgstr "Review"
+
+msgid  "Forecasts"
+msgstr "Forecasts"
+
+msgid  "Absences of %s %s"
+msgstr "Absences of %s %s"
+
+msgid  "Export Excel"
+msgstr "Export Excel"
+
+msgid  "Are you sure you want set "%s" on default ?"
+msgstr "Are you sure you want set "%s" on default ?"
+
+msgid  "Last name"
+msgstr "Last name"
+
+msgid  "Confirm Password"
+msgstr "Confirm Password"
+
+msgid  "---Select Company---"
+msgstr "---Select Company---"
+
+msgid  "Role"
+msgstr "Role"
+
+msgid  "---Select role---"
+msgstr "---Select role---"
+
+msgid  "Average Daily Rate"
+msgstr "Average Daily Rate"
+
+msgid  "Actif"
+msgstr "Actif"
+
+msgid  "Not Actif"
+msgstr "Not Actif"
+
+msgid  "external"
+msgstr "external"
+
+msgid  "Not External"
+msgstr "Not External"
+
+msgid  "External"
+msgstr "External"
+
+msgid  "ID2"
+msgstr "ID2"
+
+msgid  "Function"
+msgstr "Function"
+
+msgid  "This field is not blank."
+msgstr "This field is not blank."
+
+msgid  "The password do not match."
+msgstr "The password do not match."
+
+msgid  "Invalid Date (Valid format is dd-mm-yyyy)."
+msgstr "Invalid Date (Valid format is dd-mm-yyyy)."
+
+msgid  "The end date must be greater than start date."
+msgstr "The end date must be greater than start date."
+
+msgid  "The Work phone must be a number "
+msgstr "The Work phone must be a number "
+
+msgid  "The Mobile phone must be a number "
+msgstr "The Mobile phone must be a number "
+
+msgid  "The Home phone must be a number "
+msgstr "The Home phone must be a number "
+
+msgid  "The Fax number must be a number "
+msgstr "The Fax number must be a number "
+
+msgid  "The Postcode must be a number "
+msgstr "The Postcode must be a number "
+
+msgid  "Checking..."
+msgstr "Checking..."
+
+msgid  "Employee ID has already been exist"
+msgstr "Resource ID has already been exist"
+
+msgid  "Employee Detail"
+msgstr "Resource Detail"
+
+msgid  "Projects Management"
+msgstr "Projects Management"
+
+msgid  "Admin SAS"
+msgstr "Admin SAS"
+
+msgid  "Choose your company role"
+msgstr "Choose your company role"
+
+msgid  "Continue"
+msgstr "Continue"
+
+msgid  "New Employees"
+msgstr "New Resources"
+
+msgid  "Update Employees"
+msgstr "Update Resources"
+
+msgid  "Error Employees"
+msgstr "Error Resources"
+
+msgid  "First name"
+msgstr "First name"
+
+msgid  "Profit center"
+msgstr "Profit center"
+
+msgid  "Employee List"
+msgstr "Resource List"
+
+msgid  "Organization chart"
+msgstr "Organization chart"
+
+msgid  "Fullname"
+msgstr "Fullname"
+
+msgid  "-- Any -- "
+msgstr "-- Any -- "
+
+msgid  "Forgot your password?"
+msgstr "Forgot your password?"
+
+msgid  "Login"
+msgstr "Login"
+
+msgid  "OK! Now, please select your company role"
+msgstr "OK! Now, please select your company role"
+
+msgid  "My profile"
+msgstr "My profile"
+
+msgid  "Company: "
+msgstr "Company: "
+
+msgid  "Role:"
+msgstr "Role:"
+
+msgid  "Send"
+msgstr "Send"
+
+msgid  "Edit Employee"
+msgstr "Edit Resource"
+
+msgid  "Delete Employee"
+msgstr "Delete Resource"
+
+msgid  "This page is not available!"
+msgstr "This page is not available!"
+
+msgid  "N/A"
+msgstr "N/A"
+
+msgid  "Jan"
+msgstr "Jan"
+
+msgid  "Feb"
+msgstr "Feb"
+
+msgid  "Mar"
+msgstr "Mar"
+
+msgid  "Apr"
+msgstr "Apr"
+
+msgid  "Jun"
+msgstr "Jun"
+
+msgid  "Jul"
+msgstr "Jul"
+
+msgid  "Aug"
+msgstr "Aug"
+
+msgid  "Sep"
+msgstr "Sep"
+
+msgid  "Oct"
+msgstr "Oct"
+
+msgid  "Nov"
+msgstr "Nov"
+
+msgid  "Dec"
+msgstr "Dec"
+
+msgid  "Phase name"
+msgstr "Phase name"
+
+msgid  "Project name"
+msgstr "Project name"
+
+msgid  "Start Real Date"
+msgstr "Start Real Date"
+
+msgid  "End Real Date"
+msgstr "End Real Date"
+
+msgid  "Project: %s from %s to %s"
+msgstr "Project: %s from %s to %s"
+
+msgid  "Estimation"
+msgstr "Estimation"
+
+msgid  "Postponed"
+msgstr "Postponed"
+
+msgid  "Project"
+msgstr "Project"
+
+msgid  "There was a problem with the field"
+msgstr "There was a problem with the field"
+
+msgid  "Holidays management of %s"
+msgstr "Holidays management of %s"
+
+msgid  "Set to workday"
+msgstr "Set to workday"
+
+msgid  "Set to holiday"
+msgstr "Set to holiday"
+
+msgid  "Holiday, Repeat every year."
+msgstr "Holiday, Repeat every year."
+
+msgid  "Project manager"
+msgstr "Project manager"
+
+msgid  "Projects Management :: Error"
+msgstr "Projects Management :: Error"
+
+msgid  "Copyright &copy; 2011. All rights reserved."
+msgstr "Copyright &copy; 2011. All rights reserved."
+
+msgid  "Projects Management :: Login"
+msgstr "Projects Management :: Login"
+
+msgid  "Personalized"
+msgstr "Personalized Views"
+
+msgid  "This email was sent using the"
+msgstr "This email was sent using the"
+
+msgid  "CakePHP Framework"
+msgstr "CakePHP Framework"
+
+msgid  "Add Project Function"
+msgstr "Add Project Function"
+
+msgid  "List Project Functions"
+msgstr "List Project Functions"
+
+msgid  "List Project Teams"
+msgstr "List Project Teams"
+
+msgid  "New Project Team"
+msgstr "New Project Team"
+
+msgid  "Edit Project Function"
+msgstr "Edit Project Function"
+
+msgid  "Profit Center "
+msgstr "Profit Center "
+
+msgid  "Manager"
+msgstr "Manager"
+
+msgid  "Add a new profit center"
+msgstr "Add a new profit center"
+
+msgid  " Name"
+msgstr " Name"
+
+msgid  "Parent ID"
+msgstr "Parent ID"
+
+msgid  "-- Root -- "
+msgstr "-- Root -- "
+
+msgid  "Analytical Reference"
+msgstr "Analytical Reference"
+
+msgid  "Profit Center Manager"
+msgstr "Profit Center Manager"
+
+msgid  "-- Select --"
+msgstr "-- Select --"
+
+msgid  "Edit this profit center"
+msgstr "Edit this profit center"
+
+msgid  "Profit center has already been exist"
+msgstr "Profit center has already been exist"
+
+msgid  "Export organization chart"
+msgstr "Export organization chart"
+
+msgid  "Back to "
+msgstr "Back to "
+
+msgid  "Choose company:"
+msgstr "Choose company:"
+
+msgid  " company"
+msgstr " company"
+
+msgid  "Project Function"
+msgstr "Project Function"
+
+msgid  "Delete Project Function"
+msgstr "Delete Project Function"
+
+msgid  "New Project Function"
+msgstr "New Project Function"
+
+msgid  "Related Project Teams"
+msgstr "Related Project Teams"
+
+msgid  "Project Id"
+msgstr "Project Id"
+
+msgid  "Employee Id"
+msgstr "Resource Id"
+
+msgid  "Project Function Id"
+msgstr "Project Function Id"
+
+msgid  "Add Project Amr Category"
+msgstr "Add Project Amr Category"
+
+msgid  "List Project Amr Categories"
+msgstr "List Project Amr Categories"
+
+msgid  "List Project Amrs"
+msgstr "List Project Amrs"
+
+msgid  "New Project Amr"
+msgstr "New Project Amr"
+
+msgid  "Edit Project Amr Category"
+msgstr "Edit Project Amr Category"
+
+msgid  "Project AMR Categories"
+msgstr "Project AMR Categories"
+
+msgid  "AMR Category"
+msgstr "AMR Category"
+
+msgid  "Add a new project AMR category"
+msgstr "Add a new project AMR category"
+
+msgid  "-- Select--"
+msgstr "-- Select--"
+
+msgid  "Edit the project AMR category"
+msgstr "Edit the project AMR category"
+
+msgid  "Project Amr Category"
+msgstr "Project Amr Category"
+
+msgid  "Amr Category"
+msgstr "Amr Category"
+
+msgid  "Delete Project Amr Category"
+msgstr "Delete Project Amr Category"
+
+msgid  "New Project Amr Category"
+msgstr "New Project Amr Category"
+
+msgid  "Related Project Amrs"
+msgstr "Related Project Amrs"
+
+msgid  "Project Amr Program Id"
+msgstr "Project Amr Program Id"
+
+msgid  "Project Amr Sub Program Id"
+msgstr "Project Amr Sub Program Id"
+
+msgid  "Project Amr Category Id"
+msgstr "Project Amr Category Id"
+
+msgid  "Project Amr Sub Category Id"
+msgstr "Project Amr Sub Category Id"
+
+msgid  "Project Amr Status Id"
+msgstr "Project Amr Status Id"
+
+msgid  "Project Amr Mep Date"
+msgstr "Project Amr Mep Date"
+
+msgid  "Project Amr Progression"
+msgstr "Project Amr Progression"
+
+msgid  "Project Phases Id"
+msgstr "Project Phases Id"
+
+msgid  "Project Amr Cost Control Id"
+msgstr "Project Amr Cost Control Id"
+
+msgid  "Project Amr Organization Id"
+msgstr "Project Amr Organization Id"
+
+msgid  "Project Amr Plan Id"
+msgstr "Project Amr Plan Id"
+
+msgid  "Project Amr Perimeter Id"
+msgstr "Project Amr Perimeter Id"
+
+msgid  "Project Amr Risk Control Id"
+msgstr "Project Amr Risk Control Id"
+
+msgid  "Project Amr Problem Control Id"
+msgstr "Project Amr Problem Control Id"
+
+msgid  "Project Amr Risk Information"
+msgstr "Project Amr Risk Information"
+
+msgid  "Project Amr Problem Information"
+msgstr "Project Amr Problem Information"
+
+msgid  "Project Amr Solution"
+msgstr "Project Amr Solution"
+
+msgid  "Project Amr Solution Description"
+msgstr "Project Amr Solution Description"
+
+msgid  "Add Project Amr Cost Control"
+msgstr "Add Project Amr Cost Control"
+
+msgid  "List Project Amr Cost Controls"
+msgstr "List Project Amr Cost Controls"
+
+msgid  "Edit Project Amr Cost Control"
+msgstr "Edit Project Amr Cost Control"
+
+msgid  "Project AMR Cost Controls"
+msgstr "Project AMR Cost Controls"
+
+msgid  "AMR Cost Control"
+msgstr "AMR Cost Control"
+
+msgid  "Add a new Project Amr Cost Control"
+msgstr "Add a new Project Amr Cost Control"
+
+msgid  "Add a new project AMR cost control"
+msgstr "Add a new project AMR cost control"
+
+msgid  "Edit the project AMR cost control"
+msgstr "Edit the project AMR cost control"
+
+msgid  "Project Amr Cost Control"
+msgstr "Project Amr Cost Control"
+
+msgid  "Amr Cost Control"
+msgstr "Amr Cost Control"
+
+msgid  "Delete Project Amr Cost Control"
+msgstr "Delete Project Amr Cost Control"
+
+msgid  "New Project Amr Cost Control"
+msgstr "New Project Amr Cost Control"
+
+msgid  "Add Project Amr Organization"
+msgstr "Add Project Amr Organization"
+
+msgid  "List Project Amr Organizations"
+msgstr "List Project Amr Organizations"
+
+msgid  "Edit Project Amr Organization"
+msgstr "Edit Project Amr Organization"
+
+msgid  "Project AMR Organizations"
+msgstr "Project AMR Organizations"
+
+msgid  "ARM Organization"
+msgstr "ARM Organization"
+
+msgid  "Add a new Project Amr Organization"
+msgstr "Add a new Project Amr Organization"
+
+msgid  "Edit this Project Amr Organization"
+msgstr "Edit this Project Amr Organization"
+
+msgid  "Project Amr Organization"
+msgstr "Project Amr Organization"
+
+msgid  "Amr Organization"
+msgstr "Amr Organization"
+
+msgid  "Delete Project Amr Organization"
+msgstr "Delete Project Amr Organization"
+
+msgid  "New Project Amr Organization"
+msgstr "New Project Amr Organization"
+
+msgid  "Add Project Amr Perimeter"
+msgstr "Add Project Amr Perimeter"
+
+msgid  "List Project Amr Perimeters"
+msgstr "List Project Amr Perimeters"
+
+msgid  "Edit Project Amr Perimeter"
+msgstr "Edit Project Amr Perimeter"
+
+msgid  "Project AMR Perimeters"
+msgstr "Project AMR Perimeters"
+
+msgid  "AMR Perimeter"
+msgstr "AMR Perimeter"
+
+msgid  "Add a new Project Amr Perimeter"
+msgstr "Add a new Project Amr Perimeter"
+
+msgid  "Add a new project AMR perimeter"
+msgstr "Add a new project AMR perimeter"
+
+msgid  "Edit the project AMR perimeter"
+msgstr "Edit the project AMR perimeter"
+
+msgid  "Project Amr Perimeter"
+msgstr "Project Amr Perimeter"
+
+msgid  "Amr Perimeter"
+msgstr "Amr Perimeter"
+
+msgid  "Delete Project Amr Perimeter"
+msgstr "Delete Project Amr Perimeter"
+
+msgid  "New Project Amr Perimeter"
+msgstr "New Project Amr Perimeter"
+
+msgid  "Add Project Amr Plan"
+msgstr "Add Project Amr Plan"
+
+msgid  "List Project Amr Plans"
+msgstr "List Project Amr Plans"
+
+msgid  "Edit Project Amr Plan"
+msgstr "Edit Project Amr Plan"
+
+msgid  "Project AMR Plans"
+msgstr "Project AMR Plans"
+
+msgid  "AMR Plan"
+msgstr "AMR Plan"
+
+msgid  "Add a new Project Amr Plan"
+msgstr "Add a new Project Amr Plan"
+
+msgid  "Add a new project AMR plan"
+msgstr "Add a new project AMR plan"
+
+msgid  "Edit the project AMR plan"
+msgstr "Edit the project AMR plan"
+
+msgid  "Project Amr Plan"
+msgstr "Project Amr Plan"
+
+msgid  "Amr Plan"
+msgstr "Amr Plan"
+
+msgid  "Delete Project Amr Plan"
+msgstr "Delete Project Amr Plan"
+
+msgid  "New Project Amr Plan"
+msgstr "New Project Amr Plan"
+
+msgid  "Add Project Amr Problem Control"
+msgstr "Add Project Amr Problem Control"
+
+msgid  "List Project Amr Problem Controls"
+msgstr "List Project Amr Problem Controls"
+
+msgid  "Edit Project Amr Problem Control"
+msgstr "Edit Project Amr Problem Control"
+
+msgid  "Project AMR Problem Controls"
+msgstr "Project AMR Problem Controls"
+
+msgid  "AMR Problem Controls"
+msgstr "AMR Problem Controls"
+
+msgid  "Add a new project AMR problem control"
+msgstr "Add a new project AMR problem control"
+
+msgid  "Add new project AMR risk control"
+msgstr "Add new project AMR risk control"
+
+msgid  "Edit the project AMR problem control"
+msgstr "Edit the project AMR problem control"
+
+msgid  "Add new project AMR problem control"
+msgstr "Add new project AMR problem control"
+
+msgid  "Project Amr Problem Control"
+msgstr "Project Amr Problem Control"
+
+msgid  "Amr Problem Control"
+msgstr "Amr Problem Control"
+
+msgid  "Delete Project Amr Problem Control"
+msgstr "Delete Project Amr Problem Control"
+
+msgid  "New Project Amr Problem Control"
+msgstr "New Project Amr Problem Control"
+
+msgid  "Add Project Amr Program"
+msgstr "Add Project Amr Program"
+
+msgid  "List Project Amr Programs"
+msgstr "List Project Amr Programs"
+
+msgid  "Edit Project Amr Program"
+msgstr "Edit Project Amr Program"
+
+msgid  "Program/Portfolio"
+msgstr "Program/Portfolio"
+
+msgid  "Add a new Program/Portfolio"
+msgstr "Add a new Program/Portfolio"
+
+msgid  "Add a new project AMR program"
+msgstr "Add a new project AMR program"
+
+msgid  "Edit the project AMR program"
+msgstr "Edit the project AMR program"
+
+msgid  "Project Amr Program"
+msgstr "Project Amr Program"
+
+msgid  "Amr Program"
+msgstr "Amr Program"
+
+msgid  "Delete Project Amr Program"
+msgstr "Delete Project Amr Program"
+
+msgid  "New Project Amr Program"
+msgstr "New Project Amr Program"
+
+msgid  "Add Project Amr Risk Control"
+msgstr "Add Project Amr Risk Control"
+
+msgid  "List Project Amr Risk Controls"
+msgstr "List Project Amr Risk Controls"
+
+msgid  "Edit Project Amr Risk Control"
+msgstr "Edit Project Amr Risk Control"
+
+msgid  "Project AMR Risk Control"
+msgstr "Project AMR Risk Control"
+
+msgid  "AMR Risk Control"
+msgstr "Risk"
+
+msgid  "Add a new project AMR risk control"
+msgstr "Add a new project AMR risk control"
+
+msgid  "Edit the project AMR risk control"
+msgstr "Edit the project AMR risk control"
+
+msgid  "Project Amr Risk Control"
+msgstr "Project Amr Risk Control"
+
+msgid  "Delete Project Amr Risk Control"
+msgstr "Delete Project Amr Risk Control"
+
+msgid  "New Project Amr Risk Control"
+msgstr "New Project Amr Risk Control"
+
+msgid  "Add Project Amr Status"
+msgstr "Add Project Amr Status"
+
+msgid  "List Project Amr Statuses"
+msgstr "List Project Amr Statuses"
+
+msgid  "Edit Project Amr Status"
+msgstr "Edit Project Amr Status"
+
+msgid  "Project ARM Status"
+msgstr "Project ARM Status"
+
+msgid  "AMR Status"
+msgstr "AMR Status"
+
+msgid  "Add a new Project Amr Status"
+msgstr "Add a new Project Amr Status"
+
+msgid  "Add a new  project AMR status"
+msgstr "Add a new  project AMR status"
+
+msgid  "Edit the project AMR status"
+msgstr "Edit the project AMR status"
+
+msgid  "Project Amr Status"
+msgstr "Project Amr Status"
+
+msgid  "Amr Status"
+msgstr "Amr Status"
+
+msgid  "Delete Project Amr Status"
+msgstr "Delete Project Amr Status"
+
+msgid  "New Project Amr Status"
+msgstr "New Project Amr Status"
+
+msgid  "Add Project Amr Sub Category"
+msgstr "Add Project Amr Sub Category"
+
+msgid  "List Project Amr Sub Categories"
+msgstr "List Project Amr Sub Categories"
+
+msgid  "Edit Project Amr Sub Category"
+msgstr "Edit Project Amr Sub Category"
+
+msgid  "Project Statuses "
+msgstr "Project Statuses "
+
+msgid  "Project AMR Sub Categories"
+msgstr "Project AMR Sub Categories"
+
+msgid  "AMR Sub Category"
+msgstr "AMR Sub Category"
+
+msgid  "Project AMR Category"
+msgstr "Project AMR Category"
+
+msgid  "Add a new AMR sub category"
+msgstr "Add a new AMR sub category"
+
+msgid  "Sub category"
+msgstr "Sub category"
+
+msgid  " AMR Sub Category (*)"
+msgstr " AMR Sub Category (*)"
+
+msgid  "AMR category"
+msgstr "AMR category"
+
+msgid  "Edit the project AMR sub category"
+msgstr "Edit the project AMR sub category"
+
+msgid  "Add a new project AMR sub category"
+msgstr "Add a new project AMR sub category"
+
+msgid  "Project Amr Sub Category"
+msgstr "Project Amr Sub Category"
+
+msgid  "Amr Sub Category"
+msgstr "Amr Sub Category"
+
+msgid  "Delete Project Amr Sub Category"
+msgstr "Delete Project Amr Sub Category"
+
+msgid  "New Project Amr Sub Category"
+msgstr "New Project Amr Sub Category"
+
+msgid  "Add Project Amr Sub Program"
+msgstr "Add Project Amr Sub Program"
+
+msgid  "List Project Amr Sub Programs"
+msgstr "List Project Amr Sub Programs"
+
+msgid  "Edit Project Amr Sub Program"
+msgstr "Edit Project Amr Sub Program"
+
+msgid  "Sub Program/Portfolio"
+msgstr "Sub Program/Portfolio"
+
+msgid  "Add a new AMR sub program"
+msgstr "Add a new AMR sub program"
+
+msgid  "Sub Program/Portfolio (*)"
+msgstr "Sub Program/Portfolio (*)"
+
+msgid  "Edit the AMR sub program"
+msgstr "Edit the AMR sub program"
+
+msgid  "Project Amr Sub Program"
+msgstr "Project Amr Sub Program"
+
+msgid  "Amr Sub Program"
+msgstr "Amr Sub Program"
+
+msgid  "Delete Project Amr Sub Program"
+msgstr "Delete Project Amr Sub Program"
+
+msgid  "New Project Amr Sub Program"
+msgstr "New Project Amr Sub Program"
+
+msgid  "Project AMR of "
+msgstr "Project AMR of "
+
+msgid  "Vision Project"
+msgstr "Vision Project"
+
+msgid  "Key performance indicator KPI: %s"
+msgstr "Key performance indicator KPI: %s"
+
+msgid  "Weather"
+msgstr "Weather"
+
+msgid  "Program"
+msgstr "Program"
+
+msgid  "-- Select Program-- "
+msgstr "-- Select Program-- "
+
+msgid  "Category"
+msgstr "Category"
+
+msgid  "-- Select Category --"
+msgstr "-- Select Category --"
+
+msgid  "Progression"
+msgstr "Progression"
+
+msgid  "Cost Control"
+msgstr "Cost Control"
+
+msgid  "-- Select Cost Control --"
+msgstr "-- Select Cost Control --"
+
+msgid  "Planning"
+msgstr "Planning"
+
+msgid  "-- Select Plan --"
+msgstr "-- Select Plan --"
+
+msgid  "Risk Control"
+msgstr "Risk Control"
+
+msgid  "-- Select Risk Control --"
+msgstr "-- Select Risk Control --"
+
+msgid  "Organization"
+msgstr "Organization"
+
+msgid  "-- Select Organization --"
+msgstr "-- Select Organization --"
+
+msgid  "Perimeter"
+msgstr "Perimeter"
+
+msgid  "-- Select Perimeter --"
+msgstr "-- Select Perimeter --"
+
+msgid  "Issue Control"
+msgstr "Issue Control"
+
+msgid  "-- Select Issue Control --"
+msgstr "-- Select Issue Control --"
+
+msgid  "Sub Program"
+msgstr "Sub Program"
+
+msgid  "-- Select Sub Program --"
+msgstr "-- Select Sub Program --"
+
+msgid  "Sub Category"
+msgstr "Sub Category"
+
+msgid  "-- Select Sub Category --"
+msgstr "-- Select Sub Category --"
+
+msgid  "CAPEX"
+msgstr "CAPEX"
+
+msgid  "-- Currency --"
+msgstr "-- Currency --"
+
+msgid  "Engaged"
+msgstr "Engaged"
+
+msgid  "Forecasted"
+msgstr "Forecasted"
+
+msgid  "Variance"
+msgstr "Variance"
+
+msgid  "MEP Date"
+msgstr "MEP Date"
+
+msgid  "(dd-mm-yyyy)"
+msgstr "(dd-mm-yyyy)"
+
+msgid  "Current Phase"
+msgstr "Current Phase"
+
+msgid  "-- Select Phase --"
+msgstr "-- Select Phase --"
+
+msgid  "Risk Information"
+msgstr "Risk Information"
+
+msgid  "Issue Information"
+msgstr "Issue Information"
+
+msgid  "Solution Description"
+msgstr "Solution Description"
+
+msgid  "The budget must be a number and at least 0."
+msgstr "The budget must be a number and at least 0."
+
+msgid  "The progression must be a number and between 0 and 100."
+msgstr "The progression must be a number and between 0 and 100."
+
+msgid  "Invalid Date (Valid format is dd-mm-yyyy)"
+msgstr "Invalid Date (Valid format is dd-mm-yyyy)"
+
+msgid  "The Budget must be a number "
+msgstr "The Budget must be a number "
+
+msgid  "The Progression must be a number 0-100 "
+msgstr "The Progression must be a number 0-100 "
+
+msgid  "Add a new employee for this project"
+msgstr "Add a new resource for this project"
+
+msgid  "Add a new phase planning for this project"
+msgstr "Add a new phase planning for this project"
+
+msgid  "Add a new milestone for this project"
+msgstr "Add a new milestone for this project"
+
+msgid  "Add a new task for this project"
+msgstr "Add a new task for this project"
+
+msgid  "Add a new risk for this project"
+msgstr "Add a new risk for this project"
+
+msgid  "Add a new issue for this project"
+msgstr "Add a new issue for this project"
+
+msgid  "Add a new decision for this project"
+msgstr "Add a new decision for this project"
+
+msgid  "Select actors"
+msgstr "Select actors"
+
+msgid  "Add new a deliverable for this project"
+msgstr "Add new a deliverable for this project"
+
+msgid  "Select impact"
+msgstr "Select impact"
+
+msgid  "Add a new evolution for this project"
+msgstr "Add a new evolution for this project"
+
+msgid  "Add Project Status"
+msgstr "Add Project Status"
+
+msgid  "List Project Statuses"
+msgstr "List Project Statuses"
+
+msgid  "Edit Project Status"
+msgstr "Edit Project Status"
+
+msgid  "Add a new implementation complexity"
+msgstr "Add a new implementation complexity"
+
+msgid  "Edit this implementation complexity"
+msgstr "Edit this implementation complexity"
+
+msgid  "Project Status"
+msgstr "Project Status"
+
+msgid  "Delete Project Status"
+msgstr "Delete Project Status"
+
+msgid  "New Project Status"
+msgstr "New Project Status"
+
+msgid  "Original End Date"
+msgstr "Original End Date"
+
+msgid  "Finality"
+msgstr "Finality"
+
+msgid  "Created Value for"
+msgstr "Created Value for"
+
+msgid  "financial"
+msgstr "financial"
+
+msgid  "How should the project appear to our stakeholders?"
+msgstr "How should the project appear to our stakeholders?"
+
+msgid  "CUSTOMER"
+msgstr "CUSTOMER"
+
+msgid  "How should the project appear to our customers?"
+msgstr "How should the project appear to our customers?"
+
+msgid  "LEARNING &amp; GROWTH"
+msgstr "LEARNING &amp; GROWTH"
+
+msgid  "How can we sustain our ability to change and Improve?"
+msgstr "How can we sustain our ability to change and Improve?"
+
+msgid  "BUSINESS PROCESS"
+msgstr "BUSINESS PROCESS"
+
+msgid  "What business processes must the project excel at?"
+msgstr "What business processes must the project excel at?"
+
+msgid  "Add Project Phase"
+msgstr "Add Project Phase"
+
+msgid  "List Project Phases"
+msgstr "List Project Phases"
+
+msgid  "List Project Phase Plans"
+msgstr "List Project Phase Plans"
+
+msgid  "New Project Phase Plan"
+msgstr "New Project Phase Plan"
+
+msgid  "Edit Project Phase"
+msgstr "Edit Project Phase"
+
+msgid  "Project Phases Listing"
+msgstr "Project Phases Listing"
+
+msgid  "Add a new created value"
+msgstr "Add a new created value"
+
+msgid  "Description (*)"
+msgstr "Description (*)"
+
+msgid  "Value"
+msgstr "Value"
+
+msgid  "Value (*)"
+msgstr "Value (*)"
+
+msgid  "Edit this created value"
+msgstr "Edit this created value"
+
+msgid  "Could not sort because this item is fisrt of this company"
+msgstr "Could not sort because this item is fisrt of this company"
+
+msgid  "Could not sort because this item is last of this company"
+msgstr "Could not sort because this item is last of this company"
+
+msgid  "Project Phase"
+msgstr "Project Phase"
+
+msgid  "Delete Project Phase"
+msgstr "Delete Project Phase"
+
+msgid  "New Project Phase"
+msgstr "New Project Phase"
+
+msgid  "Related Project Phase Plans"
+msgstr "Related Project Phase Plans"
+
+msgid  "Project Planed Phase Id"
+msgstr "Project Planed Phase Id"
+
+msgid  "Project Phase Status Id"
+msgstr "Project Phase Status Id"
+
+msgid  "Phase Planed Start Date"
+msgstr "Phase Planed Start Date"
+
+msgid  "Phase Planed End Date"
+msgstr "Phase Planed End Date"
+
+msgid  "Phase Real Start Date"
+msgstr "Phase Real Start Date"
+
+msgid  "Phase Real End Date"
+msgstr "Phase Real End Date"
+
+msgid  "Decision"
+msgstr "Decision"
+
+msgid  "Decision Explanation"
+msgstr "Decision Explanation"
+
+msgid  "Decision Owner"
+msgstr "Decision Owner"
+
+msgid  "Decision Date"
+msgstr "Decision Date"
+
+msgid  "Project Decision of "
+msgstr "Project Decision of "
+
+msgid  "Add Project"
+msgstr "Add Project"
+
+msgid  "Project decisions of "
+msgstr "Project decisions of "
+
+msgid  "Decision Explanations"
+msgstr "Decision Explanations"
+
+msgid  "Are you sure you want to delete "%s" out of project decision?"
+msgstr "Are you sure you want to delete "%s" out of project decision?"
+
+msgid  "Add a new project decision"
+msgstr "Add a new project decision"
+
+msgid  "Decision "
+msgstr "Decision "
+
+msgid  "Decision(*)"
+msgstr "Decision(*)"
+
+msgid  "(dd-mm-yyyy) ("
+msgstr "(dd-mm-yyyy) ("
+
+msgid  "Explanation"
+msgstr "Explanation"
+
+msgid  "Invalid Date: Valid format is dd-mm-yyyy"
+msgstr "Invalid Date: Valid format is dd-mm-yyyy"
+
+msgid  "This decision of project is exist."
+msgstr "This decision of project is exist."
+
+msgid  "Phase date must between "
+msgstr "Phase date must between "
+
+msgid  "Edit the project decision "
+msgstr "Edit the project decision "
+
+msgid  "Add a new project decision "
+msgstr "Add a new project decision "
+
+msgid  "Record of decisions: %s"
+msgstr "Record of decisions: %s"
+
+msgid  "Add Project Evolution Impact"
+msgstr "Add Project Evolution Impact"
+
+msgid  "List Project Evolution Impacts"
+msgstr "List Project Evolution Impacts"
+
+msgid  "List Project Evolution Impact Refers"
+msgstr "List Project Evolution Impact Refers"
+
+msgid  "New Project Evolution Impact Refer"
+msgstr "New Project Evolution Impact Refer"
+
+msgid  "Edit Project Evolution Impact"
+msgstr "Edit Project Evolution Impact"
+
+msgid  "Project Evolution Impacts"
+msgstr "Project Evolution Impacts"
+
+msgid  "Evolution Impact"
+msgstr "Evolution Impact"
+
+msgid  "Add a new evolution impact"
+msgstr "Add a new evolution impact"
+
+msgid  "Edit the evolution impact"
+msgstr "Edit the evolution impact"
+
+msgid  "Project Evolution Impact"
+msgstr "Project Evolution Impact"
+
+msgid  "Delete Project Evolution Impact"
+msgstr "Delete Project Evolution Impact"
+
+msgid  "New Project Evolution Impact"
+msgstr "New Project Evolution Impact"
+
+msgid  "Related Project Evolution Impact Refers"
+msgstr "Related Project Evolution Impact Refers"
+
+msgid  "Project Evolution Id"
+msgstr "Project Evolution Id"
+
+msgid  "Project Evolution Impact Id"
+msgstr "Project Evolution Impact Id"
+
+msgid  "Add Project Evolution Type"
+msgstr "Add Project Evolution Type"
+
+msgid  "List Project Evolution Types"
+msgstr "List Project Evolution Types"
+
+msgid  "List Project Evolutions"
+msgstr "List Project Evolutions"
+
+msgid  "New Project Evolution"
+msgstr "New Project Evolution"
+
+msgid  "Edit Project Evolution Type"
+msgstr "Edit Project Evolution Type"
+
+msgid  "Project Evolution Types"
+msgstr "Project Evolution Types"
+
+msgid  "Project Evolution Type"
+msgstr "Project Evolution Type"
+
+msgid  "Add a new project evolution type"
+msgstr "Add a new project evolution type"
+
+msgid  "Edit the project evolution type"
+msgstr "Edit the project evolution type"
+
+msgid  "Project Type Evolution"
+msgstr "Project Type Evolution"
+
+msgid  "Delete Project Evolution Type"
+msgstr "Delete Project Evolution Type"
+
+msgid  "New Project Evolution Type"
+msgstr "New Project Evolution Type"
+
+msgid  "Related Project Evolutions"
+msgstr "Related Project Evolutions"
+
+msgid  "Project Evolution"
+msgstr "Project Evolution"
+
+msgid  "Project Evolution Type Id"
+msgstr "Project Evolution Type Id"
+
+msgid  "Evolution Applicant"
+msgstr "Evolution Applicant"
+
+msgid  "Evolution Date Validated"
+msgstr "Evolution Date Validated"
+
+msgid  "Evolution Validator"
+msgstr "Evolution Validator"
+
+msgid  "Supplementary Budget"
+msgstr "Supplementary Budget"
+
+msgid  "Add Project Evolution"
+msgstr "Add Project Evolution"
+
+msgid  "Edit Project Evolution"
+msgstr "Edit Project Evolution"
+
+msgid  "Type Evolution"
+msgstr "Type Evolution"
+
+msgid  "Required By"
+msgstr "Required By"
+
+msgid  "Date validated"
+msgstr "Date validated"
+
+msgid  "Validated By"
+msgstr "Validated By"
+
+msgid  "Impact"
+msgstr "Impact"
+
+msgid  "Project Evolution of "
+msgstr "Project Evolution of "
+
+msgid  "Project evolutions of "
+msgstr "Project evolutions of "
+
+msgid  "Required by"
+msgstr "Required by"
+
+msgid  "Validate Date"
+msgstr "Validate Date"
+
+msgid  "Validated by"
+msgstr "Validated by"
+
+msgid  "Add a new project evolution"
+msgstr "Add a new project evolution"
+
+msgid  "Evolution (*)"
+msgstr "Evolution (*)"
+
+msgid  "-- Select -- (*)"
+msgstr "-- Select -- (*)"
+
+msgid  "Supplementary Budget (*)"
+msgstr "Supplementary Budget (*)"
+
+msgid  "(dd-mm-yyyy)("
+msgstr "(dd-mm-yyyy)("
+
+msgid  "The Budget must be a number and greater than 0"
+msgstr "The Budget must be a number and greater than 0"
+
+msgid  "Edit this evolution of this project "
+msgstr "Edit this evolution of this project "
+
+msgid  "Date must between "
+msgstr "Date must between "
+
+msgid  "This Evolution of project is exist."
+msgstr "This Evolution of project is exist."
+
+msgid  "Evolution: %s"
+msgstr "Evolution: %s"
+
+msgid  "Date Validated"
+msgstr "Date Validated"
+
+msgid  "Phase start date must between %1$s and %2$s"
+msgstr "Phase start date must between %1$s and %2$s"
+
+msgid  "This phase of project is exist."
+msgstr "This phase of project is exist."
+
+msgid  "Delete Project Evolution"
+msgstr "Delete Project Evolution"
+
+msgid  "Project Functions "
+msgstr "Project Functions "
+
+msgid  "Add a new project function"
+msgstr "Add a new project function"
+
+msgid  "Edit this project function"
+msgstr "Edit this project function"
+
+msgid  "Not available"
+msgstr "Not available"
+
+msgid  "Download"
+msgstr "Download"
+
+msgid  "Replace"
+msgstr "Replace"
+
+msgid  "File attachment"
+msgstr "File attachment"
+
+msgid  "Add Project Issue Severity"
+msgstr "Add Project Issue Severity"
+
+msgid  "List Project Issue Severities"
+msgstr "List Project Issue Severities"
+
+msgid  "List Project Issues"
+msgstr "List Project Issues"
+
+msgid  "New Project Issue"
+msgstr "New Project Issue"
+
+msgid  "Edit Project Issue Severity"
+msgstr "Edit Project Issue Severity"
+
+msgid  "Project Issue Severities "
+msgstr "Project Issue Severities "
+
+msgid  "Project Issue Severities"
+msgstr "Project Issue Severities"
+
+msgid  "Issue Severity"
+msgstr "Issue Severity"
+
+msgid  "Prev"
+msgstr "Prev"
+
+msgid  "Next"
+msgstr "Next"
+
+msgid  "Add a new project issue severity"
+msgstr "Add a new project issue severity"
+
+msgid  "Issue Severity (*)"
+msgstr "Issue Severity (*)"
+
+msgid  "Edit this project issue severity"
+msgstr "Edit this project issue severity"
+
+msgid  "This isue severity is exist."
+msgstr "This isue severity is exist."
+
+msgid  "Project Issue Severity"
+msgstr "Project Issue Severity"
+
+msgid  "Delete Project Issue Severity"
+msgstr "Delete Project Issue Severity"
+
+msgid  "New Project Issue Severity"
+msgstr "New Project Issue Severity"
+
+msgid  "Related Project Issues"
+msgstr "Related Project Issues"
+
+msgid  "Project Issue Problem"
+msgstr "Project Issue Problem"
+
+msgid  "Project Issue Severity Id"
+msgstr "Project Issue Severity Id"
+
+msgid  "Project Issue Status Id"
+msgstr "Project Issue Status Id"
+
+msgid  "Issue Assign To"
+msgstr "Issue Assign To"
+
+msgid  "Issue Action Related"
+msgstr "Issue Action Related"
+
+msgid  "Date Issue Close"
+msgstr "Date Issue Close"
+
+msgid  "Add Project Issue Status"
+msgstr "Add Project Issue Status"
+
+msgid  "List Project Issue Statuses"
+msgstr "List Project Issue Statuses"
+
+msgid  "Edit Project Issue Status"
+msgstr "Edit Project Issue Status"
+
+msgid  "Project Issue Statuses "
+msgstr "Project Issue Statuses "
+
+msgid  "Project Issue Statuses"
+msgstr "Project Issue Statuses"
+
+msgid  "Add a new project issue status"
+msgstr "Add a new project issue status"
+
+msgid  "Issue Status (*)"
+msgstr "Issue Status (*)"
+
+msgid  "Edit this project issue status"
+msgstr "Edit this project issue status"
+
+msgid  "Project Issue Status"
+msgstr "Project Issue Status"
+
+msgid  "Delete Project Issue Status"
+msgstr "Delete Project Issue Status"
+
+msgid  "New Project Issue Status"
+msgstr "New Project Issue Status"
+
+msgid  "Add Project Issue"
+msgstr "Add Project Issue"
+
+msgid  "Edit Project Issue"
+msgstr "Edit Project Issue"
+
+msgid  "Issue"
+msgstr "Issue"
+
+msgid  "Severity"
+msgstr "Severity"
+
+msgid  "Assign to"
+msgstr "Assign to"
+
+msgid  "Actions Related"
+msgstr "Actions Related"
+
+msgid  "Date closing"
+msgstr "Date closing"
+
+msgid  "Project Issue of "
+msgstr "Project Issue of "
+
+msgid  "Project issues of "
+msgstr "Project issues of "
+
+msgid  "Actions related"
+msgstr "Actions related"
+
+msgid  "Are you sure you want to delete "%s" out of project issue?"
+msgstr "Are you sure you want to delete "%s" out of project issue?"
+
+msgid  "Add a new project issue"
+msgstr "Add a new project issue"
+
+msgid  "Issue (*)"
+msgstr "Issue (*)"
+
+msgid  "Edit this issue of this project"
+msgstr "Edit this issue of this project"
+
+msgid  "This issue of project is exist."
+msgstr "This issue of project is exist."
+
+msgid  "Issue: %s"
+msgstr "Issue: %s"
+
+msgid  "Date closing must between %1$s and %2$s"
+msgstr "Date closing must between %1$s and %2$s"
+
+msgid  "Project Issue"
+msgstr "Project Issue"
+
+msgid  "Delete Project Issue"
+msgstr "Delete Project Issue"
+
+msgid  "Pilot"
+msgstr "Pilot"
+
+msgid  "Logout"
+msgstr "Logout"
+
+msgid  "Edit Project Livrable Category"
+msgstr "Edit Project Livrable Category"
+
+msgid  "List Project Livrable Categories"
+msgstr "List Project Livrable Categories"
+
+msgid  "List Project Livrables"
+msgstr "List Project Livrables"
+
+msgid  "New Project Livrable"
+msgstr "New Project Livrable"
+
+msgid  "Deliverable Category"
+msgstr "Deliverable Category"
+
+msgid  "Add a new Project Deliverable Categories"
+msgstr "Add a new Project Deliverable Categories"
+
+msgid  "Add a new deliverable category"
+msgstr "Add a new deliverable category"
+
+msgid  "Edit the deliverable category"
+msgstr "Edit the deliverable category"
+
+msgid  "Progress"
+msgstr "Progress"
+
+msgid  "Delivery date"
+msgstr "Delivery date"
+
+msgid  "Planned d. date"
+msgstr "Planned d. date"
+
+msgid  "Owner"
+msgstr "Owner"
+
+msgid  "Actor"
+msgstr "Actor"
+
+msgid  "livrable_file_attachment"
+msgstr "livrable_file_attachment"
+
+msgid  "Project Deliverable of "
+msgstr "Project Deliverable of "
+
+msgid  "Project deliverable of "
+msgstr "Project deliverable of "
+
+msgid  "Delivery Date"
+msgstr "Delivery Date"
+
+msgid  "Planned Delivery Date"
+msgstr "Planned Delivery Date"
+
+msgid  "Actors"
+msgstr "Actors"
+
+msgid  "File"
+msgstr "File"
+
+msgid  "Are you sure you want to delete "%s" out of project Deliverables?"
+msgstr "Are you sure you want to delete "%s" out of project Deliverables?"
+
+msgid  "Add a new project deliverable"
+msgstr "Add a new project deliverable"
+
+msgid  "Deliverable (*)"
+msgstr "Deliverable (*)"
+
+msgid  "Status (*)"
+msgstr "Status (*)"
+
+msgid  "(dd-mm-yyyy) (not before "
+msgstr "(dd-mm-yyyy) (not before "
+
+msgid  "File Attachment"
+msgstr "File Attachment"
+
+msgid  "Edit deliverable for this project"
+msgstr "Edit deliverable for this project"
+
+msgid  "The progression must be between 0 and 100"
+msgstr "The progression must be between 0 and 100"
+
+msgid  "Phase date must >= "
+msgstr "Phase date must >= "
+
+msgid  "The Progress must be a number 0- 100"
+msgstr "The Progress must be a number 0- 100"
+
+msgid  "Deliverables: %s"
+msgstr "Deliverables: %s"
+
+msgid  "Attachment"
+msgstr "Attachment"
+
+msgid  "Cannot leave because upload file in processing!"
+msgstr "Cannot leave because upload file in processing!"
+
+msgid  "Milestone"
+msgstr "Milestone"
+
+msgid  "Milestone date"
+msgstr "Milestone date"
+
+msgid  "Project Milestone of "
+msgstr "Project Milestone of "
+
+msgid  "Project milestones of %s"
+msgstr "Project milestones of %s"
+
+msgid  "Milestone date must between %s and %s"
+msgstr "Milestone date must between %s and %s"
+
+msgid  "Project Part: %s"
+msgstr "Project Part: %s"
+
+msgid  "Plan start date"
+msgstr "Plan start date"
+
+msgid  "Plan end date"
+msgstr "Plan end date"
+
+msgid  "Real start date"
+msgstr "Real start date"
+
+msgid  "Real end date"
+msgstr "Real end date"
+
+msgid  "Project Phase Plan of "
+msgstr "Project Phase Plan of "
+
+msgid  "Vision Project gantt chart"
+msgstr "Vision Project gantt chart"
+
+msgid  "Vision Project of %s"
+msgstr "Vision Project of %s"
+
+msgid  "Project phase plans of %s"
+msgstr "Project phase plans of %s"
+
+msgid  "Vision Project V2"
+msgstr "Vision Project V2"
+
+msgid  "Duration"
+msgstr "Duration"
+
+msgid  "Predecessor"
+msgstr "Predecessor"
+
+msgid  "Color"
+msgstr "Color"
+
+msgid  "Order"
+msgstr "Order"
+
+msgid  "Phase plans: %s"
+msgstr "Phase plans: %s"
+
+msgid  "Display real time"
+msgstr "Display real time"
+
+msgid  "Week"
+msgstr "Week"
+
+msgid  "Month"
+msgstr "Month"
+
+msgid  "Year"
+msgstr "Year"
+
+msgid  "No data exist to create Gantt chart"
+msgstr "No data exist to create Gantt chart"
+
+msgid  "Add Project Phase Plan"
+msgstr "Add Project Phase Plan"
+
+msgid  "List Project Phase Statuses"
+msgstr "List Project Phase Statuses"
+
+msgid  "New Project Phase Status"
+msgstr "New Project Phase Status"
+
+msgid  "Edit Project Phase Plan"
+msgstr "Edit Project Phase Plan"
+
+msgid  "Project Phase Plan"
+msgstr "Project Phase Plan"
+
+msgid  "Delete Project Phase Plan"
+msgstr "Delete Project Phase Plan"
+
+msgid  "Add Project Phase Status"
+msgstr "Add Project Phase Status"
+
+msgid  "Edit Project Phase Status"
+msgstr "Edit Project Phase Status"
+
+msgid  "Project Phase Statuses "
+msgstr "Project Phase Statuses "
+
+msgid  "Project Phase Statuses"
+msgstr "Project Phase Statuses"
+
+msgid  "Phase Status"
+msgstr "Phase Status"
+
+msgid  "Add a new project phase status"
+msgstr "Add a new project phase status"
+
+msgid  "Phase Status (*)"
+msgstr "Phase Status (*)"
+
+msgid  "Edit this project phase status"
+msgstr "Edit this project phase status"
+
+msgid  "Delete Project Phase Status"
+msgstr "Delete Project Phase Status"
+
+msgid  "Project Phases"
+msgstr "Project Phases"
+
+msgid  "Add a new project phase"
+msgstr "Add a new project phase"
+
+msgid  "Edit this project phase"
+msgstr "Edit this project phase"
+
+msgid  "Add Project Priority"
+msgstr "Add Project Priority"
+
+msgid  "List Project Priorities"
+msgstr "List Project Priorities"
+
+msgid  "Edit Project Priority"
+msgstr "Edit Project Priority"
+
+msgid  "Project Priorities Listing"
+msgstr "Project Priorities Listing"
+
+msgid  "Project Priorities"
+msgstr "Project Priorities"
+
+msgid  "Priority"
+msgstr "Priority"
+
+msgid  "Add a new ProjectPriority"
+msgstr "Add a new ProjectPriority"
+
+msgid  "priority"
+msgstr "priority"
+
+msgid  "Priority (*)"
+msgstr "Priority (*)"
+
+msgid  "Edit this ProjectPriority"
+msgstr "Edit this ProjectPriority"
+
+msgid  "Project Priority"
+msgstr "Project Priority"
+
+msgid  "Delete Project Priority"
+msgstr "Delete Project Priority"
+
+msgid  "New Project Priority"
+msgstr "New Project Priority"
+
+msgid  "Add Project Risk Occurrence"
+msgstr "Add Project Risk Occurrence"
+
+msgid  "List Project Risk Occurrences"
+msgstr "List Project Risk Occurrences"
+
+msgid  "List Project Risks"
+msgstr "List Project Risks"
+
+msgid  "New Project Risk"
+msgstr "New Project Risk"
+
+msgid  "Edit Project Risk Occurrence"
+msgstr "Edit Project Risk Occurrence"
+
+msgid  "Project Risk Occurrences "
+msgstr "Project Risk Occurrences "
+
+msgid  "Project Risk Occurrences"
+msgstr "Project Risk Occurrences"
+
+msgid  "Risk Occurrence"
+msgstr "Risk Occurrence"
+
+msgid  "Add a new project risk occurrence"
+msgstr "Add a new project risk occurrence"
+
+msgid  " Risk occurrence"
+msgstr " Risk occurrence"
+
+msgid  "Risk Occurrence (*)"
+msgstr "Risk Occurrence (*)"
+
+msgid  "Edit this project risk occurrence"
+msgstr "Edit this project risk occurrence"
+
+msgid  "Project Risk Occurrence"
+msgstr "Project Risk Occurrence"
+
+msgid  "Delete Project Risk Occurrence"
+msgstr "Delete Project Risk Occurrence"
+
+msgid  "New Project Risk Occurrence"
+msgstr "New Project Risk Occurrence"
+
+msgid  "Related Project Risks"
+msgstr "Related Project Risks"
+
+msgid  "Project Risk"
+msgstr "Project Risk"
+
+msgid  "Project Risk Severity Id"
+msgstr "Project Risk Severity Id"
+
+msgid  "Project Risk Occurrence Id"
+msgstr "Project Risk Occurrence Id"
+
+msgid  "Risk Assign To"
+msgstr "Risk Assign To"
+
+msgid  "Risk Close Date"
+msgstr "Risk Close Date"
+
+msgid  "Actions Manage Risk"
+msgstr "Actions Manage Risk"
+
+msgid  "Add Project Risk Severity"
+msgstr "Add Project Risk Severity"
+
+msgid  "List Project Risk Severities"
+msgstr "List Project Risk Severities"
+
+msgid  "Edit Project Risk Severity"
+msgstr "Edit Project Risk Severity"
+
+msgid  "Project Risk Severities "
+msgstr "Project Risk Severities "
+
+msgid  "Project Risk Severities"
+msgstr "Project Risk Severities"
+
+msgid  "Risk Severity"
+msgstr "Risk Severity"
+
+msgid  "Add a new project risk severity"
+msgstr "Add a new project risk severity"
+
+msgid  " Risk Severity"
+msgstr " Risk Severity"
+
+msgid  "Risk Severity (*)"
+msgstr "Risk Severity (*)"
+
+msgid  "Edit this project risk severity"
+msgstr "Edit this project risk severity"
+
+msgid  "This risk severity is exist."
+msgstr "This risk severity is exist."
+
+msgid  "Project Risk Severity"
+msgstr "Project Risk Severity"
+
+msgid  "Delete Project Risk Severity"
+msgstr "Delete Project Risk Severity"
+
+msgid  "New Project Risk Severity"
+msgstr "New Project Risk Severity"
+
+msgid  "Add Project Risk"
+msgstr "Add Project Risk"
+
+msgid  "Edit Project Risk"
+msgstr "Edit Project Risk"
+
+msgid  "Risk/Opportunity"
+msgstr "Risk/Opportunity"
+
+msgid  "Occurrence"
+msgstr "Occurrence"
+
+msgid  "Actions Manage"
+msgstr "Actions Manage"
+
+msgid  "Project Risk of "
+msgstr "Project Risk of "
+
+msgid  "Project risks of "
+msgstr "Project risks of "
+
+msgid  "Actions to manage risk"
+msgstr "Actions to manage risk"
+
+msgid  "Are you sure you want to delete "%s" out of project Risk?"
+msgstr "Are you sure you want to delete "%s" out of project Risk?"
+
+msgid  "Add a new project risk"
+msgstr "Add a new project risk"
+
+msgid  "Risk/Opportunity (*)"
+msgstr "Risk/Opportunity (*)"
+
+msgid  "(dd-mm-yyyy) (from "
+msgstr "(dd-mm-yyyy) (from "
+
+msgid  "Assign To"
+msgstr "Assign To"
+
+msgid  "Actions manage"
+msgstr "Actions manage"
+
+msgid  "Invalid Date(Valid format is dd-mm-yyyy)"
+msgstr "Invalid Date(Valid format is dd-mm-yyyy)"
+
+msgid  "Edit this risk of project"
+msgstr "Edit this risk of project"
+
+msgid  "This risk is exist."
+msgstr "This risk is exist."
+
+msgid  "Risk/Opportunity: %s"
+msgstr "Risk/Opportunity: %s"
+
+msgid  "Delete Project Risk"
+msgstr "Delete Project Risk"
+
+msgid  "Full name"
+msgstr "Full name"
+
+msgid  "% of work"
+msgstr "% of work"
+
+msgid  "Man day"
+msgstr "Man day"
+
+msgid  "Remains"
+msgstr "Remains"
+
+msgid  "No data exist!"
+msgstr "No data exist!"
+
+msgid  "Total"
+msgstr "Total"
+
+msgid  "Staffing Project of %s"
+msgstr "Staffing Project of %s"
+
+msgid  "Functions"
+msgstr "Functions"
+
+msgid  "New Staffings"
+msgstr "New Staffings"
+
+msgid  "Update Staffing"
+msgstr "Update Staffing"
+
+msgid  "Error Staffings"
+msgstr "Error Staffings"
+
+msgid  "no data exit"
+msgstr "no data exit"
+
+msgid  "No data exist to create staffing"
+msgstr "No data exist to create staffing"
+
+msgid  "Display Fields"
+msgstr "Display Fields"
+
+msgid  "All fields"
+msgstr "All fields"
+
+msgid  "Please choose a fields to export"
+msgstr "Please choose a fields to export"
+
+msgid  "The value is not to be greater than %1$s, valuable suggestion %2$s"
+msgstr "The value is not to be greater than %1$s, valuable suggestion %2$s"
+
+msgid  "Submit failed, please correct data before submit."
+msgstr "Submit failed, please correct data before submit."
+
+msgid  "The data has been save"
+msgstr "The data has been save"
+
+msgid  "Employees of function"
+msgstr "Resources of function"
+
+msgid  "Add a new project status"
+msgstr "Add a new project status"
+
+msgid  "Edit this project status"
+msgstr "Edit this project status"
+
+msgid  "Add Project Sub Type"
+msgstr "Add Project Sub Type"
+
+msgid  "List Project Sub Types"
+msgstr "List Project Sub Types"
+
+msgid  "List Project Types"
+msgstr "List Project Types"
+
+msgid  "New Project Type"
+msgstr "New Project Type"
+
+msgid  "Edit Project Sub Type"
+msgstr "Edit Project Sub Type"
+
+msgid  "Project AMR Programs "
+msgstr "Project AMR Programs "
+
+msgid  "Project Sub Types"
+msgstr "Project Sub Types"
+
+msgid  "Sub type"
+msgstr "Sub type"
+
+msgid  "Add a new sub type"
+msgstr "Add a new sub type"
+
+msgid  "Sub Type"
+msgstr "Sub Type"
+
+msgid  " Sub type (*)"
+msgstr " Sub type (*)"
+
+msgid  "Project Type"
+msgstr "Project Type"
+
+msgid  "Edit the sub type"
+msgstr "Edit the sub type"
+
+msgid  "Project Sub Type"
+msgstr "Project Sub Type"
+
+msgid  "Delete Project Sub Type"
+msgstr "Delete Project Sub Type"
+
+msgid  "New Project Sub Type"
+msgstr "New Project Sub Type"
+
+msgid  "Project Type Id"
+msgstr "Project Type Id"
+
+msgid  "Project Sub Type Id"
+msgstr "Project Sub Type Id"
+
+msgid  "Chief Business Id"
+msgstr "Chief Business Id"
+
+msgid  "Task"
+msgstr "Task"
+
+msgid  "Completed"
+msgstr "Completed"
+
+msgid  "Real End date"
+msgstr "Real End date"
+
+msgid  "Project Task of "
+msgstr "Project Task of "
+
+msgid  "Project Task List of %s"
+msgstr "Project Task List of %s"
+
+msgid  "Price by date"
+msgstr "Price by date"
+
+msgid  "Work Expected"
+msgstr "Work Expected"
+
+msgid  "Backup"
+msgstr "Backup"
+
+msgid  "List all employees for %s"
+msgstr "List all resources for %s"
+
+msgid  "No exists data!"
+msgstr "No exists data!"
+
+msgid  "Project Teams List of %s"
+msgstr "Project Teams List of %s"
+
+msgid  "Project Teams List"
+msgstr "Project Teams List"
+
+msgid  "Are you sure you want to delete "%s" out of project teams?"
+msgstr "Are you sure you want to delete "%s" out of project teams?"
+
+msgid  "-- Select (*) -- "
+msgstr "-- Select (*) -- "
+
+msgid  "Add Project Type"
+msgstr "Add Project Type"
+
+msgid  "Edit Project Type"
+msgstr "Edit Project Type"
+
+msgid  "Project Types"
+msgstr "Project Types"
+
+msgid  "No data available"
+msgstr "No data available"
+
+msgid  "Add a new project type"
+msgstr "Add a new project type"
+
+msgid  "Edit the project type"
+msgstr "Edit the project type"
+
+msgid  "Delete Project Type"
+msgstr "Delete Project Type"
+
+msgid  "Related Project Sub Types"
+msgstr "Related Project Sub Types"
+
+msgid  "(*)"
+msgstr "(*)"
+
+msgid  "Project Code 1"
+msgstr "Project Code 1"
+
+msgid  "Project type"
+msgstr "Project type"
+
+msgid  "--Select--"
+msgstr "--Select--"
+
+msgid  "Select sub type"
+msgstr "Select sub type"
+
+msgid  "Select sub program"
+msgstr "Select sub program"
+
+msgid  "Project long Name"
+msgstr "Project long Name"
+
+msgid  "Project Code 2"
+msgstr "Project Code 2"
+
+msgid  "Project Manager"
+msgstr "Project Manager"
+
+msgid  "Chief Business"
+msgstr "Chief Business"
+
+msgid  "Technical manager"
+msgstr "Technical manager"
+
+msgid  "Planned End Date"
+msgstr "Planned End Date"
+
+msgid  "The field is not blank."
+msgstr "The field is not blank."
+
+msgid  "The planed end date must be greater than start date."
+msgstr "The planed end date must be greater than start date."
+
+msgid  "The end date must be greater than start date"
+msgstr "The end date must be greater than start date"
+
+msgid  "Project long name"
+msgstr "Project long name"
+
+msgid  "Project List "
+msgstr "Project List "
+
+msgid  "Project Detail of "
+msgstr "Project Detail of "
+
+msgid  "Vision portfolio"
+msgstr "Vision portfolio"
+
+msgid  "Vision staffing"
+msgstr "Vision staffing"
+
+msgid  "--Select company---"
+msgstr "--Select company---"
+
+msgid  "Reload"
+msgstr "Reload"
+
+msgid  "Project code 1"
+msgstr "Project code 1"
+
+msgid  "Project code 2"
+msgstr "Project code 2"
+
+msgid  "Planed end date"
+msgstr "Planed end date"
+
+msgid  "Complexity"
+msgstr "Complexity"
+
+msgid  "Problem Control"
+msgstr "Problem Control"
+
+msgid  "Problem Information"
+msgstr "Problem Information"
+
+msgid  "Solution"
+msgstr "Solution"
+
+msgid  "Cost Control Weather"
+msgstr "Cost Control Weather"
+
+msgid  "Planning Weather"
+msgstr "Planning Weather"
+
+msgid  "Risk Control Weather"
+msgstr "Risk Control Weather"
+
+msgid  "Organization Weather"
+msgstr "Organization Weather"
+
+msgid  "Perimeter Weather"
+msgstr "Perimeter Weather"
+
+msgid  "Issue Control Weather"
+msgstr "Issue Control Weather"
+
+msgid  "M.D Validated"
+msgstr "M.D Validated"
+
+msgid  "M.D Engaged"
+msgstr "M.D Engaged"
+
+msgid  "M.D Forecasted"
+msgstr "M.D Forecasted"
+
+msgid  "M.D Variance"
+msgstr "M.D Variance"
+
+msgid  "Validated Currency"
+msgstr "Validated Currency"
+
+msgid  "Engaged Currency"
+msgstr "Engaged Currency"
+
+msgid  "Forecasted Currency"
+msgstr "Forecasted Currency"
+
+msgid  "Variance Currency"
+msgstr "Variance Currency"
+
+msgid  "Visibility settings"
+msgstr "Visibility settings"
+
+msgid  "Show Gantt chart"
+msgstr "Show Gantt chart"
+
+msgid  "Show staffing by"
+msgstr "Show staffing by"
+
+msgid  "Profit center & Project"
+msgstr "Profit center & Project"
+
+msgid  "Function & Project"
+msgstr "Function & Project"
+
+msgid  "Show Summary"
+msgstr "Show Summary"
+
+msgid  "Ok"
+msgstr "Ok"
+
+msgid  "<span class="paging-page"> Page</span>"
+msgstr "<span class="paging-page"> Page</span>"
+
+msgid  "Show %s projects."
+msgstr "Show %s projects."
+
+msgid  "Edit Project"
+msgstr "Edit Project"
+
+msgid  "Delete Project"
+msgstr "Delete Project"
+
+msgid  "Absence Validation Constraint management of %s"
+msgstr "Absence Validation Constraint management of %s"
+
+msgid  "New View"
+msgstr "New View"
+
+msgid  "Projects Details"
+msgstr "Projects Details"
+
+msgid  "View name"
+msgstr "View name"
+
+msgid  "View description"
+msgstr "View description"
+
+msgid  "Set it as default view"
+msgstr "Set it as default view"
+
+msgid  "Set it as public view"
+msgstr "Set it as public view"
+
+msgid  "Refresh"
+msgstr "Refresh"
+
+msgid  "Project Name (*)"
+msgstr "Project Name (*)"
+
+msgid  "Project AMR"
+msgstr "Project AMR"
+
+msgid  "-- Select Project Manager --"
+msgstr "-- Select Project Manager --"
+
+msgid  "-- Select Status --"
+msgstr "-- Select Status --"
+
+msgid  "Current"
+msgstr "Current"
+
+msgid  "(dd-mm-yy)"
+msgstr "(dd-mm-yy)"
+
+msgid  "-- Select Problem Control --"
+msgstr "-- Select Problem Control --"
+
+msgid  "Personalized Views List"
+msgstr "Personalized Views List"
+
+msgid  "Add View"
+msgstr "Add View"
+
+msgid  "Created date"
+msgstr "Created date"
+
+msgid  "Author"
+msgstr "Author"
+
+msgid  "Default view"
+msgstr "Default view"
+
+msgid  "Public view"
+msgstr "Public view"
+
+msgid  "Admin Public view"
+msgstr "Admin Public view"
+
+msgid  "Do you want to update "%s" default view ?"
+msgstr "Do you want to update "%s" default view ?"
+
+msgid  "Do you want to update "%s" is not default view ?"
+msgstr "Do you want to update "%s" is not default view ?"
+
+msgid  "Default"
+msgstr "Default"
+
+msgid  "Do you want to update "%s" public view ?"
+msgstr "Do you want to update "%s" public view ?"
+
+msgid  "Do you want to update "%s" is not public view ?"
+msgstr "Do you want to update "%s" is not public view ?"
+
+msgid  "public"
+msgstr "public"
+
+msgid  "View List"
+msgstr "View List"
+
+msgid  "View Name"
+msgstr "View Name"
+
+msgid  "Created Date"
+msgstr "Created Date"
+
+msgid  "The Budget must be a number at least 0 "
+msgstr "The Budget must be a number at least 0 "
+
+msgid  "MEP date must from %s to %s"
+msgstr "MEP date must from %s to %s"
+
+msgid  "Project Details"
+msgstr "Project Details"
+
+msgid  "Project details of %s"
+msgstr "Project details of %s"
+
+msgid  "Long project name"
+msgstr "Long project name"
+
+msgid  "Workday management of %s"
+msgstr "Workday management of %s"
+
+msgid  "Debug setting does not allow access to this url."
+msgstr "Debug setting does not allow access to this url."
+
+msgid  "You have not permission to access this function"
+msgstr "You do not have permission to access this function"
+
+msgid  "You do not have enough privileges to access this page."
+msgstr "You do not have enough privileges to access this page."
+
+msgid  "You can not request a absence because your time sheet is "%s"."
+msgstr "You can not request an absence because your time-sheet is "%s"."
+
+msgid  "[PMs - Activity] The an absence has been %s."
+msgstr "[zOG] The absence has been %s."
+
+msgid  "The data was not found or has an employees change the requested, please try again"
+msgstr "The data was not found or an resources has change the requested, please try again"
+
+msgid  "You can not delete an activity used in an timesheet or in the forecast but you can desactivate it"
+msgstr "You can not delete an activity used in an time-sheet or in the forecast but you can deactivate it"
+
+msgid  "validated"
+msgstr "validated"
+
+msgid  "rejected"
+msgstr "rejected"
+
+msgid  "[PMs - Activity] The an timesheet has been %s."
+msgstr "[zOG] The timesheet has been %s."
+
+msgid  "[PMs - Activity] The an timesheet has to be validated."
+msgstr "[zOG] The timesheet has to be validated."
+
+msgid  "You are not allowed deleting this company"
+msgstr "You are not allowed deleting this company"
+
+msgid  "You are not allowed deleting this employee"
+msgstr "You are not allowed deleting this resource"
+
+msgid  "You are not allowed editing this employee"
+msgstr "You are not allowed editing this resource"
+
+msgid  "Your profile has been edited"
+msgstr "Your profile has been edited"
+
+msgid  "Your profile could not be saved. Please, try again."
+msgstr "Your profile could not be saved. Please, try again."
+
+msgid  "Sorry but due to security reasons you are limited to the number of temporary codes received each day. Please try again in %s hours."
+msgstr "Sorry but due to security reasons you are limited to the number of temporary codes received each day. Please try again in %s hours."
+
+msgid  "z0Gravity Recovery Password"
+msgstr "z0Gravity Recovery Password"
+
+msgid  "Can not recovery your password, please try again."
+msgstr "Can not recovery your password, please try again."
+
+msgid  "Invalid token, please try again."
+msgstr "Invalid token, please try again."
+
+msgid  "The password has been changed."
+msgstr "The password has been changed."
+
+msgid  "The password could not be changed."
+msgstr "The password could not be changed."
+
+msgid  "Change your password."
+msgstr "Change your password."
+
+msgid  "You are viewing with personalized view %s."
+msgstr "You are viewing with personalized view %s."
+
+msgid  "User view was deleted"
+msgstr "User view was deleted"
+
+msgid  "User view was not deleted"
+msgstr "User view was not deleted"
+
+msgid  "Workday has been deleted"
+msgstr "Workday has been deleted"
+
+msgid  "Workday was not deleted"
+msgstr "Workday was not deleted"
+
+msgid  "View name is not blank!"
+msgstr "View name is not blank!"
+
+msgid  "Absence Requests : %s"
+msgstr "Absence Requests : %s"
+
+msgid  "Date requesting"
+msgstr "Date request"
+
+msgid  "Date validate"
+msgstr "Date validate"
+
+msgid  "Date reject"
+msgstr "Date reject"
+
+msgid  "--- Status ---"
+msgstr "--- Status ---"
+
+msgid  "Validate Requested"
+msgstr "Validate"
+
+msgid  "Reject Absence request?"
+msgstr "Reject Absence request?"
+
+msgid  "Are you sure to reject request of selected employees for this week?"
+msgstr "Are you sure to reject request of selected resources for this week?"
+
+msgid  "Validate Absence request?"
+msgstr "Validate Absence request?"
+
+msgid  "Are you sure to validate request of selected employees for this week?"
+msgstr "Do you want to validate request of selected resources for this week?"
+
+msgid  "No name"
+msgstr "No name"
+
+msgid  "Remove forecast"
+msgstr "Remove forecast"
+
+msgid  "Detail of %s"
+msgstr "Detail of %s"
+
+msgid  "Activity Validate : %s"
+msgstr "Activity Validate : %s"
+
+msgid  "Validated By Your Manager"
+msgstr "Validated By Your Manager"
+
+msgid  "Are you sure to validate you time sheet? Once validated your could not modify it"
+msgstr "Do you want to validate your timesheet ? Once validated, modification is not possible anymore."
+
+msgid  "The value must between %1$s and %2$s."
+msgstr "The value must between %1$s and %2$s."
+
+msgid  "Not yet"
+msgstr "Not yet"
+
+msgid  "Hello"
+msgstr "Hello"
+
+msgid  "The absence from <i>%1$s %2$s</i> to <i>%3$s %4$s</i> has been %5$s by your manager."
+msgstr "The absence from <i>%1$s %2$s</i> to <i>%3$s %4$s</i> has been %5$s by your manager."
+
+msgid  "You can select the following link to %s."
+msgstr "You can select the following link to %s."
+
+msgid  "review that absences"
+msgstr "review that absences"
+
+msgid  "Have a nice day."
+msgstr "Have a nice day."
+
+msgid  "The timesheet of <b>%1$s</b> <i>week</i> <b>%2$s</b> / %3$s has to be validated."
+msgstr "The timesheet of <b>%1$s</b> <i>week</i> <b>%2$s</b> / %3$s has to be validated."
+
+msgid  "validate that timesheet"
+msgstr "validate that timesheet"
+
+msgid  "The timesheet on <i>week</i> <b>%1$s</b> / %2$s has been %3$s by your manager."
+msgstr "The timesheet on <i>week</i> <b>%1$s</b> / %2$s has been %3$s by your manager."
+
+msgid  "review that timesheet"
+msgstr "review that timesheet"
+
+msgid  "Please select the following link to change your forgotten password. %1$s This link is active only %2$s hours."
+msgstr "Please select the following link to change your forgotten password. %1$s This link is active only %2$s hours."
+
+msgid  "change your password"
+msgstr "change your password"
+
+msgid  "After this time limit has expired the code will not work and you will need to resubmit the password change request."
+msgstr "After this time limit has expired the code will not work and you will need to resubmit the password change request."
+
+msgid  "Receive email from PMS/RMS"
+msgstr "Receive email from PMS/RMS"
+
+msgid  "New Password"
+msgstr "New Password"
+
+msgid  "Re Password"
+msgstr "Re Password"
+
+msgid  "The password did not match."
+msgstr "The password did not match."
+
+msgid  "An email has been sent to %s. Please follow the instructions to change your password."
+msgstr "Un message a été envoyé à %s"
+
+msgid  "Email sent"
+msgstr "Email envoyer"
+
+msgid  "Validate date must between "
+msgstr "Validate date must between "
+
+msgid  "Update Staffings"
+msgstr "Update Staffings"
+
+msgid  "Sorry but due to security reasons you are limited to the number of send reqeust message."
+msgstr "Sorry but due to security reasons you are limited to the number of send request message."
+
+msgid  "[PMS - Absence] Absences has to be validated."
+msgstr "[zOG] Absences has to be validated."
+
+msgid  "The message has been sent."
+msgstr "Sent"
+
+msgid  "The request email message could not be sent to your manager."
+msgstr "Mail not sent to your manager"
+
+msgid  "Could not sent message, please try again."
+msgstr "Could not sent message, please try again."
+
+msgid  "You can not request a absence because the your time sheet is "%s"."
+msgstr "Timesheet already validated."
+
+msgid  "[PMS - Absence] Absence has been %s."
+msgstr "[zOG] Absence has been %s."
+
+msgid  "[PMS - Activity] Timesheet has been %s."
+msgstr "[zOG] Timesheet has been %s."
+
+msgid  "[PMS - Activity] Timesheet has to be validated."
+msgstr "[zOG] Timesheet has to be validated."
+
+msgid  "The request validate has been sent, but email message could not be sent to your manager."
+msgstr "The request validation has been sent, but email message could not be sent to your manager."
+
+msgid  "Send request message"
+msgstr "Inform your manager by email"
+
+msgid  "Your are sure to send you requested? Once sent your could not re sent it"
+msgstr "Confirm? A mail will be sent."
+
+msgid  "Your are sure to validate you time sheet? Once validated your could not modify it"
+msgstr "Validated ? A mail will be sent."
+
+msgid  "The Absence request of <b>%1$s</b> from <i>%2$s %3$s</i>  to <i>%4$s %5$s</i> has to be validated"
+msgstr "The Absence request of <b>%1$s</b> from <i>%2$s %3$s</i>  to <i>%4$s %5$s</i> has to be validated"
+
+msgid  "Vous avez recu une demande d’absence de <b>%1$s</b> du <i>%2$s %3$s</i> à <i>%4$s %5$s</i>."
+msgstr "Vous avez recu une demande d’absence de <b>%1$s</b> du <i>%2$s %3$s</i> à <i>%4$s %5$s</i>."
+
+msgid  "Select the following link to %s."
+msgstr "Select the following link to %s."
+
+msgid  "validate that absences"
+msgstr "validate that absences"
+
+msgid  "Sélectionner le lien pour %s."
+msgstr "Sélectionner le lien pour %s."
+
+msgid  "valider absences demande"
+msgstr "valider absences demande"
+
+msgid  "Thank you"
+msgstr "Thank you"
+
+msgid  "Absence validated from <i>%1$s %2$s</i> to <i>%3$s %4$s</i>."
+msgstr "Absence validated from <i>%1$s %2$s</i> to <i>%3$s %4$s</i>."
+
+msgid  "Absence validée du <i>%1$s %2$s</i> au <i>%3$s %4$s</i>."
+msgstr "Absence validée du <i>%1$s %2$s</i> au <i>%3$s %4$s</i>."
+
+msgid  "Absence rejected from <i>%1$s %2$s</i> to <i>%3$s %4$s</i>."
+msgstr "Absence rejected from <i>%1$s %2$s</i> to <i>%3$s %4$s</i>."
+
+msgid  "Absence non validée du <i>%1$s %2$s</i> au <i>%3$s %4$s</i>."
+msgstr "Absence non validée du <i>%1$s %2$s</i> au <i>%3$s %4$s</i>."
+
+msgid  "revoir absences demande"
+msgstr "revoir absences demande"
+
+msgid  "The timesheet of <b>%1$s</b> <i>week</i> <b>%2$s</b> has to be validated."
+msgstr "The timesheet of <b>%1$s</b> <i>week</i> <b>%2$s</b> has to be validated."
+
+msgid  "Vous avez reçu la feuille de temps de <b>%1$s</b> de la <i>semaine</i> <b>%2$s</b> à valider."
+msgstr "Vous avez reçu la feuille de temps de <b>%1$s</b> de la <i>semaine</i> <b>%2$s</b> à valider."
+
+msgid  "validate the timesheet"
+msgstr "validate the timesheet"
+
+msgid  "valider la feuille de temps"
+msgstr "valider la feuille de temps"
+
+msgid  "Timesheet <i>week</i> <b>%1$s</b> validated."
+msgstr "Timesheet <i>week</i> <b>%1$s</b> validated."
+
+msgid  "Feuille de temps <i>semaine</i> <b>%1$s</b> validée."
+msgstr "Feuille de temps <i>semaine</i> <b>%1$s</b> validée."
+
+msgid  "Timesheet <i>week</i> <b>%1$s</b> rejected."
+msgstr "Timesheet <i>week</i> <b>%1$s</b> rejected."
+
+msgid  "Feuille de temps <i>semaine</i> <b>%1$s</b> non validée."
+msgstr "Feuille de temps <i>semaine</i> <b>%1$s</b> non validée."
+
+msgid  "Select the following link %s."
+msgstr "Select the following link %s."
+
+msgid  "review your timesheet"
+msgstr "review your timesheet"
+
+msgid  "revoir la feuille de temps"
+msgstr "revoir la feuille de temps"
+
+msgid  "Page not found!"
+msgstr "Page not found!"
+
+msgid  "Click here to back"
+msgstr "Click here to go back"
+
+msgid  "Back to home page?"
+msgstr "Back to homepage?"
+
+msgid "title availability"
+msgstr "Availability"
+
+msgid "column availability"
+msgstr "Availability"
+
+msgid "Vocation/Day Off"
+msgstr "Vocation/Day Off"
+
+msgid  "External Costs Progress Euro"
+msgstr "External Costs Progress &euro;"
+
+msgid  "Rank"
+msgstr "Trend" 
+
+msgid  "Budget Total"
+msgstr "Budget Total"
+
+msgid  "BP Investment City"
+msgstr "BP Investissement Ville"
+
+msgid  "BP Operation City"
+msgstr "BP Fonctionnement Ville"
+
+msgid  "Available Investment"
+msgstr "Disponible Investissement"
+
+msgid  "Available Operation"
+msgstr "Disponible Fonctionnement"
+
+msgid  "Financing Plan"
+msgstr "Plan de financement"
+
+msgid  "Partner"
+msgstr "Partenaire"
+
+msgid  "Percent"
+msgstr "Pourcentage"
+
+msgid  "Amount"
+msgstr "Montant"
+
+msgid  "Finance"
+msgstr "Financement"
+
+msgid "Back to Project List"
+msgstr "Back to Project List"
+
+msgid "Back to Resource List"
+msgstr "Back to Resource List"
+
+msgid "Employee/Time"
+msgstr "Resource/Time"
+
+msgid "% Assigned to employee"
+msgstr "% Assigned to resource"
+
+msgid "Display all name of milestones"
+msgstr "Display all names of milestones in"
+
+msgid "Capacity Theoretical"
+msgstr "Capacity"
+
+msgid "Expire Date"
+msgstr "End Date"
+
+msgid "Your license will expired in <span>%s</span> days"
+msgstr "End date in <span>%s</span> days"
+
+msgid "Activity Settings"
+msgstr "Settings"
+
+msgid "flash Milestone"
+msgstr "Milestone"
+
+msgid "flash Risk/Opportunity"
+msgstr "Risk / Opportunity"
+
+msgid "flash Risk"
+msgstr "Risk"
+
+msgid "flash KPI / Comment"
+msgstr "Comment"
+
+msgid "flash KPI / Done"
+msgstr "Done"
+
+msgid "flash KPI / ToDo"
+msgstr "ToDo"
+
+msgid "flash Primary Objective"
+msgstr "Primary Objective"
+
+msgid "flash Project Manager"
+msgstr "Project Manager"
+
+msgid "flash Technical manager"
+msgstr "Technical manager"
+
+msgid "flash Project Code 1"
+msgstr "Project Code"
+
+msgid "flash Planed"
+msgstr "Planed"
+
+msgid "flash Consumed"
+msgstr "Consumed"
+
+msgid "flash Overload"
+msgstr "Overload"
+
+msgid "flash Start date"
+msgstr "Start date"
+
+msgid "flash End date"
+msgstr "End date"
+
+msgid "flash Project program"
+msgstr "Program"
+
+msgid "Login About us"
+msgstr "About us"
+
+msgid "Login Contact"
+msgstr "Contact"
+
+msgid "New login"
+msgstr "Login"
+
+msgid  "z0g Today"
+msgstr "Today"
+
+msgid  "z0g Yesterday"
+msgstr "Yesterday"
+
+msgid  "Synthesis Comment"
+msgstr "Comment"
+
+msgid  "Synthesis Done"
+msgstr "Done"
+
+msgid  "wdtext_create_a_project"
+msgstr "Create a project"
+
+msgid  "Upload Cancel"
+msgstr "Cancel"
+
+msgid  "cmMinute"
+msgstr "Minute"
+
+msgid  "cmHour"
+msgstr "Hour"
+
+msgid  "cmDay"
+msgstr "Day"
+
+msgid  "cmMonth"
+msgstr "Month"
+
+msgid  "cmYear"
+msgstr "Year"
+
+msgid  "cmMinutes"
+msgstr "Minutes"
+
+msgid  "cmHours"
+msgstr "Hours"
+
+msgid  "cmDays"
+msgstr "Days"
+
+msgid  "cmMonths"
+msgstr "Months"
+
+msgid  "cmYears"
+msgstr "Years"
+
+msgid  "Doc Last Modified"
+msgstr "Last Modified"
+
+msgid  "Doc Deliverable"
+msgstr "Deliverable"
+
+msgid  "Doc Progress"
+msgstr "Progress"
+
+msgid  "Doc Responsible"
+msgstr "Responsible"
+
+msgid  "Project SQL"
+msgstr "SQL"
+
+msgid "Fair"
+msgstr "Various clouds"
+
+msgid "Furry"
+msgstr "Cloudy, rain"
+
+msgid "Assigner to"
+msgstr "Assign to"
+
+msgid "To login"
+msgstr "Login"
+
+msgid "Planed capacity"
+msgstr "Planed </br>capacity"
+
+msgid "Type_Enable_For_Customer"
+msgstr "Customer"
+
+msgid "external_limit_period"
+msgstr "Period"
+
+msgid "external_limit_support"
+msgstr "Number of support ticket"
+
+msgid "external_limit_formation"
+msgstr "Number of formation ticket"
+
+msgid "external_limit_coaching"
+msgstr "Number of coaching ticket"
+
+msgid "alert_ticket_title_support"
+msgstr "Ticket support information"
+
+msgid "alert_ticket_title_formation"
+msgstr "Ticket formation information"
+
+msgid "alert_ticket_title_coaching"
+msgstr "Ticket coaching information"
+
+msgid "%s ticket(s) utilisé(s)  sur %s  - Fin de période %s"
+msgstr "%s/%s of ticket- End of period %s"

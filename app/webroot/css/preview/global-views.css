@@ -1,0 +1,237 @@
+.error-message {
+    color: #FF0000;
+    margin-left: 35px;
+}
+#download-place img{
+    margin-right: 10px;
+    vertical-align: middle;
+}
+#replace-attachment{
+    /*margin-left: 20px;*/
+}
+#wd-container-main .wd-layout{
+    padding-bottom: 10px;
+}
+.wd-input.wd-normal input,
+.wd-input.wd-normal label {
+    float: none;
+    width: auto;
+}
+.wd-input.wd-normal label {
+    display: inline-block;
+    margin-left: 5px;
+    line-height: 20px;
+}
+fieldset div.wd-input {
+    margin: 0;
+}
+#file-types {
+    clear: both;
+    line-height: 30px;
+}
+#file-types span {
+    color: green;
+}
+.wd-section img:hover{
+    cursor: pointer;
+}
+.wd-tab .wd-panel{
+    border: none;
+}
+#wd-container-footer{
+    display: none;
+}
+body{
+    overflow: hidden;
+}
+.wd-panel{
+    padding: 20px !important;
+}
+#wd-fragment-2{
+    position: relative;
+    text-align: center;
+}
+#wd-fragment-2 img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 3px;
+}
+#on-image-expand-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 0px rgba(29,29,27,0.2);
+    text-align: center;
+}
+#on-image-expand-btn:before{
+    content: "\e038";
+    font-family: 'simple-line-icons';
+    font-size: 16px;
+    text-align: center;
+    line-height: 40px;
+}
+#ProjectGlobalViewIndexForm .btn{
+    line-height: 32px;
+    text-align: center;
+    vertical-align: middle;
+}
+#ProjectGlobalViewIndexForm .btn img{
+    margin: 0;
+}
+#ProjectGlobalViewIndexForm .btn.btn-fullscreen:before{
+    font-size: 16px;
+}
+.download-place-toggle-button{
+    float: right;
+    position: relative;
+    width: 32px;
+    height: 32px;
+}
+.download-place-inner{
+    float: right;
+}
+i.button-dot{
+    position: absolute;
+    width: 100%;
+    line-height: 32px;
+    height: 100%;
+
+}
+i.button-dot:before{
+    content: '';
+    width: 5px;
+    height: 5px;
+    left: calc(50% - 10px);
+    border-radius: 50%;
+    background: rebeccapurple;
+    position: absolute;
+    line-height: 32px;
+    top: 13px;
+    background-color: #C7CCCF;
+}
+i.button-dot-2:before {
+    left: calc( 50% - 2px);
+}
+i.button-dot-3:before {
+    left: calc( 50% + 6px);
+}
+.download-place-inner{
+    display: none;
+}
+.download-place-inner a{
+    opacity: 0;
+    transition: all ease 0.3s;
+}
+.download-place-inner a:nth-last-child(2){
+    transition: all ease 1s;
+}
+.download-place-inner a:nth-last-child(3){
+    transition: all ease 2s;
+}
+.download-place-inner a:nth-last-child(4){
+    transition: all ease 3s;
+}
+.download-place-inner a:nth-last-child(5){
+    transition: all ease 4s;
+}
+.download-place-inner.open a{
+    opacity: 1;
+}
+body{
+    overflow: auto !important;
+}
+.wd-hide{
+    display: none;
+}
+.wd-section .dropzone {
+    width: 275px;
+    height: 160px;
+    border: 1px dashed #E1E6E8;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 15px;
+    color: #666;
+    padding: 0;
+    margin-left: 20px;
+    overflow: auto;
+}
+/*.wd-tab .tabs-header-container{
+    display: block;
+    
+}
+.wd-tab .tabs-header-container .tab-header{
+    display: inline-block;
+    min-width: 80px;
+    max-width: 200px;
+    text-align: center;
+
+}*/
+
+#upload-place div textarea,
+#upload-place div input{
+    width: calc(100% - 32px);
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #ccd2d5;
+    padding: 0 15px;
+}
+#upload-place div textarea{
+    height: inherit;
+    line-height: inherit;
+    min-height: 150px;
+    resize: vertical;
+}
+.wd-tab .tab-header{
+    cursor: pointer;
+}
+.wd-tab .tabs-content-container .tab-content{
+    display: none;
+}
+.wd-tab .tabs-content-container .tab-content.wd-current{
+    display: block;
+    
+}
+.wd-tab .tabs-content-container .tab-content form{
+    margin: 15px;
+    margin-left: 0px;
+    position: relative;
+    width: inherit;
+}
+.wd-panel .wd-title .btn{
+    height: 40px;
+    width: 40px;
+    line-height: 38px;
+    display: none;
+    border: 1px solid #E1E6E8;    
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    padding: 0;
+    box-sizing: border-box;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+.wd-title .btn{
+    margin-right: 7px;
+}
+.wd-title .btn:hover{
+    background-color: #247FC3;
+    color: #fff;
+}
+.wd-title .btn:hover:before{
+    color: #fff;
+}
+.wd-title .btn img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+iframe{
+	width: 100%;
+	height: 100%;
+}

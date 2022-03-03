@@ -1,0 +1,9 @@
+#project_container.project-list {
+	height: auto !important;
+}
+#project_container:not(.project-list) {
+	height: 400px !important;
+}
+.slick-viewport {
+	min-height: 400px;
+}

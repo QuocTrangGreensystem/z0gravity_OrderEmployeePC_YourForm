@@ -1,0 +1,35 @@
+#flashMessage.message{
+	background: #FAFEFB url(/img/new-icon/saved.png) no-repeat 20px center;
+    border: 1px solid #6EAF79;
+    background-color: #FAFEFB;
+    color: #6EAF79;
+}
+#flashMessage.message{
+	padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 70px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+#flashMessage.message a.close{
+	background: url(/img/new-icon/close-saved.png) no-repeat;
+	width: 14px;
+	height: 14px;
+}
+#flashMessage.error,
+#flashMessage.warning{
+	background: #FFEFEF url(/img/new-icon/warning.png) no-repeat 20px center;
+    border: 1px solid #F05352;
+    background-color: #FFEFEF;
+    color: #F05352;
+}
+#flashMessage.error{
+	background: #FFEFEF url(/img/new-icon/error.png) no-repeat 20px center;
+}
+
+#flashMessage.message.error a.close,
+#flashMessage.message.warning a.close{
+	background: url(/img/new-icon/close-warning.png) no-repeat;
+	width: 14px;
+	height: 14px;
+}

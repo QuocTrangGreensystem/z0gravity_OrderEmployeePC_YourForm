@@ -1,0 +1,102 @@
+0xu0030
+ 00
+ 00
+0xu0031
+ 1
+ 100
+0xu0032
+ 2
+ 2020
+0xu0033
+ 3
+ 3.00
+0xu0034
+ 4
+ 4
+0xu0035
+ 5
+ 5
+0xu0036
+ 6
+ 6
+0xu0037
+ 7
+ 7
+0xu0041
+ A
+ AVOIR
+0xu0042
+ B
+ BÉNÉFICIER
+0xu0043
+ C
+ CÔTÉ
+0xu0044
+ D
+ D’ÉVITER
+0xu0045
+ ECRAN
+ EXISTE
+0xu0046
+ FAIRE
+ FORECAST
+0xu0047
+ GAUCHE
+ GUIDE
+0xu0048
+ H
+ HAUT
+0xu0049
+ I
+ IV
+0xu004a
+ J
+ JOUR
+0xu004c
+ L
+ L’ÉTAT
+0xu004d
+ MANAGER
+ MÊME
+0xu004e
+ N
+ N’ÉTAIT
+0xu004f
+ OBTENEZ
+ OÙ
+0xu0050
+ PAGE
+ PÉRIODE
+0xu0051
+ QU
+ QU’À
+0xu0052
+ REJET
+ RÉPARTIE
+0xu0053
+ S
+ S’AFFICHENT
+0xu0054
+ TABLEAU
+ TÂCHES
+0xu0055
+ UN
+ UTILITÉ
+0xu0056
+ V
+ VU
+0xu0059
+ Y
+ Y
+0xu005a
+ Z0
+ Z0GRAVITY
+0xu00c0
+ À
+ À
+0xu00c9
+ ÉCHÉANT
+ ÉVITER
+0xu00ca
+ ÊTES
+ ÊTRE

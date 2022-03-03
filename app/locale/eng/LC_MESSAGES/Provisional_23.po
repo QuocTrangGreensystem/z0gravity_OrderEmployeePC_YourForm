@@ -1,0 +1,9 @@
+msgid "Budget Provisional M.D"
+msgstr "Engagé prévisionnel"
+
+msgid "Provisional"
+msgstr "Engagé"
+
+msgid "Budget Provisional"
+msgstr "Engagé prévisionnel"
+

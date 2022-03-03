@@ -1,0 +1,123 @@
+msgid "Project details"
+msgstr ""
+
+msgid "Project Name"
+msgstr "LIBELLE_PROJET"
+
+msgid "Project long name"
+msgstr "NOM DU PROJET"
+
+msgid "Project Code 1"
+msgstr "CODE_PROJET"
+
+msgid "Project Code 2"
+msgstr "%BNPP"
+
+msgid "Company"
+msgstr ""
+
+msgid "Project Manager"
+msgstr "CHEF_DE_PROJET"
+
+msgid "Project type"
+msgstr "POLE_LEADER"
+
+msgid "Program"
+msgstr "ACTIVITE"
+
+msgid "Priority"
+msgstr "Priorité"
+
+msgid "Implementation Complexity"
+msgstr "Complexité"
+
+msgid "Created value"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Current Phase"
+msgstr ""
+
+msgid "Link To RMS Activity"
+msgstr ""
+
+msgid "Issues"
+msgstr "Problématique-Déclencheur"
+
+msgid "Primary Objectives"
+msgstr ""
+
+msgid "Project Objectives"
+msgstr ""
+
+msgid "Constraint"
+msgstr ""
+
+msgid "Remark"
+msgstr "Commentaire"
+
+msgid "Chief Business"
+msgstr ""
+
+msgid "Technical manager"
+msgstr ""
+
+msgid "Start Date"
+msgstr "DATE_DEBUT"
+
+msgid "End Date"
+msgstr "DATE_FIN"
+
+msgid "Customer"
+msgstr "CLIENT"
+
+msgid "Free 1"
+msgstr ""
+
+msgid "Free 2"
+msgstr ""
+
+msgid "Free 3"
+msgstr ""
+
+msgid "Free 4"
+msgstr ""
+
+msgid "Free 5"
+msgstr ""
+
+msgid "Number 1"
+msgstr "PPA_BACKLOG_BNPP J.H"
+
+msgid "Number 2"
+msgstr "PPA_BACKLOG_NXS J.H"
+
+msgid "Number 3"
+msgstr "PPA_N1_BNPP J.H"
+
+msgid "Number 4"
+msgstr "PPA_N1_NXS J.H"
+
+msgid "0/1 1"
+msgstr "ACTIF OUI 1"
+
+msgid "List 1"
+msgstr "Comité"
+
+msgid "List 2"
+msgstr "VERSION_PRINCIPALE"
+
+msgid "List 3"
+msgstr "POLE_LEADER"
+
+msgid "Number 5"
+msgstr "CODE ACTIVITE"
+
+msgid "0/1 2"
+msgstr "PLAN 1 HORS PLAN 0"
+
+msgid "Date 1"
+msgstr "Date création"
+

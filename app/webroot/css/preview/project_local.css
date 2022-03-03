@@ -1,0 +1,103 @@
+.wd-tab .wd-panel h2.wd-t2{
+	margin: 0 !important;
+	padding: 0;
+	position: relative;
+}
+h2.wd-t2 #coord-input{
+	height: 48px;	width: 300px;	border: 1px solid #E1E6E8; border-radius: 2px;
+	font-size: 14px;	line-height: 18px; color: #666; padding: 0; padding-left: 10px;
+}
+h2.wd-t2 #display-maps{
+	margin: 0;
+	position: absolute;
+	right: 0;
+	top: 10px;
+	left: 275px;
+	color: #C6CCCF;
+}
+h2.wd-t2 #display-maps:before{
+	color: #C6CCCF;
+}
+.wd-section .active-box{
+	display: inline-block;
+	float: right;
+	color: #C7CCCF;
+	position: relative;
+	top: 10px;
+	font-size: 20px;
+}
+@media(min-width: 1280px){
+	form#ProjectLocalViewIndexForm{
+		margin-left: 30px;
+	}
+}
+
+#ProjectLocalViewIndexForm fieldset label, #ProjectLocalViewAttachment{
+	color: #666;
+}
+.wd-layout > .wd-main-content > .wd-tab > .wd-panel{
+	padding-top: 20px;
+}
+
+/* new upload dropzone */
+
+.project-local-upload #upload-widget{
+    border: 1px dashed rgba(0,0,0,0.3);
+    color: rgba(0,0,0,0.3);
+}
+#wd-fragment-1 .project-local-upload{
+	display: none;
+	margin-top: 30px;
+}
+#wd-fragment-1 .project-local-upload.active,
+.wd-section#wd-fragment-1.active .project-local-upload.active{
+	display: block;
+}
+#wd-fragment-1.wd-section .project-local-upload.active{
+	display: none;
+}
+
+#files-list{
+	margin: 17px 0;
+}
+#files-list li{
+	position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    color: #424242;
+}
+#files-list li, #files-list li:first-child, #files-list li:last-child {
+    border-radius: 0;
+    border-color: rgba(120, 130, 140, .13);
+}
+
+#files-list li span, #files-list li .file-download{
+	margin-left: 10px;
+	cursor: pointer;
+	font-weight: 400;
+	color: #424242;
+
+}
+
+#files-list li i{
+	font-size: 18px;
+    color: #C6CCCF;
+}
+#files-list li a{
+	cursor: pointer;
+}
+#files-list li .delete-file{
+	float: right;
+}
+fieldset div.wd-input input[type="text"]{
+	height: 31px;
+	padding: 0 5px;
+}
+fieldset div.wd-normal{
+	position: relative;
+    top: 5px;
+}

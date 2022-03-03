@@ -1,0 +1,120 @@
+body .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close {
+    background: url(../../img/new-icon/close.png) no-repeat center center;
+}
+body .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close:hover {
+    background: url(../../img/new-icon/close-blue.png) no-repeat center center;
+    border: none!important;
+}
+body .ui-dialog.ui-widget .ui-dialog-titlebar {
+    background-color: transparent;
+}
+body .ui-dialog.ui-widget .ui-dialog-titlebar  span{
+	position: relative;
+    font-size: 14px;
+    font-weight: 600;
+}
+.template_logs {
+    margin-right: 20px;
+    margin-left: 20px;
+    position: relative;
+	font-size: 14px;
+	font-family: 'Open sans';
+	color: #424242;
+}
+.template_logs #content_comment {
+    height: 100%;
+    position: relative;
+    padding-bottom: 14px;
+}
+.template_logs #content_comment .content {
+    margin-bottom: 15px;
+}
+
+.template_logs #content_comment #update-comment {
+    border: 1px solid #E1E6E8;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px 1px rgba(29,29,27,0.06);
+    width: calc( 100% - 20px );
+    padding: 10px;
+    resize: none;
+    max-height: 150px;
+    height: 98px;
+}
+
+.template_logs .content-logs {
+    height: 300px;
+    overflow-y: auto;
+	margin-top: 10px;
+}
+
+.template_logs .content-logs .content .avatar, 
+.template_logs .content-logs .content .item-content {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.template_logs .content-logs .content .avatar {
+    margin-right: 10px;
+}
+
+.template_logs .content-logs .content .item-content {
+    width: calc(100% - 60px);
+}
+
+.template_logs #content_comment .content p {
+    color: #C6CCCF;
+}
+
+.template_logs .content-logs .content .avatar img {
+    border-radius: 50%;
+	width: 35px;
+	height: auto;
+}
+
+#content_comment.loading:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+#content_comment.loading:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: url(/img/business/wait-1.gif) no-repeat center center;
+    z-index: 3;
+    display: block;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+}
+.circle-name{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	overflow: hidden;
+	background-color: #72ADD2;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 16px;
+	text-align: center;
+	line-height: 40px;
+	font-weight: bold;
+	display: inline-block;
+	vertical-align: top;
+}
+.circle-name a, .circle-name span{
+	color: #fff;
+	font-weight: 600;
+	text-underline: none;
+}
+
+.circle-name a:hover{
+	text-decoration: none;
+}

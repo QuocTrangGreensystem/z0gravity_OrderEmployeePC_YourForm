@@ -1,0 +1,188 @@
+
+.slick-cell .multiSelect {width: auto; display: block;overflow: hidden; text-overflow: ellipsis;}
+.select-employees{
+	margin: 3px;
+}
+.select-employees td{
+	overflow: hidden;
+	padding: 2px 5px;
+}
+.multiSelectOptions{
+
+}
+.select-employees .no-employee .input label{
+	font-weight: normal !important;
+	white-space: normal;
+}
+.select-employees label{
+	display: inline !important;
+	width: auto !important;
+}
+.context-menu-filter{
+	clear: both;
+	overflow: hidden;
+	background-color: #004787;
+	padding: 3px;
+}
+.context-menu .notmatch{
+	display: none;
+}
+.context-menu-filter input{
+	padding: 0 !important;
+	width: 100% !important;
+	border: 0 !important;
+	float: none !important;
+	line-height: normal !important;
+	margin: 0 !important;
+	background: 0 !important;
+	cursor: pointer;
+}
+.context-menu-filter span{
+	display: block;
+	background: url("/css/images/search_label.gif") no-repeat 2px center;
+	padding-left: 17px;
+	background-color: #fff;
+	border: 1px solid #D4D4D4;
+}
+.context-menu-shadow{
+	background-color: white !important;
+}
+.wd-displays{
+	display: none;
+}
+#wd-container-footer{
+	display: none;
+}
+body{
+	overflow: hidden;
+}
+
+.wd-list-project .wd-title .btn {
+    height: 40px;
+    width: 40px;
+    line-height: 38px;
+    display: none;
+    border: 1px solid #E1E6E8;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    padding: 0;
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s ease;
+    color: #666;
+}
+.wd-list-project .wd-title .btn:hover {
+    background-color: #247FC3;
+    color: #fff;
+}
+.wd-list-project .wd-title .btn:hover:before{
+	 color: #fff;
+}
+.grid-canvas .wd-actions a {
+    width: 39px;
+    height: 39px;
+    margin: 0;
+    vertical-align: top;
+    display: inline-block;
+	text-indent: -9999px;
+}
+
+.multiselect-filter,
+.multiselect-filter a.multiSelect{
+	    height: 40px;
+    line-height: 40px;
+	    padding: 0;
+		background-color: transparent;
+}
+.multiselect-filter{
+ padding: 0 5px;
+}
+.multiselect-filter .multiSelect span{
+	margin-top: 0;	
+}
+
+.slick-headerrow .slick-headerrow-column{
+	    
+    box-sizing: border-box;
+	padding: 0;
+}
+.multiSelectOptions .multiSelect-filter{
+	background-color: transparent;
+}
+.slick-headerrow-columns{
+	border-bottom: none;
+}
+.multiSelect-filter *{
+	box-sizing: border-box;
+}
+.slick-cell .circle-name{
+	margin-right: 0;
+	margin-top: 4px;
+}
+.slick-cell .text-center{
+	display: block;
+	width: 100%;
+}
+.slick-viewport .slick-cell a{
+	font-weight: 400;
+    font-style: normal;
+}
+.context-menu-filter{
+	background-color: transparent;
+}
+a.multiSelect.active,
+a.multiSelect.hover{
+	background: url(../../img/new-icon/down.png) no-repeat 100% center;
+}
+.slick-viewport .slick-row .slick-cell.active.editable{
+	padding: 0;
+}
+.slick-viewport .slick-row .slick-cell .multiSelect{
+	height: 40px;
+    line-height: 40px;
+    border: none;
+    padding: 0 5px;
+}
+.slick-viewport .slick-row .slick-cell{
+	height: 40px;
+    /* line-height: 45px; */
+    border-right: 1px solid #E9E9E9;
+    border-bottom: 1px solid #E9E9E9;
+}
+.select-employees .no-employee .input label{
+	white-space: normal;
+}
+.filterer {
+	background: none !important;
+}
+.add-new-item{
+    height: 50px;
+    width: 50px;
+    background-color: #247FC3;
+    box-shadow: 0 0 10px 1px rgba(29,29,27,0.2);
+    border-radius: 50%;
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    position: absolute;
+    z-index: 21;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s ease;
+    top: 105px;
+    right: 80px;
+}
+.add-new-item img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.add-new-item:hover{
+    opacity: 0.95;
+}
+.text-center{
+    text-align: center;
+}

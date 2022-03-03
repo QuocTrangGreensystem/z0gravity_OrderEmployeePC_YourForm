@@ -1,0 +1,63 @@
+@import url(icons.css);
+/*.x-grid-tree-node-expanded td{background:rgb(152, 187, 231) !important}*/
+.x-column-header-inner{
+    background-color: #64a3c7;
+    color: #fff;
+    text-align: center;
+    padding: 10px 5px;
+    border-right: 1px solid #fff;
+    padding-top: 10px !important;
+}
+
+.x-column-header.x-column-header-focus .x-column-header-inner {
+    background-color: #64a3c7;
+}
+
+#treeview-1022{
+    border-right: 1px solid #E0E0E0;
+    border-left: 1px solid #E0E0E0;
+}
+#gridcolumn-1010-titleEl{
+    border-radius: 6px 0 0 0;
+}
+.x-box-inner{
+    border-right: none;
+}
+#headercontainer-1009-innerCt{
+     background-color: #06427A;
+     border-radius: 0 6px 0 0;
+     -webkit-border-radius: 0 6px 0 0;
+}
+.x-panel-default{
+    background: none !important;
+}
+#button-1026{
+    background: url("/img/front/bg-add-project2.png") no-repeat scroll 10% 50% transparent;
+    display: block;
+    padding-left: 27px;
+    text-decoration: none;
+    background-color: #2b8e00;
+    height: 33px;
+}
+span#button-1026-btnInnerEl{
+    color: #F4FFF4 !important;
+    display: block;
+    float: right;
+    height: 33px;
+    line-height: 25px;
+    padding-left: 27px;
+    text-decoration: none;
+}
+#button-1026:hover{
+    background: url("/img/front/bg-add-project1.png") no-repeat scroll 10% 50% transparent;
+    display: block;
+    float: right;
+    height: 33px;
+    padding-left: 27px;
+    text-decoration: none;
+    /*background-color: #3bc500;*/
+    background-color: #00A400;
+}
+.x-component.x-mask {
+    position: inherit;
+}

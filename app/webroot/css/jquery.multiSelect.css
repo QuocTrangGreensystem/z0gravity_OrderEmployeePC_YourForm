@@ -1,0 +1,116 @@
+a.multiSelect {
+    background: #FFF url(images/btn.png) center right no-repeat;
+    border: solid 1px #D4D4D4;
+    padding-right: 20px;
+    position: relative;
+    width: 59%;
+    cursor: default;
+    text-decoration: none;
+    color: #242424;
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: top;
+    height:28px;
+}
+
+a.multiSelect:link, a.multiSelect:visited, a.multiSelect:hover, a.multiSelect:active {
+    color: #242424;
+    text-decoration: none;
+}
+
+a.multiSelect span
+{
+    margin: 4px 0px 1px 3px;
+    overflow: hidden;
+    display: -moz-inline-stack;
+    display: inline-block;
+    white-space: nowrap;
+    color:#242424;
+    font-weight:normal
+}
+
+a.multiSelect.hover {
+    background-image: url(images/btn_hover.png);
+}
+
+a.multiSelect.active, 
+a.multiSelect.focus {
+    border: inset 1px #4EB2F7;
+}
+
+a.multiSelect.active {
+    background-image: url(images/btn_hover.png);
+}
+
+.multiSelectOptions {
+    margin-top: -1px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: solid 1px #D4D4D4;
+    background: #FFF;
+    color: #000;
+    top: -9999px;
+}
+
+.multiSelectOptions LABEL {
+    padding: 0px 2px;
+    display: block;
+    white-space: nowrap;
+}
+
+.multiSelectOptions LABEL.optGroup
+{
+    font-weight: bold;
+}
+
+.multiSelectOptions .optGroupContainer LABEL
+{
+    padding-left: 10px;
+}
+
+.multiSelectOptions.optGroupHasCheckboxes .optGroupContainer LABEL
+{
+    padding-left: 18px;
+}
+
+.multiSelectOptions input{
+    vertical-align: middle;
+}
+
+.multiSelectOptions LABEL.checked {
+    background-color: #dce5f8;
+}
+
+.multiSelectOptions LABEL.selectAll {
+    border-bottom: dotted 1px #CCC;
+}
+
+.multiSelectOptions LABEL.hover {
+    background-color: #3399ff;
+    color: white;
+}
+.multiSelect-filter{
+    clear: both;
+    overflow: hidden;
+    background-color: #004787;
+    padding: 3px;
+}
+.multiSelect-filter input{
+    padding: 0 !important;
+    width: 100% !important;
+    border: 0 !important;
+    float: none !important;
+    line-height: normal !important;
+    margin: 0 !important;
+    background: 0 !important;
+}
+.multiSelect-filter span{
+    display: block;
+    background: url("images/search_label.gif") no-repeat 2px center;
+    padding-left: 17px;
+    background-color: #fff;
+    border: 1px solid #D4D4D4;
+}
+.multiSelectOptions label.notmatch {
+    display: none !important;
+}

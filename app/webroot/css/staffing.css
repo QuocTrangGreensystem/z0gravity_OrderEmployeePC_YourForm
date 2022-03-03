@@ -1,0 +1,31 @@
+/* build by QN */
+
+/* reset tables */
+#staffing-container table {
+}
+
+
+
+
+#left-header {
+}
+
+
+
+.table-cell {
+	border: 1px solid #ddd;
+	border-collapse: collapse;
+	padding: 5px;
+	vertical-align: middle;
+}
+
+.table-header {
+	background-color: #185790 !important;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+
+.x-hide {
+	display: none;
+}

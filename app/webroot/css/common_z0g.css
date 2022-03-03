@@ -1,0 +1,238 @@
+/* date */
+a img{
+    border: 0;
+}
+.datepicker{margin-bottom:10px;}
+.datepicker .ui-datepicker{display:block;width:100%;}
+.ui-datepicker-trigger{position:relative;top:7px;right:27px;vertical-align:top;cursor:pointer;}
+.wd-calendar-filter .ui-datepicker-trigger{position:absolute;top:9px;right:11px;vertical-align:top;cursor:pointer;}
+.ui-datepicker{display:none;font-size:12px;width:206px;background-color:#fff;z-index:1000;}
+.ui-datepicker table{width:100%;}
+.ui-datepicker table th, .ui-datepicker table td {text-align:center;}
+.ui-datepicker table th{background-color:#ebebeb;border:#ebebeb solid 1px;color:#414141 }
+.ui-datepicker table td{background-color:#fafafa;border:#f0f0f0 solid 1px;width:14%;}
+.ui-datepicker table td a{ color:#414141;text-align:center; text-decoration: none;}
+.ui-datepicker table td.ui-datepicker-current-day, .ui-datepicker table td.ui-datepicker-today{font-weight:bolder;}
+.ui-datepicker table td.ui-datepicker-current-day{background-color:#ebebeb;}
+.ui-datepicker table td.ui-datepicker-today{background-color:#00426B;}
+.ui-datepicker table td.ui-datepicker-today a{ color:#fff;border:none;background-color:#3D78A1;text-align:center}
+.ui-datepicker table td.ui-state-disabled{color:#cdcdcd;}
+.ui-datepicker table td.ui-datepicker-week-end a {color:#990000;}
+.ui-state-hover, .ui-datepicker-prev-hover{border:none !important;}
+.ui-datepicker .ui-datepicker-header{background-color:#3D78A1;height:29px;position:relative;zoom:1;}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-prev, .ui-datepicker .ui-datepicker-header .ui-datepicker-next{cursor:pointer;height:16px;overflow:hidden;position:absolute;text-indent:-1983em;top:7px;width:16px;}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-prev{background-position:left top;left:7px; background: url(../img_z0g/icon-pre.svg) no-repeat;}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-prev:hover{}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-next{background-position:-16px top;right:7px; background: url(../img_z0g/icon-next.svg) no-repeat;}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-next:hover{}
+.ui-datepicker .ui-datepicker-title{background-color:#3D78A1;border-radius:3px 3px 0 0;-moz-border-radius:3px 3px 0 0;-webkit-border-radius:3px 3px 0 0;color:#fff;font-weight:bolder;line-height:29px;text-align:center;text-shadow:#333 1px 1px;}
+.ui-datepicker .ui-datepicker-title select{margin:0 5px}
+.ui-datepicker .ui-datepicker-buttonpane{margin-top:5px;text-align:right;}
+.ui-datepicker .ui-datepicker-buttonpane button {font-size:12px;cursor:pointer;background-color:#6b6b6b;border:0;color:#fff;height:25px;line-height:25px;padding:0 7px 3px}
+.ui-datepicker .ui-datepicker-buttonpane button:hover {background-color:#3D78A1}
+/* dialog */
+.ui-widget-overlay { background-color: #000; height: 100%; left: 0; opacity: .5; -moz-opacity: .5; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; filter: alpha(opacity=50); position: absolute; top: 0; width: 100%; }
+.ui-dialog {background-color: #fff; border: #666 solid 1px; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; font-size: .75em; padding: 1px; position: absolute; }
+.ui-dialog .ui-dialog-titlebar { background-color: #3D78A1; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; color: #fff; cursor: move; height: 31px; line-height: 31px; padding: 0 10px; text-shadow: #004483; 1px 1px; }
+.ui-dialog .ui-dialog-titlebar .ui-dialog-title { font-weight: bolder; }
+.ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close { background: url(../img_z0g/arrow-12.png) no-repeat; height: 17px; overflow: hidden; position: absolute; right: 8px; text-indent: -1983em; top: 7px; width: 17px; }
+.ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close:hover { background-position: left -17px; }
+.ui-dialog .ui-dialog-content { padding: 10px 0; }
+.message{
+    text-align: center;
+    padding-top: 2em;
+}
+@media (max-width: 48em) {
+  .message {
+      text-align: center;
+      padding-top: 0em; } }
+.page-login__logo .warning .close{
+    display: none;
+}
+div.wd-error-message {
+    clear: both;
+    display: block;
+    width: 65%;
+    color: #b51f1f;
+    text-align: left;
+}
+.nav-item-actived{
+    background: linear-gradient(to right, rgba(0, 66, 107, 0.4) 9.6%, rgba(41, 234, 255, 0.4) 86.33%);
+}
+.third-nav__item {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+.main-nav>a, .secondary-nav>a{
+    text-decoration: none;
+}
+.multiSelectOptions{
+    width: 315px !important;
+    height: 200px !important;
+}
+.wd-row-custom{
+	margin-right: -7px;
+}
+.wd-row-custom p{
+	font-weight: bold;
+	text-align:right;
+}
+.row-number-custom {
+    text-align: right;
+    padding-right: 10px !important;
+}
+.left-content{
+    width: 49.95%;
+    float: left;
+}
+.left-content>p, .left-content>div, .right-content>p, .right-content>div, .textarea-editor{
+    width: 100%;
+}
+.left-content label, .right-content label, .textarea-editor label, .center-centent label{
+    float: left;
+    width: 135px;
+    padding-right: 10px;
+    line-height: 29px;
+    text-transform: capitalize;
+    text-align: right;
+    font-weight: bolder;
+}
+.left-content select, .right-content select{
+    width: 62.2%;
+    float: left;
+}
+.right-content{
+    width: 50%;
+    float: right;
+}
+.panel{
+    overflow: hidden;
+}
+.textarea-editor textarea{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+#flashMessage{
+    padding-top: 2em;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+#flashMessage .close {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    text-decoration: none;
+    display: none;
+}
+#add-activity{
+    margin-bottom: 10px;
+}
+.delete-attachment,.download-attachment{
+	background-repeat: no-repeat;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	margin: 0 5px;
+	overflow: hidden;
+	color: transparent !important;
+	text-indent: -999px;
+}
+.link_button img{
+    float: left;
+    display: block;
+    margin-top: 2px;
+    margin-right: 8px;
+}
+.only_button{
+    display: inline-block;
+    vertical-align: middle;
+}
+.only_button img{
+    width: 36px;
+    height: 36px;
+}
+.button_with_text{
+
+    padding-top: 12px;
+    padding-bottom: 7px;
+}
+.button_with_text img{
+    float: left;
+    height: 19px;
+    width: 19px;
+    margin-top: -3px;
+    margin-right: 7px;
+}
+.gantt-month, .gantt-current-month {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-right: 1px dotted #000;
+    opacity: 0.3;
+}
+.gantt-month span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 36px;
+}
+.gantt-current-month {
+    background-color: #ddd;
+}
+.sg{
+    margin-top: 20px;
+}
+.sub-menu{
+    display: none;
+}
+.sub-menu li{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.sg-outline{
+    max-width: 20em;
+}
+.sg-section-content{
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 2em;
+    display: inline-block;
+    max-width: 100%;
+    width: 100%;
+}
+.section-table{
+    border-top: 1px solid #00fff7;
+    border-bottom: 1px solid #fff;
+}
+.row-even{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.no-magin{
+    margin: 0;
+}
+.button-center{
+    padding: 10px 0;
+    margin: 0 auto;
+    width: 220px;
+    clear: both;
+}
+.center-centent{
+    float: left;
+    width: 100%;
+}
+.center-centent p{
+    float: left;
+    margin: 0;
+    margin-left: -30px;
+}
+.center-centent p label{
+    width: auto;
+    margin-left: 10px;
+}
+ol li a{
+    color: #00fff7;
+    text-decoration: none;
+}
+ol li a:hover{
+    text-decoration: underline;
+}

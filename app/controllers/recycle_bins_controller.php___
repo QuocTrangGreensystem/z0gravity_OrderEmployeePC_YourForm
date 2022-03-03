@@ -1,0 +1,3518 @@
+<?php
+/**
+ * AZURÉE
+ * Copyright 2011 -2014 by Global SI (http://globalsi.fr)
+ * and Green System Solutions (http://greensystem.vn)
+ */
+class RecycleBinsController extends AppController {
+
+    /**
+     * Controller name
+     *
+     * @var string
+     * @access public
+     */
+    var $name = 'RecycleBins';
+    /**
+     * Controller using model
+     * @var array
+     * @access public
+     */
+    var $uses = array();
+    public function beforeFilter(){
+      parent::beforeFilter();
+    }
+
+    /**
+     * Update module company
+     */
+    public function updateModuleCompany(){
+        $this->loadModels('Company');
+        $company = $this->Company->find('all', array(
+            'recursive' => -1,
+            'fields' => array('id', 'module', 'module_pms', 'module_rms', 'module_audit', 'module_report', 'module_busines')
+        ));
+        $company = Set::combine($company, '{n}.Company.id', '{n}.Company');
+        foreach ($company as $key => $value) {
+            if($value['module'] == 0){
+                $value['module_pms'] = 1;
+                $value['module_rms'] = 0;
+                $value['module_audit'] = 0;
+                $value['module_report'] = 0;
+                $value['module_busines'] = 0;
+            }elseif($value['module'] == 1){
+                $value['module_pms'] = 0;
+                $value['module_rms'] = 1;
+                $value['module_audit'] = 0;
+                $value['module_report'] = 0;
+                $value['module_busines'] = 0;
+            }elseif($value['module'] == 2){
+                $value['module_pms'] = 1;
+                $value['module_rms'] = 0;
+                $value['module_audit'] = 0;
+                $value['module_report'] = 0;
+                $value['module_busines'] = 0;
+            }elseif($value['module'] == 3){
+                $value['module_pms'] = 1;
+                $value['module_rms'] = 1;
+                $value['module_audit'] = 0;
+                $value['module_report'] = 0;
+                $value['module_busines'] = 0;
+            }elseif($value['module'] == 4){
+                $value['module_pms'] = 1;
+                $value['module_rms'] = 0;
+                $value['module_audit'] = 1;
+                $value['module_report'] = 0;
+                $value['module_busines'] = 0;
+            }elseif($value['module'] == 5){
+                $value['module_pms'] = 0;
+                $value['module_rms'] = 1;
+                $value['module_audit'] = 1;
+                $value['module_report'] = 0;
+                $value['module_busines'] = 0;
+            }else{
+                $value['module_pms'] = 1;
+                $value['module_rms'] = 1;
+                $value['module_audit'] = 1;
+                $value['module_report'] = 0;
+                $value['module_busines'] = 0;
+            }
+            $saved = array(
+                'module_pms' => $value['module_pms'],
+                'module_rms' => $value['module_rms'],
+                'module_audit' => $value['module_audit'],
+                'module_report' => $value['module_report'],
+                'module_busines' => $value['module_busines']
+            );
+            $this->Company->id = $key;
+            $this->Company->save($saved);
+        }
+        echo 'OKIE';
+        exit;
+    }
+
+
+    /**
+     * Update activated projects
+     */
+    public function updateActivatedProjects(){
+        set_time_limit(0);
+        /**
+         * Lay tat ca activity linked voi projects
+         */
+        $this->loadModels('Activity', 'Project');
+        $activities = $this->Activity->find('list', array(
+            'recursive' => -1,
+            'conditions' => array(
+                'NOT' => array('project is null')
+            ),
+            'fields' => array('project', 'activated')
+        ));
+        if(!empty($activities)){
+            foreach($activities as $id => $activated){
+                $this->Project->id = $id;
+                $this->Project->save(array('activated' => $activated));
+            }
+        }
+        echo 'OKIE!';
+        exit;
+    }
+
+    /**
+     * Rename Employee
+     */
+    public function renameEmployeeProjectAndActivity($companyName = null){
+        set_time_limit(0);
+        $this->loadModels('Employee', 'Company', 'Project', 'Activity');
+        $company_id = $this->Company->find('first', array(
+            'recursive' => -1,
+            'conditions' => array('Company.company_name' => trim(strtolower($companyName))),
+            'fields' => array('id')
+        ));
+        $company_id = !empty($company_id) && !empty($company_id['Company']['id']) ? $company_id['Company']['id'] : '';
+        /**
+         * Rename Employee
+         */
+        if(!empty($company_id)){
+            $employees = $this->Employee->find('all', array(
+                'recursive' => -1,
+                'conditions' => array('Employee.company_id' => $company_id, 'is_sas' => 0),
+                'fields' => array('id', 'first_name', 'last_name', 'email')
+            ));
+            if(!empty($employees)){
+                $count = 1;
+                foreach($employees as $employee){
+                    $dx = $employee['Employee'];
+                    $email = explode('@', $dx['email']);
+                    $save['last_name'] = $count;
+                    if(!empty($email[0])){
+                        if(strpos($email[0], '.') !== false){
+                           $save['email'] = preg_replace('/\.(.*)/', ".$count", $email[0]) . '@' . trim(strtolower($companyName)) . '.com';
+                        } else {
+                            $save['email'] = $email[0] . ".$count" . '@' . trim(strtolower($companyName)) . '.com';
+                        }
+                    }
+                    $this->Employee->id = $dx['id'];
+                    $this->Employee->save($save);
+                    $count++;
+                }
+            }
+        }
+        /**
+         * Rename Project linked Activity
+         */
+        $projects = $this->Project->find('list', array(
+            'recursive' => -1,
+            'conditions' => array('company_id' => $company_id, 'activity_id IS NOT NULL'),
+            'fields' => array('id','activity_id'),
+            'order' => array('id')
+        ));
+        $runs = 1;
+        if(!empty($projects)){
+            foreach($projects as $id => $activityId){
+                $saveLinkProject = array(
+                    'project_name' => 'Project name P' . $runs,
+                    'long_project_name' => 'Project long name P' . $runs
+                );
+                /**
+                 * Save Project
+                 */
+                $this->Project->id = $id;
+                $this->Project->save($saveLinkProject);
+                $saveLinkActivity = array(
+                    'name' => 'Activity name A' . $runs,
+                    'long_name' => 'Activity long name A' . $runs,
+                    'short_name' => 'Activity short name A' . $runs
+                );
+                /**
+                 * Save Activity
+                 */
+                $this->Activity->id = $activityId;
+                $this->Activity->save($saveLinkActivity);
+                $runs++;
+            }
+        }
+        /**
+         * Rename Project not Activity
+         */
+        $tmp_runPs = $tmp_runAs = $runs;
+        $projects = $this->Project->find('list', array(
+            'recursive' => -1,
+            'conditions' => array('company_id' => $company_id, 'activity_id IS NULL'),
+            'fields' => array('id', 'id'),
+            'order' => array('id')
+        ));
+        if(!empty($projects)){
+            foreach($projects as $id){
+                $save = array(
+                    'project_name' => 'Project name P' . $tmp_runPs,
+                    'long_project_name' => 'Project long name P' . $tmp_runPs
+                );
+                $this->Project->id = $id;
+                $this->Project->save($save);
+                $tmp_runPs++;
+            }
+        }
+        /**
+         * Rename Activity
+         */
+        $activities = $this->Activity->find('list', array(
+            'recursive' => -1,
+            'conditions' => array('company_id' => $company_id, 'project IS NULL'),
+            'fields' => array('id', 'id'),
+            'order' => array('id')
+        ));
+        if(!empty($activities)){
+            foreach($activities as $id){
+                $save = array(
+                    'name' => 'Activity name A' . $tmp_runAs,
+                    'long_name' => 'Activity long name A' . $tmp_runAs,
+                    'short_name' => 'Activity short name A' . $tmp_runAs
+                );
+                $this->Activity->id = $id;
+                $this->Activity->save($save);
+                $tmp_runAs++;
+            }
+        }
+        echo 'OK';
+        exit;
+    }
+
+    /**
+     * Add company ID vao employee table
+     */
+    public function addCompanyIdAndProfitCenterIdToEmployee(){
+        set_time_limit(0);
+        $this->loadModels('CompanyEmployeeReference', 'Employee', 'ProjectEmployeeProfitFunctionRefer');
+        $listEmploys = $this->CompanyEmployeeReference->find('list', array(
+            'recursive' => -1,
+            'fields' => array('employee_id', 'company_id')
+        ));
+        $listPCOfEmployees = $this->ProjectEmployeeProfitFunctionRefer->find('list', array(
+            'recursive' => -1,
+            'fields' => array('employee_id', 'profit_center_id')
+        ));
+        $total = 0;
+        if(!empty($listPCOfEmployees)){
+            foreach($listPCOfEmployees as $emID => $pcID){
+                $total++;
+                $companyIdOfEm = !empty($listEmploys[$emID]) ? $listEmploys[$emID] : '';
+                $this->Employee->id = $emID;
+                $this->Employee->save(array('profit_center_id' => $pcID, 'company_id' => $companyIdOfEm));
+            }
+        }
+        echo 'OKIE!';
+        exit;
+    }
+
+    public function addProjectManagerSeeAllProjectsOfAllCompany(){
+        $this->loadModels('Company', 'CompanyConfig');
+        $companies = $this->Company->find('list', array(
+            'recursive' => -1,
+            'fields' => array('id', 'id')
+        ));
+        if(!empty($companies)){
+            foreach($companies as $company_id){
+                $last = $this->CompanyConfig->find('first', array(
+                    'recursive' => -1,
+                    'conditions' => array('company' => $company_id, 'cf_name' => 'see_all_projects'),
+                    'fields' => array('id')
+                ));
+                if(!empty($last) && !empty($last['CompanyConfig']['id'])){
+                    $this->CompanyConfig->id = $last['CompanyConfig']['id'];
+                    $this->CompanyConfig->save(array('cf_value' => 1));
+                } else {
+                    $saved = array('company' => $company_id, 'cf_name' => 'see_all_projects', 'cf_value' => 1);
+                    $this->CompanyConfig->create();
+                    $this->CompanyConfig->save($saved);
+                }
+            }
+        }
+        echo 'OKIE!';
+        exit;
+    }
+
+
+    public function updateStartEndDateActivity(){
+        set_time_limit(0);
+        $this->loadModels('Activity', 'ActivityTask', 'ProjectTask');
+        $infors = $this->Session->read('Auth.employee_info');
+        $company_id = $infors['Company']['id'];
+        $projectTasks = $activityTasks = array();
+        $activities = $this->Activity->find('all', array(
+            'recursive' => -1,
+            'conditions' => array('company_id' => $company_id),
+            'fields' => array('id', 'start_date', 'end_date', 'project', 'created', 'updated')
+        ));
+        $activityIds = !empty($activities) ? Set::classicExtract($activities, '{n}.Activity.id') : array();
+        $projectIds = !empty($activities) ? array_unique(Set::classicExtract($activities, '{n}.Activity.project')) : array();
+        if(!empty($activityIds)){
+            $activityTasks = $this->ActivityTask->find('all', array(
+                'recursive' => -1,
+                'conditions' => array(
+                    'activity_id' => $activityIds,
+                    'NOT' => array('task_start_date' => null, 'task_end_date' => null)
+                ),
+                'fields' => array(
+                    'activity_id',
+                    'MIN(task_start_date) AS startDate',
+                    'MAX(task_end_date) AS endDate'
+                ),
+                'group' => array('activity_id')
+            ));
+            $activityTasks = !empty($activityTasks) ? Set::combine($activityTasks, '{n}.ActivityTask.activity_id', '{n}.0') : array();
+        }
+        if(!empty($projectIds)){
+            $projectTasks = $this->ProjectTask->find('all', array(
+                'recursive' => -1,
+                'conditions' => array(
+                    'project_id' => $projectIds,
+                    'NOT' => array('task_start_date' => '0000-00-00', 'task_end_date' => '0000-00-00')
+                ),
+                'fields' => array(
+                    'project_id',
+                    'MIN(task_start_date) AS startDate',
+                    'MAX(task_end_date) AS endDate'
+                ),
+                'group' => array('project_id')
+            ));
+            $projectTasks = !empty($projectTasks) ? Set::combine($projectTasks, '{n}.ProjectTask.project_id', '{n}.0') : array();
+        }
+        $count = 0;
+        $total = 0;
+        if(!empty($activities)){
+            $total = count($activities);
+            foreach($activities as $activity){
+                $dx = $activity['Activity'];
+                $dx['start_date'] = empty($dx['start_date']) ? $dx['created'] : $dx['start_date'];
+                $dx['end_date'] = empty($dx['end_date']) ? $dx['updated'] : $dx['end_date'];
+                $saved = array();
+                if(!empty($dx['project'])){
+                    $pTaskOfActivity = !empty($projectTasks[$dx['project']]) ? $projectTasks[$dx['project']] : array();
+                    if(!empty($pTaskOfActivity)){
+                        $start = strtotime($pTaskOfActivity['startDate']);
+                        $end = strtotime($pTaskOfActivity['startDate']);
+                        $saved['start_date'] = (!empty($dx['start_date']) && $dx['start_date'] <= $start) ? $dx['start_date'] : $start;
+                        $saved['end_date'] = ($dx['end_date'] >= $end) ? $dx['end_date'] : $end;
+                    } else {
+                        $saved['start_date'] = $dx['start_date'];
+                        $saved['end_date'] = $dx['end_date'];
+                    }
+                } else {
+                    $aTaskOfActivity = !empty($activityTasks[$dx['id']]) ? $activityTasks[$dx['id']] : array();
+                    if(!empty($aTaskOfActivity)){
+                        $saved['start_date'] = (!empty($dx['start_date']) && $dx['start_date'] <= $aTaskOfActivity['startDate']) ? $dx['start_date'] : $aTaskOfActivity['startDate'];
+                        $saved['end_date'] = ($dx['end_date'] >= $aTaskOfActivity['endDate']) ? $dx['end_date'] : $aTaskOfActivity['endDate'];
+                    } else {
+                        $saved['start_date'] = $dx['start_date'];
+                        $saved['end_date'] = $dx['end_date'];
+                    }
+                }
+                $this->Activity->id = $dx['id'];
+                if($this->Activity->save($saved)){
+                    $count++;
+                }
+            }
+        }
+        echo 'Saved: ' . $count . ' / ' . $total;
+        exit;
+    }
+    /**
+     * checkTaskHaveRequestButNotExistsSystem
+     */
+    public function checkTaskHaveRequestButNotExistsSystem(){
+        $this->loadModel('ActivityRequest');
+        $this->loadModel('ActivityTask');
+        /**
+         * Lay tat ca cac task cua he thong
+         */
+        $activityTasks = $this->ActivityTask->find('list', array(
+            'recursive' => -1,
+            'fields' => array('id', 'id')
+        ));
+        $activityTasks[0] = 0;
+        /**
+         * Lay tat cac cac task duoc request
+         */
+        $activityRequests = $this->ActivityRequest->find('list', array(
+            'recursive' => -1,
+            'fields' => array('id', 'task_id'),
+            'conditions' => array(
+                'NOT' => array(
+                    'OR' => array(
+                        'task_id IS NULL',
+                        'task_id' => $activityTasks
+                    )
+                )
+            )
+        ));
+        $activityRequests = !empty($activityRequests) ? array_unique($activityRequests) : array();
+        debug($activityRequests); exit;
+    }
+
+    /**
+     * Modify year = 1980 of repeat of holiday
+     */
+    public function modifyYearInRepeatOfHolidays(){
+        $this->loadModel('Holiday');
+        $holidays = $this->Holiday->find('list', array(
+            'recursive' => -1,
+            'conditions' => array(
+                'NOT' => array('repeat' => 'IS NULL')
+            ),
+            'fields' => array('id', 'repeat')
+        ));
+        if(!empty($holidays)){
+            foreach($holidays as $id => $date){
+                $date = strtotime(date('d-m', $date) . '-1980');
+                $this->Holiday->id = $id;
+                $this->Holiday->save(array('repeat' => $date));
+            }
+        }
+        echo 'Finish!';
+        exit;
+    }
+
+    /**
+     * Delete database company
+     */
+    public function deleteAllDatabaseOfCompany($company = null){
+        if(!empty($company)){
+            /**
+             * Xoa du lieu trong admin
+             */
+            $this->loadModel('ProjectSetting');
+            $this->loadModel('AbsenceAttachment');
+            $this->loadModel('AbsenceHistory');
+            $this->loadModel('AbsenceRequestConfirm');
+            $this->loadModel('Absence');
+            $this->loadModel('ActionLog');
+            $this->loadModel('ActivityColumn');
+            $this->loadModel('ActivityExport');
+            $this->loadModel('ActivityFamily');
+            $this->loadModel('ActivityRequestConfirmMonth');
+            $this->loadModel('ActivityRequestConfirm');
+            $this->loadModel('ActivityRequestCopy');
+            $this->loadModel('ActivityRequest');
+            $this->loadModel('AuditAdmin');
+            $this->loadModel('AuditMissionEmployeeRefer');
+            $this->loadModel('AuditMission');
+            $this->loadModel('AuditMissionFile');
+            $this->loadModel('AuditRecomEmployeeRefer');
+            $this->loadModel('AuditRecom');
+            $this->loadModel('AuditRecomFile');
+            $this->loadModel('AuditSetting');
+            $this->loadModel('BudgetCustomer');
+            $this->loadModel('BudgetProvider');
+            $this->loadModel('BudgetSetting');
+            $this->loadModel('BudgetType');
+            $this->loadModel('ProjectCreatedValue');
+            $this->loadModel('City');
+            $this->loadModel('Company');
+            $this->loadModel('CompanyEmployeeReference');
+            $this->loadModel('Employee');
+            $this->loadModel('ContractType');
+            $this->loadModel('Country');
+            $this->loadModel('Currency');
+            $this->loadModel('Holiday');
+            $this->loadModel('LogSystem');
+            $this->loadModel('Menu');
+            $this->loadModel('ProfitCenter');
+            $this->loadModel('ProjectAmrCategory');
+            $this->loadModel('ProjectAmrSubCategory');
+            $this->loadModel('ProjectAmrCostControl');
+            $this->loadModel('ProjectAmrOrganization');
+            $this->loadModel('ProjectAmrPerimeter');
+            $this->loadModel('ProjectAmrPlan');
+            $this->loadModel('ProjectAmrProblemControl');
+            $this->loadModel('ProjectAmrProgram');
+            $this->loadModel('ProjectAmrSubProgram');
+            $this->loadModel('ProjectAmrRiskControl');
+            $this->loadModel('ProjectAmrStatuse');
+            $this->loadModel('ProjectComplexity');
+            $this->loadModel('ProjectEvolutionImpact');
+            $this->loadModel('ProjectEvolutionType');
+            $this->loadModel('ProjectFunction');
+            $this->loadModel('ProjectIssueSeverity');
+            $this->loadModel('ProjectIssueStatuse');
+            $this->loadModel('ProjectLivrableCategory');
+            $this->loadModel('ProjectPhaseStatuse');
+            $this->loadModel('ProjectPriority');
+            $this->loadModel('ProjectPhase');
+            $this->loadModel('ProjectRiskOccurrence');
+            $this->loadModel('ProjectRiskSeverity');
+            $this->loadModel('ProjectStatuse');
+            $this->loadModel('ProjectType');
+            $this->loadModel('ProjectSubType');
+            $this->loadModel('ResponseConstraint');
+            $this->loadModel('SaleCustomerContact');
+            $this->loadModel('SaleCustomerIban');
+            $this->loadModel('SaleCustomer');
+            $this->loadModel('SaleExpense');
+            $this->loadModel('SaleLeadEmployeeRefer');
+            $this->loadModel('SaleLead');
+            $this->loadModel('SaleLeadFile');
+            $this->loadModel('SaleLeadLog');
+            $this->loadModel('SaleLeadProductExpense');
+            $this->loadModel('SaleLeadProductInvoice');
+            $this->loadModel('SaleLeadProduct');
+            $this->loadModel('SaleRole');
+            $this->loadModel('SaleSetting');
+            $this->loadModel('SecuritySetting');
+            $this->loadModel('TmpCaculateAbsence');
+            $this->loadModel('TmpCaculateProfitCenter');
+            $this->loadModel('TmpModuleActivityExport');
+            $this->loadModel('TmpProfitCenterOfActivity');
+            $this->loadModel('TmpStaffingSystem');
+            $this->loadModel('TranslationEntry');
+            $this->loadModel('TranslationSetting');
+            $this->loadModel('UserView');
+            $this->loadModel('Workday');
+            $this->loadModel('AbsenceComment');
+            $this->loadModel('AbsenceRequest');
+            $this->loadModel('AbsenceRequestFile');
+            $this->loadModel('ActivityComment');
+            $this->loadModel('ActivityForecast');
+            $this->loadModel('EmployeeAbsence');
+            $this->loadModel('HistoryFilter');
+            $this->loadModel('ProjectEmployeeProfitFunctionRefer');
+            $this->loadModel('UserDefaultView');
+            $this->loadModel('UserStatusViewActivity');
+            $this->loadModel('UserStatusViewSaleDeal');
+            $this->loadModel('UserStatusViewSale');
+            $this->loadModel('UserStatusView');
+            $this->loadModel('Profile');
+            $this->loadModel('ProfileValue');
+            $this->loadModel('ApiKey');
+            $this->loadModel('CompanyConfig');
+            $this->loadModel('BudgetFunder');
+            $this->loadModel('ProjectAcceptanceType');
+            $company = strtolower(trim($company));
+            $companies = $this->Company->find('first', array(
+                'recursive' => -1,
+                'conditions' => array('company_name' => $company),
+                'fields' => array('id')
+            ));
+            if(!empty($companies) && !empty($companies['Company']['id'])){
+                $company_id = $companies['Company']['id'];
+                /**
+                 * CompanyConfig
+                 */
+                $this->CompanyConfig->deleteAll(array('CompanyConfig.company' => $company_id), false);
+                /**
+                 * ApiKey
+                 */
+                $this->ApiKey->deleteAll(array('ApiKey.company_id' => $company_id), false);
+                /**
+                 * ProjectSetting
+                 */
+                $this->ProjectSetting->deleteAll(array('ProjectSetting.company_id' => $company_id), false);
+                /**
+                 * AbsenceAttachment
+                 */
+                $this->AbsenceAttachment->deleteAll(array('AbsenceAttachment.company_id' => $company_id), false);
+                /**
+                 * AbsenceHistory
+                 */
+                $this->AbsenceHistory->deleteAll(array('AbsenceHistory.company_id' => $company_id), false);
+                /**
+                 * AbsenceRequestConfirm
+                 */
+                $this->AbsenceRequestConfirm->deleteAll(array('AbsenceRequestConfirm.company_id' => $company_id), false);
+                /**
+                 * Absence
+                 */
+                $this->Absence->deleteAll(array('Absence.company_id' => $company_id), false);
+                /**
+                 * ActionLog
+                 */
+                $this->ActionLog->deleteAll(array('ActionLog.company_id' => $company_id), false);
+                /**
+                 * ActivityColumn
+                 */
+                $this->ActivityColumn->deleteAll(array('ActivityColumn.company_id' => $company_id), false);
+                /**
+                 * ActivityExport
+                 */
+                $this->ActivityExport->deleteAll(array('ActivityExport.company_id' => $company_id), false);
+                /**
+                 * ActivityFamily
+                 */
+                $this->ActivityFamily->deleteAll(array('ActivityFamily.company_id' => $company_id), false);
+                /**
+                 * ActivityRequestConfirmMonth
+                 */
+                $this->ActivityRequestConfirmMonth->deleteAll(array('ActivityRequestConfirmMonth.company_id' => $company_id), false);
+                /**
+                 * ActivityRequestConfirm
+                 */
+                $this->ActivityRequestConfirm->deleteAll(array('ActivityRequestConfirm.company_id' => $company_id), false);
+                /**
+                 * ActivityRequestCopy
+                 */
+                $this->ActivityRequestCopy->deleteAll(array('ActivityRequestCopy.company_id' => $company_id), false);
+                /**
+                 * ActivityRequest
+                 */
+                $this->ActivityRequest->deleteAll(array('ActivityRequest.company_id' => $company_id), false);
+                /**
+                 * AuditAdmin
+                 */
+                $this->AuditAdmin->deleteAll(array('AuditAdmin.company_id' => $company_id), false);
+                /**
+                 * AuditMissionEmployeeRefer
+                 */
+                $this->AuditMissionEmployeeRefer->deleteAll(array('AuditMissionEmployeeRefer.company_id' => $company_id), false);
+                /**
+                 * AuditMission
+                 */
+                $auditMissions = $this->AuditMission->find('list', array(
+                    'recursive' => -1,
+                    'conditions' => array('AuditMission.company_id' => $company_id),
+                    'fields' => array('id', 'id')
+                ));
+                $this->AuditMissionFile->deleteAll(array('AuditMissionFile.audit_mission_id' => $auditMissions), false);
+                $this->AuditMission->deleteAll(array('AuditMission.company_id' => $company_id), false);
+                /**
+                 * AuditRecomEmployeeRefer
+                 */
+                $this->AuditRecomEmployeeRefer->deleteAll(array('AuditRecomEmployeeRefer.company_id' => $company_id), false);
+                /**
+                 * AuditRecom
+                 */
+                $auditRecoms = $this->AuditRecom->find('list', array(
+                    'recursive' => -1,
+                    'conditions' => array('AuditRecom.company_id' => $company_id),
+                    'fields' => array('id', 'id')
+                ));
+                $this->AuditRecomFile->deleteAll(array('AuditRecomFile.audit_recom_id' => $company_id), false);
+                $this->AuditRecom->deleteAll(array('AuditRecom.company_id' => $company_id), false);
+                /**
+                 * AuditSetting
+                 */
+                $this->AuditSetting->deleteAll(array('AuditSetting.company_id' => $company_id), false);
+                /**
+                 * BudgetCustomer
+                 */
+                $this->BudgetCustomer->deleteAll(array('BudgetCustomer.company_id' => $company_id), false);
+                /**
+                 * BudgetProvider
+                 */
+                $this->BudgetProvider->deleteAll(array('BudgetProvider.company_id' => $company_id), false);
+                /**
+                 * BudgetSetting
+                 */
+                $this->BudgetSetting->deleteAll(array('BudgetSetting.company_id' => $company_id), false);
+                /**
+                 * BudgetType
+                 */
+                $this->BudgetType->deleteAll(array('BudgetType.company_id' => $company_id), false);
+                /**
+                 * BudgetFunder
+                 */
+                $this->BudgetFunder->deleteAll(array('BudgetFunder.company_id' => $company_id), false);
+                /**
+                 * City
+                 */
+                $this->City->deleteAll(array('City.company_id' => $company_id), false);
+                /**
+                 * CompanyEmployeeReference
+                 */
+                $CompanyEmployeeReferences = $this->CompanyEmployeeReference->find('list', array(
+                    'recursive' => -1,
+                    'conditions' => array('CompanyEmployeeReference.company_id' => $company_id),
+                    'fields' => array('employee_id', 'employee_id')
+                ));
+                $this->CompanyEmployeeReference->deleteAll(array('CompanyEmployeeReference.company_id' => $company_id), false);
+                $this->Employee->deleteAll(array('Employee.id' => $CompanyEmployeeReferences), false);
+                /**
+                 * ContractType
+                 */
+                $this->ContractType->deleteAll(array('ContractType.company_id' => $company_id), false);
+                /**
+                 * Country
+                 */
+                $this->Country->deleteAll(array('Country.company_id' => $company_id), false);
+                /**
+                 * Currency
+                 */
+                $this->Currency->deleteAll(array('Currency.company_id' => $company_id), false);
+                /**
+                 * ProjectCreatedValue
+                 */
+                $this->ProjectCreatedValue->deleteAll(array('ProjectCreatedValue.company_id' => $company_id), false);
+                /**
+                 * Holiday
+                 */
+                $this->Holiday->deleteAll(array('Holiday.company_id' => $company_id), false);
+                /**
+                 * LogSystem
+                 */
+                $this->LogSystem->deleteAll(array('LogSystem.company_id' => $company_id), false);
+                /**
+                 * Menu
+                 */
+                $this->Menu->deleteAll(array('Menu.company_id' => $company_id), false);
+                /**
+                 * ProfitCenter
+                 */
+                $this->ProfitCenter->deleteAll(array('ProfitCenter.company_id' => $company_id), false);
+                /**
+                 * ProjectAmrCategory
+                 */
+                $ProjectAmrCategory = $this->ProjectAmrCategory->find('list', array(
+                    'recursive' => -1,
+                    'conditions' => array('ProjectAmrCategory.company_id' => $company_id),
+                    'fields' => array('id', 'id')
+                ));
+                $this->ProjectAmrSubCategory->deleteAll(array('ProjectAmrSubCategory.project_amr_category_id' => $ProjectAmrCategory), false);
+                $this->ProjectAmrCategory->deleteAll(array('ProjectAmrCategory.company_id' => $company_id), false);
+                /**
+                 * ProjectAmrCostControl
+                 */
+                $this->ProjectAmrCostControl->deleteAll(array('ProjectAmrCostControl.company_id' => $company_id), false);
+                /**
+                 * ProjectAmrOrganization
+                 */
+                $this->ProjectAmrOrganization->deleteAll(array('ProjectAmrOrganization.company_id' => $company_id), false);
+                /**
+                 * ProjectAmrPerimeter
+                 */
+                $this->ProjectAmrPerimeter->deleteAll(array('ProjectAmrPerimeter.company_id' => $company_id), false);
+                /**
+                 * ProjectAmrPlan
+                 */
+                $this->ProjectAmrPlan->deleteAll(array('ProjectAmrPlan.company_id' => $company_id), false);
+                /**
+                 * ProjectAmrProblemControl
+                 */
+                $this->ProjectAmrProblemControl->deleteAll(array('ProjectAmrProblemControl.company_id' => $company_id), false);
+                /**
+                 * ProjectAcceptanceType
+                 */
+                $this->ProjectAcceptanceType->deleteAll(array('ProjectAcceptanceType.company_id' => $company_id), false);
+                /**
+                 * ProjectAmrProgram
+                 */
+                $ProjectAmrProgram = $this->ProjectAmrProgram->find('list', array(
+                    'recursive' => -1,
+                    'conditions' => array('ProjectAmrProgram.company_id' => $company_id),
+                    'fields' => array('id', 'id')
+                ));
+                $this->ProjectAmrSubProgram->deleteAll(array('ProjectAmrSubProgram.project_amr_program_id' => $ProjectAmrProgram), false);
+                $this->ProjectAmrProgram->deleteAll(array('ProjectAmrProgram.company_id' => $company_id), false);
+                /**
+                 * ProjectAmrRiskControl
+                 */
+                $this->ProjectAmrRiskControl->deleteAll(array('ProjectAmrRiskControl.company_id' => $company_id), false);
+                /**
+                 * ProjectAmrStatuse
+                 */
+                $this->ProjectAmrStatuse->deleteAll(array('ProjectAmrStatuse.company_id' => $company_id), false);
+                /**
+                 * ProjectComplexity
+                 */
+                $this->ProjectComplexity->deleteAll(array('ProjectComplexity.company_id' => $company_id), false);
+                /**
+                 * ProjectEvolutionImpact
+                 */
+                $this->ProjectEvolutionImpact->deleteAll(array('ProjectEvolutionImpact.company_id' => $company_id), false);
+                /**
+                 * ProjectEvolutionType
+                 */
+                $this->ProjectEvolutionType->deleteAll(array('ProjectEvolutionType.company_id' => $company_id), false);
+                /**
+                 * ProjectFunction
+                 */
+                $this->ProjectFunction->deleteAll(array('ProjectFunction.company_id' => $company_id), false);
+                /**
+                 * ProjectIssueSeverity
+                 */
+                $this->ProjectIssueSeverity->deleteAll(array('ProjectIssueSeverity.company_id' => $company_id), false);
+                /**
+                 * ProjectIssueStatuse
+                 */
+                $this->ProjectIssueStatuse->deleteAll(array('ProjectIssueStatuse.company_id' => $company_id), false);
+                /**
+                 * ProjectLivrableCategory
+                 */
+                $this->ProjectLivrableCategory->deleteAll(array('ProjectLivrableCategory.company_id' => $company_id), false);
+                /**
+                 * ProjectPhaseStatuse
+                 */
+                $this->ProjectPhaseStatuse->deleteAll(array('ProjectPhaseStatuse.company_id' => $company_id), false);
+                /**
+                 * ProjectPriority
+                 */
+                $this->ProjectPriority->deleteAll(array('ProjectPriority.company_id' => $company_id), false);
+                /**
+                 * ProjectPhase
+                 */
+                $this->ProjectPhase->deleteAll(array('ProjectPhase.company_id' => $company_id), false);
+                /**
+                 * ProjectRiskOccurrence
+                 */
+                $this->ProjectRiskOccurrence->deleteAll(array('ProjectRiskOccurrence.company_id' => $company_id), false);
+                /**
+                 * ProjectRiskSeverity
+                 */
+                $this->ProjectRiskSeverity->deleteAll(array('ProjectRiskSeverity.company_id' => $company_id), false);
+                /**
+                 * ProjectStatuse
+                 */
+                $this->ProjectStatuse->deleteAll(array('ProjectStatuse.company_id' => $company_id), false);
+                /**
+                 * ProjectType
+                 */
+                $ProjectType = $this->ProjectType->find('list', array(
+                    'recursive' => -1,
+                    'conditions' => array('ProjectType.company_id' => $company_id),
+                    'fields' => array('id', 'id')
+                ));
+                $this->ProjectSubType->deleteAll(array('ProjectSubType.project_type_id' => $ProjectType), false);
+                $this->ProjectType->deleteAll(array('ProjectType.company_id' => $company_id), false);
+                /**
+                 * ResponseConstraint
+                 */
+                $this->ResponseConstraint->deleteAll(array('ResponseConstraint.company_id' => $company_id), false);
+                /**
+                 * SaleCustomerContact
+                 */
+                $this->SaleCustomerContact->deleteAll(array('SaleCustomerContact.company_id' => $company_id), false);
+                /**
+                 * SaleCustomerIban
+                 */
+                $this->SaleCustomerIban->deleteAll(array('SaleCustomerIban.company_id' => $company_id), false);
+                /**
+                 * SaleCustomer
+                 */
+                $this->SaleCustomer->deleteAll(array('SaleCustomer.company_id' => $company_id), false);
+                /**
+                 * SaleExpense
+                 */
+                $this->SaleExpense->deleteAll(array('SaleExpense.company_id' => $company_id), false);
+                /**
+                 * SaleLeadEmployeeRefer
+                 */
+                $this->SaleLeadEmployeeRefer->deleteAll(array('SaleLeadEmployeeRefer.company_id' => $company_id), false);
+                /**
+                 * SaleLead
+                 */
+                $SaleLead = $this->SaleLead->find('list', array(
+                    'recursive' => -1,
+                    'conditions' => array('SaleLead.company_id' => $company_id),
+                    'fields' => array('id', 'id')
+                ));
+                $this->SaleLeadFile->deleteAll(array('SaleLeadFile.sale_lead_id' => $SaleLead), false);
+                $this->SaleLead->deleteAll(array('SaleLead.company_id' => $company_id), false);
+                /**
+                 * SaleLeadLog
+                 */
+                $this->SaleLeadLog->deleteAll(array('SaleLeadLog.company_id' => $company_id), false);
+                /**
+                 * SaleLeadProductExpense
+                 */
+                $this->SaleLeadProductExpense->deleteAll(array('SaleLeadProductExpense.company_id' => $company_id), false);
+                /**
+                 * SaleLeadProductInvoice
+                 */
+                $this->SaleLeadProductInvoice->deleteAll(array('SaleLeadProductInvoice.company_id' => $company_id), false);
+                /**
+                 * SaleLeadProduct
+                 */
+                $this->SaleLeadProduct->deleteAll(array('SaleLeadProduct.company_id' => $company_id), false);
+                /**
+                 * SaleRole
+                 */
+                $this->SaleRole->deleteAll(array('SaleRole.company_id' => $company_id), false);
+                /**
+                 * SaleSetting
+                 */
+                $this->SaleSetting->deleteAll(array('SaleSetting.company_id' => $company_id), false);
+                /**
+                 * SecuritySetting
+                 */
+                $this->SecuritySetting->deleteAll(array('SecuritySetting.company_id' => $company_id), false);
+                /**
+                 * TmpCaculateAbsence
+                 */
+                $this->TmpCaculateAbsence->deleteAll(array('TmpCaculateAbsence.company_id' => $company_id), false);
+                /**
+                 * TmpCaculateProfitCenter
+                 */
+                $this->TmpCaculateProfitCenter->deleteAll(array('TmpCaculateProfitCenter.company_id' => $company_id), false);
+                /**
+                 * TmpModuleActivityExport
+                 */
+                $this->TmpModuleActivityExport->deleteAll(array('TmpModuleActivityExport.company_id' => $company_id), false);
+                /**
+                 * TmpProfitCenterOfActivity
+                 */
+                $this->TmpProfitCenterOfActivity->deleteAll(array('TmpProfitCenterOfActivity.company_id' => $company_id), false);
+                /**
+                 * TmpStaffingSystem
+                 */
+                $this->TmpStaffingSystem->deleteAll(array('TmpStaffingSystem.company_id' => $company_id), false);
+                /**
+                 * TranslationEntry
+                 */
+                $this->TranslationEntry->deleteAll(array('TranslationEntry.company_id' => $company_id), false);
+                /**
+                 * TranslationSetting
+                 */
+                $this->TranslationSetting->deleteAll(array('TranslationSetting.company_id' => $company_id), false);
+                /**
+                 * UserView
+                 */
+                $this->UserView->deleteAll(array('UserView.company_id' => $company_id), false);
+                /**
+                 * Workday
+                 */
+                $this->Workday->deleteAll(array('Workday.company_id' => $company_id), false);
+                /**
+                 * Profile
+                 */
+                $Profile = $this->Profile->find('list', array(
+                    'recursive' => -1,
+                    'conditions' => array('Profile.company_id' => $company_id),
+                    'fields' => array('id', 'id')
+                ));
+                $this->ProfileValue->deleteAll(array('ProfileValue.profile_id' => $Profile), false);
+                $this->Profile->deleteAll(array('Profile.company_id' => $company_id), false);
+                /**
+                 * AbsenceComment
+                 */
+                $this->AbsenceComment->deleteAll(array('AbsenceComment.employee_id' => $CompanyEmployeeReferences), false);
+                /**
+                 * AbsenceRequest
+                 */
+                $this->AbsenceRequest->deleteAll(array('AbsenceRequest.employee_id' => $CompanyEmployeeReferences), false);
+                /**
+                 * AbsenceRequestFile
+                 */
+                $this->AbsenceRequestFile->deleteAll(array('AbsenceRequestFile.employee_id' => $CompanyEmployeeReferences), false);
+                /**
+                 * ActivityComment
+                 */
+                $this->ActivityComment->deleteAll(array('ActivityComment.employee_id' => $CompanyEmployeeReferences), false);
+                /**
+                 * ActivityForecast
+                 */
+                $this->ActivityForecast->deleteAll(array('ActivityForecast.employee_id' => $CompanyEmployeeReferences), false);
+                /**
+                 * EmployeeAbsence
+                 */
+                $this->EmployeeAbsence->deleteAll(array('EmployeeAbsence.employee_id' => $CompanyEmployeeReferences), false);
+                /**
+                 * HistoryFilter
+                 */
+                $this->HistoryFilter->deleteAll(array('HistoryFilter.employee_id' => $CompanyEmployeeReferences), false);
+                /**
+                 * ProjectEmployeeProfitFunctionRefer
+                 */
+                $this->ProjectEmployeeProfitFunctionRefer->deleteAll(array('ProjectEmployeeProfitFunctionRefer.employee_id' => $CompanyEmployeeReferences), false);
+                /**
+                 * UserDefaultView
+                 */
+                $this->UserDefaultView->deleteAll(array('UserDefaultView.employee_id' => $CompanyEmployeeReferences), false);
+                /**
+                 * UserStatusViewActivity
+                 */
+                $this->UserStatusViewActivity->deleteAll(array('UserStatusViewActivity.employee_id' => $CompanyEmployeeReferences), false);
+                /**
+                 * UserStatusViewSaleDeal
+                 */
+                $this->UserStatusViewSaleDeal->deleteAll(array('UserStatusViewSaleDeal.employee_id' => $CompanyEmployeeReferences), false);
+                /**
+                 * UserStatusViewSale
+                 */
+                $this->UserStatusViewSale->deleteAll(array('UserStatusViewSale.employee_id' => $CompanyEmployeeReferences), false);
+                /**
+                 * UserStatusView
+                 */
+                $this->UserStatusView->deleteAll(array('UserStatusView.employee_id' => $CompanyEmployeeReferences), false);
+                /**
+                 * Delete company
+                 */
+                $this->Company->delete($company_id);
+                echo 'OKIE!';
+            } else {
+                echo 'Company not found!';
+            }
+        } else {
+            echo 'Company not found!';
+        }
+        exit;
+    }
+    /**
+     * Delete project and activity of company
+     */
+    public function deleteProjectAndActivityOfCompany($company = null){
+        if(!empty($company)){
+            $this->loadModel('Company');
+            $this->loadModel('Project');
+            $this->loadModel('Activity');
+            $this->loadModel('ProjectTask');
+            $this->loadModel('ProjectTaskEmployeeRefer');
+            $this->loadModel('ActivityTask');
+            $this->loadModel('ActivityTaskEmployeeRefer');
+            $this->loadModel('ProjectGlobalView');
+            $this->loadModel('ProjectLocalView');
+            $this->loadModel('ProjectImage');
+            $this->loadModel('ProjectCreatedVal');
+            $this->loadModel('ProjectTeam');
+            $this->loadModel('ProjectFunctionEmployeeRefer');
+            $this->loadModel('ProjectPart');
+            $this->loadModel('ProjectPhasePlan');
+            $this->loadModel('ProjectMilestone');
+            $this->loadModel('ProjectBudgetSyn');
+            $this->loadModel('ProjectFinance');
+            $this->loadModel('ProjectFinancePartner');
+            $this->loadModel('ProjectRisk');
+            $this->loadModel('ProjectIssue');
+            $this->loadModel('ProjectDecision');
+            $this->loadModel('ProjectLivrable');
+            $this->loadModel('ProjectLivrableActor');
+            $this->loadModel('ProjectEvolution');
+            $this->loadModel('ProjectEvolutionImpactRefer');
+            $this->loadModel('ProjectAmr');
+            $this->loadModel('ProjectBudgetSale');
+            $this->loadModel('ProjectBudgetInternal');
+            $this->loadModel('ProjectBudgetInternalDetail');
+            $this->loadModel('ProjectBudgetExternal');
+            $this->loadModel('ProjectEmployeeManager');
+            $this->loadModel('ActivityProfitRefer');
+            $this->loadModel('ActivityRequest');
+            $this->loadModel('NctWorkload');
+            $this->loadModel('ProjectAcceptance');
+            $this->loadModel('ProjectBudgetInvoice');
+            $this->loadModel('ProjectBudgetProvisional');
+
+            $company = strtolower(trim($company));
+            $companies = $this->Company->find('first', array(
+                'recursive' => -1,
+                'conditions' => array('company_name' => $company),
+                'fields' => array('id')
+            ));
+            if(!empty($companies) && !empty($companies['Company']['id'])){
+                $company_id = $companies['Company']['id'];
+                /**
+                 * Get all projects of company
+                 */
+                $projects = $this->Project->find('all', array(
+                    'recursive' => -1,
+                    'conditions' => array('company_id' => $company_id),
+                    'fields' => array('id', 'activity_id')
+                ));
+                $activityOfProjects = !empty($projects) ? Set::classicExtract($projects, '{n}.Project.activity_id') : array();
+                $projectIdLists = !empty($projects) ? Set::classicExtract($projects, '{n}.Project.id') : array();
+                /**
+                 * Delete projects
+                 */
+                $this->Project->deleteAll(array('Project.id' => $projectIdLists), false);
+                /**
+                 * Get All project task of projects
+                 */
+                $projectTasks = $this->ProjectTask->find('list', array(
+                    'recursive' => -1,
+                    'conditions' => array('project_id' => $projectIdLists),
+                    'fields' => array('id', 'id')
+                ));
+                /**
+                 * Delete project tasks
+                 */
+                $this->ProjectTask->deleteAll(array('ProjectTask.id' => $projectTasks), false);
+                /**
+                 * Delete project task assign to
+                 */
+                $this->ProjectTaskEmployeeRefer->deleteAll(array('ProjectTaskEmployeeRefer.project_task_id' => $projectTasks), false);
+                /**
+                 * Delete ProjectGlobalView
+                 */
+                $this->ProjectGlobalView->deleteAll(array('ProjectGlobalView.project_id' => $projectIdLists), false);
+                /**
+                 * Delete ProjectAcceptance
+                 */
+                $this->ProjectAcceptance->deleteAll(array('ProjectAcceptance.project_id' => $projectIdLists), false);
+                /**
+                 * Delete ProjectGlobalView
+                 */
+                $this->ProjectGlobalView->deleteAll(array('ProjectGlobalView.project_id' => $projectIdLists), false);
+                /**
+                 * Delete ProjectLocalView
+                 */
+                $this->ProjectLocalView->deleteAll(array('ProjectLocalView.project_id' => $projectIdLists), false);
+                /**
+                 * Delete ProjectImage
+                 */
+                $this->ProjectImage->deleteAll(array('ProjectImage.project_id' => $projectIdLists), false);
+                /**
+                 * Delete ProjectCreatedVal
+                 */
+                $this->ProjectCreatedVal->deleteAll(array('ProjectCreatedVal.project_id' => $projectIdLists), false);
+                /**
+                 * Delete ProjectPart
+                 */
+                $this->ProjectPart->deleteAll(array('ProjectPart.project_id' => $projectIdLists), false);
+                /**
+                 * Delete ProjectPhasePlan
+                 */
+                $this->ProjectPhasePlan->deleteAll(array('ProjectPhasePlan.project_id' => $projectIdLists), false);
+                /**
+                 * Delete ProjectMilestone
+                 */
+                $this->ProjectMilestone->deleteAll(array('ProjectMilestone.project_id' => $projectIdLists), false);
+                /**
+                 * Delete ProjectBudgetSyn
+                 */
+                $this->ProjectBudgetSyn->deleteAll(array('ProjectBudgetSyn.project_id' => $projectIdLists), false);
+                /**
+                 * Delete ProjectFinance
+                 */
+                $projectFinances = $this->ProjectFinance->find('list', array(
+                    'recursive' => -1,
+                    'conditions' => array('ProjectFinance.project_id' => $projectIdLists),
+                    'fields' => array('id', 'id')
+                ));
+                $this->ProjectFinance->deleteAll(array('ProjectFinance.project_id' => $projectIdLists), false);
+                $this->ProjectFinancePartner->deleteAll(array('ProjectFinancePartner.finance_id' => $projectFinances), false);
+                /**
+                 * Delete ProjectRisk
+                 */
+                $this->ProjectRisk->deleteAll(array('ProjectRisk.project_id' => $projectIdLists), false);
+                /**
+                 * Delete ProjectIssue
+                 */
+                $this->ProjectIssue->deleteAll(array('ProjectIssue.project_id' => $projectIdLists), false);
+                /**
+                 * Delete ProjectDecision
+                 */
+                $this->ProjectDecision->deleteAll(array('ProjectDecision.project_id' => $projectIdLists), false);
+                /**
+                 * Delete ProjectLivrable
+                 */
+                $projectLivrables = $this->ProjectLivrable->find('list', array(
+                    'recursive' => -1,
+                    'conditions' => array('ProjectLivrable.project_id' => $projectIdLists),
+                    'fields' => array('id', 'id')
+                ));
+                $this->ProjectLivrableActor->deleteAll(array('ProjectLivrableActor.project_livrable_id' => $projectLivrables), false);
+                $this->ProjectLivrable->deleteAll(array('ProjectLivrable.project_id' => $projectIdLists), false);
+                /**
+                 * Delete ProjectEvolution
+                 */
+                $projectEvolutions = $this->ProjectEvolution->find('list', array(
+                    'recursive' => -1,
+                    'conditions' => array('ProjectEvolution.project_id' => $projectIdLists),
+                    'fields' => array('id', 'id')
+                ));
+                $this->ProjectEvolutionImpactRefer->deleteAll(array('ProjectEvolutionImpactRefer.project_evolution_id' => $projectEvolutions), false);
+                $this->ProjectEvolution->deleteAll(array('ProjectEvolution.project_id' => $projectIdLists), false);
+                /**
+                 * Delete ProjectAmr
+                 */
+                $this->ProjectAmr->deleteAll(array('ProjectAmr.project_id' => $projectIdLists), false);
+                /**
+                 * Delete ProjectTeam
+                 */
+                $projectTeams = $this->ProjectTeam->find('list', array(
+                    'recursive' => -1,
+                    'conditions' => array('ProjectTeam.project_id' => $projectIdLists),
+                    'fields' => array('id', 'id')
+                ));
+                $this->ProjectFunctionEmployeeRefer->deleteAll(array('ProjectFunctionEmployeeRefer.project_team_id' => $projectTeams), false);
+                $this->ProjectTeam->deleteAll(array('ProjectTeam.project_id' => $projectIdLists), false);
+                /**
+                 * Delete ProjectEmployeeManager
+                 */
+                $this->ProjectEmployeeManager->deleteAll(array('ProjectEmployeeManager.project_id' => $projectIdLists), false);
+                /**
+                 * Get all activity of company
+                 */
+                $activities = $this->Activity->find('list', array(
+                    'recursive' => -1,
+                    'conditions' => array(
+                        'OR' => array(
+                            'company_id' => $company_id,
+                            'Activity.id' => $activityOfProjects
+                        )
+                    ),
+                    'fields' => array('id', 'id')
+                ));
+                /**
+                 * Delete ActivityProfitRefer
+                 */
+                $this->ActivityProfitRefer->deleteAll(array('ActivityProfitRefer.activity_id' => $activities), false);
+                /**
+                 * Delete ProjectBudgetSale
+                 */
+                $this->ProjectBudgetSale->deleteAll(array(
+                    'OR' => array(
+                        'ProjectBudgetSale.project_id' => $projectIdLists,
+                        'ProjectBudgetSale.activity_id' => $activities
+                    )
+                ), false);
+                /**
+                 * Delete ProjectBudgetInvoice
+                 */
+                $this->ProjectBudgetInvoice->deleteAll(array(
+                    'OR' => array(
+                        'ProjectBudgetInvoice.project_id' => $projectIdLists,
+                        'ProjectBudgetInvoice.activity_id' => $activities
+                    )
+                ), false);
+                /**
+                 * Delete ProjectBudgetProvisional
+                 */
+                $this->ProjectBudgetProvisional->deleteAll(array(
+                    'OR' => array(
+                        'ProjectBudgetProvisional.project_id' => $projectIdLists,
+                        'ProjectBudgetProvisional.activity_id' => $activities
+                    )
+                ), false);
+                /**
+                 * Delete ProjectBudgetInternal
+                 */
+                $this->ProjectBudgetInternal->deleteAll(array(
+                    'OR' => array(
+                        'ProjectBudgetInternal.project_id' => $projectIdLists,
+                        'ProjectBudgetInternal.activity_id' => $activities
+                    )
+                ), false);
+                /**
+                 * Delete ProjectBudgetInternalDetail
+                 */
+                $this->ProjectBudgetInternalDetail->deleteAll(array(
+                    'OR' => array(
+                        'ProjectBudgetInternalDetail.project_id' => $projectIdLists,
+                        'ProjectBudgetInternalDetail.activity_id' => $activities
+                    )
+                ), false);
+                /**
+                 * Delete ProjectBudgetExternal
+                 */
+                $this->ProjectBudgetExternal->deleteAll(array(
+                    'OR' => array(
+                        'ProjectBudgetExternal.project_id' => $projectIdLists,
+                        'ProjectBudgetExternal.activity_id' => $activities
+                    )
+                ), false);
+                /**
+                 * Delete activities
+                 */
+                $this->Activity->deleteAll(array('Activity.id' => $activities), false);
+                /**
+                 * Get all activity tasks
+                 */
+                $activityTasks = $this->ActivityTask->find('list', array(
+                    'recursive' => -1,
+                    'conditions' => array('activity_id' => $activities),
+                    'fields' => array('id', 'id')
+                ));
+                /**
+                 * Delete activity task
+                 */
+                $this->ActivityTask->deleteAll(array('ActivityTask.id' => $activityTasks), false);
+                /**
+                 * Delete activity task assign to
+                 */
+                $this->ActivityTaskEmployeeRefer->deleteAll(array('ActivityTaskEmployeeRefer.activity_task_id' => $activityTasks), false);
+                /**
+                 * Delete ActivityRequest
+                 */
+                $this->ActivityRequest->deleteAll(array(
+                    'OR' => array(
+                        'ActivityRequest.task_id' => $activityTasks,
+                        'ActivityRequest.activity_id' => $activities
+                    )
+                ), false);
+                /**
+                 * Delete NctWorkload
+                 */
+                $this->NctWorkload->deleteAll(array(
+                    'OR' => array(
+                        'NctWorkload.project_task_id' => $projectTasks,
+                        'NctWorkload.activity_task_id' => $activityTasks
+                    )
+                ), false);
+                echo 'OKIE!';
+            } else {
+                echo 'Company not found!';
+            }
+        } else {
+            echo 'Company not found!';
+        }
+        exit;
+    }
+
+    /**
+     * Ham dung de kiem tra mot so van de cua he thong.
+     * Em co the edit va save tuy y
+     */
+    public function checkBugSystem(){
+        $ActivityRequest = ClassRegistry::init('ActivityRequest');
+    }
+    /**
+     * Add activity id vao table activity request.
+     * Chua xong
+     */
+    public function addActivityIdToActivityRequest(){
+        $company_id = $this->employee_info['Company']['id'];
+        $this->loadModel('ActivityRequest');
+        $activityRequests = $this->ActivityRequest->find('list', array(
+            'recursive' => -1,
+            'conditions' => array(
+                'company_id' => $company_id,
+                'NOT' => array('task_id' => '')
+            ),
+            'fields' => array('')
+        ));
+    }
+    /**
+     * Xoa menu cua project va he thong
+     */
+    public function deleteMenuOfCompanyLogin($model = null){
+        $company_id = $this->employee_info['Company']['id'];
+        $this->loadModel('Menu');
+        $this->Menu->deleteAll(array('company_id' => $company_id, 'model' => $model), false);
+        echo 'OK!';
+        exit();
+    }
+    /**
+     * Xoa activity export module fields
+     */
+    public function deleteActivityExportOfCompanyLogin(){
+        $company_id = $this->employee_info['Company']['id'];
+        $this->loadModel('ActivityExport');
+        $this->ActivityExport->deleteAll(array('company_id' => $company_id), false);
+        echo 'OK!';
+        exit();
+    }
+
+    /**
+     * Ham dung de kiem tra cac task co consumed, nhung lai ton tai sub-task.
+     * Chuyen cac consumed cua task cho 1 sub-task thuoc task do.
+     *
+     */
+    public function changeConsumedAllTask(){
+        $this->loadModel('Project');
+        $this->loadModel('Activity');
+        $this->loadModel('ProjectTask');
+        $this->loadModel('ActivityTask');
+        $this->loadModel('ActivityRequest');
+        $company_id = $this->employee_info['Company']['id'];
+        /**
+         * Kiem tra cac project co linked voi activity
+         */
+        $projects = $this->Project->find('list', array(
+            'recursive' => -1,
+            'conditions' => array(
+                'NOT' => array(
+                    'activity_id' => null
+                )
+            ),
+            'fields' => array('id', 'id')
+        ));
+        /**
+         * Lay tat cac cac task co project linked voi activity
+         */
+        $projectTasks = $this->ProjectTask->find('all', array(
+            'recursive' => -1,
+            'conditions' => array('project_id' => $projects),
+            'fields' => array('id', 'parent_id'),
+            'order' => array('id' => 'DESC')
+        ));
+        /**
+         * Lay nhung task parent, nhung id task cos sub-task
+         */
+        $parentIds = !empty($projectTasks) ? array_unique(Set::classicExtract($projectTasks, '{n}.ProjectTask.parent_id')) : array();
+        /**
+         * Lay cac activity task linked voi project Task
+         */
+        $activityTasks = $this->ActivityTask->find('list', array(
+            'recursive' => -1,
+            'conditions' => array('project_task_id' => $parentIds),
+            'fields' => array('id', 'project_task_id')
+        ));
+        /**
+         * Kiem tra xem nhung task parent nao co consumed
+         */
+        $activityRequests = $this->ActivityRequest->find('list', array(
+            'recursive' => -1,
+            'conditions' => array('task_id' => array_keys($activityTasks)),
+            'fields' => array('id', 'task_id')
+        ));
+        $projectTaskParentHaveConsumeds = array();
+        foreach($activityRequests as $activityTaskId){
+            $taskId = !empty($activityTasks[$activityTaskId]) ? $activityTasks[$activityTaskId] : 0;
+            $projectTaskParentHaveConsumeds[$activityTaskId] = $taskId;
+        }
+        $Childs = !empty($projectTasks) ? Set::combine($projectTasks, '{n}.ProjectTask.parent_id', '{n}.ProjectTask.id') : array();
+        $pTaskChilds = array();
+        foreach($projectTaskParentHaveConsumeds as $aTask => $parent){
+            $pTaskChilds[$aTask] = !empty($Childs[$parent]) ? $Childs[$parent] : 0;
+        }
+        /**
+         * Lay nhung child activity task linked voi project Task.
+         */
+        $childTasks = $this->ActivityTask->find('list', array(
+            'recursive' => -1,
+            'conditions' => array('project_task_id' => $pTaskChilds),
+            'fields' => array('project_task_id', 'id')
+        ));
+        /**
+         * Gan task cha cho task con
+         */
+        $changeTasks = array();
+        foreach($pTaskChilds as $parent => $id){
+            $changeTasks[$parent] = !empty($childTasks[$id]) ? $childTasks[$id] : 0;
+        }
+        /**
+         * Chuyen consumed o project task: chuyen thang cha cho thang con gan nhat.
+         */
+        foreach($activityRequests as $id => $parent){
+            $this->ActivityRequest->id = $id;
+            $_saved['task_id'] = !empty($changeTasks[$parent]) ? $changeTasks[$parent] : 0;
+            $_saved['company_id'] = $company_id;
+            $this->ActivityRequest->save($_saved);
+        }
+        /**
+         * Lay tat ca cac task có activity ko linked voi project
+         */
+        $aTasks = $this->ActivityTask->find('all', array(
+            'recursive' => -1,
+            'conditions' => array(
+                'project_task_id' => null
+            ),
+            'fields' => array('id', 'parent_id'),
+            'order' => array('id' => 'DESC')
+        ));
+         /**
+         * Lay nhung task parent, nhung id task cos sub-task
+         */
+        $aParents = !empty($aTasks) ? array_unique(Set::classicExtract($aTasks, '{n}.ActivityTask.parent_id')) : array();
+        /**
+         * Kiem tra xem nhung task parent nao co consumed
+         */
+        $requests = $this->ActivityRequest->find('list', array(
+            'recursive' => -1,
+            'conditions' => array('task_id' => $aParents),
+            'fields' => array('id', 'task_id')
+        ));
+        $Achilds = !empty($aTasks) ? Set::combine($aTasks, '{n}.ActivityTask.parent_id', '{n}.ActivityTask.id') : array();
+        foreach($requests as $id => $parent){
+            $this->ActivityRequest->id = $id;
+            $_saved['task_id'] = !empty($Achilds[$parent]) ? $Achilds[$parent] : 0;
+            $_saved['company_id'] = $company_id;
+            $this->ActivityRequest->save($_saved);
+        }
+        echo 'finish!';
+        exit;
+    }
+    /**
+    * kiem tra tat ca cac Project Phase khong co real start date
+    * thi real start date = plan tart date
+    */
+    public function auto_set_real_time(){
+        $this->loadModel('ProjectPhasePlan');
+        $ProjectPhasePlans = $this->ProjectPhasePlan->find('all',array(
+            'recursive' => -1,
+            'conditions' => array(
+                'OR' => array(
+                    'phase_real_start_date IS null',
+                    'phase_real_start_date' => '0000-00-00',
+                )
+            )
+        ));
+        foreach($ProjectPhasePlans as $key => $ProjectPhasePlan){
+            $ProjectPhasePlan['ProjectPhasePlan']['phase_real_start_date'] = $ProjectPhasePlan['ProjectPhasePlan']['phase_planed_start_date'];
+            $this->ProjectPhasePlan->id = $ProjectPhasePlan['ProjectPhasePlan']['id'];
+            $this->ProjectPhasePlan->save($ProjectPhasePlan['ProjectPhasePlan']);
+        }
+        echo "Finish";
+        exit;
+    }
+
+    /**
+     * Update project_budget_extertals
+     * Cap nhat id = 1 co attach la 1 file. Doi format thanh 2.
+     */
+    public function updateFormatFileExternal(){
+        $this->loadModel('ProjectBudgetExternal');
+        $datas = $this->ProjectBudgetExternal->find('first', array(
+            'recursive' => -1,
+            'conditions' => array('ProjectBudgetExternal.id' => 1)
+        ));
+        unset($datas['ProjectBudgetExternal']['id']);
+        $datas = $datas['ProjectBudgetExternal'];
+        $datas['format'] = 2;
+        $this->ProjectBudgetExternal->id = 1;
+        $this->ProjectBudgetExternal->save($datas);
+        echo 'Finish!';
+        exit;
+    }
+
+    /**
+     * Kiem tra du lieu o table project_livrables.
+     * Neu co ton tai livrable_file_attachment thi update cot format gia tri thanh 2.
+     */
+    public function updateFormatFileLivrables(){
+        $this->loadModel('ProjectLivrable');
+        $datas = $this->ProjectLivrable->find('list', array(
+            'recursive' => -1,
+            'conditions' => array('NOT' => array('livrable_file_attachment' => '')),
+            'fields' => array('id', 'livrable_file_attachment')
+        ));
+        $totalDatas = count($datas);
+        $check = 0;
+        foreach($datas as $id => $data){
+            $this->ProjectLivrable->id = $id;
+            $saved = array('format' => 2);
+            if($this->ProjectLivrable->save($saved)){
+                $check++;
+            }
+        }
+        echo 'Saved: ' . $check . '/' . $totalDatas;
+        echo '<br />Finish!';
+        exit;
+    }
+
+    function loadt(){
+         $this->loadModel('Employee');
+         for($i = 1; $i <= 450; $i++){
+            $this->data["Employee"]['email'] = 'test.perform' .$i. '@greensystem.vn';
+            $this->data["Employee"]['password'] = md5('123456');
+            $this->data["Employee"]['is_sas'] = 1;
+            $this->data["Employee"]['actif'] = 1;
+            $this->data["Employee"]['start_date'] = '0000-00-00';
+            $this->data["Employee"]['end_date'] = '0000-00-00';
+            $this->Employee->create();
+            $this->Employee->save($this->data["Employee"]);
+         }
+         exit;
+    }
+
+    function changeEmailAndPassEmployee(){
+        $this->loadModel('Employee');
+        $employees = $this->Employee->find('list', array(
+            'recursive' => -1,
+            'conditions' => array(
+                'NOT' => array('is_sas' => 1),
+                'NOT' => array('Employee.id' => 117)
+            ),
+            'fields' => array('id', 'id')
+        ));
+        $count = 0;
+        $i = 1;
+        foreach($employees as $id){
+            $this->Employee->id = $id;
+            $saved = array(
+                'email' => 'test.perform' .$i. '@greensystem.vn',
+                'password' => md5('123456'),
+                'actif' => 1,
+                'start_date' => '0000-00-00',
+                'end_date' => '0000-00-00'
+            );
+            if($this->Employee->save($saved)){
+                $count++;
+                $i++;
+            }
+        }
+        echo 'Save: ' . $count . ' / ' . count($employees);
+        exit;
+    }
+    public function set_status_alancer_for_tasks(){
+        $this->loadModel('ProjectTask');
+        $taskNoStatus = $this->ProjectTask->find('list',array(
+            'recursive' => -1,
+            'conditions' => array(
+                'task_status_id is null'
+            ),
+            'fields' => array('id','id')
+
+        ));
+        if(!empty($taskNoStatus)){
+            $this->ProjectTask->updateAll(
+                array('ProjectTask.task_status_id' => 71),
+                array('ProjectTask.id ' => $taskNoStatus)
+            );
+
+        }
+        echo 'finish';
+        exit;
+    }
+
+    /**
+     * Xoa cac model thuoc phan staffing khong can thiet, khong dung nua
+     *
+     */
+    public function deleteFileModelNotUsed(){
+        $path = APP . 'models' . DS;
+        $fileDeletes = array(
+            'tmp_staffing_activity', 'tmp_staffing_activity_profit_center', 'tmp_staffing_function',
+            'tmp_staffing_profit_center', 'tmp_staffing_project', 'project_staffing_employee',
+            'project_staffing_demo', 'project_staffing', 'activity_staffing', 'tmp_staffing_employee'
+        );
+        foreach($fileDeletes as $fileDelete){
+            if(file_exists($path . $fileDelete.'.php')){
+                $files = $path . $fileDelete.'.php';
+                 unlink($files);
+            }
+        }
+        echo 'Finish!';
+        exit;
+    }
+    /**
+     * Xoa cac request khong co y nghia.
+     * Detail: Co mot so employee vao request activity or task nhung khi luu du lieu thi value = 0, activity_id = 0, task_id = 0.
+     * Cac du lieu nay se khong co y nghia trong qua trinh su dung. Nen xoa di.
+     */
+     public function deleteRequestNotUsing(){
+        $this->loadModel('ActivityRequest');
+        $requests = $this->ActivityRequest->find('all', array(
+            'recursive' => -1,
+            'conditions' => array(
+                'activity_id' => 0,
+                'task_id' => 0
+            ),
+            'fields' => array('id', 'activity_id', 'task_id', 'value')
+        ));
+        if(!empty($requests)){
+            foreach($requests as $request){
+                $dx = $request['ActivityRequest'];
+                echo $dx['activity_id'] . ' - ' . $dx['task_id'] . ' - ' . $dx['value'] . '<br />';
+                $this->ActivityRequest->delete($dx['id']);
+            }
+        }
+        echo 'Finish!';
+        exit;
+     }
+     /**
+      * Xoa cac du lieu khong can thiet o table tmp_staffing_systems
+      */
+     public function allProjectLinked(){
+        $this->loadModel('Project');
+        $lists = $this->Project->find('list', array(
+            'recursive' => -1,
+            'conditions' => array(
+                'NOT' => array('activity_id' => null)
+            ),
+            'fields' => array('id', 'activity_id')
+        ));
+        debug($lists);
+        echo 'Finish!';
+        exit;
+     }
+     /**
+      * Xoa absence request confirm bi du thua
+      */
+     public function deleteAbsenceNotUsing(){
+        $this->loadModel('AbsenceRequestConfirm');
+        $this->AbsenceRequestConfirm->delete(4877);
+        echo 'Finish!';
+        exit;
+     }
+     /**
+      * Doi table tu MyISAM sang InnoDB
+      */
+     public function changeMyisamIntoInnoDB(){
+        $db = ConnectionManager::getDataSource('default');
+        $sql = "SELECT table_name FROM INFORMATION_SCHEMA.TABLES WHERE engine <> 'InnoDB'";
+        $datas = $db->query($sql);
+        if(!empty($datas)){
+            $datas = Set::combine($datas, '{n}.TABLES.table_name', '{n}.TABLES.table_name');
+            foreach($datas as $table){
+                $_check = 'SHOW TABLES LIKE "' .$table. '"';
+                $runs = $db->query($_check);
+                if(!empty($runs)) {
+                    $_SQL = 'ALTER TABLE ' . $table . ' ENGINE=INNODB';
+                    $db->query($_SQL);
+                } else {
+                    //do nothing
+                }
+            }
+        }
+        echo 'Finish!';
+        exit;
+     }
+
+     /**
+      * Tim tat ca cac project task parent va activity task parent co consumed va tien hanh remove
+      */
+     public function removeTaskParentHaveConsumed(){
+        $this->loadModel('ProjectTask');
+        $this->loadModel('ActivityTask');
+        $this->loadModel('ActivityRequest');
+        $projectTasks = $this->ProjectTask->find('all', array(
+            'recursive' => -1,
+            'conditions' => array(
+                'NOT' => array('parent_id' => 0)
+            ),
+            'fields' => array('id',' parent_id')
+        ));
+        if(!empty($projectTasks)){
+            $listParents = array_unique(Set::classicExtract($projectTasks, '{n}.ProjectTask.parent_id'));
+            if(!empty($listParents)){
+                $listPTasks = $this->ActivityTask->find('list', array(
+                    'recursive' => -1,
+                    'conditions' => array('project_task_id' => $listParents),
+                    'fields' => array('project_task_id', 'id')
+                ));
+                $listATasks = $this->ActivityTask->find('list', array(
+                    'recursive' => -1,
+                    'conditions' => array(
+                        'project_task_id' => null,
+                        'NOT' => array('parent_id' => 0)
+                    ),
+                    'fields' => array('id', 'parent_id')
+                ));
+                $listATasks = !empty($listATasks) ? array_unique($listATasks) : array();
+                $activityTasks = array_unique(array_merge($listPTasks, $listATasks));
+                if(!empty($activityTasks)){
+                    $requests = $this->ActivityRequest->find('list', array(
+                        'recursive' => -1,
+                        'conditions' => array('task_id' => $activityTasks),
+                        'fields' => array('id')
+                    ));
+                    if(!empty($requests)){
+                        foreach($requests as $id){
+                            $this->ActivityRequest->delete($id);
+                        }
+                    }
+                }
+            }
+
+        }
+        echo 'Finish!';
+        exit;
+     }
+
+     /**
+      * Cap nhat lai gia tr? average cho internal.
+      * luc truoc xay dung 1 average dung chung duoc luu o table: project_budget_internal.
+      * Sau nay yeu cau thay doi: cu moi record trong internal dieu co 1 gia tr? average khac nhau.
+      * function nay giup lay gia tr? average cu update cho tat ca cac record moi.
+      */
+     public function updateAverageInternalDetail(){
+        $this->loadModel('ProjectBudgetInternal');
+        $this->loadModel('ProjectBudgetInternalDetail');
+        $internals = $this->ProjectBudgetInternal->find('list', array(
+            'recursive' => -1,
+            'fields' => array('project_id', 'average_daily_rate')
+        ));
+        if(!empty($internals)){
+            foreach($internals as $project_id => $average){
+                $this->ProjectBudgetInternalDetail->updateAll(
+                    array('ProjectBudgetInternalDetail.average' => $average),
+                    array('ProjectBudgetInternalDetail.project_id' => $project_id)
+                );
+            }
+        }
+        echo 'OK';
+        exit;
+     }
+
+     /**
+      * Cap nhat lai cac task bi mat consumed trong luc linkd va unlink
+      */
+
+     public function updateTaskLoseConsumed(){
+        $this->loadModel('ActivityTask');
+        $this->loadModel('ActivityRequest');
+        $activityTasks = $this->ActivityTask->find('list', array(
+            'recursive' => -1,
+            'conditions' => array('project_task_id' => array(3474, 3475, 3476, 3514, 3583)),
+            'fields' => array('project_task_id', 'id')
+        ));
+        $linkTaskOlds = array(
+            3474 => 4612,
+            3475 => 4929,
+            3476 => 4610,
+            3514 => 4613,
+            3583 => 4930
+        );
+
+        $linkTaskNews = array();
+        if(!empty($activityTasks)){
+            foreach($activityTasks as $idPr => $newId){
+                $oldId = !empty($linkTaskOlds[$idPr]) ? $linkTaskOlds[$idPr] : 0;
+                $linkTaskNews[$oldId] = $newId;
+            }
+        }
+        $requests = $this->ActivityRequest->find('list', array(
+            'recursive' => -1,
+            'conditions' => array('task_id' => $linkTaskOlds),
+            'fields' => array('id', 'task_id')
+        ));
+        if(!empty($requests)){
+            foreach($requests as $id => $val){
+                $addId = !empty($linkTaskNews[$val]) ? $linkTaskNews[$val] : 0;
+                $saved = array('task_id' => $addId);
+                $this->ActivityRequest->id = $id;
+                $this->ActivityRequest->save($saved);
+            }
+        }
+        echo 'OK!';
+        exit;
+     }
+
+     /**
+      * Cap nhat lai cac project linked voi activity.
+      * Do trong qua trinh hoat dong. Mot so project da mat lien ket voi activity.
+      * Nen ham nay dung de kiem tra cac project nao mat lien ket voi activity thi tien hanh linked lai
+      */
+     public function updateLinkedProject(){
+        $this->loadModel('Activity');
+        $this->loadModel('Project');
+        $activities = $this->Activity->find('list', array(
+            'recursive' => -1,
+            'conditions' => array(
+                'NOT' => array('project' => null)
+            ),
+            'fields' => array('id', 'project')
+        ));
+        if(!empty($activities)){
+            foreach($activities as $activityId => $projectId){
+                $this->Project->id = $projectId;
+                $saved = array(
+                    'activity_id' => $activityId
+                );
+                $this->Project->save($saved);
+            }
+        }
+        echo 'OK!';
+        exit;
+     }
+
+     /**
+      * Lay tat cac cac task va update trang thai theo nhu mo ta sau:
+      * Project status = archived: All Task status = CLOS
+      * Project status = opportunity: All Tasks status = a lancer
+      * Project status = in progress: Task without status = a lancer
+      */
+     public function updateTaskStatusFollowStatusProject(){
+        $this->loadModel('ProjectStatus');
+        $this->loadModel('Project');
+        $this->loadModel('ProjectTask');
+        $infors = $this->Session->read('Auth.employee_info');
+        $status = $this->ProjectStatus->find('list', array(
+            'recursive' => -1,
+            'conditions' => array(
+                //'name' => array('Clos', 'closed ', 'A lancer', 'A launch'),
+                'company_id' => $infors['Company']['id']
+            )
+        ));
+        $close = $aLancer = '';
+        if(!empty($status)){
+            foreach($status as $id => $val){
+                $val = trim(strtolower($val));
+                if($val == 'clos' || $val == 'closed'){
+                    $close = $id;
+                } elseif($val == 'a lancer' || $val == 'a launch'){
+                    $aLancer = $id;
+                }
+            }
+        }
+        $projects = $this->Project->find('list', array(
+            'recursive' => -1,
+            'fields' => array('id', 'category'),
+            'order' => array('id')
+        ));
+        if(!empty($projects)){
+            foreach($projects as $id => $cate){
+                if($cate == 3){ // archived
+                    $this->ProjectTask->updateAll(
+                        array('ProjectTask.task_status_id' => $close),
+                        array('ProjectTask.project_id' => $id)
+                    );
+                } else if($cate == 1){ //in progress
+                    $tmps = $this->ProjectTask->find('list', array(
+                        'recursive' => -1,
+                        'conditions' => array('project_id' => $id),
+                        'fields' => array('id', 'task_status_id')
+                    ));
+                    if(!empty($tmps)){
+                        foreach($tmps as $idTask => $tmp){
+                            if(!empty($tmp)){
+                                // have status
+                            } else {
+                                $this->ProjectTask->id = $idTask;
+                                $this->ProjectTask->save(array('task_status_id' => $aLancer));
+                            }
+                        }
+                    }
+                } else if($cate == 2){ //opportunity
+                    $this->ProjectTask->updateAll(
+                        array('ProjectTask.task_status_id' => $aLancer),
+                        array('ProjectTask.project_id' => $id)
+                    );
+                }
+            }
+        }
+        echo 'OK!';
+        exit;
+     }
+
+     /**
+      * Lay tat ca cac activities khong linked voi project va co status la: not activated.
+      * Kiem tra cac task cua activities tren. Neu task nao khong co status thi update status cho task do = CLOS
+      */
+     public function updateTaskStatusFollowActivityNotActivated(){
+        $this->loadModel('ProjectStatus');
+        $this->loadModel('Activity');
+        $this->loadModel('ActivityTask');
+        $infors = $this->Session->read('Auth.employee_info');
+        $status = $this->ProjectStatus->find('list', array(
+            'recursive' => -1,
+            'conditions' => array(
+                //'name' => array('Clos', 'closed ', 'A lancer', 'A launch'),
+                'company_id' => $infors['Company']['id']
+            )
+        ));
+        $close = $aLancer = '';
+        if(!empty($status)){
+            foreach($status as $id => $val){
+                $val = trim(strtolower($val));
+                if($val == 'clos' || $val == 'closed'){
+                    $close = $id;
+                } elseif($val == 'a lancer' || $val == 'a launch'){
+                    $aLancer = $id;
+                }
+            }
+        }
+        $activities = $this->Activity->find('list', array(
+            'recursive' => -1,
+            'conditions' => array(
+                'project' => null,
+                'activated' => 0
+            ),
+            'fields' => array('id', 'id')
+        ));
+        if(!empty($activities)){
+            $tasks = $this->ActivityTask->find('list', array(
+                'recursive' => -1,
+                'conditions' => array('activity_id' => $activities),
+                'fields' => array('id', 'task_status_id')
+            ));
+            if(!empty($tasks)){
+                foreach($tasks as $id => $status){
+                    if(!empty($status)){
+                        //do nothing
+                    } else {
+                        $this->ActivityTask->id = $id;
+                        $this->ActivityTask->save(array('task_status_id' => $close));
+                    }
+                }
+            }
+        }
+        echo 'OK!';
+        exit;
+     }
+     /**
+      * Xoa het tat ca history cua he thong.
+      */
+     public function deleteHistoryOfSystem(){
+        $this->loadModel('Employee');
+        $histories = $this->Employee->HistoryFilter->find('list', array(
+            'recursive' => -1,
+            'fields' => array('id', 'id'),
+            'order' => array('id' => 'ASC')
+        ));
+        if(!empty($histories)){
+            foreach($histories as $id){
+                $this->Employee->HistoryFilter->delete($id);
+            }
+        }
+        $db = ConnectionManager::getDataSource('default');
+        $setAuto = 'ALTER TABLE history_filters AUTO_INCREMENT = 1';
+        $db->query($setAuto);
+        echo 'OK!';
+        exit;
+     }
+
+      /**
+      * Update project manager backup cho cac activity co linked voi project
+      */
+     public function updateProjectManagerActivityBackup(){
+        $this->loadModel('Project');
+        $this->loadModel('ProjectEmployeeManager');
+        $infors = $this->Session->read('Auth.employee_info');
+        $projects = $this->Project->find('list', array(
+            'recursive' => -1,
+            'conditions' => array(
+                'company_id' => $infors['Company']['id'],
+                'NOT' => array('activity_id' => null)
+            ),
+            'fields' => array('id', 'activity_id')
+        ));
+        if(!empty($projects)){
+            foreach($projects as $projectId => $activityId){
+                $this->ProjectEmployeeManager->updateAll(
+                    array('ProjectEmployeeManager.activity_id' => $activityId),
+                    array('ProjectEmployeeManager.project_id' => $projectId)
+                );
+            }
+        }
+        echo 'OK!';
+        exit;
+     }
+
+     /**
+      * Update project manager primary cho activity co linked voi project
+      */
+     public function updateProjectManagerActivityPrimary(){
+        $this->loadModel('Project');
+        $this->loadModel('Activity');
+        $infors = $this->Session->read('Auth.employee_info');
+        $projects = $this->Project->find('list', array(
+            'recursive' => -1,
+            'conditions' => array(
+                'company_id' => $infors['Company']['id'],
+                'NOT' => array('activity_id' => null)
+            ),
+            'fields' => array('activity_id', 'project_manager_id')
+        ));
+        if(!empty($projects)){
+            foreach($projects as $activityId => $projectManager){
+                $this->Activity->id = $activityId;
+                $this->Activity->save(array('project_manager_id' => $projectManager));
+            }
+        }
+        echo 'OK!';
+        exit;
+     }
+     /**
+      * Update manager of activity to ActivityEmployeeManager From ProjectEmployeeManager
+      */
+     public function updateMangerActivityFromProjectEmployeeManager(){
+        $this->loadModel('Project');
+        $this->loadModel('ActivityEmployeeManager');
+        $this->loadModel('ProjectEmployeeManager');
+        $activityManagers = $this->ActivityEmployeeManager->find('all', array(
+            'recursive' => -1,
+            'fields' => array('id', 'activity_id', 'project_manager_id')
+        ));
+        $activityId = !empty($activityManagers) ? array_unique(Set::classicExtract($activityManagers, '{n}.ActivityEmployeeManager.activity_id')) : array();
+        $projectLinkeds = $this->Project->find('list', array(
+            'recurisve' => -1,
+            'conditions' => array('activity_id' => $activityId),
+            'fields' => array('activity_id', 'id')
+        ));
+        if(!empty($activityManagers)){
+            foreach($activityManagers as $activityManager){
+                $dx = $activityManager['ActivityEmployeeManager'];
+                $tmp = $this->ProjectEmployeeManager->find('first', array(
+                    'recursive' => -1,
+                    'conditions' => array(
+                        'activity_id' => $dx['activity_id'],
+                        'project_manager_id' => $dx['project_manager_id']
+                    )
+                ));
+                if(!empty($tmp)){
+                    //do nothing
+                } else {
+                    $saved = array(
+                        'activity_id' => $dx['activity_id'],
+                        'project_manager_id' => $dx['project_manager_id'],
+                        'is_backup' => 1,
+                        'project_id' => !empty($projectLinkeds[$dx['activity_id']]) ? $projectLinkeds[$dx['activity_id']] : 0
+                    );
+                    $this->ProjectEmployeeManager->create();
+                    $this->ProjectEmployeeManager->save($saved);
+                }
+            }
+        }
+        echo 'OK!';
+        exit;
+     }
+
+     /**
+      * Xoa cac tmp TmpProfitCenterOfActivity khong luu activity id. Khong can thiet va khong dung den
+      */
+     public function deleteTmpProfitCenterOfActivityNotUsed(){
+        $this->loadModel('TmpProfitCenterOfActivity');
+        $this->TmpProfitCenterOfActivity->deleteAll(array('TmpProfitCenterOfActivity.activity_id' => null), false);
+        echo 'OK!';
+        exit;
+     }
+     /**
+      * Update company for tmp
+      */
+     public function updateCompanyForTmp(){
+        $this->loadModel('TmpCaculateAbsence');
+        $this->loadModel('TmpCaculateProfitCenter');
+        $this->loadModel('TmpProfitCenterOfActivity');
+        $this->loadModel('TmpStaffingSystem');
+        $infors = $this->Session->read('Auth.employee_info');
+        $this->TmpCaculateAbsence->updateAll(
+            array('TmpCaculateAbsence.company_id' => $infors['Company']['id']),
+            array('TmpCaculateAbsence.id >=' => 0)
+        );
+        $this->TmpCaculateProfitCenter->updateAll(
+            array('TmpCaculateProfitCenter.company_id' => $infors['Company']['id']),
+            array('TmpCaculateProfitCenter.id >=' => 0)
+        );
+        $this->TmpProfitCenterOfActivity->updateAll(
+            array('TmpProfitCenterOfActivity.company_id' => $infors['Company']['id']),
+            array('TmpProfitCenterOfActivity.id >=' => 0)
+        );
+        $this->TmpStaffingSystem->updateAll(
+            array('TmpStaffingSystem.company_id' => $infors['Company']['id']),
+            array('TmpStaffingSystem.id >=' => 0)
+        );
+        echo 'OK!';
+        exit;
+     }
+
+     /**
+      * Delete table budget synthesis
+      */
+     public function deleteProjectBudgetSyn(){
+        $this->loadModel('ProjectBudgetSyn');
+        $this->ProjectBudgetSyn->deleteAll(array('ProjectBudgetSyn.id >=' => 0), false);
+        $db = ConnectionManager::getDataSource('default');
+        $setAuto = 'ALTER TABLE project_budget_syns AUTO_INCREMENT = 1';
+        $db->query($setAuto);
+        echo 'OK.';
+        exit;
+     }
+
+     /**
+      * Update table budget synthesis
+      */
+     public function updateProjectBudgetSyn(){
+        $this->loadModel('ProjectBudgetSyn');
+        $this->loadModel('ProjectBudgetInternalDetail');
+        $this->loadModel('ProjectBudgetExternal');
+        $this->loadModel('ProjectBudgetSale');
+        $this->loadModel('ProjectBudgetInvoice');
+        $this->ProjectBudgetSyn->deleteAll(array('ProjectBudgetSyn.id >=' => 0), false);
+        $db = ConnectionManager::getDataSource('default');
+        $setAuto = 'ALTER TABLE project_budget_syns AUTO_INCREMENT = 1';
+        $db->query($setAuto);
+        // Internal costs
+        $internals = $this->ProjectBudgetInternalDetail->find('all', array(
+            'recursive' => -1,
+            'fields' => array('budget_md', 'average', 'project_id', 'activity_id')
+        ));
+        $projects = array();
+        $budgetInternals = array();
+        if(!empty($internals)){
+            foreach($internals as $internal){
+                $dx = $internal['ProjectBudgetInternalDetail'];
+                if(empty($dx['budget_md'])){
+                    $dx['budget_md'] = 0;
+                }
+                if(empty($dx['average'])){
+                    $dx['average'] = 0;
+                }
+                if(!isset($budgetInternals[$dx['project_id']]['budgetEuro'])){
+                    $budgetInternals[$dx['project_id']]['budgetEuro'] = 0;
+                }
+                $budgetInternals[$dx['project_id']]['budgetEuro'] += $dx['budget_md']*$dx['average'];
+
+                if(!isset($budgetInternals[$dx['project_id']]['budgetManday'])){
+                    $budgetInternals[$dx['project_id']]['budgetManday'] = 0;
+                }
+                $budgetInternals[$dx['project_id']]['budgetManday'] += $dx['budget_md'];
+
+                if(!isset($budgetInternals[$dx['project_id']]['average'])){
+                    $budgetInternals[$dx['project_id']]['average'] = 0;
+                }
+                $budgetInternals[$dx['project_id']]['average'] += $dx['average'];
+
+                if(!isset($budgetInternals[$dx['project_id']]['countRecord'])){
+                    $budgetInternals[$dx['project_id']]['countRecord'] = 0;
+                }
+                $budgetInternals[$dx['project_id']]['countRecord'] += 1;
+                $projects[$dx['project_id']] = $dx['activity_id'];
+            }
+        }
+        // External Cost
+        $externals = $this->ProjectBudgetExternal->find('all', array(
+                'recursive' => -1,
+                'fields' => array('budget_erro', 'ordered_erro', 'remain_erro', 'man_day', 'progress_md', 'project_id', 'activity_id')
+            ));
+        $budgetExternals = array();
+        if(!empty($externals)){
+            foreach($externals as $external){
+                $dx = $external['ProjectBudgetExternal'];
+                $dx['budget_erro'] = !empty($dx['budget_erro']) ? $dx['budget_erro'] : 0;
+                $dx['ordered_erro'] = !empty($dx['ordered_erro']) ? $dx['ordered_erro'] : 0;
+                $dx['remain_erro'] = !empty($dx['remain_erro']) ? $dx['remain_erro'] : 0;
+                $dx['man_day'] = !empty($dx['man_day']) ? $dx['man_day'] : 0;
+                $dx['progress_md'] = !empty($dx['progress_md']) ? $dx['progress_md'] : 0;
+
+                if(!isset($budgetExternals[$dx['project_id']]['budgetEuro'])){
+                    $budgetExternals[$dx['project_id']]['budgetEuro'] = 0;
+                }
+                $budgetExternals[$dx['project_id']]['budgetEuro'] += $dx['budget_erro'];
+
+                if(!isset($budgetExternals[$dx['project_id']]['forecastEuro'])){
+                    $budgetExternals[$dx['project_id']]['forecastEuro'] = 0;
+                }
+                $budgetExternals[$dx['project_id']]['forecastEuro'] += $dx['ordered_erro'] + $dx['remain_erro'];
+
+                if(!isset($budgetExternals[$dx['project_id']]['orderedEuro'])){
+                    $budgetExternals[$dx['project_id']]['orderedEuro'] = 0;
+                }
+                $budgetExternals[$dx['project_id']]['orderedEuro'] += $dx['ordered_erro'];
+
+                if(!isset($budgetExternals[$dx['project_id']]['remainEuro'])){
+                    $budgetExternals[$dx['project_id']]['remainEuro'] = 0;
+                }
+                $budgetExternals[$dx['project_id']]['remainEuro'] += $dx['remain_erro'];
+
+                if(!isset($budgetExternals[$dx['project_id']]['manDay'])){
+                    $budgetExternals[$dx['project_id']]['manDay'] = 0;
+                }
+                $budgetExternals[$dx['project_id']]['manDay'] += $dx['man_day'];
+
+                if(!isset($budgetExternals[$dx['project_id']]['progressEuro'])){
+                    $budgetExternals[$dx['project_id']]['progressEuro'] = 0;
+                }
+                $budgetExternals[$dx['project_id']]['progressEuro'] += round(($dx['ordered_erro']*$dx['progress_md'])/100, 2);
+                $projects[$dx['project_id']] = $dx['activity_id'];
+            }
+        }
+        // Sales
+        $sales = $this->ProjectBudgetSale->find('all', array(
+                'recursive' => -1,
+                'fields' => array('sold', 'man_day', 'project_id', 'activity_id')
+            ));
+        $budgetSales = array();
+        if(!empty($sales)){
+            foreach($sales as $sale){
+                $dx = $sale['ProjectBudgetSale'];
+                if(!isset($budgetSales[$dx['project_id']]['soldEuro'])){
+                    $budgetSales[$dx['project_id']]['soldEuro'] = 0;
+                }
+                $budgetSales[$dx['project_id']]['soldEuro'] += !empty($dx['sold']) ? $dx['sold'] : 0;
+
+                if(!isset($budgetSales[$dx['project_id']]['manDay'])){
+                    $budgetSales[$dx['project_id']]['manDay'] = 0;
+                }
+                $budgetSales[$dx['project_id']]['manDay'] += !empty($dx['man_day']) ? $dx['man_day'] : 0;
+                $projects[$dx['project_id']] = $dx['activity_id'];
+            }
+        }
+        // Invoice
+        $invoices = $this->ProjectBudgetInvoice->find('all', array(
+                'recursive' => -1,
+                'fields' => array('billed', 'paid', 'effective_date', 'project_id', 'activity_id')
+            ));
+        if(!empty($invoices)){
+            foreach($invoices as $invoice){
+                $dx = $invoice['ProjectBudgetInvoice'];
+                $dx['billed'] = !empty($dx['billed']) ? $dx['billed'] : 0;
+                $dx['paid'] = !empty($dx['paid']) ? $dx['paid'] : 0;
+
+                if(!isset($budgetSales[$dx['project_id']]['toBillEuro'])){
+                    $budgetSales[$dx['project_id']]['toBillEuro'] = 0;
+                }
+                $budgetSales[$dx['project_id']]['toBillEuro'] += $dx['billed'];
+                if(!isset($budgetSales[$dx['project_id']]['paidEuro'])){
+                    $budgetSales[$dx['project_id']]['paidEuro'] = 0;
+                }
+                $budgetSales[$dx['project_id']]['paidEuro'] += $dx['paid'];
+
+                if(!empty($dx['effective_date']) && $dx['effective_date'] != '0000-00-00'){
+                    if(!isset($budgetSales[$dx['project_id']]['billedEuro'])){
+                        $budgetSales[$dx['project_id']]['billedEuro'] = 0;
+                    }
+                    $budgetSales[$dx['project_id']]['billedEuro'] += $dx['billed'];
+                }
+                $projects[$dx['project_id']] = $dx['activity_id'];
+            }
+        }
+        // Save Project budget Sync Of Project
+        if(!empty($projects)){
+            $saved = array();
+            foreach($projects as $projectId => $activityId){
+                if($projectId != 0){
+                    $inAverage = !empty($budgetInternals[$projectId]['average']) ? $budgetInternals[$projectId]['average'] : 0;
+                    $inBudgetEuro = !empty($budgetInternals[$projectId]['budgetEuro']) ? $budgetInternals[$projectId]['budgetEuro'] : 0;
+                    $inBudgetManDay = !empty($budgetInternals[$projectId]['budgetManday']) ? $budgetInternals[$projectId]['budgetManday'] : 0;
+                    $inBudgetCountRecord = !empty($budgetInternals[$projectId]['countRecord']) ? $budgetInternals[$projectId]['countRecord'] : 0;
+                    $inAverage = ($inBudgetCountRecord == 0) ? 0 : round($inAverage/$inBudgetCountRecord, 2);
+                    $exBudgetEuro = !empty($budgetExternals[$projectId]['budgetEuro']) ? $budgetExternals[$projectId]['budgetEuro'] : 0;
+                    $exForecastEuro = !empty($budgetExternals[$projectId]['forecastEuro']) ? $budgetExternals[$projectId]['forecastEuro'] : 0;
+                    $exOrderEuro = !empty($budgetExternals[$projectId]['orderedEuro']) ? $budgetExternals[$projectId]['orderedEuro'] : 0;
+                    $exRemainEuro = !empty($budgetExternals[$projectId]['remainEuro']) ? $budgetExternals[$projectId]['remainEuro'] : 0;
+                    $exVarEuro = ($exBudgetEuro == 0) ? -100 : round(((($exOrderEuro + $exRemainEuro)/$exBudgetEuro)-1)*100, 2);
+                    $exManDay = !empty($budgetExternals[$projectId]['manDay']) ? $budgetExternals[$projectId]['manDay'] : 0;
+                    $exProgressEuro = !empty($budgetExternals[$projectId]['progressEuro']) ? $budgetExternals[$projectId]['progressEuro'] : 0;
+                    $exProgressManDay = ($exOrderEuro == 0) ? 0 : round(($exProgressEuro/$exOrderEuro)*100, 2);
+                    $saleSoldEuro = !empty($budgetSales[$projectId]['soldEuro']) ? $budgetSales[$projectId]['soldEuro'] : 0;
+                    $saleManDay = !empty($budgetSales[$projectId]['manDay']) ? $budgetSales[$projectId]['manDay'] : 0;
+                    $saleToBillEuro = !empty($budgetSales[$projectId]['toBillEuro']) ? $budgetSales[$projectId]['toBillEuro'] : 0;
+                    $saleBilledEuro = !empty($budgetSales[$projectId]['billedEuro']) ? $budgetSales[$projectId]['billedEuro'] : 0;
+                    $salePaidEuro = !empty($budgetSales[$projectId]['paidEuro']) ? $budgetSales[$projectId]['paidEuro'] : 0;
+
+                    $saved[] = array(
+                        'project_id' => $projectId,
+                        'activity_id' => $activityId,
+                        'internal_costs_average' => $inAverage,
+                        'internal_costs_budget' => $inBudgetEuro,
+                        'internal_costs_budget_man_day' => $inBudgetManDay,
+                        'external_costs_budget' => $exBudgetEuro,
+                        'external_costs_forecast' => $exForecastEuro,
+                        'external_costs_var' => $exVarEuro,
+                        'external_costs_ordered' => $exOrderEuro,
+                        'external_costs_remain' => $exRemainEuro,
+                        'external_costs_man_day' => $exManDay,
+                        'external_costs_progress' => $exProgressManDay,
+                        'external_costs_progress_euro' => $exProgressEuro,
+                        'sales_sold' => $saleSoldEuro,
+                        'sales_man_day' => $saleManDay,
+                        'sales_to_bill' => $saleToBillEuro,
+                        'sales_billed' => $saleBilledEuro,
+                        'sales_paid' => $salePaidEuro
+                    );
+                }
+
+            }
+            if(!empty($saved)){
+                $this->ProjectBudgetSyn->saveAll($saved);
+            }
+        }
+        echo 'OK.';
+        exit;
+     }
+	 public function deleteRecordsNotAssignAndNotConsumedInTmpStaffingSystem(){
+		$this->loadModel('TmpStaffingSystem');
+		$this->TmpStaffingSystem->deleteAll(array('TmpStaffingSystem.estimated'=>0,'TmpStaffingSystem.consumed'=>0), false);
+		echo 'Completed';
+        exit;
+	}
+     /**
+      * Xoa cac du lieu cua project va activity trong tmp staffing system khi project/activity do khong ton tai trong he thong
+      */
+     public function deleteAllProjectAndActivityNotUsingInTmpStaffingSystem(){
+        $this->loadModel('Project');
+        $this->loadModel('ProjectTask');
+        $this->loadModel('ActivityTask');
+        $this->loadModel('Activity');
+        $this->loadModel('TmpStaffingSystem');
+        $infors = $this->Session->read('Auth.employee_info');
+        /**
+         * Lay cac project cua cong ty dang login
+         */
+        $projects = $this->Project->find('list', array(
+            'recursive' => -1,
+            'conditions' => array('company_id' => $infors['Company']['id'])
+        ));
+        /**
+         * Lay cac project cua cac cong ty khac
+         */
+        $projectNotOfCompanies = $this->Project->find('list', array(
+            'recursive' => -1,
+            'conditions' => array(
+                'NOT' => array(
+                    'company_id' => $infors['Company']['id']
+                )
+            )
+        ));
+        $projects = !empty($projectNotOfCompanies) ? array_merge($projects, $projectNotOfCompanies) : $projects;
+        /**
+         * Lay cac task thuoc project da bi xoa cua cong ty dang login va khong thuoc lay cac task thuoc cong ty khac
+         */
+        $projectTasks = $this->ProjectTask->find('list', array(
+            'recursive' => -1,
+            'conditions' => array(
+                'NOT' => array('project_id' => $projects)
+            ),
+            'fields' => array('id', 'id')
+        ));
+        /**
+         * Xoa cac assign task cua project da bi xoa cua cong ty dang login
+         */
+        if(!empty($projectTasks)){
+            $this->loadModel('ProjectTaskEmployeeRefer');
+            $this->ProjectTaskEmployeeRefer->deleteAll(array('ProjectTaskEmployeeRefer.project_task_id' => $projectTasks), false);
+            $this->ActivityTask->deleteAll(array('ActivityTask.project_task_id' => $projectTasks), false);
+        }
+        /**
+         * Xoa cac task va tmp cua project da bi xoa cua cong ty dang login
+         */
+        $this->ProjectTask->deleteAll(array('NOT' => array('ProjectTask.project_id' => $projects)), false);
+        $projects[0] = 0;
+        $this->TmpStaffingSystem->deleteAll(array('NOT' => array('TmpStaffingSystem.project_id' => $projects)), false);
+        /**
+         * Lay cac activity cua cong ty dang login
+         */
+        $activities = $this->Activity->find('list', array(
+            'recursive' => -1,
+            'conditions' => array('company_id' => $infors['Company']['id']),
+            'fields' => array('id', 'id')
+        ));
+        /**
+         * Lay cac activity cua cac cong ty khac
+         */
+        $activityNotOfCompanies = $this->Activity->find('list', array(
+            'recursive' => -1,
+            'conditions' => array(
+                'NOT' => array('company_id' => $infors['Company']['id'])
+            ),
+            'fields' => array('id', 'id')
+        ));
+        $activities = !empty($activityNotOfCompanies) ? array_merge($activities, $activityNotOfCompanies) : $activities;
+        /**
+         * Lay cac task thuoc activity da bi xoa cua cong ty dang login va khong thuoc lay cac task thuoc cong ty khac
+         */
+        $activityTasks = $this->ActivityTask->find('list', array(
+            'recursive' => -1,
+            'conditions' => array(
+                'NOT' => array('activity_id' => $activities)
+            ),
+            'fields' => array('id', 'id')
+        ));
+        /**
+         * Xoa cac assign task cua project da bi xoa cua cong ty dang login
+         */
+        if(!empty($activityTasks)){
+            $this->loadModel('ActivityTaskEmployeeRefer');
+            $this->ActivityTaskEmployeeRefer->deleteAll(array('ActivityTaskEmployeeRefer.activity_task_id' => $activityTasks), false);
+        }
+        /**
+         * Xoa cac task va tmp cua project da bi xoa cua cong ty dang login
+         */
+        $this->ActivityTask->deleteAll(array('NOT' => array('ActivityTask.activity_id' => $activities)), false);
+        $activities[0] = 0;
+        $this->TmpStaffingSystem->deleteAll(array('NOT' => array('TmpStaffingSystem.activity_id' => $activities)), false);
+        echo 'OK';
+        exit;
+     }
+
+     /**
+      * Kiem tra cac task da validate trong activity request,
+      * Nhung khong ton tai ben activity task
+      * Bug Nguy hiem
+      */
+     public function checkTaskUsingInActivityRequestAndNotExistActivityTask(){
+        $this->loadModel('ActivityTask');
+        $this->loadModel('ActivityRequest');
+        $tasks = $this->ActivityTask->find('list', array(
+            'recursive' => -1,
+            'fields' => array('id', 'id')
+        ));
+        $requests = $this->ActivityRequest->find('list', array(
+            'recursive' => -1,
+            'conditions' => array(
+                'status' => 2, 'activity_id' => 0,
+                'NOT' => array('task_id' => $tasks)
+            ),
+            'fields' => array('task_id', 'task_id')
+        ));
+        if(!empty($requests)){
+            foreach($requests as $taskId){
+                echo 'Activity Task Id: ' . $taskId . '<br />';
+            }
+            echo 'TotalL : ' . count($requests);
+        }
+        exit;
+     }
+     /**
+      * Doi status = null thanh status = -1 trong table activity request
+      */
+     public function changeStatusInActivityRequest(){
+        $this->loadModel('ActivityRequest');
+        $requests = $this->ActivityRequest->find('list', array(
+            'recursive' => -1,
+            'conditions' => array('status' => null),
+            'fields' => array('id', 'id')
+        ));
+        if(!empty($requests)){
+            $this->ActivityRequest->updateAll(array('status' => -1), array(
+                'ActivityRequest.id' => $requests
+            ));
+        }
+        echo 'Finish!';
+        exit;
+     }
+     /**
+      * Tong so ngay xin nghi absence cua 1 employee trong 1 thang
+      * Luu vao table TmpCaculateAbsence
+      */
+     public function caculateRequestOfEmployeeControler(){
+        $this->loadModel('AbsenceRequest');
+        $this->loadModel('TmpCaculateAbsence');
+        $checkDatas = $this->TmpCaculateAbsence->find('count');
+        if($checkDatas == 0){
+            $infors = $this->Session->read('Auth.employee_info');
+            $requestQuery = $this->AbsenceRequest->find(
+    			"all",
+    			array(
+    				'recursive' 	=> -1,
+                    'fields' => array('employee_id', 'date', 'absence_am', 'absence_pm', 'response_am', 'response_pm')
+    			)
+    		);
+            $totalAbcenses = array();
+            foreach($requestQuery as $request){
+                foreach(array('am', 'pm') as $value){
+                    if($request['AbsenceRequest']['absence_' . $value] && $request['AbsenceRequest']['response_' . $value] == 'validated'){
+                        $_dates = date('m-Y', $request['AbsenceRequest']['date']);
+                        $dates = strtotime('01-'.$_dates);
+                        if(!isset($totalAbcenses[$request['AbsenceRequest']['employee_id']][$dates])){
+                            $totalAbcenses[$request['AbsenceRequest']['employee_id']][$dates] = 0;
+                        }
+                        $totalAbcenses[$request['AbsenceRequest']['employee_id']][$dates] += 0.5;
+                    }
+                }
+            }
+            $references = ClassRegistry::init('ProjectEmployeeProfitFunctionRefer')->find('list', array(
+                'recursive' => -1,
+                'conditions' => array(
+                    'NOT' => array('profit_center_id' => null, 'profit_center_id' => 0)
+                ),
+                'fields' => array('employee_id', 'profit_center_id'),
+                'order' => array('employee_id')
+            ));
+
+            $datas = $idProfits = array();
+            if(!empty($totalAbcenses)){
+                foreach($totalAbcenses as $employ => $totalAbcense){
+                    foreach($totalAbcense as $time => $values){
+                        $_datas = array(
+                            'profit_center_id' => !empty($references[$employ]) ? $references[$employ] : 0,
+                            'employee_id' => $employ,
+                            'date' => $time,
+                            'total_absence' => $values,
+                            'company_id' => $infors['Company']['id']
+                        );
+                        $datas[] = $_datas;
+                    }
+                }
+            }
+            if(!empty($datas)){
+                $this->TmpCaculateAbsence->saveAll($datas);
+            }
+            echo 'Okie';
+        } else {
+            echo 'Already Have The Data!';
+        }
+        exit;
+    }
+
+    /**
+     * Xoa cache trong table TmpCaculateAbsence
+     */
+    public function clearCaheTmpCaculateAbsence(){
+        $this->loadModel('TmpCaculateAbsence');
+        $this->TmpCaculateAbsence->deleteAll(array('TmpCaculateAbsence.id >' => 0), false);
+        $db = ConnectionManager::getDataSource('default');
+        $setAuto = 'ALTER TABLE tmp_caculate_absences AUTO_INCREMENT = 1';
+        $db->query($setAuto);
+        echo 'Okie';
+        exit;
+    }
+
+    /**
+     * Check activity/project co workload be hon 0?
+     */
+    public function checkWorkloadNegativeNumberInTmpStaffing(){
+        $this->loadModel('TmpStaffingSystem');
+        $this->loadModel('ProjectTask');
+        $this->loadModel('ActivityTask');
+        $staffings = $this->TmpStaffingSystem->find('all', array(
+            'recursive' => -1,
+            'conditions' => array('estimated <' => 0),
+            'fields' => array('project_id', 'activity_id')
+        ));
+        $activities = $projects = array();
+        if(!empty($staffings)){
+            foreach($staffings as $staffing){
+                $dx = $staffing['TmpStaffingSystem'];
+                if($dx['project_id'] == 0){
+                    $activities[$dx['activity_id']] = $dx['activity_id'];
+                } else {
+                    $projects[$dx['project_id']] = $dx['activity_id'];
+                }
+
+
+            }
+        }
+        if(!empty($activities)){
+            echo 'Activity: <br />';
+            foreach($activities as $id){
+                $this->TmpStaffingSystem->deleteAll(array('TmpStaffingSystem.activity_id' => $id), false);
+                $this->ActivityTask->staffingSystem($id);
+                echo '------------ ' . $id . '<br />';
+            }
+        }
+        if(!empty($projects)){
+            echo 'Project: <br />';
+            foreach($projects as $id => $val){
+                $this->TmpStaffingSystem->deleteAll(array('TmpStaffingSystem.project_id' => $id), false);
+                $this->ProjectTask->staffingSystem($id);
+                echo '------------ ' . $id . '<br />';
+            }
+        }
+        if(empty($activities) && empty($projects)) {
+            echo 'Okie';
+        }
+        exit;
+    }
+    /**
+     * xoa cache table TmpCaculateProfitCenter
+     */
+    public function clearCaheTmpCaculateProfitCenter(){
+        $this->loadModel('TmpCaculateProfitCenter');
+        $this->TmpCaculateProfitCenter->deleteAll(array('TmpCaculateProfitCenter.id >' => 0), false);
+        $db = ConnectionManager::getDataSource('default');
+        $setAuto = 'ALTER TABLE tmp_caculate_profit_centers AUTO_INCREMENT = 1';
+        $db->query($setAuto);
+        echo 'Okie';
+        exit;
+    }
+    /**
+     * ham dung de tinh toan tong so employee cua 1 profit center
+     */
+    public function caculateProfitCenter($profitCenters = null){
+        $references = ClassRegistry::init('ProjectEmployeeProfitFunctionRefer')->find('list', array(
+                'recursive' => -1,
+                'conditions' => array(
+                    'NOT' => array('profit_center_id' => null, 'profit_center_id' => 0)
+                ),
+                'fields' => array('employee_id', 'profit_center_id'),
+                'order' => array('employee_id')
+            ));
+        $employees = array();
+        if(!empty($references)){
+            foreach($references as $employ => $profit){
+                if(!isset($employees[$profit])){
+                    //do nothing
+                }
+                $employees[$profit][] = $employ;
+            }
+
+        }
+        $TmpCaculateProfitCenter = ClassRegistry::init('TmpCaculateProfitCenter');
+        $company = $this->employee_info['Company']['id'];
+        if(!empty($employees)){
+            foreach($employees as $profitId => $employee){
+                $tmp = $TmpCaculateProfitCenter->find('first', array(
+                    'recursive' => -1,
+                    'conditions' => array('profit_center_id' => $profitId),
+                    'fields' => array('id')
+                ));
+                if(!empty($tmp) && $tmp['TmpCaculateProfitCenter']['id']){
+                    $TmpCaculateProfitCenter->id = $tmp['TmpCaculateProfitCenter']['id'];
+                    $saved['total_employee'] = count($employee);
+                    $TmpCaculateProfitCenter->save($saved);
+                } else {
+                    $saved['profit_center_id'] = $profitId;
+                    $saved['total_employee'] = count($employee);
+                    $saved['company_id'] = $company;
+                    $TmpCaculateProfitCenter->create();
+                    $TmpCaculateProfitCenter->save($saved);
+                }
+            }
+        }
+        echo 'Okie';
+        exit;
+    }
+	/*lam moi table tmp_staffing_systems*/
+	public function truncateTableTmpStaffingSystem(){
+		echo 'Completed!';
+        exit;
+        $db = ConnectionManager::getDataSource('default');
+        $setAuto = 'TRUNCATE TABLE `tmp_staffing_systems`';
+        $db->query($setAuto);
+        echo 'Completed!';
+        exit;
+    }
+	public function checkTaskCreateAutomatic(){
+        $db = ConnectionManager::getDataSource('default');
+        $setForProject = 'ALTER TABLE `project_tasks` ADD `special` INT( 1 ) NOT NULL DEFAULT 0 AFTER `weight`';
+		$setForAtivity = 'ALTER TABLE `activity_tasks` ADD `special` INT( 1 ) NOT NULL DEFAULT 0 AFTER `overload`';
+        $db->query($setForProject);
+		$db->query($setForAtivity);
+        echo 'Completed!';
+        exit;
+    }
+	public function syncEmployeeCompanyProfitCenter(){
+		$this->loadModel('ProfitCenter');
+		$this->loadModel('ProjectEmployeeProfitFunctionRefer');
+		$this->loadModel('CompanyEmployeeReference');
+		$this->loadModel('Company');
+
+		$listCompany=$this->Company->find('list',array(
+			'recurisve' => -1,
+			'fields' => array('id')
+		));
+		foreach($listCompany as $val)
+		{
+			$checkDefaultPC=$this->ProfitCenter->find('count', array(
+                'recursive' => -1,
+                'conditions' => array(
+                    'ProfitCenter.company_id'=>$val,'ProfitCenter.name'=>'DEFAULT'
+                )
+            ));
+			if(!$checkDefaultPC)
+			{
+				$defaultPC = array(
+                    'ProfitCenter' => array(
+                                'name' => 'DEFAULT',
+                                'company_id' => $val
+                        )
+                );
+                $this->ProfitCenter->create();
+                $this->ProfitCenter->save($defaultPC);
+			}
+			$PCDefaultOfCompany[$val]=$this->ProfitCenter->find('first', array(
+				'recursive' => -1,
+				'conditions' => array(
+					'ProfitCenter.company_id'=>$val,'ProfitCenter.name'=>'DEFAULT'
+				),
+				'fields'=>array('company_id','id')
+			));
+		}
+		//debug($PCDefaultOfCompany); exit;
+		$PCDefaultOfCompany=Set::combine($PCDefaultOfCompany,'{n}.ProfitCenter.company_id','{n}.ProfitCenter.id');
+		//debug($PCDefaultOfCompany); exit;
+		$_fields=array(
+			'Employee.id',
+			'Employee.is_sas',
+			'ERP.profit_center_id',
+			'ERP.id',
+			'PC.company_id',
+			'CRE.company_id',
+			'CRE.role_id',
+		);
+		$_joins = array(
+			array(
+				'table' => 'project_employee_profit_function_refers',
+				'alias' => 'ERP',
+				'type' => 'LEFT',
+				'foreignKey' => 'employee_id',
+				'conditions'=> array(
+					'Employee.id = ERP.employee_id'
+				)
+			),
+			array(
+				'table' => 'profit_centers',
+				'alias' => 'PC',
+				'type' => 'LEFT',
+				'foreignKey' => 'profit_center_id',
+				'conditions'=> array(
+					'PC.id = ERP.profit_center_id'
+				)
+			),
+			array(
+				'table' => 'company_employee_references',
+				'alias' => 'CRE',
+				'type' => 'LEFT',
+				'foreignKey' => 'employee_id',
+				'conditions'=> array(
+					'CRE.employee_id = Employee.id'
+				)
+			)
+		);
+		$listEmployee=$this->Employee->find('all', array(
+                'recursive' => -1,
+				'joins'=>$_joins,
+				'fields'=>$_fields,
+				'conditions'=> array(
+					'Employee.is_sas <>' => 1
+				)
+            ));
+		foreach($listEmployee as $_index=>$_data)
+		{
+			if($_data['PC']['company_id']!=$_data['CRE']['company_id'])
+			{
+				if($_data['ERP']['profit_center_id']!='')
+				{
+					$dataEdit = array(
+						'ProjectEmployeeProfitFunctionRefer' => array(
+								'profit_center_id' => $PCDefaultOfCompany[$_data['CRE']['company_id']]
+							)
+					);
+					$this->ProjectEmployeeProfitFunctionRefer->id=$_data['ERP']['id'];
+					$this->ProjectEmployeeProfitFunctionRefer->save($dataEdit);
+				}
+				else
+				{
+					$dataEdit = array(
+						'ProjectEmployeeProfitFunctionRefer' => array(
+								'employee_id'=>$_data['Employee']['id'],
+								'profit_center_id' => $PCDefaultOfCompany[$_data['CRE']['company_id']]
+							)
+					);
+					$this->ProjectEmployeeProfitFunctionRefer->create();
+					$this->ProjectEmployeeProfitFunctionRefer->save($dataEdit);
+				}
+			}
+		}
+        echo 'Finish!!!';
+        exit;
+    }
+	function syncEmployeeActivityProfitCenterRefers()
+	{
+		$this->loadModel('ActivityProfitRefer');
+		$this->loadModel('ActivityTaskEmployeeRefer');
+		$datas = $this->ActivityProfitRefer->find('all',array(
+			'order'=>array('activity_id')
+		));
+		$pcForActivity=array();
+		foreach($datas as $data)
+		{
+			$key=$data['ActivityProfitRefer']['activity_id'];
+			$PC=$data['ActivityProfitRefer']['profit_center_id'];
+			if(!isset($pcForActivity[$key]))
+			{
+				$pcForActivity[$key]=array();
+			}
+			$pcForActivity[$key][$PC]=$PC;
+		}
+		//debug($pcForActivity);
+
+		$_fields=array(
+			'Activity.activity_id',
+			'ERP.profit_center_id'
+		);
+		$_joins = array(
+			array(
+				'table' => 'activity_tasks',
+				'alias' => 'Activity',
+				'type' => 'LEFT',
+				'foreignKey' => 'id',
+				'conditions'=> array(
+					'ActivityTaskEmployeeRefer.activity_task_id = Activity.id',
+				)
+			),
+			array(
+				'table' => 'project_employee_profit_function_refers',
+				'alias' => 'ERP',
+				'type' => 'RIGHT',
+				'foreignKey' => 'employee_id',
+				'conditions'=> array(
+					'ActivityTaskEmployeeRefer.reference_id = ERP.employee_id'
+				)
+			),
+		);
+		$datas1 = $this->ActivityTaskEmployeeRefer->find('all',array(
+			'conditions'=>array(
+				'ActivityTaskEmployeeRefer.is_profit_center'=>0
+			),
+			'fields' => $_fields,
+			'joins' => $_joins,
+			'order' => 'Activity.activity_id'
+		));
+
+		$pcForActivity1=array();
+		foreach($datas1 as $val)
+		{
+			$key=$val['Activity']['activity_id'];
+			$PC=$val['ERP']['profit_center_id'];
+			if(!isset($pcForActivity1[$key]))
+			{
+				$pcForActivity1[$key]=array();
+			}
+			$pcForActivity1[$key][$PC]=$PC;
+		}
+		$save=array();
+		foreach($pcForActivity1 as $_key=>$val)
+		{
+			if($_key!='')
+			{
+				foreach($val as $_val)
+				{
+					if(!isset($pcForActivity[$_key][$_val]))
+					{
+						//echo $_key; echo '-'; echo $_val; echo "<br />";
+						//$this->ActivityProfitRefer->create();
+						$save[] = array('activity_id'=>$_key,'profit_center_id'=>$_val,'type'=>0);
+						//$this->ActivityProfitRefer->save($save);
+					}
+				}
+			}
+		}
+		$this->ActivityProfitRefer->saveAll($save);
+		echo 'Completed!';
+		exit;
+	}
+	function deleteTasksInvalid()
+	{
+		$this->loadModel('ActivityTask');
+		$this->loadModel('ProjectTask');
+		$this->loadModel('ActivityTaskEmployeeRefer');
+		$this->loadModel('ProjectTaskEmployeeRefer');
+
+		//DELETE ACTIVITY TASK
+		$this->ActivityTask->deleteAll(
+			array('ActivityTask.name is null'), false
+		);
+		//DELETE PROJECT TASK
+		$this->ProjectTask->deleteAll(
+			array('ProjectTask.task_title is null'), false
+		);
+
+		//DELETE ASSIGN TASK
+		$this->ActivityTaskEmployeeRefer->deleteAll(
+			array('ActivityTaskEmployeeRefer.activity_task_id is null'), false
+		);
+		$this->ProjectTaskEmployeeRefer->deleteAll(
+			array('ProjectTaskEmployeeRefer.project_task_id is null'), false
+		);
+		echo 'Completed!';
+		exit;
+	}
+	function resetTaskAssigned(){
+		//Ham nay dung de format du lieu khac phuc bug : PC da duoc assign task nhung bi xoa ma khong validate.
+		$this->loadModel('ActivityTaskEmployeeRefer');
+		$this->loadModel('ProjectTaskEmployeeRefer');
+		$this->loadModel('ProfitCenter');
+		$this->loadModel('ActivityRequest');
+		$this->loadModel('ActivityTask');
+		$this->loadModel('ProjectTask');
+		$company = $this->employee_info['Company']['id'];
+		//GET ALL PC
+		$listPc = $this->ProfitCenter->find('list',array(
+			'recursive' => -1,
+			'conditions' => array('company_id'=>$company),
+			'fields' => array('id')
+		));
+		//CONDISTIONS GENERAL
+		$joins = array(
+			array(
+				'table' => 'project_employee_profit_function_refers',
+				'alias' => 'ERP',
+				'type' => 'LEFT',
+				'foreignKey' => 'employee_id',
+				'conditions'=> array(
+					'ActivityRequest.employee_id = ERP.employee_id'
+				)
+			)
+		);
+		$fields=array(
+			'ActivityRequest.task_id',
+			'ERP.profit_center_id',
+		);
+
+		//GET PC ASSIGNED TO ACTIVITY TASK
+		$listPcAssign = $this->ActivityTaskEmployeeRefer->find('all',array(
+			'recursive' => -1,
+			'conditions' => array('is_profit_center' => 1),
+			'fields' => array('DISTINCT reference_id')
+		));
+		$listPcAssign = Set::classicExtract($listPcAssign,'{n}.ActivityTaskEmployeeRefer.reference_id');
+		//GET ALL PC ASSIGNED TO ACTIVITY TASK, BUT DELETED THIS
+		$listPcDeleted = array_diff($listPcAssign,$listPc);
+		//GET ALL ACTIVITY TASK REFER PC DELETED
+		$_joins = array(
+			array(
+				'table' => 'profit_centers',
+				'alias' => 'Activity',
+				'type' => 'LEFT',
+				'foreignKey' => 'id',
+				'conditions'=> array(
+					'ActivityTaskEmployeeRefer.activity_task_id = Activity.id',
+				),
+
+			)
+		);
+		$_fields=array(
+			'ActivityTaskEmployeeRefer.activity_task_id',
+			'ActivityTaskEmployeeRefer.reference_id'
+		);
+		$activityTaskRefers = $this->ActivityTaskEmployeeRefer->find('all',array(
+			'recursive' => -1,
+			'conditions' => array('ActivityTaskEmployeeRefer.is_profit_center' => 1, 'ActivityTaskEmployeeRefer.reference_id' => $listPcDeleted),
+			'joins' => $_joins,
+			'fields' => $_fields
+		));
+		$activityTaskIDs = Set::combine($activityTaskRefers,'{n}.ActivityTaskEmployeeRefer.activity_task_id','{n}.ActivityTaskEmployeeRefer.reference_id');
+
+		foreach($activityTaskIDs as $val => $key )
+		{
+			/*$activityTasks = $this->ActivityTask->find('all',array(
+				//'recursive' => -1,
+				'conditions' => array('ActivityTask.id' => $val),
+				//'fields' => array('DISTINCT reference_id')
+			));*/
+			$pcNeedReAssign = $this->ActivityRequest->find('all',array(
+				//'recursive' => -1,
+				'conditions' => array('ActivityRequest.task_id' => $val, 'ActivityRequest.status' => 2),
+				'joins' => $joins,
+				'fields' => $fields,
+				'order' => array('ActivityRequest.task_id'),
+				'limit' => 1
+			));
+			if(empty($pcNeedReAssignProject))
+			{
+				$this->ActivityTaskEmployeeRefer->deleteAll(
+					array('ActivityTaskEmployeeRefer.reference_id' => $key, 'ActivityTaskEmployeeRefer.activity_task_id' => $val),false
+				);
+			}
+			else
+			{
+				$this->ActivityTaskEmployeeRefer->updateAll(
+					array('ActivityTaskEmployeeRefer.reference_id' => $pcNeedReAssign[0]['ERP']['profit_center_id']),
+					array('ActivityTaskEmployeeRefer.reference_id' => $key, 'ActivityTaskEmployeeRefer.activity_task_id' => $val)
+				);
+			}
+		}
+
+		/*-----------------PROJECT-----------------*/
+		//GET PC ASSIGNED TO PROJECT TASK
+		$listPcAssignProject = $this->ProjectTaskEmployeeRefer->find('all',array(
+			'recursive' => -1,
+			'conditions' => array('is_profit_center' => 1),
+			'fields' => array('DISTINCT reference_id')
+		));
+		$listPcAssignProject = Set::classicExtract($listPcAssignProject,'{n}.ProjectTaskEmployeeRefer.reference_id');
+		//GET ALL PC ASSIGNED TO TASK, BUT DELETED THIS
+		$listPcDeletedProject = array_diff($listPcAssignProject,$listPc);
+
+		//GET ALL ACTIVITY TASK REFER PC DELETED
+		$_joins = array(
+			array(
+				'table' => 'profit_centers',
+				'alias' => 'Activity',
+				'type' => 'LEFT',
+				'foreignKey' => 'id',
+				'conditions'=> array(
+					'ProjectTaskEmployeeRefer.project_task_id = Activity.id',
+				),
+
+			)
+		);
+		$_fields=array(
+			'ProjectTaskEmployeeRefer.project_task_id',
+			'ProjectTaskEmployeeRefer.reference_id'
+		);
+		$projectTasks = $this->ProjectTaskEmployeeRefer->find('all',array(
+			'recursive' => -1,
+			'conditions' => array('ProjectTaskEmployeeRefer.is_profit_center' => 1, 'ProjectTaskEmployeeRefer.reference_id' => $listPcDeletedProject),
+			'joins' => $_joins,
+			'fields' => $_fields
+		));
+		$projectTaskIDs = Set::combine($projectTasks,'{n}.ProjectTaskEmployeeRefer.project_task_id','{n}.ProjectTaskEmployeeRefer.reference_id');
+		foreach($projectTaskIDs as $val => $key )
+		{
+			/*$projectTaskLists = $this->ProjectTask->find('all',array(
+				//'recursive' => -1,
+				'conditions' => array('ProjectTask.id' => $val),
+				//'fields' => array('DISTINCT reference_id')
+			));*/
+			$pcNeedReAssignProject = $this->ActivityRequest->find('all',array(
+				'recursive' => -1,
+				'conditions' => array('ActivityRequest.task_id' => $val, 'ActivityRequest.status' => 2),
+				'joins' => $joins,
+				'fields' => $fields,
+				'order' => array('ActivityRequest.task_id'),
+				'limit' => 1
+			));
+			//debug($pcNeedReAssignProject);
+			if(empty($pcNeedReAssignProject))
+			{
+				$this->ProjectTaskEmployeeRefer->deleteAll(
+					array('ProjectTaskEmployeeRefer.reference_id' => $key, 'ProjectTaskEmployeeRefer.project_task_id' => $val),false
+				);
+			}
+			else
+			{
+				$this->ProjectTaskEmployeeRefer->updateAll(
+					array('ProjectTaskEmployeeRefer.reference_id' => $pcNeedReAssignProject[0]['ERP']['profit_center_id']),
+					array('ProjectTaskEmployeeRefer.reference_id' => $key, 'ProjectTaskEmployeeRefer.project_task_id' => $val)
+				);
+			}
+		}
+
+		echo "Finish !!!";
+		exit;
+	}
+	function transferEmployeeVsProfitInProjectAndActivityRefer(){
+		//Ham nay dung de format du lieu khac phuc bug : PC da duoc assign task nhung bi xoa ma khong validate.
+		$this->loadModel('ActivityTaskEmployeeRefer');
+		$this->loadModel('ProjectTaskEmployeeRefer');
+		$this->loadModel('ProfitCenter');
+		$this->loadModel('Employee');
+		$this->loadModel('ActivityRequest');
+		$company = $this->employee_info['Company']['id'];
+
+		//GET ALL PC
+		$listPc = $this->ProfitCenter->find('list',array(
+			'recursive' => -1,
+			'conditions' => array('company_id'=>$company),
+			'fields' => array('id')
+		));
+		//GET ALL Employee
+		$this->loadModel('CompanyEmployeeReference');
+		$listEmp = $this->CompanyEmployeeReference->find('list',array(
+			'recursive' => -1,
+			'conditions' => array('company_id'=>$company),
+			'fields' => array('employee_id')
+		));
+
+		//GET EMPLOYEE ASSIGNED TO ACTIVITY TASK
+		$listEmpAssign = $this->ActivityTaskEmployeeRefer->find('all',array(
+			'recursive' => -1,
+			'conditions' => array('is_profit_center' => 0),
+			'fields' => array('DISTINCT reference_id')
+		));
+		$listEmpAssign = Set::classicExtract($listEmpAssign,'{n}.ActivityTaskEmployeeRefer.reference_id');
+		//GET ALL PC ASSIGNED TO ACTIVITY TASK, BUT DELETED THIS
+		$listEmpDeleted = array_diff($listEmpAssign,$listEmp);
+		foreach($listEmpDeleted as $val)
+		{
+			if(in_array($val, $listPc))
+			{
+				$this->ActivityTaskEmployeeRefer->updateAll(
+					array('ActivityTaskEmployeeRefer.is_profit_center' => 1),
+					array('ActivityTaskEmployeeRefer.reference_id' => $val, 'ActivityTaskEmployeeRefer.is_profit_center' => 0)
+				);
+			}
+		}
+
+		//GET PC ASSIGNED TO ACTIVITY TASK
+		$listPcAssign = $this->ActivityTaskEmployeeRefer->find('all',array(
+			'recursive' => -1,
+			'conditions' => array('is_profit_center' => 1),
+			'fields' => array('DISTINCT reference_id')
+		));
+		$listPcAssign = Set::classicExtract($listPcAssign,'{n}.ActivityTaskEmployeeRefer.reference_id');
+		//GET ALL PC ASSIGNED TO ACTIVITY TASK, BUT DELETED THIS
+		$listPcDeleted = array_diff($listPcAssign,$listPc);
+		foreach($listPcDeleted as $val)
+		{
+			if(in_array($val, $listEmp))
+			{
+				$this->ActivityTaskEmployeeRefer->updateAll(
+					array('ActivityTaskEmployeeRefer.is_profit_center' => 0),
+					array('ActivityTaskEmployeeRefer.reference_id' => $val, 'ActivityTaskEmployeeRefer.is_profit_center' => 1)
+				);
+			}
+		}
+
+		/*-----------------PROJECT-----------------*/
+		//GET EMPLOYEE ASSIGNED TO ACTIVITY TASK
+		$listEmpAssignProject = $this->ProjectTaskEmployeeRefer->find('all',array(
+			'recursive' => -1,
+			'conditions' => array('is_profit_center' => 0),
+			'fields' => array('DISTINCT reference_id')
+		));
+		$listEmpAssignProject = Set::classicExtract($listEmpAssignProject,'{n}.ProjectTaskEmployeeRefer.reference_id');
+		//GET ALL PC ASSIGNED TO ACTIVITY TASK, BUT DELETED THIS
+		$listEmpDeletedProject = array_diff($listEmpAssignProject,$listEmp);
+		foreach($listEmpDeletedProject as $val)
+		{
+			if(in_array($val, $listPc))
+			{
+				$this->ProjectTaskEmployeeRefer->updateAll(
+					array('ProjectTaskEmployeeRefer.is_profit_center' => 1),
+					array('ProjectTaskEmployeeRefer.reference_id' => $val, 'ProjectTaskEmployeeRefer.is_profit_center' => 0)
+				);
+			}
+		}
+
+		//GET PC ASSIGNED TO PROJECT TASK
+		$listPcAssignProject = $this->ProjectTaskEmployeeRefer->find('all',array(
+			'recursive' => -1,
+			'conditions' => array('is_profit_center' => 0),
+			'fields' => array('DISTINCT reference_id')
+		));
+		$listPcAssignProject = Set::classicExtract($listPcAssignProject,'{n}.ProjectTaskEmployeeRefer.reference_id');
+		//GET ALL PC ASSIGNED TO TASK, BUT DELETED THIS
+		$listPcDeletedProject = array_diff($listPcAssignProject,$listPc);
+		foreach($listPcDeletedProject as $val)
+		{
+			if(in_array($val, $listEmp))
+			{
+				$this->ProjectTaskEmployeeRefer->updateAll(
+					array('ProjectTaskEmployeeRefer.is_profit_center' => 0),
+					array('ProjectTaskEmployeeRefer.reference_id' => $val, 'ProjectTaskEmployeeRefer.is_profit_center' => 1)
+				);
+			}
+		}
+		echo "Finish !!!";
+		exit;
+	}
+	/*Delete Project Teams not exits function refer and insert new Project Teams + add function refer for this.*/
+	function formatProjectTeam()
+	{
+		$company = $this->employee_info['Company']['id'];
+		$this->loadModel('ProjectTeam');
+		$this->loadModel('Project');
+		$this->loadModel('ProjectTask');
+		$this->loadModel('ProjectFunctionEmployeeRefer');
+		$this->loadModel('ProjectEmployeeProfitFunctionRefer');
+		$this->loadModel('ProjectTaskEmployeeRefer');
+
+		//GET ALL PROJECT TEAMS
+		$projectTeams = $this->ProjectTeam->find('list',array(
+			'recursive' => -1,
+			//'conditions' => array('company_id'=>$company),
+			'fields' => array('id')
+		));
+		//GET PROJECT TEAMS EXISTS FUNCTION REFER
+		$projectTeamRefers = $this->ProjectFunctionEmployeeRefer->find('all',array(
+			'recursive' => -1,
+			//'conditions' => array('company_id'=>$company),
+			'fields' => array('DISTINCT project_team_id')
+		));
+		$projectTeamRefers = Set::classicExtract ($projectTeamRefers, '{n}.ProjectFunctionEmployeeRefer.project_team_id');
+		//GET TEAMS NOT REFER EMPLOYEE, PC, SKILL
+		$projectTeamsEmpty = array_diff($projectTeams,$projectTeamRefers);
+		//DELETED TEAMS NOT REFER EMPLOYEE, PC, SKILL
+		$this->ProjectTeam->deleteAll(
+			array('ProjectTeam.id' => $projectTeamsEmpty), false
+		);
+		//GET PROJECT EXISTS PROJECT TEAMS
+		$projectForTeams = $this->ProjectTeam->find('all',array(
+			'recursive' => -1,
+			//'conditions' => array('id'=>$projectTeamsEmpty),
+			'fields' => array('DISTINCT project_id')
+		));
+		$projectForTeams = Set::classicExtract($projectForTeams,'{n}.ProjectTeam.project_id');
+		//GET ALL PROJECT
+		$projects = $this->Project->find('list',array(
+			'recursive' => -1,
+			//'conditions' => array('id'=>$projectTeamsEmpty),
+			'fields' => array('id')
+		));
+		//GET PROJECT IS NOT EXISTS PROJECT TEAM
+		$projectNotExistsTeam = array_diff($projects,$projectForTeams);
+
+		//GET ALL PROJECT EXISTS ASSIGNED
+		$_joins = array(
+			array(
+				'table' => 'project_tasks',
+				'alias' => 'ProjectTask',
+				'type' => 'LEFT',
+				'foreignKey' => 'id',
+				'conditions'=> array(
+					'ProjectTaskEmployeeRefer.project_task_id = ProjectTask.id',
+				),
+
+			)
+		);
+		$_fields=array(
+			'DISTINCT ProjectTask.project_id'
+		);
+		$projectRefers = $this->ProjectTaskEmployeeRefer->find('all',array(
+			'recursive' => -1,
+			//'conditions' => array('ProjectTaskEmployeeRefer.is_profit_center' => 1, 'ProjectTaskEmployeeRefer.reference_id' => $listPcDeletedProject),
+			'joins' => $_joins,
+			'fields' => $_fields
+		));
+
+		$projectRefers = Set::classicExtract($projectRefers,'{n}.ProjectTask.project_id');
+		//debug($projectNotExistsTeam);
+		//GET LIST PROJECT NEED ADD THE TEAM
+		//$projectNeedAddTeams = array_intersect ($projectRefers,$projectNotExistsTeam);
+		$projectNeedAddTeams = $projectRefers ;
+		//GET DATA EMPLOYEE REFER PROFIT CENTER
+		$employeeReferPc = $this->ProjectEmployeeProfitFunctionRefer->find('list',array(
+			'recursive' => -1,
+			//'conditions' => array('ProjectEmployeeProfitFunctionRefer.is_profit_center' => 1, 'ProjectTaskEmployeeRefer.reference_id' => $listPcDeletedProject),
+			'fields' => array('employee_id','profit_center_id')
+		));
+
+		//MAIN
+		$dataSaves = array();
+		foreach($projectNeedAddTeams as $id)
+		{
+			echo 'Project : '.$id.'<br />';
+			$projectLists = $this->ProjectTask->find('list',array(
+				'recursive' => -1,
+				'conditions' => array('ProjectTask.project_id' => $id),
+				'fields' => 'id'
+			));
+			$listEmployeePCReFers = $this->ProjectTaskEmployeeRefer->find('all',array(
+				'recursive' => -1,
+				'conditions' => array('ProjectTaskEmployeeRefer.project_task_id' => $projectLists),
+				'fields' => array('ProjectTaskEmployeeRefer.reference_id, ProjectTaskEmployeeRefer.is_profit_center')
+			));
+
+			$dataPcRefer = array();
+			$dataPc = array();
+			//ADD THE TEAM
+			$this->ProjectTeam->create();
+			$this->ProjectTeam->save(
+				array('project_id' => $id, 'price_by_date' => 0)
+			);
+			$teamId = $this->ProjectTeam->getLastInsertID();
+			foreach($listEmployeePCReFers as $val)
+			{
+				$refer = $val['ProjectTaskEmployeeRefer']['reference_id'];
+				if($val['ProjectTaskEmployeeRefer']['is_profit_center']==1)
+				{
+					$dataPc[] = $refer;
+				}
+				else
+				{
+					if(isset($employeeReferPc[$refer]))
+					{
+						$dataPcRefer[] = $employeeReferPc[$refer];
+						$dataSaves[] = array('employee_id' => $refer, 'profit_center_id' => $employeeReferPc[$refer], 'project_team_id' => $teamId, 'backup' => null);
+					}
+				}
+			}
+			$dataPc = array_diff($dataPc,$dataPcRefer);
+			$dataPc = array_unique($dataPc);
+			foreach($dataPc as $pc)
+			{
+				$dataSaves[] = array('employee_id' => null, 'profit_center_id' => $pc, 'project_team_id' => $teamId, 'backup' => 0);
+			}
+		}
+		$this->ProjectFunctionEmployeeRefer->create();
+		$this->ProjectFunctionEmployeeRefer->saveAll($dataSaves);
+		//END
+		exit('Finish!!!');
+	}
+	function checkConsumedInvalid()
+	{
+		$this->loadModel('ActivityRequest');
+		$this->loadModel('Holiday');
+		$this->loadModel('Employee');
+		$this->loadModel('ProfitCenter');
+		$this->loadModel('ProjectEmployeeProfitFunctionRefer');
+		$activityRequests = $this->ActivityRequest->find('list',array(
+			'recursive' => -1,
+			'conditions' => array(
+				'company_id' => $this->employee_info['Company']['id'],
+				'status' => 2,
+				'value <>' => 0,
+				"FROM_UNIXTIME(date, '%d-%m-%Y')" => '25-12-2014'
+			),
+			'fields' => 'employee_id'
+		));
+		$activityRequests = array_values($activityRequests);
+		$employeeReferPc = $this->ProjectEmployeeProfitFunctionRefer->find('list',array(
+			'recursive' => -1,
+			'conditions' => array(
+				'employee_id' => $activityRequests
+			),
+			'fields' => array('employee_id','profit_center_id')
+		));
+		$employees = $this->Employee->find('all', array(
+            'recursive' => -1,
+            'conditions' => array(
+                'id' => $activityRequests
+            )
+        ));
+
+		$employees = Set::combine($employees,'{n}.Employee.id','{n}.Employee');
+		$datasPC = array();
+		foreach($employeeReferPc as $emp=>$pc)
+		{
+			$emp = $employees[$emp]['first_name'].' '.$employees[$emp]['last_name'];
+			$datasPC[$pc] = isset($datasPC[$pc]) ? $datasPC[$pc] : array() ;
+			$datasPC[$pc][] = $emp;
+		}
+		$idPc = array_keys($datasPC);
+		$profitCenters = $this->ProfitCenter->find('list', array(
+            'recursive' => -1,
+            'conditions' => array(
+                'company_id' => $this->employee_info['Company']['id'],
+				'id' => $idPc
+            ),
+			'fields' => array('name'),
+			'order' => 'lft'
+        ));
+		foreach($profitCenters as $id=>$name)
+		{
+			echo "<b>$name</b>"; echo '<br />';
+			foreach($datasPC[$id] as $val)
+			{
+				echo "<i>$val</i>";echo '<br />';
+			}
+			echo '-------';
+			echo '<br />';
+		}
+		exit;
+	}
+	function syncWorkloadFormTaskVsWorkloadFromRefers()
+	{
+		$this->loadModel('ProjectTaskEmployeeRefer');
+		$this->loadModel('ProjectTask');
+		$this->loadModel('ActivityTaskEmployeeRefer');
+		$this->loadModel('ActivityTask');
+
+	}
+    /*
+    * Loai bo staffing cua nhung project/activity ko ton tai
+    */
+    function trimStaffing(){
+		exit('Completed!');
+        $projects = ClassRegistry::init('Project')->find('list', array(
+            'recursive' => -1,
+            'fields' => array('id')
+        ));
+        $activities = ClassRegistry::init('Activity')->find('list', array(
+            'recursive' => -1,
+            'fields' => array('id')
+        ));
+        //tien hanh xoa
+        $staffing = ClassRegistry::init('TmpStaffingSystem');
+        $staffing->query('delete from tmp_staffing_systems where project_id != 0 and NOT ( project_id IN ('. implode(',', $projects) .') )');
+
+        $staffing->query('delete from tmp_staffing_systems where activity_id != 0 and NOT ( activity_id IN ('. implode(',', $activities) .') )');
+        exit('done');
+    }
+	function deleteTaskReferenceInvalid()
+	{
+		$this->loadModel('ProjectTaskEmployeeRefer');
+		$this->ProjectTaskEmployeeRefer->deleteAll(
+			array('ProjectTaskEmployeeRefer.reference_id' => 0), false
+		);
+		exit('Completed!!!');
+	}
+    function addAcceptance(){
+        $this->loadModels('Company', 'Menu');
+        $cids = $this->Company->find('list', array('fields' => 'id'));
+        foreach($cids as $c){
+            //tim xem company da co acceptance chua
+            $menu = $this->Menu->find('first', array(
+                'conditions' => array(
+                    'company_id' => $c,
+                    'controllers' => 'project_acceptances',
+                    'functions' => 'index'
+                )
+            ));
+            if( $menu )continue;
+            $this->Menu->create();
+            $this->Menu->save(array(
+                'company_id' => $c,
+                'controllers' => 'project_acceptances',
+                'model' => 'project',
+                'name_eng' => 'Acceptance',
+                'name_fre' => 'Recette',
+                'functions' => 'index',
+                'display' => 1,
+                'weight' => 99
+            ));
+        }
+        die('ok');
+    }
+    function removeTranslation(){
+        $this->loadModels('Translation');
+        $this->Translation->deleteAll(array(
+            'Translation.original_text' => array('Var %', 'Action', 'Invoice', 'Total')
+        ));
+        die('ok');
+    }
+    function updateMenu(){
+        $this->loadModel('Company');
+        $list = $this->Company->find('list', array('fields' => array('id')));
+        foreach($list as $id){
+            $this->requestAction('/menus/autoInsert', array('pass' => array($id)));
+        }
+        die('OK');
+    }
+    function addManual(){
+        $this->loadModels('Company', 'ActivityColumn');
+        $list = $this->Company->find('list', array('fields' => array('id')));
+        foreach ($list as $id) {
+            $e = $this->ActivityColumn->find('first', array(
+                'recursive' => -1,
+                'conditions' => array(
+                    'ActivityColumn.key' => 'manual_consumed',
+                    'company_id' => $id
+                )
+            ));
+            if( !empty($e) )continue;
+            $this->ActivityColumn->create();
+            $this->ActivityColumn->save(array(
+                'name' => 'Manual Consumed',
+                'key' => 'manual_consumed',
+                'description' => '',
+                'display' => 0,
+                'weight' => 999,
+                'company_id' => $id
+            ));
+        }
+        die('ok');
+    }
+    function fixDir(){
+        $list = $this->Company->find('list', array('fields' => array('id', 'company_name')));
+        foreach($list as $id => $name){
+            $dir = strtolower(Inflector::slug($name));
+            $this->Company->id = $id;
+            $this->Company->saveField('dir', $dir);
+        }
+        die('OK');
+    }
+    function updateActivityTaskId(){
+        $this->loadModels('NctWorkload', 'ActivityTask');
+        $refers = $this->ActivityTask->find('list', array(
+            'recursive' => -1,
+            'conditions' => array(
+                'project_task_id IS NOT NULL',
+                'is_nct' => 1
+            ),
+            'fields' => array('project_task_id', 'id')
+        ));
+        foreach($refers as $pid => $aid){
+            $this->NctWorkload->updateAll(array(
+                'NctWorkload.activity_task_id' => $aid
+            ), array(
+                'NctWorkload.project_task_id' => $pid
+            ));
+        }
+        die('ok');
+    }
+}
+?>

@@ -1,0 +1,452 @@
+#AjaxGanttChartDIV{
+	padding:20px;
+	overflow-y:hidden;overflow-x:auto
+}
+#ajaxScroll{
+	height:24px;
+	overflow-y:hidden;overflow-x:auto;
+}
+#AjaxGanttChartDIV #mcs1_container {
+	margin-left: 0 !important;
+}
+.wd-tab .wd-content,.wd-tab .wd-panel{
+    overflow: visible;
+}
+.gantt-content-wrapper{
+    background-color: #fff;
+}
+#GanttChartDIV{
+    background-color: #fff;
+}
+.gantt-wrapper td{
+    background-color: #fff;
+}
+.vision-project{
+    margin: 0;
+    padding: 2px 0 10px;
+    font-size: 16px;
+}
+.gantt{
+    width: auto;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    /* + */border-left: 1px solid #ccc;
+}
+.table-scroll{
+    max-height:300px;
+    overflow-y : auto;
+    overflow-x : hidden;
+    width:100%;
+}
+.gantt-side{
+    left: 0; 
+    top: 0;
+    z-index: 10;
+    position: absolute;
+    width:450px;
+    overflow: hidden;
+}
+.gantt-chart{
+    position: relative;
+    width: auto; 
+    background: #fff;
+}
+.gantt-chart-1{
+
+}
+.gantt-chart-wrapper{
+    width:auto;
+    overflow:hidden;
+    background-color: #fff;
+    position: relative;
+}
+.gantt-msi{
+    position: absolute;
+}
+/*
+.gantt-chart-1,.gantt-chart-0{
+    padding-bottom: 25px;
+}
+*/
+.gantt-scroll-place{
+    height: 20px;
+}
+.gantt-line .gantt-msl{
+    top: 16px;
+}
+.gantt-ms .gantt-line{
+    height: 16px;
+}
+.gantt-msd .gantt-line{
+    height: 32px;
+}
+.gantt-line-0{
+    margin-top: -1px;
+}
+.gantt-msi i{
+    background: url("../img/mi.png") no-repeat center;
+    cursor:pointer; 
+    height: 16px;
+    width: 16px;
+    text-indent: -999px;
+    overflow: hidden;
+    margin-left: -8px;
+    float: left;
+}
+.gantt-msi-blue i{
+    background: url("../img/mi-blue.png") no-repeat center;
+    cursor:pointer; 
+    height: 16px;
+    width: 16px;
+    text-indent: -999px;
+    overflow: hidden;
+    margin-left: -8px;
+    float: left;
+}
+.gantt-msi-green i{
+    background: url("../img/mi-green.png") no-repeat center;
+    cursor:pointer; 
+    height: 16px;
+    width: 16px;
+    text-indent: -999px;
+    overflow: hidden;
+    margin-left: -8px;
+    float: left;
+}
+.gantt-msi-orange i{
+    background: url("../img/mi-orange.png") no-repeat center;
+    cursor:pointer; 
+    height: 16px;
+    width: 16px;
+    text-indent: -999px;
+    overflow: hidden;
+    margin-left: -8px;
+    float: left;
+}
+.gantt-msi span, .gantt-msi-blue span, .gantt-msi-green span, .gantt-msi-orange span{
+    float: left;
+    white-space: nowrap;
+}
+.gantt-parent{ 
+    background-color: #F2F4F4;
+}
+.gantt-node td,
+.gantt-node,
+.gantt-list td{
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+.gantt-list td{
+    border-width: 1px 0;
+}
+.gantt-list td:last-child{
+    border-right-width: 1px;
+}
+.gantt-list .gantt-ms td{
+    border-right-width: 0px;
+}
+.gantt-date .gantt-node td:first-child{
+    border-left-width: 0;
+}
+.gantt-head td{ 
+    background-color: #185790 !important;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+.gantt-node td{text-align: center;}
+.gantt-name div{text-align: left; white-space: nowrap;}
+.gantt-date .gantt-sun{
+    background-color: #EEF4F4;
+}
+.gantt-date .gantt-sat{
+    background-color: #F5FDFD;
+}
+.gantt-date .gantt-now{
+    background-color: #D7FDD1;
+}
+.gantt-wrapper{ 
+    position: relative;
+    background-color: #fff;
+}
+.gantt-child{background-color: #fff;}
+.gantt-node{ border-width: 1px 0;}
+.gantt-line{position: relative;}
+#AjaxGanttChartDIV .gantt-line-p,#AjaxGanttChartDIV .gantt-line-s,#AjaxGanttChartDIV .gantt-line-n{
+    background-color: #222424;position: absolute; height: 4px; top:13px; cursor: pointer;z-index: 2;
+}
+#AjaxGanttChartDIV .gantt-line-n{
+	height:6px;
+	background:#FFF url('../img/line-n.png') center repeat-x !important;
+	border-style:none solid !important;
+}
+.arrow-down{
+	top: 5px;
+	position: absolute; 
+	z-index:10000;
+	width:12px;
+	height:6px;
+	background:#FFF url('../img/bg-a-down.png') bottom center no-repeat !important;
+	border:none !important;
+}
+.gantt-line-s:hover,.gantt-line-n:hover{ 
+    z-index: 100;
+    -moz-box-shadow: 0 2px 3px #333;
+    -webkit-box-shadow: 0 2px 3px #333;
+    box-shadow: 0 2px 3px #333;
+    filter: progid:DXImageTransform.Microsoft.Shadow(color=#333333, direction='180', strength='3');
+    border-collapse: separate;
+}
+#AjaxGanttChartDIV .gantt-parent .gantt-line-n,#AjaxGanttChartDIV .gantt-parent .gantt-line-s,
+#AjaxGanttChartDIV .gantt-parent .gantt-line-n span,#AjaxGanttChartDIV .gantt-parent .gantt-line-s span{
+    background: url('../img/gantt-arrow.png') repeat-x 0 0;
+    background-color: transparent !important;
+}
+#AjaxGanttChartDIV .gantt-parent .gantt-line-n span,#AjaxGanttChartDIV .gantt-parent .gantt-line-s span{
+    height: 10px;
+    background-position: right -20px;
+    background-repeat: no-repeat;
+    display: block;
+}
+#AjaxGanttChartDIV .gantt-parent .gantt-line-n span span,#AjaxGanttChartDIV .gantt-parent .gantt-line-s span span{
+    background-position: 0 -10px;
+}
+#AjaxGanttChartDIV .gantt-line-tip{
+    background: none !important;
+    margin: -3px 3px 0 3px;
+}
+#AjaxGanttChartDIV .gantt-line-desc{
+    position: absolute;
+    top:4px;
+}
+#AjaxGanttChartDIV .gantt-line-tip, #AjaxGanttChartDIV .gantt-line-desc{
+    height: 11px;
+    font-size: 10px;
+    line-height: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: bold;
+}
+#AjaxGanttChartDIV .gantt-line-s{top: 26px;}
+#AjaxGanttChartDIV  .gantt-primary .gantt-node .gantt-num-date td div{
+    line-height: 0;
+    font-size: 0;
+    height: 0;
+    overflow: hidden; 
+    padding-top: 0;
+    padding-bottom: 0; 
+    text-align: center;
+}
+.gantt-node td{ border-width: 0 1px;}
+/* Begin Border */
+.gantt-year .gantt-node td{
+    border-width: 0;
+}
+.gantt-year .gantt-node-head td{
+    border-width: 0 1px 0 0;
+}
+.gantt-week .gantt-node table div,
+.gantt-week .gantt-node-head td div{
+    width: 7em;
+}
+.gantt-date .gantt-node .gantt-head td div{
+    width: auto;
+}
+/* End border */
+#AjaxGanttChartDIV .gantt-primary .gantt-node table div, #AjaxGanttChartDIV .gantt-list-primary td div,#AjaxGanttChartDIV .gantt-list-primary .gantt-staff .gantt-head div{
+    padding: 12px 0;
+}
+#AjaxGanttChartDIV .gantt-staff .gantt-node table div,#AjaxGanttChartDIV table .gantt-ms div{
+    padding: 3px 0;
+}
+.gantt-date .gantt-node table div{
+    width: 30px;
+}
+#AjaxGanttChartDIV .gantt-week .gantt-node td,
+#AjaxGanttChartDIV .gantt-node td.gantt-d31,
+#AjaxGanttChartDIV .gantt-node td.gantt-d30,
+#AjaxGanttChartDIV .gantt-node td.gantt-d29,
+#AjaxGanttChartDIV .gantt-node td.gantt-d28{
+    border-width: 0 1px 0 0;
+    /*height: 29px;*/
+    height: 37px;
+}
+    
+#AjaxGanttChartDIV .gantt-num-date td.gantt-d31,
+#AjaxGanttChartDIV .gantt-num-date td.gantt-d30,
+#AjaxGanttChartDIV .gantt-num-date td.gantt-d29,
+#AjaxGanttChartDIV .gantt-num-date td.gantt-d28{
+    border-width: 0 1px 0 0;
+    height: 0px !important;
+}
+
+.gantt-d31 div{
+    width: 124px;
+}
+.gantt-d30 div{
+    width: 120px;
+}
+.gantt-d29 div{
+    width: 116px;
+}
+.gantt-d28 div{
+    width: 112px;
+}
+.gantt-year .gantt-d31 div{
+    width: 62px;
+}
+.gantt-year .gantt-d30 div{
+    width: 60px;
+}
+.gantt-year .gantt-d29 div{
+    width: 58px;
+}
+.gantt-year .gantt-d28 div{
+    width: 56px;
+}
+/* paging */
+.paging{overflow:hidden;padding-left:5px}
+.paging span{display:-moz-inline-stack;display:inline-block;vertical-align:top;zoom:1;*display:inline;padding:3px 7px;background-color:#0258a8;margin-right:5px;color:#fff;}
+.paging span a{color:#fff}
+.paging span.current{background-color:#024481;color:#fff;font-weight:bolder}
+.paging span.page{background-color:#fff;color:#424242;}
+
+/* gant list link*/
+.gantt-switch{padding-bottom:10px;overflow:hidden}
+.gantt-switch a{float:left;margin-right:10px;background-color:#0258a8;color:#fff;padding:3px 10px}
+.gantt-switch a.gantt-switch-current{background-color:#024481;}
+
+.gantt-side .gantt-list{border:1px solid #ccc;border-top:0}
+.gantt-chart-wrapper .gantt-head td,.gantt-chart-wrapper .gantt-num td{}
+#AjaxGanttChartDIV .gantt-list-primary .gantt-head td{padding:17px 3px 17.2px;white-space: nowrap;}
+.gantt-list-primary .gantt-row div{
+    white-space: nowrap;
+}
+*+html #AjaxGanttChartDIV  .gantt-list-primary .gantt-head td{padding:17px 3px;}
+#AjaxGanttChartDIV .gantt-side tr.gantt-row td{padding:0 5px 0 3px}
+.gantt-side .gantt-child td.gantt-name{padding-left: 7px;}
+
+#overlay-container{
+    display: none;
+}
+#overlay-wrapper{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    background: #000;
+    opacity: 0.5;
+    filter:alpha(opacity=50);
+}
+#overlay-box{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10001;
+    height: 100px;
+    margin-left: -100px;
+    margin-top: -50px;
+    padding-top: 70px;
+    width: 200px;
+    text-align: center;
+    font-weight: bold;
+    background: url("../img/loader.gif") top center no-repeat;
+}
+.gantt-list .gantt-staff table td,
+.gantt-staff .gantt-node td.gantt-d31,
+.gantt-staff .gantt-node td.gantt-d30,
+.gantt-staff .gantt-node td.gantt-d29,
+.gantt-staff .gantt-node td.gantt-d28{
+    border-width: 0 0 1px 1px;
+}
+.gantt-staff .gantt-num-date td{
+    border-top: 0;
+    border-bottom:  0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+#AjaxGanttChartDIV .gantt-list .gantt-staff table td,
+#AjaxGanttChartDIV .gantt-list .gantt-staff table div{
+    width: 50px;
+}
+#AjaxGanttChartDIV .gantt-list .gantt-staff table .gantt-name,
+#AjaxGanttChartDIV .gantt-list .gantt-staff table .gantt-name div{
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    white-space: normal;
+	vertical-align: middle;
+}
+.gantt-list .gantt-staff table .gantt-name{
+    padding: 0 7px;
+}
+
+.gantt-list .gantt-staff table .gantt-title .gantt-name,
+.gantt-list .gantt-staff table .gantt-title .gantt-name div{
+    white-space: nowrap;
+}
+#AjaxGanttChartDIV .gantt-list .gantt-staff table .gantt-func,
+#AjaxGanttChartDIV .gantt-list .gantt-staff table .gantt-func div{
+    width: 100px;
+    text-align: left;
+    padding: 0 3px;
+}
+#AjaxGanttChartDIV .gantt-staff .gantt-node td{
+    background-color: #FBFCCA;
+    cursor:default;
+}
+#AjaxGanttChartDIV .gantt-staff .gantt-node .gantt-summary td{
+    background-color: #D2F7D9;
+}
+#AjaxGanttChartDIV .gantt-staff .gantt-node .gantt-title td{
+    background-color: #BEFDC6;
+    font-weight: bold;
+}
+.gantt-staff tr.gantt-forecast td,
+.gantt-staff .gantt-summary tr.gantt-forecast td{
+    background-color:#B7F5FA;
+}
+.gantt-employee .gantt-invalid,
+.gantt-staff .gantt-node td.gantt-invalid,
+.gantt-staff .gantt-node td.gantt-invalid input,
+.gantt-staff .gantt-node .gantt-summary td.gantt-invalid{
+    background-color:#FC5C6F;
+    color: #fff;
+}
+.gantt-wrapper .gantt-staff .gantt-node .gantt-space{
+    border-width: 1px 0 0 0;
+    background-color:#fff;
+}
+.gantt-staff:last-child .gantt-space{
+    display: none;
+}
+.gantt-input input,.gantt-forecast input{
+    width: 100%;
+    text-align: center;
+    background: 0;
+    border: 0;
+    cursor: text;
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    line-height: 100%;
+}
+@media screen\9 {
+    .gantt-input input,.gantt-forecast input{
+        height: 14px;
+        line-height: 14px;
+    }
+} 
+@media \0screen {
+    .gantt-input input,.gantt-forecast input{
+        height: 13px;
+        line-height: 13px;
+    }
+}
+.gantt-input:hover{
+    background-color:#fff;
+}

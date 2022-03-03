@@ -1,0 +1,229 @@
+a.pch_add_phase{
+    background: url(<?php echo $this->Html->url('/img/business/add-invoi-1.png');?>) no-repeat !important;
+    width: 24px;
+    height: 24px;
+    display: block;
+    float: left;
+}
+#dialog_auto_task{
+    overflow-y:auto;
+    overflow-x:hidden;
+    padding:10px 10px;
+}
+#dialog_auto_task th, #dialog_auto_task td{
+    padding: 2px 4px;
+}
+#wd-container-footer{
+    display: none;
+}
+#wd-header-custom{height:42px;border:1px solid #E0E0E0;border-bottom:none;border-right:none!important;}
+.slick-headerrow-columns div p{padding-top:5px;font-weight:700;text-align: right;}#project_container{overflow:visible!important;}
+.slick-headerrow-columns div{background-color:#b5d2e2;}
+.gs-custom-cell-md-header{background:#75923C!important;}.gs-custom-cell-md{background-color:#C2D69A!important;}.cl-average-daily-rate{margin-left:-12px;width:135px;padding:7px;}.color-rate-loading{color:#ccc;}.color-rate-success{color:#3BBD43;}.color-rate-error{color:#F71230;}.slick-row.odd{background:#FFF!important;}.row-parent-custom{background-color:#EAF1FA;}.row-disabled-custom{background-color:#FAFAFA!important;}.row-number-custom{text-align:right;}.row-current-edit{border-top:1px solid #004482!important;border-bottom:1px solid #004482!important;box-shadow:0 0 3px #004482;}
+.wd-list-project{
+    position: relative;
+}
+#new-external,
+#new-internal{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    z-index: 5;
+    top: 50px;
+    margin: 0;
+    right: 15px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    background-color: #247FC3;
+}
+#new-external:before,
+#new-internal:before{
+    content: '';
+    background-color: #fff;
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    top: calc( 50% - 10px);
+    left: calc( 50% - 1px);
+}
+#new-external:after,
+#new-internal:after{
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    width: 20px;
+    height: 2px;
+    left: calc( 50% - 10px);
+    top: calc( 50% - 1px);
+}
+.project-external .wd-bt-big a.wd-hover-advance-tooltip {
+    background: url(/img/new-icon/remove_gray.png) center center no-repeat;
+    top: 0px;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: block;
+}
+.project-external .wd-bt-big a.wd-hover-advance-tooltip:hover{
+        background-color: #247FC3;
+}
+.project-external .slick-row .slick-cell{
+    line-height: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
+    box-sizing: border-box;
+}
+.project-external .slick-headerrow-columns div p{
+    padding-top: 0;
+    font-weight: 600;
+    text-align: right;
+    height: 38px;
+    line-height: 38px;
+}
+.project-external .wd-bt-big{
+    margin: 0;
+    padding: 0;
+}
+.project-external .slick-row{
+    background: transparent;
+}
+.project-external .slick-row.active,
+.project-external .slick-row.rowCurrentEdit{
+    border: 1px solid #247FC3;
+    box-sizing: border-box;
+}
+.project-external .slick-pane-header{
+    height: 40px;
+    line-height: 40px;
+}
+.project-external .slick-header .slick-header-column{
+    padding: 0;
+    height: 40px;
+    line-height: 40px;
+}
+
+.project-external .download-attachment{
+    background: url(/img/new-icon/download.png) center center no-repeat;
+    padding: 0;
+    margin: 0;
+}
+.project-external .delete-attachment {
+    background: url(/img/new-icon/delete.png) center center no-repeat;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    top: 1px;
+}
+.project-external #action-attach-url{
+    background: url(/img/new-icon/folder.png) center center no-repeat;
+    float: none;
+    width: 20px;
+    background-position: unset;
+}
+.project-external .url-attachment{
+    background: url(/img/new-icon/link.png) center center no-repeat;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    top: 5px;
+    float: none;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-size: contain;
+}
+.project-external #action-attach-url:hover{
+    background-position: unset;
+}
+
+.project-external .slick-cell.editable{
+    text-align: center;
+}
+.project-external .slick-headerrow-columns div p#gs-name{
+    text-align: left;
+}
+#wd-container-main .wd-title .btn{
+    width: 38px;
+    height: 38px;
+    padding: 0px;
+    line-height: 38px;
+    border: 1px solid #E1E6E8;
+    background-color: #FFFFFF;
+    color: #242424;
+    margin-right: 10px;
+    transition: all 0.4s ease;
+    text-align: center;
+}
+
+#wd-container-main .wd-title .btn.btn-expand:before{
+    content: '' !important;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background: url(/img/new-icon/expand.png) center center no-repeat;
+}
+#wd-container-main .wd-title .btn:hover{
+    background-color: #247FC3;
+    color: #fff;
+}
+.wd-title{
+    margin-bottom: 0;
+}
+.wd-list-project.fullScreen {
+    /*background-color: #fff;*/
+    width: calc(100% - 40px) !important;
+    height: 100% !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    position: fixed !important;
+    z-index: 100 !important;
+    background: #FFF !important; 
+    padding: 20px !important;
+}
+#wd-container-main .wd-title .btn.btn-table-collapse{
+    right: 10px;
+    top: 5px;
+}
+.content-tooltip{
+	padding: 7px;
+	position: relative;
+	text-align: left;
+}
+.content-tooltip li{
+	line-height: 20px;
+	display: block;
+	font-size: 13px;
+}
+.content-tooltip li span{
+	float: right;
+	margin-left: 5px;
+}
+.content-tooltip li.budget{
+	color: #6EAF79
+}
+.content-tooltip li.forecast{
+	color: #F05352
+}
+.content-tooltip li.engaged,
+.content-tooltip li.ordered{
+	color: #217FC2;
+}
+/* .content-tooltip :after{ */
+	/* content: ''; */
+	/* border-left: 10px solid transparent; */
+    /* border-right: 10px solid transparent; */
+    /* border-top: 10px solid #fff; */
+    /* position: absolute; */
+    /* bottom: -10px; */
+    /* left: calc(50% + 2px); */
+    /* transform: translateX(-50%); */
+    /* display: block; */
+/* } */

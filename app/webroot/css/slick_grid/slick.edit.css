@@ -1,0 +1,142 @@
+fieldset label{color:#000}
+.fieldset{color:#000;font-size:12px;border:1px solid #D4D0C8;margin:0 10px;padding:5px}
+.legend{font-size:14px;font-weight:700;text-transform:uppercase;padding:0 4px}
+.fieldset div.wd-input div{float:left}
+.fieldset div.wd-input div input{float:none;width:auto;vertical-align:middle;margin-right:10px}
+.fieldset div.wd-input div label{width:auto;float:none}
+.wd-action{overflow:hidden;width:55px}
+a.wd-edit{background:url(../../img/front/ico-edit.png) no-repeat left top;text-indent:-1983px;overflow:hidden;width:23px;height:24px;display:block;float:left;margin-top:2px;}
+a.wd-update{background:url(../../img/front/bg-select.png) no-repeat left top;text-indent:-1983px;overflow:hidden;width:23px;height:24px;display:block;float:left}
+.wd-bt-big{margin-left:8px;float:left;margin-top:2px;}
+.wd-bt-big .wd-btn{display:block;text-indent:-1983px;overflow:hidden;}
+.wd-bt-big a.wd-hover-advance-tooltip{display:block;background:url(../../img/front/ico-move.png) no-repeat left top;text-indent:-1983px;overflow:hidden;width:23px;height:24px}
+.wd-advance-tooltip-content{display:none}
+.ui-dialog-title,fieldset div.wd-input{font-size:12px}
+a.wd-edit:hover,a.wd-update:hover,.wd-bt-big a.wd-hover-advance-tooltip:hover,a.wd-update-default{background-position:left -24px}
+.slick-header .slick-header-column{background: url("../../img/front/bg-head-table.png") repeat-x #06427A;color:#fff;text-align:center;padding:10px 5px;border-right:1px solid #fff;cursor: pointer}
+.slick-header.ui-state-default{border:none;width: 97%;}
+.slick-headerrow .slick-headerrow-column input,.slick-headerrow .slick-headerrow-column select{padding:4px 3px;border: 1px solid #ccc;width: 90%;}
+.slick-headerrow{border-top:none;}
+.slick-headerrow .slick-headerrow-column{border-left:none;background-color: #F2F5F7;}
+.slick-header-columns{border-bottom:none;background: transparent;}
+.multiselect-filter{
+    width: 98%;
+    position: relative;
+    padding-top :  2px;
+}
+.multiselect-filter a.multiSelect{
+    padding: 0;
+    width: 98%;
+    height: 23px;
+    margin: 0;
+}
+.multiselect-filter .multiSelectOptions{
+    width: 100% !important;
+}
+.multiselect-filter .multiSelect span{
+    width: auto !important;
+    display: block;
+    margin: 3px 25px 1px 1px;
+    text-overflow : ellipsis;
+}
+select.editor-select{
+    width:100%;
+    height:100%;
+    outline:0;
+    margin:0;
+    padding:0;
+    vertical-align: middle;
+    line-height: 100%;
+}
+textarea.textarea-editor{
+    border: 1px solid #ccc;
+    width: 100%;
+    resize:both;
+}
+.grid-canvas .slick-cell.editable{
+    overflow: hidden;
+}
+.grid-canvas .loading{
+    background: url("../../img/ajax-loader.gif") no-repeat 2px center;
+    padding-left: 20px;
+}
+.grid-canvas .editor-text{
+    background: #fff url("../../img/pencil.gif") no-repeat 2px center;
+    padding-left: 20px;
+}
+.grid-canvas .editor-datepicker{
+    background: #fff url("../../img/calendar.gif") no-repeat 2px center;
+    padding-left: 20px;
+}
+.editor-reset{
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 10px;
+    right : 10px;
+    background: #fff url("../../img/reset.png") no-repeat center center;
+    overflow: hidden;
+    cursor: pointer;
+}
+.editor-percentcomplete-helper{
+    z-index: 999;
+}
+.editor-error .tooltip-container{
+    color: #f00;
+}
+.grid-canvas .disabled .slick-cell{
+    color: #000 !important;
+}
+.grid-canvas .success .slick-cell{
+    color: #3BBD43 !important;
+}
+.grid-canvas .error .slick-cell{
+    color: #F71230 !important;
+}
+.grid-canvas .pendding .slick-cell{
+    color: #1362D8 !important;
+}
+#update-status{
+    overflow: hidden;
+    margin-top: 5px;
+}
+#update-status h3{
+    float: left;
+    padding-top: 7px;
+}
+#update-status ul{
+    overflow: hidden;
+}
+#update-status ul li{
+    list-style: none;
+    float: left;
+    padding: 7px 2px;
+    background: #fff;
+    margin: 0 3px;
+    text-align: center;
+    width: 70px;
+}
+#update-status li.success{
+    color: #3BBD43;
+    border: 1px solid #3BBD43;
+}
+#update-status li.error{
+    color: #F71230;
+    border: 1px solid #F71230;
+}
+#update-status li.pendding{
+    color: #1362D8;
+    border: 1px solid #1362D8;
+}
+#update-status li.disabled{
+    color: #ccc;
+    border: 1px solid #ccc;
+}
+.grid-canvas .editable input.miniColors{
+    background: 0;
+    padding-left: 5px;
+    width: auto;
+}
+.grid-canvas .editable .miniColors-triggerWrap{
+
+}

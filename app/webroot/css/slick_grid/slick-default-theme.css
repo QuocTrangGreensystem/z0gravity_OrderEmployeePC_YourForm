@@ -1,0 +1,20 @@
+.slick-header-columns{background:url(../../img/slick_grid/header-columns-bg.gif) repeat-x center bottom;border-bottom:1px solid silver}
+.slick-header-column{background:url(../../img/slick_grid/header-columns-bg.gif) repeat-x center bottom;border-right:1px solid silver}
+.slick-header-column:hover,.slick-header-column-active{background:#FFF url(../../img/slick_grid/header-columns-over-bg.gif) repeat-x center bottom}
+.slick-headerrow-column{background:#fafafa;border-bottom:0;height:100%}
+.slick-row.ui-state-active{background:#F5F7D7}
+.slick-row{position:absolute;background:#FFF;border:0;line-height:20px}
+.slick-row.selected{z-index:10;background:#DFE8F6}
+.slick-cell{padding-left:4px;padding-right:4px;line-height:29px;}
+.slick-cell a{color:#013D74;font-weight:700}
+.slick-group{border-bottom:2px solid silver}
+.slick-group-toggle{width:9px;height:9px;margin-right:5px}
+.slick-group-toggle.expanded{background:url(../../img/slick_grid/collapse.gif) no-repeat center center}
+.slick-group-toggle.collapsed{background:url(../../img/slick_grid/expand.gif) no-repeat center center}
+.slick-group-totals{color:gray;background:#FFF}
+.slick-cell.selected{background-color:#C5DEEB}
+.slick-cell.active{border-color:gray;border-style:solid}
+.slick-sortable-placeholder{background:silver!important}
+.slick-row.loading{opacity:0.5;filter:alpha(opacity=50)}
+.slick-cell.invalid{border-color:red}
+.slick-row.odd{background:#fafafa}

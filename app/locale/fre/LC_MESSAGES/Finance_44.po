@@ -1,0 +1,27 @@
+msgid "Budget Investment"
+msgstr "Budget investissement"
+
+msgid "Investment Budget (Y)"
+msgstr "Budget (Y)"
+
+msgid "Investment Total Budget"
+msgstr "Investissement"
+
+msgid "Investment Avancement (Y)"
+msgstr "Budget engagé"
+
+msgid "Operation Total Budget"
+msgstr "Vente estimée"
+
+msgid "Operation Total Avancement"
+msgstr "Vente réalisée"
+
+msgid "Operation Avancement (Y)"
+msgstr "Vente réalisée"
+
+msgid "Operation Budget (Y)"
+msgstr "Vente budget"
+
+msgid "Engaged"
+msgstr "Engagé"
+

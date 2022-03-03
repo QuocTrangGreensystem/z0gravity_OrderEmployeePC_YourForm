@@ -1,0 +1,51 @@
+.content-setting-upload{
+	margin-top: 15px;
+}
+
+.setting-image-upload form{
+	border: 1px dashed rgba(0,0,0,0.3);
+    color: rgba(0,0,0,0.3);
+}
+.content-setting-upload label{
+	margin-bottom: 12px;
+	display: block;
+}
+.file-upload{
+	margin-top: 15px;
+}
+.file-item{
+    border: 1px solid #ddd;
+    font-size: 14px;
+    color: #424242;
+    padding: 10px 15px;
+    display: block;
+}
+.file-item{
+	font-size: 14px;
+    color: #C6CCCF;
+}
+.file-item span{
+	margin-left: 10px;
+    cursor: pointer;
+    font-weight: 400;
+    color: #424242;
+}
+.file-item a{
+	float: right;
+	cursor: pointer;
+}
+.content-setting-upload label{
+	display: inline-block;
+	width: calc( 100% - 30px);
+}
+.wd-main-content a.active-box{
+	display: inline-block;
+    float: right;
+    color: #C7CCCF;
+    font-size: 20px;
+    cursor: pointer;
+    width: 30px;
+}
+.wd-main-content a.active-box:hover{
+	color: #0C5FBA;
+}

@@ -1,0 +1,11 @@
+DROP TRIGGER IF EXISTS after_insert_activity_requests;
+DROP TRIGGER IF EXISTS after_update_activity_requests; 
+DROP TRIGGER IF EXISTS after_delete_activity_requests; 
+DROP TRIGGER IF EXISTS after_insert_company_configs; 
+DROP TRIGGER IF EXISTS after_insert_nct_workloads; 
+DROP TRIGGER IF EXISTS after_delete_nct_workloads; 
+DROP TRIGGER IF EXISTS after_insert_project_task_employee_refers; 
+DROP TRIGGER IF EXISTS after_delete_project_task_employee_refers; 
+DROP TRIGGER IF EXISTS after_insert_project_tasks; 
+DROP TRIGGER IF EXISTS after_update_project_tasks; 
+DROP TRIGGER IF EXISTS after_delete_project_tasks; 

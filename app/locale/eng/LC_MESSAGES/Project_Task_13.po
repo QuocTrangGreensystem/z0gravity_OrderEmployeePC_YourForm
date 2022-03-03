@@ -1,0 +1,15 @@
+msgid "Task"
+msgstr "Task"
+
+msgid "In Used"
+msgstr ""
+
+msgid "Attachment"
+msgstr "File"
+
+msgid "% progress order"
+msgstr "% order"
+
+msgid "% progress order €"
+msgstr "% order €"
+

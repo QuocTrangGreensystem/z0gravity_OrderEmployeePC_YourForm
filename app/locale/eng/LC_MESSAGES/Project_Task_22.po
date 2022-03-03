@@ -1,0 +1,18 @@
+msgid "Manual Consumed"
+msgstr ""
+
+msgid "In Used"
+msgstr "In Used"
+
+msgid "Task"
+msgstr ""
+
+msgid "Initial workload"
+msgstr ""
+
+msgid "Initial start date"
+msgstr ""
+
+msgid "Initial end date"
+msgstr ""
+

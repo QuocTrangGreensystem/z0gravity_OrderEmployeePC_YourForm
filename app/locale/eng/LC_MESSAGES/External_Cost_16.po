@@ -1,0 +1,66 @@
+msgid "External Cost"
+msgstr "External Cost"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "Order date"
+msgstr "Order date"
+
+msgid "Provider"
+msgstr "Provider"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "CAPEX/OPEX"
+msgstr "CAPEX/OPEX"
+
+msgid "Budget €"
+msgstr "Budget €"
+
+msgid "Forecast €"
+msgstr "Forecast €"
+
+msgid "Var"
+msgstr "Var"
+
+msgid "Ordered €"
+msgstr "Ordered €"
+
+msgid "Remain €"
+msgstr "Remain €"
+
+msgid "M.D"
+msgstr "M.D"
+
+msgid "Consumed"
+msgstr "Consumed"
+
+msgid "Progress %"
+msgstr "Progress %"
+
+msgid "Progress €"
+msgstr "Progress €"
+
+msgid "OPEX €"
+msgstr "OPEX €"
+
+msgid "CAPEX €"
+msgstr "CAPEX €"
+
+msgid "Attachement or URL"
+msgstr "Attachement or URL"
+
+msgid "Reference"
+msgstr "Reference"
+
+msgid "Reference 2"
+msgstr "Reference 2"
+
+msgid "Action"
+msgstr "Action"
+

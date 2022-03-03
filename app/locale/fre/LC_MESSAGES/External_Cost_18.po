@@ -1,0 +1,75 @@
+msgid "Name"
+msgstr "OS"
+
+msgid "Reference"
+msgstr "N° commande"
+
+msgid "Provider"
+msgstr "Fournisseur"
+
+msgid "Order date"
+msgstr "Date de commande"
+
+msgid "Budget €"
+msgstr ""
+
+msgid "Reference 2"
+msgstr "N° poste"
+
+msgid "Forecast €"
+msgstr "Atterrisage"
+
+msgid "Ordered €"
+msgstr "Commandé"
+
+msgid "Remain €"
+msgstr "Reste à commander"
+
+msgid "Consumed"
+msgstr "Engagé"
+
+msgid "M.D"
+msgstr "J.H."
+
+msgid "Progress %"
+msgstr "Avancement %"
+
+msgid "Progress €"
+msgstr "Avancement €"
+
+msgid "Profit Center"
+msgstr "Centre de profit"
+
+msgid "Funder"
+msgstr "Financeur"
+
+msgid "External Cost"
+msgstr "Coût Externe"
+
+msgid "CAPEX/OPEX"
+msgstr "Investissement/Charge"
+
+msgid "Var"
+msgstr "Var"
+
+msgid "OPEX €"
+msgstr "Charge €"
+
+msgid "CAPEX €"
+msgstr "Investissement €"
+
+msgid "Attachement or URL"
+msgstr "Fichier attaché ou URL"
+
+msgid "Reference 3"
+msgstr "Nom du poste"
+
+msgid "Reference 4"
+msgstr "Référence 4"
+
+msgid "Expected date"
+msgstr "Echéance initiale"
+
+msgid "Due date"
+msgstr "Echance révisée"
+

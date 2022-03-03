@@ -1,0 +1,12 @@
+msgid "In Used"
+msgstr ""
+
+msgid "Initial start date"
+msgstr ""
+
+msgid "Initial end date"
+msgstr ""
+
+msgid "Initial workload"
+msgstr ""
+

@@ -1,0 +1,42 @@
+msgid "Comment"
+msgstr "Commentaires"
+
+msgid "Planning"
+msgstr "Planning"
+
+msgid "Progress"
+msgstr "Avancement"
+
+msgid "Budget"
+msgstr "Couts"
+
+msgid "Staffing"
+msgstr ""
+
+msgid "Risk"
+msgstr "Risque"
+
+msgid "Issue"
+msgstr "Problème"
+
+msgid "Log Comment"
+msgstr ""
+
+msgid "Customer Point Of View"
+msgstr "METEO MOA"
+
+msgid "Done"
+msgstr "Réalisé"
+
+msgid "To Do"
+msgstr "A faire"
+
+msgid "Weather"
+msgstr "METEO MOE"
+
+msgid "Information"
+msgstr "Commentaires"
+
+msgid "Acceptance"
+msgstr "Conformité"
+

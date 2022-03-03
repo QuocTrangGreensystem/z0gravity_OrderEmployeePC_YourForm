@@ -1,0 +1,14 @@
+I
+ 4,6
+II
+ 5,6
+III
+ 6
+IL
+ 5,6,3
+IMPORTANT
+ 3
+IMPORTE
+ 5
+INTÉGRÉE
+ 4

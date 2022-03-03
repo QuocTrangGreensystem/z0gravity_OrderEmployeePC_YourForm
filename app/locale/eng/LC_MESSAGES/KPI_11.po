@@ -1,0 +1,24 @@
+msgid "Comment"
+msgstr "Comment"
+
+msgid "Planning"
+msgstr "Planning"
+
+msgid "Progress"
+msgstr "Progress"
+
+msgid "Budget"
+msgstr "Budget"
+
+msgid "Staffing"
+msgstr "Staffing"
+
+msgid "Risk"
+msgstr "Risk"
+
+msgid "Issue"
+msgstr "Issue"
+
+msgid "Log Comment"
+msgstr "Log Comment"
+

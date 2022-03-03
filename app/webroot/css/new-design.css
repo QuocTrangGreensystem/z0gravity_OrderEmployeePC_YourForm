@@ -1,0 +1,11 @@
+.widget {
+	color: #000;
+	font-size: 13px;
+	padding: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #ddd;
+}
+.widget h1 {
+	font-size: 16px;
+}
+

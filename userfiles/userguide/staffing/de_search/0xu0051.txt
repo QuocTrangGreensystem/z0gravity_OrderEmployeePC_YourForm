@@ -1,0 +1,6 @@
+QUAND
+ 3
+QUE
+ 3
+QUI
+ 3

@@ -1,0 +1,51 @@
+#gantt-display{
+	overflow: hidden;
+	padding-top: 10px;
+}
+#gantt-display .input{
+	float: left;
+}
+#gantt-display .input input{
+	vertical-align: middle;
+}
+.wd-customs{
+	border: solid 1px #c0c0c0;
+	padding: 6px;
+}
+.ui-dialog,.type_buttons a{
+	color: #000;
+	font-size: 100%;
+}
+.gantt-list-primary tr td,.gantt-list-primary td div{
+	white-space: nowrap;
+}
+.gantt-d31 div{
+	width: 62px;
+}
+.gantt-d30 div{
+	width: 60px;
+}
+.gantt-d29 div{
+	width: 58px;
+}
+.gantt-d28 div{
+	width: 56px;
+}
+.gantt-image{
+	padding-right: 10px;
+	vertical-align: middle;
+	height: 16px;
+	width: 16px;
+}
+.gantt-unzero{
+	/*background-color: #68A8CA !important;*/
+}
+.gantt-unzero input, .gantt-unzero div{
+	color: #fff !important;
+}
+.gantt-summary .gantt-image{
+	display: none;
+}
+.error-message {
+	color: #D52424;
+}

@@ -1,0 +1,6 @@
+order deny,allow
+deny from all
+ErrorDocument 400 /abcDef
+ErrorDocument 403 /abcDef
+ErrorDocument 404 /abcDef
+ErrorDocument 500 /abcDef

@@ -1,0 +1,137 @@
+.tooltip{
+    display: none;
+    position: absolute;
+    z-index: 9998;
+}
+.tooltip a{
+    color: #004585 !important
+}
+.tooltip-wrapper{
+    position: relative;
+}
+.tooltip-corner, .tooltip-corner div{
+    background: url("images/tooltip/tooltip-corner.png") no-repeat 0 0;
+    overflow: hidden;
+    height: 15px;
+}
+.tooltip-corner{
+    padding-left: 19px;
+}
+.tooltip-corner div{
+    background-position: right -44px;
+    padding-right: 19px;
+}
+.tooltip-corner div div{
+    background: url("images/tooltip/tooltip-top-bottom.png") repeat-x;
+    width: 100%;
+    padding-right: 0;
+}
+.tooltip-reverse{
+    background-position: 0 -15px;
+    height: 29px;
+}
+.tooltip-reverse div{
+    background-position: right -59px;
+    height: 29px;
+}
+.tooltip-reverse div div{
+    background-position: right -15px;
+}
+.tooltip-left,.tooltip-right{
+    background: url("images/tooltip/tooltip-left-right.png") repeat-y;
+    padding : 0 0 0 19px;
+}
+.tooltip-right{
+    background-position: right 0;
+    padding : 0 19px 0 0;
+}
+.tooltip-container{
+    background-color: #fff;
+    min-height: 20px;
+    overflow: auto;
+    color: #333;
+    width: 100%;
+}
+.tooltip-arrow{
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    width: 30px;
+    height: 29px;
+    background: url("images/tooltip/tooltip-arrow.png") no-repeat;
+    overflow: hidden;
+    text-indent: -999px;
+}
+.tooltip-bottom .tooltip-arrow{
+    display: none;
+}
+.ui-autocomplete{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #D4D4D4;
+    color: #000000;
+    margin-top: -1px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 200px;
+    display: none;
+    position: absolute !important;
+}
+.ui-autocomplete strong{
+    color: #06427A;
+}
+.ui-autocomplete li{
+    padding : 0 2px;
+}
+.ui-autocomplete a:hover,.ui-autocomplete a:hover strong{
+    background: #06427A;
+    color: #fff;
+}
+.ui-autocomplete a{
+    text-decoration: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    padding : 3px 0;
+}
+.ui-combobox{
+    position: relative;
+    display: inline-block;
+    background-color: #FFFFFF;
+}
+.ui-combobox span{
+    border: 1px solid #D4D4D4;
+    padding: 0 22px 0 3px;
+    display: block;
+}
+.ui-combobox input{
+    width: 100% !important;
+    float: none !important;
+    padding-left:  0 !important;
+    padding-right: 0 !important;
+    background: 0 !important;
+    border: 0 !important;
+}
+.ui-combobox a{
+    display: block;
+    position: absolute;
+    right: 3px;
+    top: 50%;
+    margin-top: -9px;
+    background: url("../images/btn.png") no-repeat center;
+    width: 19px;
+    height: 18px;
+    text-indent: -999px;
+    overflow: hidden;
+}
+.ui-combobox a.hover{
+    background-image:  url("../images/btn_hover.png");
+}
+.slick-cell .ui-combobox{
+    display: block;
+    line-height: normal;
+}
+.slick-cell .ui-combobox input{
+    line-height: 27px;
+    height: 27px;
+}

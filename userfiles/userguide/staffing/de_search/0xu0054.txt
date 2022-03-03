@@ -1,0 +1,10 @@
+TABLEAU
+ 3
+TEMPS
+ 3
+TIENT
+ 3
+TYPE
+ 3
+TÂCHES
+ 3

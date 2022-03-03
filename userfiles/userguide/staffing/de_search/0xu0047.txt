@@ -1,0 +1,8 @@
+GAUCHE
+ 3
+GLOBAL
+ 3
+GRAVITY
+ 2,3
+GUIDE
+ 1

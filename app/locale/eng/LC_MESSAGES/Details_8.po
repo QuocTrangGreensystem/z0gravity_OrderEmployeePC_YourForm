@@ -1,0 +1,3 @@
+msgid "Project Name"
+msgstr "NAME E"
+

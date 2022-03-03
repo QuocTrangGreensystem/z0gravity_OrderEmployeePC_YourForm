@@ -1,0 +1,87 @@
+msgid "Task"
+msgstr ""
+
+msgid "Order"
+msgstr ""
+
+msgid "Priority"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Profile"
+msgstr ""
+
+msgid "Assigned To"
+msgstr ""
+
+msgid "Start date"
+msgstr ""
+
+msgid "End date"
+msgstr ""
+
+msgid "Duration"
+msgstr ""
+
+msgid "Predecessor"
+msgstr ""
+
+msgid "Workload"
+msgstr ""
+
+msgid "Overload"
+msgstr ""
+
+msgid "Consumed"
+msgstr ""
+
+msgid "Manual Consumed"
+msgstr ""
+
+msgid "In Used"
+msgstr ""
+
+msgid "Completed"
+msgstr ""
+
+msgid "Remain"
+msgstr ""
+
+msgid "Initial workload"
+msgstr ""
+
+msgid "Initial start date"
+msgstr ""
+
+msgid "Initial end date"
+msgstr ""
+
+msgid "Amount €"
+msgstr ""
+
+msgid "% progress order"
+msgstr ""
+
+msgid "% progress order €"
+msgstr ""
+
+msgid "Text"
+msgstr ""
+
+msgid "Attachment"
+msgstr ""
+
+msgid "Remain €"
+msgstr ""
+
+msgid "Unit Price"
+msgstr ""
+
+msgid "Consumed €"
+msgstr ""
+
+msgid "Workload €"
+msgstr ""
+

@@ -1,0 +1,69 @@
+#tb-popup-content tr td, #tb-popup-content-2 tr td{
+    height: 31px;
+    line-height: 31px;
+    box-sizing: border-box;
+}
+#tb-popup-content-2 .popup-header-2 tr td{
+	height: 24px;
+    line-height: 24px;
+    box-sizing: border-box;
+}
+#gs-popup-content tr td.text-right,
+#gs-popup-content tr td div{
+	padding: 0 5px;
+}
+#gs-popup-header .gs-header-content{
+    padding-left: 0;
+    width: 100%;
+    padding-top: 0;
+}
+#gs-popup-content .gs-header-content p{
+	line-height: 20px;
+}
+#showdetail .gs-header-title ul li{
+	margin-left: 0;
+}
+#showdetail .gs-header-title ul li:not(:last-child){
+	margin-right: 5px
+}
+#showdetail .gs-header-title ul{
+	    margin-bottom: 8px;
+}
+#showdetail .gs-header-title ul li{
+	border: none;
+	width: inherit;
+	display: inline-block;
+	height: inherit;
+	float: none;
+}
+#showdetail .gs-header-title ul li a{
+	background-color: #0258a8;
+    display: inherit;
+    padding: 3px;
+    text-align: center;
+    color: #FFF;
+    width: 60px;
+    line-height: 20px;
+}
+#ui-dialog-title-showdetail{
+	font-size: 14px;
+}
+#ui-dialog-title-showdetail span{
+	text-transform: uppercase;
+}
+.ui-dialog #showdetail.ui-dialog-content{
+	padding-top: 10px;
+}
+#tb-popup-content-2 .popup-header-2 tr td.tb-year{
+	height: 31px;
+    line-height: 31px;
+}
+#tb-popup-content tr td.list-task div{
+	white-space: nowrap;
+    max-width: 435px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+#gs-popup-content .popup-header-2 tr td div{
+	padding: 0;
+}

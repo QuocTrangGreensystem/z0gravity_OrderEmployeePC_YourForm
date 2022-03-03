@@ -1,0 +1,1 @@
+ALTER TABLE `project_finance_plus_txts` ADD COLUMN `is_ws_comment`  tinyint NULL DEFAULT 0 AFTER `employee_id`;

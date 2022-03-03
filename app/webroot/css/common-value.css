@@ -1,0 +1,64 @@
+/*----- Header -----*/
+#wd-head-container{background-color:#339900;color:#fff;min-width:980px;}
+#wd-head-container .wd-center{position:relative;padding:20px}
+/*----- Content -----*/
+#wd-content-container{background-color:#eee;min-width:980px}
+.wd-left-content{float:left;width:200px;padding-right:10px;vertical-align:top;}
+.wd-right-content{float:right;width:240px;padding-left:10px;vertical-align:top}
+.wd-main-content{vertical-align:top;overflow:hidden;height:100%; min-width: 970px}
+.wd-extras,.wd-header-line{margin:15px 0;clear:both}
+.wd-section{background-color:#fff;padding:10px}
+/*----- Footer -----*/
+#wd-footer-container{clear:left;color:#fff;background-color:#339900;min-width:980px}
+#wd-footer-container .wd-center{padding:20px;height:1%}
+.wd-container-created-value{width:956px;margin:0 auto}
+.wd-container-created-value h1{font-size:16px;margin:10px 0}
+.wd-container-created-value .wd-container-block-list{position:relative;width:100%;height:740px;margin-top:25px}
+.wd-container-created-value .wd-container-block-list .wd-block-list{position:absolute;padding:38px 0 10px 28px;top:0;left:313px;background:url(../img/front/bg-block-check-list.png) no-repeat;width:301px;height:285px;color:#79b810}
+.wd-container-created-value .wd-container-block-list .wd-block-list-02{top:224px;left:627px;color:#8c0e8b}
+.wd-container-created-value .wd-container-block-list .wd-block-list-03{top:447px;left:313px;color:#a9b300}
+.wd-container-created-value .wd-container-block-list .wd-block-list-04{top:224px;left:0;color:#0d6993}
+.wd-container-created-value .wd-container-block-list .wd-block-created-value{position:absolute;top:233px;left:371px;width:217px;height:127px;background:url(../img/front/bg-create-value.png) no-repeat;z-index:100;text-align:center;color:#fff;font-size:14px;padding-top:86px}
+.wd-container-created-value .wd-container-block-list .wd-block-created-value p span{font-size:33px}
+
+.wd-container-created-value .wd-container-block-list .wd-block-list .wd-title-circle{display:block;width:22px;height:22px;background:url(../img/front/bg-circle-title.png) no-repeat;position:absolute;top:37px;right:10px}
+.wd-container-created-value .wd-container-block-list .wd-block-list-04 .wd-title-circle{background-position:-22px 0}
+.wd-container-created-value .wd-container-block-list .wd-block-list-03 .wd-title-circle{background-position:-44px 0}
+.wd-container-created-value .wd-container-block-list .wd-block-list-02 .wd-title-circle{background-position:-66px 0}
+.wd-container-created-value .wd-container-block-list .wd-block-list h2.wd-title-value{font-size:15px;text-transform:uppercase;margin-bottom:5px}
+.wd-container-created-value .wd-container-block-list .wd-block-list p.wd-question-value{line-height:19px;font-size:11px}
+.wd-container-created-value fieldset.wd-check-box-value .wd-check-box{overflow:hidden;padding:1px 0}
+.wd-container-created-value fieldset.wd-check-box-value .wd-check-box input{float:left;margin:0;padding:0}
+.wd-container-created-value fieldset.wd-check-box-value .wd-check-box label{float:left;width:100%;padding-right:0;line-height:19px;font-weight:normal;color:#515151;font-family:tahoma;text-align:left}
+/* Scrollbar */
+.wd-container-scroll{height:105px;margin:10px 0}
+.wd-container-scroll .customScrollBox{position:relative;height:100%;overflow:auto; width: 283px;}
+.wd-container-scroll .customScrollBox .container{position:relative;width:256px;top:0;float:left}
+.wd-container-scroll .customScrollBox .content{clear:both}
+.wd-container-scroll .customScrollBox .content p{margin:10px 0;font-family:"Times New Roman", serif;line-height:19px;font-size:13px;text-align:justify;color: #fdefcf}
+.wd-container-scroll .dragger_container{display: none; position:relative;width:0px;height:105px;float:left;margin:0 0 0 14px; border-left:2px solid #62970a;cursor:pointer}
+#wd-container-scroll-02.wd-container-scroll .dragger_container{border-left:2px solid #8c0e8b}
+#wd-container-scroll-03.wd-container-scroll .dragger_container{border-left:2px solid #a9b301}
+#wd-container-scroll-04.wd-container-scroll .dragger_container{border-left:2px solid #09658e}
+.wd-container-scroll .dragger{position:absolute;width:14px;height:15px;margin-left:-8px;text-align:center;overflow:hidden;cursor:pointer;background:url(../img/front/bt-scroll.png) no-repeat}
+.wd-container-scroll .dragger_pressed{position:absolute;cursor:s-resize}
+.wd-container-created-value .wd-block-list ::-webkit-scrollbar{
+    width: 4px;
+    height: 4px;
+    cursor: pointer;
+}
+
+	/* Track */
+.wd-container-created-value .wd-block-list ::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 5px #F2F5F7; 
+    border-radius: 4px;
+    background: #F2F5F7;
+    cursor: pointer;
+}
+
+	/* Handle */
+.wd-container-created-value .wd-block-list ::-webkit-scrollbar-thumb{
+    background: #5487FF; 
+    border-radius: 4px;
+    cursor: pointer;
+}

@@ -1,0 +1,81 @@
+msgid "Project details"
+msgstr "Détails du projet"
+
+msgid "Project Name"
+msgstr "Nom du projet"
+
+msgid "Project long name"
+msgstr "Chef de projet partenaire"
+
+msgid "Project Code 1"
+msgstr "Code"
+
+msgid "Project Code 2"
+msgstr "Code bis"
+
+msgid "Company"
+msgstr "Société"
+
+msgid "Project Manager"
+msgstr "Chef de projet/Correspondant Ville"
+
+msgid "Project type"
+msgstr "Type"
+
+msgid "Program"
+msgstr "Groupe de travail"
+
+msgid "Priority"
+msgstr "Opérateur"
+
+msgid "Implementation Complexity"
+msgstr "Quartier"
+
+msgid "Created value"
+msgstr "Création valeur"
+
+msgid "Status"
+msgstr "Situation du projet"
+
+msgid "Current Phase"
+msgstr "Phase courante"
+
+msgid "Link To RMS Activity"
+msgstr ""
+
+msgid "Issues"
+msgstr "Objectifs et points essentiels"
+
+msgid "Primary Objectives"
+msgstr "Précisions situation du projet"
+
+msgid "Project Objectives"
+msgstr "Objectifs"
+
+msgid "Constraint"
+msgstr "Contraintes"
+
+msgid "Remark"
+msgstr "Remarques"
+
+msgid "Chief Business"
+msgstr "Elu(s) délégué(s)"
+
+msgid "Technical manager"
+msgstr "DGAS référent"
+
+msgid "Start Date"
+msgstr "Début"
+
+msgid "End Date"
+msgstr "Fin"
+
+msgid "Customer"
+msgstr "Maitrise d'ouvrage"
+
+msgid "Free 1"
+msgstr "Pôle"
+
+msgid "Free 2"
+msgstr "Rue"
+

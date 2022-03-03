@@ -1,0 +1,54 @@
+msgid "Name"
+msgstr "OS"
+
+msgid "Reference"
+msgstr "N° commande"
+
+msgid "Provider"
+msgstr "Fournisseur"
+
+msgid "Order date"
+msgstr "Date de commande"
+
+msgid "Budget €"
+msgstr "Montant"
+
+msgid "Reference 2"
+msgstr "N° poste"
+
+msgid "Forecast €"
+msgstr "Atterrisage"
+
+msgid "Ordered €"
+msgstr "CP dépenses réalisées"
+
+msgid "Remain €"
+msgstr "Reste à commander"
+
+msgid "Consumed"
+msgstr "Engagé"
+
+msgid "M.D"
+msgstr "J.H."
+
+msgid "Progress %"
+msgstr "Avancement %"
+
+msgid "Progress €"
+msgstr "Avancement €"
+
+msgid "Profit Center"
+msgstr "Centre de profit"
+
+msgid "Funder"
+msgstr "Financeur"
+
+msgid "Reference 3"
+msgstr "Nom du poste"
+
+msgid "Expected date"
+msgstr "Echéance initiale"
+
+msgid "Due date"
+msgstr "Echance révisée"
+

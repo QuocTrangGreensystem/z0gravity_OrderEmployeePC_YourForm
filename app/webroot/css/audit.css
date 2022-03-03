@@ -1,0 +1,192 @@
+hr { 
+    display: block; 
+    height: 1px;
+    border: 0; 
+    border-top: 3px solid #7EB7D3;
+}
+fieldset div textarea{
+    width: 85%;
+}
+.error-message {
+    color: #FF0000;
+    margin-left: 35px; 
+}
+.wd-input label {width: 154px !important;}
+.wd-input .ui-combobox {
+    width: 60%;
+}
+.multiselect {
+    width: 62.5%;
+    border-right: 1px solid #c0c0c0;
+    overflow: hidden;
+}
+.wd-backup{
+    
+}
+.wd-combobox, .wd-combobox-2{
+    border: 1px solid #d4d4d4;
+    background: url("/img/bg-combobox.png") no-repeat right 5px;
+    padding: 3px 0px;
+    width: 100%;
+    display: block;
+    height: 20px;
+    overflow: hidden;
+    line-height: 22px;
+    text-decoration: none;
+    color: black !important;
+    font-weight: inherit !important;
+} 
+.wd-combobox:hover, .wd-combobox-2:hover {
+    text-decoration: none;
+    color: black;
+    font-weight: inherit;
+}
+.wd-data-manager input{
+    /*width:auto !important; 
+    margin-top: 8px !important;
+    margin-left: 5px !important;*/
+    width:25px !important;
+}
+
+.wd-data-manager label{
+    /*width:150px !important;
+    line-height:15px !important;
+    text-align:left !important; 
+    padding-left: 5px !important; 
+    padding-top: 8px !important;   
+    font-weight: inherit;*/
+}
+.context-menu-filter, .context-menu-filter-2{
+    clear: both;
+    overflow: hidden;
+    background-color: #004787;
+    padding: 3px;
+}
+.context-menu .notmatch{
+    display: none;
+}
+.context-menu-filter input, .context-menu-filter-2 input{
+    padding: 0 !important;
+    width: 100% !important;
+    border: 0 !important;
+    float: none !important;
+    line-height: normal !important;
+    margin: 0 !important;
+    background: 0 !important;
+}
+.context-menu-filter span, .context-menu-filter-2 span{
+    display: block;
+    background: url("/css/images/search_label.gif") no-repeat 2px center;
+    padding-left: 17px;
+    background-color: #fff;
+    border: 1px solid #D4D4D4;
+}
+.context-menu-shadow{
+    background-color: white !important;
+}
+.wd-customs{
+    position: absolute;
+    top: 67.4px;
+    right: 280px;
+}
+.inputcheckbox{width: auto !important;position: absolute;top:82px;left: 225px;}
+.inputcheckbox-none{display: none;}
+#wd-data-project, #wd-data-project-2{
+    display: none; 
+    position: absolute;
+    width: 28.9%;
+    border: solid 1px #c0c0c0;
+    background-color: #fff;
+    height: 150px !important;
+    overflow-y: auto;
+    z-index: 1;
+}
+.ui-datepicker{
+    width: 250px !important;
+}
+fieldset div.wd-input div.error-message{
+    padding-left: 128px !important;
+}
+.wd-title a.wd-add-project{
+    background: url(../img/front/bg-add-project-new.png) no-repeat left top;
+    height: 34px;
+    padding-left: 68px;
+}
+.gs-custom-cell-euro-header{
+    background: #457ea9 !important;
+}
+.fist-element{
+    border-left: none !important;
+}
+.border-euro-custom{
+    border-right: 1px solid #fff;
+    
+}
+.border-euro-custom span{
+    color: #fff;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 3px;
+    padding-right: 5px;
+}
+.border-md-custom{
+    border-top: 1px solid #fff !important;
+    border-right: 1px solid #fff !important;
+}
+.gs-custom-cell-md-header span.custom-title{
+    color: #fff;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 3px;
+}
+fieldset div.wd-submit input.wd-save {
+    background: url('/img/front/bg-submit-save-new.png') no-repeat left top !important;
+}
+a.wd-next {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: url("../img/front/bg-next-2.png");
+    background-origin: padding-box;
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    color: #FFFFFF;
+    display: block;
+    float: right;
+    height: 33px;
+    line-height: 33px;
+    padding-right: 27px;
+    text-decoration: none;
+}
+a.wd-next span {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: url("../img/front/bg-add-project-right.png");
+    background-origin: padding-box;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    display: block;
+    height: 33px;
+    padding-bottom: 0;
+    padding-right: 2px;
+    padding-left: 15px;
+    padding-top: 0;
+    font-size: 13px;
+}
+a.wd-next:hover span {
+    background-position: left -33px;
+}
+a.wd-next:hover {
+    background-position: right -33px;
+}
+.heightExpand{
+	height:100px !important;
+	margin-bottom:-68px;
+	position:absolute;
+    z-index: 1;
+}

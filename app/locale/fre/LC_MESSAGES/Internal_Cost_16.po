@@ -1,0 +1,48 @@
+msgid "Internal Cost"
+msgstr "Coût I​nterne"
+
+msgid "Name"
+msgstr "Nom"
+
+msgid "Validation date"
+msgstr "Validation date"
+
+msgid "Budget €"
+msgstr "Engagé €"
+
+msgid "Forecast €"
+msgstr "Atterrissage  €"
+
+msgid "Var % (€)"
+msgstr "Var % (€)"
+
+msgid "Engaged €"
+msgstr "Consommé €"
+
+msgid "Remain €"
+msgstr "Reste à faire €"
+
+msgid "Budget M.D"
+msgstr "Engagé"
+
+msgid "Forecast M.D"
+msgstr "Atterrissage J.H"
+
+msgid "Var % (M.D)"
+msgstr "Var % (J.H)"
+
+msgid "Engaged M.D"
+msgstr "Consommé J.H"
+
+msgid "Remain M.D"
+msgstr "Reste à faire J.H"
+
+msgid "Average daily rate €"
+msgstr "Cout journalier moyen €"
+
+msgid "Profit Center"
+msgstr "Filière"
+
+msgid "Funder"
+msgstr "INIT/AVT"
+

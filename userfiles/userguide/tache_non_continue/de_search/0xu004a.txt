@@ -1,0 +1,8 @@
+JANVIER
+ 2
+JH
+ 3
+JOUR
+ 3,2
+JOURS
+ 3

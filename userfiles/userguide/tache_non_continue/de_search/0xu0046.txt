@@ -1,0 +1,10 @@
+FAÇON
+ 3
+FERMÉE
+ 3
+FEUILLES
+ 3
+FIGURENT
+ 3
+FIN
+ 3

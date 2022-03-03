@@ -1,0 +1,3 @@
+msgid "ID2"
+msgstr "CONTRAT"
+

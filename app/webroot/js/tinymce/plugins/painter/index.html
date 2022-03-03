@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>
+var tinymce,     // Reference to TinyMCE
+	editor,      // Reference to TinyMCE editor
+	imgElm,
+	inside = false,
+	painter,  // Painter instance
+	settings;  // Painter settings
+
+function inArray(key, arr)
+{
+	"use strict";
+	arr = '|' + arr.join('|') + '|';
+	return arr.indexOf('|'+key+'|') != -1;
+}
+
+(function()
+{// Initialise (before load)
+	"use strict";
+
+	tinymce = parent.tinymce;
+	editor = tinymce.activeEditor;
+	var i, userSettings = editor.settings.painter ? editor.settings.painter : {};
+	settings = {
+		path: 'z0painter',
+		config: {},
+		js: [// Default JS files
+			'jquery.js',
+			'fabric.js',
+			'z0painter.js'
+		],
+		css: [// Default CSS files
+			'z0painter.css'
+		]
+	};
+
+	// Merge config
+	for (i in userSettings.config) {
+		settings.config[i] = userSettings.config[i];
+	}
+
+	// Merge js
+	for (i in userSettings.js) {
+		if (!inArray(userSettings.js[i], settings.js)) {
+			settings.js.push(userSettings.js[i]);
+		}
+	}
+
+	// Merge css
+	for (i in userSettings.css) {
+		if (!inArray(userSettings.css[i], settings.css)) {
+			settings.css.push(userSettings.css[i]);
+		}
+	}
+
+	// Add trailing slash to path
+	if (!/\/$/.test(settings.path)) {
+		settings.path += '/';
+	}
+
+	// Write stylesheets
+	for (i = 0; i < settings.css.length; i++) {
+		document.write('<li'+'nk rel="stylesheet" type="text/css" href="' + settings.path + settings.css[i] + '" />');
+	}
+
+	// Write JS source files
+	for (i = 0; i < settings.js.length; i++) {
+		document.write('<scr'+'ipt type="text/javascript" src="' + settings.path + settings.js[i] + '"></scr'+'ipt>');
+	}
+
+	window.onload = start;
+}());
+
+function start(){
+	// console.log(editor.selection);
+	z0.Painter.path = settings.path;
+	imgElm = editor.selection.getNode();
+	var img0 = imgElm.querySelector('img');
+	if( img0 ){
+		imgElm = img0;
+		inside = true;
+	}
+	painter = new z0.Painter('painter', {
+		backgroundImage: imgElm.src
+	});
+}
+
+function save(){
+	var dom = editor.dom;
+	var data = {
+		src: painter.toImage('png'),
+		alt: imgElm.alt,
+		title: imgElm.title,
+		width: imgElm.width,
+		height: imgElm.height,
+		'class': imgElm.className
+	};
+	function waitLoad(imgElm) {
+		function selectImage() {
+			imgElm.onload = imgElm.onerror = null;
+
+			if (editor.selection) {
+				editor.selection.select(imgElm);
+				editor.nodeChanged();
+			}
+		}
+		imgElm.onload = function() {
+			if (!data.width && !data.height && imageDimensions) {
+				dom.setAttribs(imgElm, {
+					width: imgElm.clientWidth,
+					height: imgElm.clientHeight
+				});
+			}
+
+			selectImage();
+		};
+
+		imgElm.onerror = selectImage;
+	}
+	editor.undoManager.transact(function() {
+		if (!data.src) {
+			if (imgElm) {
+				dom.remove(imgElm);
+				editor.focus();
+				editor.nodeChanged();
+			}
+
+			return;
+		}
+
+		if (data.title === "") {
+			data.title = null;
+		}
+
+		if (!imgElm) {
+			data.id = '__mcenew';
+			editor.focus();
+			editor.selection.setContent(dom.createHTML('img', data));
+			imgElm = dom.get('__mcenew');
+			dom.setAttrib(imgElm, 'id', null);
+		} else {
+			dom.setAttribs(imgElm, data);
+		}
+
+		editor.editorUpload.uploadImagesAuto();
+
+		waitLoad(imgElm);
+	});
+}
+
+</script>
+</head>
+<body>
+	<div id="painter"></div>
+
+</body>
+</html>

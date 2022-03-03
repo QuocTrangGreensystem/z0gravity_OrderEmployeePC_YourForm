@@ -1,0 +1,14 @@
+B
+ 4
+BAS
+ 4
+BIEN
+ 7
+BON
+ 7
+BOUTON
+ 8,4
+BOUTONS
+ 7
+BÉNÉFICIER
+ 4

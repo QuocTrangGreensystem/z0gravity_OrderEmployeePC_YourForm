@@ -1,0 +1,490 @@
+.filter-select .wd-dropdown{
+	padding-left: 10px;
+    box-sizing: border-box;
+	height: 40px;
+	line-height: 40px;
+	min-width: 200px;
+}
+.filter-select .wd-dropdown p,
+.filter-select .wd-dropdown> span{
+	display: inline-block;
+	vertical-align: top;
+	color: #666666;	
+	font-family: "Open Sans";	
+	font-size: 14px;	
+	
+}
+.filter-select .wd-dropdown> span{
+	display: inline-block;
+	padding: 0;
+}
+.filter-select .wd-dropdown li a{
+	cursor: pointer;
+}
+.wd-list-project .wd-title{
+	overflow: inherit;
+}
+#filter-view{
+	height: 40px;	
+	width: 150px;	
+	border: 1px solid #E0E6E8;	
+	    padding-left: 10px;
+	    padding-right: 10px;
+	color: #666666;	font-family: "Open Sans";	font-size: 14px;	line-height: 36px;
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    background: url(/img/new-icon/down.png) no-repeat 95% center #fff;
+}
+
+#filter-view::-ms-expand{
+    display: none;
+}
+.wd-title >.btn svg{
+	position: relative;
+	top: 5px;
+}
+.wd-title >.btn:hover svg .cls-1{
+	fill: #fff;
+}
+
+.kanban-box{
+	background-color: #F8FAFB;
+	padding: 20px;
+}
+.jqx-kanban-column{
+	border: none;
+	background: transparent;
+}
+.project-task-widget .jqx-kanban-column-header{
+	margin-bottom: 10px;
+	background-color: transparent;
+	background: transparent;
+	border: none;
+}
+.jqx-kanban-column-container{
+	background-color: transparent;
+}
+.project-task-widget .log-title,
+.jqx-kanban-column-header .jqx-kanban-column-header-title{
+	color: #666666;	
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 18px;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+.project-task-widget ul{
+	height: 252px;
+	overflow: auto;
+	padding-top: 5px;
+	margin-right: 20px;
+}
+.project-task-widget ul li,
+.jqx-kanban-column-container > div{
+	font-family: "Open Sans";
+	box-shadow: none;
+	
+	width: calc(100% - 16px);
+	margin: 0 10px 10px 0;
+	border: 1px solid #E1E6E8;
+	background-color: #FFFFFF;
+}
+.project-task-widget ul li{
+	padding: 10px;
+}
+.project-task-widget ul li::last-child {
+	margin-bottom: 0;
+}
+.project-task-widget ul li .task-time,
+.jqx-kanban-column-container > div .task-item .task-time{
+	line-height: 30px;
+	color: #666;
+	font-size: 12px;
+	border-radius: 10px;
+	text-transform: capitalize;
+	vertical-align: middle;
+	position: relative;
+	font-family: "Open Sans";
+}
+.project-task-widget .log-field-edit{
+	float: right;
+}
+.project-task-widget ul li textarea,
+.project-task-widget ul li .app-task-title,
+.jqx-kanban-column-container > div .task-item .task-title{
+	display: block;
+	width: 100%;
+	border: none;
+	margin-top: 16px;
+	resize: none;
+	color: #666666;
+	font-size: 14px;
+	line-height: 18px;
+	background: transparent;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.project-task-widget ul li .app-task-title{
+	margin-bottom: 15px;
+}
+.jqx-kanban-column-container > div .task-item{
+	padding: 15px;
+}
+.jqx-kanban-column-container > div .progress-slider .progress-number .text{
+	top: 1px;
+	position: relative;
+}
+.jqx-kanban-column-container > div .task-item .project-title{
+	margin-bottom: 10px;
+}
+.project-task-widget .task-item .circle-name,
+.jqx-kanban-column-container > div .task-item .circle-name{
+	width: 30px;
+	line-height: 30px;
+	height: 30px;
+	font-size: 14px;
+	top: 0;
+	margin-right: 5px;
+	display: inline-block;
+	text-decoration: none;
+	color: #fff;
+}
+.project-task-widget .widget_content{
+	padding-right: 0;
+}
+.wd-add-task{
+	position: absolute;
+	top: 0;
+	right: 40px;
+	width: 40px;
+	line-height: 40px;
+	display: block;
+	text-align: center;
+	height: 40px;
+}
+.wd-add-task:after,
+.wd-add-task:before{
+	content: '';
+	width: 2px;
+	height: 14px;
+	margin-top: 12px;
+	margin-left: 5px;
+	background-color: #fff;
+	position: absolute;
+}
+.wd-add-task:after{
+	width: 14px;
+	height: 2px;
+	margin-top: 18px;
+	margin-left: -1px;
+}
+.project-task-widget .ui-resizable-s {
+	width: 100%;
+	height: 8px;
+	background-color: red;
+	display: block;
+	cursor: s-resize;
+	position: absolute;
+	bottom: -4px;
+	z-index: 3;
+	background: url(/img/new-icon/resizable-handle.png) center no-repeat;
+}
+.project-task-widget .widget-title h3{
+	padding-left: 48px;
+}	
+#widget-task{
+	position: relative;
+}
+#widget-task button{
+	position: absolute;
+	left: 0;
+	top: -40px;
+}
+#widget-task button.slick-next{
+	left: 18px;
+}
+.project-task-widget .add-new-task .btn-add{
+	background-color: transparent;
+	right: 18px;
+	top: -40px;
+	box-shadow: none;
+	width: 40px;
+	height: 40px;
+}
+.project-task-widget .new-project-popup{
+	padding: 20px 10px 0px;
+}
+.project-task-widget .new-project-popup *{
+	box-sizing: border-box;
+}
+.project-task-widget .add-new-task .btn-add:before, .project-task-widget .add-new-task .btn-add:after{
+	height: 16px;
+	top: calc( 50% - 8px);
+}
+.project-task-widget .add-new-task .btn-add:after {
+	width: 16px;
+	left: calc( 50% - 8px);
+	height: 2px;
+	top: calc( 50% - 1px);
+}
+.project-task-widget .new-project-popup-inner .groupinput.line-2 .wd-input input,
+.project-task-widget .new-project-popup-inner .groupinput .wd-input select,
+.project-task-widget .new-project-popup-inner .groupinput .wd-input input,
+.project-task-widget .new-project-popup input, .new-project-popup select{
+	width: 100%;
+}
+.project-task-widget .new-project-popup select{
+	height: 48px;
+}
+.project-task-widget .wd-button-group{
+	margin-top: 25px;
+}
+.project-task-widget .new-project-popup-inner .new-phase-btn{
+	line-height: 42px;
+}
+.project-task-widget .wd-multiselect.multiselect .circle-name{
+	vertical-align: top;
+}
+.project-task-widget .wd-multiselect.multiselect a.wd-combobox,
+.project-task-widget .wd-multiselect.multiselect .wd-combobox-content{
+	width: 100%;
+}
+.project-task-widget #newTaskEndDay, .project-task-widget #newTaskStartDay{
+	background: url(/img/new-icon/date.png) no-repeat 92% center #fff;
+}
+.project-task-widget .new-project-popup label {
+	font-size: 14px;
+	text-transform: capitalize;
+}
+.project-task-widget .new-project-popup{
+	display: none;
+}
+.project-task-widget .new-project-popup.open{
+	display: block;
+	opacity: 1;
+}
+.project-task-widget .task-time,
+.project-task-widget .task-list-assigned{
+	display: inline-block;
+	vertical-align: middle;
+}
+.project-task-widget .task-list-assigned .circle-name{
+	margin-right: 4px;
+}
+.project-task-widget .task-status{
+	float: right;
+}
+.project-task-widget .status_text{
+	line-height: 30px;
+	color: #217FC2;
+	font-family: "Open Sans";
+	font-size: 10px;
+	font-weight: 600;
+}
+.project-task-widget .status_dots{
+	position: relative;
+	height: 30px;
+}
+.project-task-widget .status_dots:before{
+	content: '';
+	background-color: #F2F5F7;
+	height: 4px;
+	width: 100%;
+	top: 50%;
+	margin-top: -2px;
+	left: 0;
+	position: absolute;
+}
+.project-task-widget .status_dot{
+	width: 16px;
+	height: 16px;
+	border: 2px solid #F2F5F7;
+	background: #F2F5F7;
+	display: inline-block;
+	margin: 5px 10px 0 0;
+	border-radius: 50%;
+	position: relative;
+	-webkit-animation-duration: 1s;
+	-moz-animation-duration: 1s;
+	-o-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	-moz-animation-fill-mode: both;
+	-o-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.project-task-widget .status_dot:hover,
+.project-task-widget .status_dot.active{
+	border-color: #217FC2;
+}
+.project-task-widget .status_dot.loading{
+	border-color: #F2F5F7;
+	border-top-color: #217FC2;
+}
+.project-task-widget .status_dot.loading{
+	border-top-color: #217FC2;
+	-webkit-animation: wd-rotate 2s infinite;
+	animation: wd-rotate 2s infinite;
+}
+.project-task-widget .status_dot:last-child{
+	margin-right: 0;
+}
+.project-task-widget .status_text:not(.active){
+	display: none;
+}
+.project-task-widget .task-status >*{
+	display: inline-block;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+.project-task-widget .task-status :last-child{
+	margin-right: 0;
+}
+
+.project-task-widget .task-footer .task-workload ~ .task-consumed{
+	margin-left: 19px;
+}
+.project-task-widget .task-footer .task-workload,
+.project-task-widget .task-footer .task-consumed{
+	width: 89px;
+	float: left;
+}
+.project-task-widget .label{
+	color: #666;
+	font-size: 14px;
+	line-height: 18px;
+	margin: 0;
+}
+.project-task-widget .progress-slider{
+	margin-top: 12px;
+}
+.project-task-widget .value{
+	color: #242424;
+}
+.project-task-widget .has-overload .value{
+	color: #E94754;
+}
+.project-task-widget .special .value{
+	color:#800080;
+}
+.project-task-widget .task-footer .task-workload{
+	border-right: 1px solid #E1E6E8;
+}
+.project-task-widget .task-footer .task-progress{
+	width: calc( 100% - 220px);
+	min-width: 120px;
+	float: left;
+}
+.removed{
+	display: none;
+}
+#newtaskIndicatorForm select::-ms-expand{
+	display: none;
+}
+
+.wd-project-admin .project-task-widget{
+	padding: 20px;
+	padding-top: 0;
+}
+.wd-project-admin .project-task-widget .jqx-kanban-column{
+	padding: 20px;
+	padding-top: 0;
+}
+
+.wd-list-project .wd-title .btn{
+	height: 40px;
+	width: 40px;
+	line-height: 38px;
+	display: none;
+	border: 1px solid #E1E6E8;
+	background-color: #FFFFFF;
+	border-radius: 3px;
+	padding: 0;
+	box-sizing: border-box;
+	display: inline-block;
+	text-align: center;
+	transition: all 0.3s ease;
+}
+.wd-list-project .wd-title .btn:hover{
+	background-color: #247FC3;
+}
+.wd-list-project .wd-title{
+	margin-bottom: 0;
+}
+.wd-title *{
+	box-sizing:border-box;
+}
+.wd-title >*{
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0;
+	margin-right: 6px;
+	height: 40px;
+	line-height: 40px;
+	transition: all 0.3s ease;
+	position: relative;
+	top:  0;
+	left: 0;
+	width: auto;
+	margin-bottom: 20px;
+}
+.wd-title > .input input,
+.wd-title > .input select
+{
+	border: 1px solid #E1E6E8;
+	height: 100%;
+	width: 100%;
+	padding: 0 15px;
+	box-sizing:border-box;
+}
+.wd-title #collapse-btn{
+	position: relative;
+	float: right;
+}
+#filter_task_title{
+	width: 220px;
+}
+.wd-flex-title{
+	display: flex;
+    justify-content: space-between;	
+	padding: 15px 0 10px 0;
+}
+.wd-task-title.wd-title{
+	flex-shrink: 0;
+}
+.wd-list-assign ul li{
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 40px;
+	margin-right: 4px;
+}
+.list-all-assigned .circle-name{
+	width: 40px;
+	height: 40px;
+	border: 2px solid transparent;
+	background-color: transparent;
+	transition: all 0.3s ease;
+	font-size: 16px;
+	line-height: 40px;
+	display: block;
+	top: 0;
+}
+.list-all-assigned .circle-name img{
+	width: 100%;
+	height: 100%;
+}
+.list-all-assigned .assign-team .circle-name{
+	border-color: #C5CCCF;
+	color: #C5CCCF;
+}
+.list-all-assigned .filter-employee:checked ~ label .circle-name{
+	background-color: #217FC2 ;
+	color: #fff;
+}
+.in_progress_column .jqx-kanban-column-container .task_late.task-time{
+	color: #E94754;
+}

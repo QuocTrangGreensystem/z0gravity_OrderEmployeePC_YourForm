@@ -1,0 +1,96 @@
+msgid "Project details"
+msgstr "Description"
+
+msgid "Project Name"
+msgstr "Nom du projet"
+
+msgid "Project long name"
+msgstr "Nom long"
+
+msgid "Project Code 1"
+msgstr "Code projet"
+
+msgid "Project Code 2"
+msgstr "Code projet 2"
+
+msgid "Company"
+msgstr "Société"
+
+msgid "Project Manager"
+msgstr "Chef de projet"
+
+msgid "Project type"
+msgstr "Type de projet"
+
+msgid "Program"
+msgstr "Programme"
+
+msgid "Priority"
+msgstr "Priorité"
+
+msgid "Implementation Complexity"
+msgstr "Complexité d'implémentation"
+
+msgid "Created value"
+msgstr "Création de valeur"
+
+msgid "Status"
+msgstr "Statut"
+
+msgid "Current Phase"
+msgstr "Phase courante"
+
+msgid "Link To RMS Activity"
+msgstr ""
+
+msgid "Issues"
+msgstr "Problématique-Déclencheur"
+
+msgid "Primary Objectives"
+msgstr "Finalité"
+
+msgid "Project Objectives"
+msgstr "Objectifs"
+
+msgid "Constraint"
+msgstr "Contrainte(s)"
+
+msgid "Remark"
+msgstr "Remarque(s)"
+
+msgid "Chief Business"
+msgstr "Sponsor"
+
+msgid "Technical manager"
+msgstr "Coordinateur technique"
+
+msgid "Start Date"
+msgstr "Début"
+
+msgid "End Date"
+msgstr "Fin"
+
+msgid "Customer"
+msgstr "Client"
+
+msgid "Functional leader"
+msgstr "MOA"
+
+msgid "UAT manager"
+msgstr ""
+
+msgid "Free 1"
+msgstr ""
+
+msgid "Free 2"
+msgstr ""
+
+msgid "Free 3"
+msgstr ""
+
+msgid "Free 4"
+msgstr ""
+
+msgid "Free 5"
+msgstr ""
+

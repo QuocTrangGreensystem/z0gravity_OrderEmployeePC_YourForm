@@ -1,0 +1,105 @@
+.progress-top, .graph-bot {
+	height: 180px;
+}
+.progress-top *{
+	box-sizing: border-box;
+}
+.wd-progress-pie {
+    box-sizing: border-box;
+    padding: 8px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 5px 10px 0px rgba(29,29,27,0.06);
+    width: 140px;
+}
+.progress-top .total-progress-circle{
+	width: 172px;
+    float: left;
+    display: inline-block;
+}
+
+.wd-budget-chart .budget-progress-circle{
+	width: 172px;
+	float: left;
+	display: inline-block;
+}
+.wd-budget-chart .progress-values{
+	width: calc(100% - 172px);
+	float: left;
+}
+.wd-budget-chart .wd-t1{
+	color: #424242;
+}
+.wd-budget-chart .progress-value{
+	padding: 0 9px;
+	line-height: 32px;
+	margin-bottom: 4px;
+	border-radius: 3px;
+	font-size: 14px;
+}
+.wd-budget-chart .progress-budget{
+	background: #f8fbf8;	
+	color: #6EAF79;
+}
+.wd-budget-chart .progress-forecast{
+	background: #fff6f6;	
+	color: #E94754;
+}
+.wd-budget-chart .progress-engaged{
+	background: #f6fafd;	
+	color: #5487FF;
+}
+.wd-budget-chart #chartContainer{ 
+	min-width: 100%; 
+	position: relative;
+	margin-bottom: -28px;
+}
+.wd-budget-chart .progress-line-inner .progress-label {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+}
+.wd-budget-chart .scroll-progress {
+	bottom: 14px;
+}
+.wd-budget-chart #tblChart .jqx-chart-axis-text{
+	width: 322px;
+	height: 16px;
+	background: #f3f3f3;
+	border-radius: 8px;
+}
+.content-tooltip{
+	padding: 7px;
+	position: relative;
+}
+.content-tooltip li{
+	line-height: 20px;
+	display: block;
+	font-size: 13px;
+}
+.content-tooltip li span{
+	float: right;
+	margin-left: 5px;
+}
+
+.content-tooltip li.budget{
+	color: #6EAF79
+}
+.content-tooltip li.forecast{
+	color: #F05352
+}
+.content-tooltip li.ordered{
+	color: #217FC2
+	
+}
+.content-tooltip :after{
+	content: '';
+	border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #fff;
+    position: absolute;
+    bottom: -10px;
+    left: calc(50% + 2px);
+    transform: translateX(-50%);
+    display: block;
+}

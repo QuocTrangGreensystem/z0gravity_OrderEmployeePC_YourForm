@@ -1,0 +1,266 @@
+.wd-table .wd-bt-big a.wd-hover-advance-tooltip {
+    background: url(/img/new-icon/remove_gray.png) center center no-repeat;
+    top: 0px;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.wd-table .wd-bt-big a.wd-hover-advance-tooltip:hover {
+    background-color: #247FC3;
+}
+
+.wd-table-container{
+    position: relative;
+}
+.slick-cell .wd-bt-big{
+	margin: 0;
+	margin-top: -3px;
+}
+.slick-cell.wd-action-column{
+    padding-left: 0;
+    padding-right: 0;
+ 	overflow: visible;   
+}
+.wd-table .slick-header .slick-header-column{
+	text-align: left;
+}
+.wd-table{
+	min-height: 400px;
+}
+.wd-table .filterer{
+	background: none !important;
+}
+
+.wd-panel .wd-title a{
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #E1E6E8;
+    background-color: #fff;
+    color: #242424;
+    border-radius: 2px;
+    font-size: 20px;
+    margin: 0;
+    margin-right: 6px;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    transition: all 0.4s ease;
+}
+.wd-panel .wd-title a:hover{
+    background-color: #247FC3;
+    color: #fff;
+    text-decoration: none;
+}
+.wd-panel .wd-title a:hover:before{
+    color: #fff;
+}
+.wd-title{
+    position: relative;
+}
+.add-new-item{
+    height: 50px;
+    width: 50px;
+    background-color: #247FC3;
+    box-shadow: 0 0 10px 1px rgba(29,29,27,0.2);
+    border-radius: 50%;
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    position: absolute;
+    z-index: 21;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s ease;
+    top: -25px;
+    right: 25px;
+}
+.add-new-item img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.add-new-item:hover{
+    opacity: 0.95;
+}
+.wd-table-container{
+    position: relative;
+}
+.wd-panel .wd-title .btn.btn-table-collapse {
+    width: 38px;
+    height: 38px;
+    background: #fff url(/img/new-icon/close.png) center center no-repeat;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+.wd-list-project .wd-title{
+	margin-bottom: 20px;
+}   
+.wd-list-project.fullScreen .wd-title{
+    margin-bottom: 40px;
+}
+.wd-title .btn#table-expand:before {
+    content: '' !important;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background: url(/img/new-icon/expand.png) center center no-repeat;
+} 
+.wd-title #open-diagram:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background: url(/img/new-icon/diagram.png) center center no-repeat;
+}
+.wd-title #open-diagram:hover:before{
+    text-decoration: none;
+    filter: brightness(0) invert(1);
+
+}
+
+.wd-list-project.fullScreen {
+    background-color: #fff; 
+    width: calc(100% - 80px) !important;
+    height: 100% !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    position: fixed !important;
+    z-index: 100 !important;
+    background: #FFF !important;
+    padding: 40px !important;
+}
+.wd-tab .wd-panel{
+    padding: 40px;
+}
+.slick-cell .color{
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    border: none;
+    margin-left: 10px;
+}
+.slick-cell .color:first-child{
+    margin-left: 0;
+}
+.slick-cell .ui-combobox input,
+.slick-cell a.multiSelect{
+	height: 40px;
+    box-sizing: border-box;
+    border: none;
+}
+.slick-viewport .slick-row .slick-cell a.multiSelect{
+	background: url(../../img/new-icon/down.png) no-repeat 100% center;
+    border: none;
+}
+.slick-cell a.multiSelect span{
+    margin: 0;
+    height: 100%;
+}
+#wd-container-main .slick-row.active .slick-cell{
+    border-bottom: 1px solid #2E85C6;
+    border-top: 1px solid #2E85C6;
+    transition: all 0.3s ease;
+}
+.slick-row .slick-cell.active .ui-combobox{
+	height: 38px;
+}
+#wd-container-main  .slick-row.active .slick-cell:first-child{
+    border-left: 1px solid #2E85C6;
+}
+#wd-container-main  .slick-row.active .slick-cell:last-child{
+    border-right: 1px solid #2E85C6;
+}
+.multiSelectOptions .multiSelect-filter >span{
+    line-height: 35px;
+}
+body .multiSelectOptions label{
+    line-height: 25px !important;
+    margin: 0 !important;
+}
+body .multiSelectOptions label{
+    margin-top: 6px;
+}
+
+/* Diagram */
+.menu-template{
+    position: absolute;
+    width: 0;
+    height: 0;
+    top:0;
+    left:0;
+}
+.menu-template-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 30px;
+    left: 30px;
+}
+.popup{
+    position: absolute;
+    min-width: 100px;
+    min-height: 30px;
+    top:0;
+    left:10px;
+}
+.popup .project-image{
+    position: absolute;
+    height: 100%;
+    left: 100%;
+    top:0;
+    margin-left: 20px;
+}
+.popup .project-image img{
+    height: 100%;
+    width: auto;
+}
+.popup .dropdown-menu li a{
+    color: #247FC3;
+    background: #fff;
+    border-radius: 3px;
+    /*margin-top: 5px;*/
+    margin-bottom: 5px;
+    line-height: 35px;
+    display: block;
+    white-space: nowrap;
+    padding: 0 15px;
+    font-weight: 400;
+    text-decoration: none;
+}
+.popup .dropdown-menu li a:hover{
+    color: #fff;
+    background-color: #247FC3;
+}
+.popup .dropdown-menu li:last-child a{
+    margin-bottom: 0;
+}
+.slick-cell.active .update-image{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #fff;
+}
+.slick-cell.active .update-image input,
+.slick-cell.active .update-image img{
+	line-height: 38px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.slick-cell .display-image img{
+	vertical-align: middle;
+}
+
+/* End Diagram */
+

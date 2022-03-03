@@ -1,0 +1,122 @@
+/* file nay dung chung cho 5 screen 
+	Decisions
+	Evolution
+	Acceptance
+	Budget_purcharge
+	Expectation
+*/
+.wd-tab{
+	margin: 40px;
+}
+#layout #wd-container-main .wd-layout {
+	padding: 0;
+	background: #f2f5f7;
+}
+.wd-layout > .wd-main-content > .wd-tab > .wd-panel {
+	background-color: #fff;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1920px;
+	padding: 40px;
+	border-radius: 5px;
+	display: block;
+	margin: auto;
+	border: none;
+	box-sizing: border-box;
+}
+#wd-container-main .wd-bt-big a.wd-hover-advance-tooltip {
+	background: url(/img/new-icon/remove_gray.png) center center no-repeat;
+	top: 0px;
+	left: 0;
+	width: 40px;
+	height: 40px;
+	background-color: transparent;
+	text-align: center;
+	transition: all 0.3s ease;
+}
+#wd-container-main .wd-bt-big {
+	float: none;
+	margin: 0;
+}
+#wd-container-main .slick-viewport .slick-cell {
+	height: 40px;
+	padding: 0;
+	border-top: 0;
+	line-height: 40px;
+	border-right: 1px solid #E9E9E9;
+	box-sizing: border-box;
+	font-size: 14px;
+	color: #424242;
+}
+#wd-container-main .filterer{
+	background: none !important;
+	background-color: #F2F5F7 !important;
+}
+.slick-headerrow {
+	height: 40px;
+}
+.slick-headerrow-columns.slick-headerrow-columns-left, .slick-headerrow-columns.slick-headerrow-columns-right {
+	height: 40px;
+}
+.slick-headerrow-columns .slick-headerrow-column.ui-state-default {
+	padding: 0;
+	border-left: none;
+}
+.multiselect-filter{
+	width: 100%;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+.multiselect-filter a.multiSelect.hover,.multiselect-filter a.multiSelect {
+	border: none;
+	background: url(../../img/new-icon/down.png) no-repeat 100% center;
+}
+.multiselect-filter a.multiSelect {
+	padding: 0 7px;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	background-position: 97%;
+	box-sizing: border-box;
+}
+.multiselect-filter .multiSelect span {
+	padding: 0;
+	margin: 0;
+}
+.slick-headerrow-columns .slick-headerrow-column.ui-state-default .multiselect-filter {
+	padding: 0;
+	box-sizing: border-box;
+	border: none !important;
+	width: 100%;
+}
+.slick-headerrow-columns .slick-headerrow-column.ui-state-default .multiselect-filter .input-filter {
+	padding: 0 7px;
+	margin: 0;
+	line-height: 40px;
+	height: 40px;
+	box-sizing: border-box;
+	width: 100%;
+	font-style: normal;
+	color: #242424;
+	border: none;
+	background-color: #F2F5F7;
+}
+.slick-viewport {
+	border-left: none;
+}
+#wd-container-main .wd-title .btn {
+	width: 38px;
+	height: 38px;
+	padding: 0px;
+	line-height: 38px;
+	border: 1px solid #E1E6E8;
+	background-color: #FFFFFF;
+	color: #242424;
+	margin-right: 10px;
+	transition: all 0.4s ease;
+	text-align: center;
+}
+.slick-row {
+	height: 40px !important;
+}

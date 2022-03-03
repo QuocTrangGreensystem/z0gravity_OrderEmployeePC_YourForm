@@ -1,0 +1,30 @@
+msgid "Issue status"
+msgstr ""
+
+msgid "Weather"
+msgstr ""
+
+msgid "Customer Point Of View"
+msgstr ""
+
+msgid "To Do"
+msgstr ""
+
+msgid "Done"
+msgstr ""
+
+msgid "Issue"
+msgstr ""
+
+msgid "Comment"
+msgstr "INFORMATION"
+
+msgid "Planning"
+msgstr ""
+
+msgid "Acceptance"
+msgstr ""
+
+msgid "Planning status"
+msgstr "PLANNING"
+

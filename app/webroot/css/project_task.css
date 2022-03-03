@@ -1,0 +1,262 @@
+#task_detail{
+     float: left;
+     margin-bottom: 5px;
+}
+#task_detail #nameofemployee{
+    text-align: center;
+}
+#tipdetail #tableworkload table,#tipdetail #tabletaskname table{
+    border-collapse: collapse;
+}
+#detail #tableworkload table thead,#detail #tabletaskname table thead{
+    color: white;
+    border-right: 1px solid #185790;
+    background: url("/img/front/bg-head-table.png") repeat-x #06427A;
+}
+#detail #tableworkload table thead td,#detail #tabletaskname table thead td{
+    border-right: 1px solid #ccc; 
+    border-bottom: 1px solid #ccc;    
+    text-align: center; 
+}
+#detail #tableworkload table tbody td,#detail #tabletaskname table tbody td{
+    border-right: 1px solid #ccc; 
+    border-bottom: 1px solid #ccc;  
+      
+}
+#tabletaskname{
+    float:left;
+    overflow: auto;
+}
+#tableworkload{
+    float: left;
+    overflow-y: auto;
+    
+}
+
+#tableWL thead td div, #tableWL tbody tr td div{
+    width: 80px;
+}
+#tableWL tbody tr td div{
+    text-align: right;
+}
+#detail{
+    float: left;
+    overflow-y: auto;
+}
+.totdetail td:first-child{
+    background: #95B3D7;
+}
+.projecttask{
+    width:390px;
+    white-space:  nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis; 
+}
+.activitytask{
+    width: 390px;
+    white-space:  nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;  
+}
+.activity-task-list{
+    width: 400px;
+    background: rgb(253, 205, 205);
+}
+.project-task-list{
+    width: 400px;
+    background: #C2D69A;
+}
+.title_left{
+    width: 100px;
+}
+.x-boundlist-item{
+	padding-right:23px !important;
+}
+.x-boundlist-item em{
+	float: right; font-style: normal; color: rgb(29, 209, 29); font-weight: bold;
+}
+.x-boundlist-item em.noMD{
+	color:#F00;
+}
+.viewloadmd a{
+	position:relative;
+	top:-21px;
+	padding: 5px 15px 5px 5px;
+    height: 23px;
+    margin: 0px 0px 0px 5px;
+    color: #278300;
+    font-weight: bold;
+    background: url(/img/loader.png) right no-repeat ;
+}
+.x-boundlist-item-over{
+	z-index:1 !important;
+}
+.loadmd{
+	position:relative;
+	z-index:999999;
+	cursor:pointer;
+}
+.loadmd img{
+	position:relative;
+	margin:4px;
+	float:left;
+	z-index:9999999999999999;
+}
+.viewloadmd a:hover ,.viewloadmd:hover{
+    cursor: pointer;
+    text-decoration: none;    
+}
+#tipdetail table tbody tr td:first-child {
+    width: 100px
+}
+.availabilityltzero{
+    color: rgb(197, 2, 2);
+    font-weight: bold;
+}
+.availabilitygtzero{
+    color: rgb(2, 197, 119);
+    font-weight: bold;
+}
+.vczero{
+    
+}
+#nameofemployee{
+    font-weight: bold;
+    font-size: 13pt;
+    margin-bottom: 5px;
+}
+.listtasks{
+    text-align: justify;
+}
+.project-priority div{
+    width: 80px;
+    text-align: center;
+}
+.context-menu-filter {
+    width: 175px;
+    float: left;
+    margin-top: -7px;
+    border: 2px solid #004787;
+}
+.context-menu-filter p span {
+    background: url(../css/images/search_label.gif) no-repeat 2px center;
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    margin-left: 2px;
+}
+.context-menu-filter p input{
+    float: right;
+    padding: 2px;
+    width: 150px;
+}
+.context-menu-filter {
+    width: 153px;
+    margin-left: 2px;
+    padding: 3px;
+    margin-top: -6px;
+    float: left;
+}
+.context-menu-filter span {
+    padding-left: 23px;
+    margin-top: -1px;
+}
+.filter {
+   float: left;
+    width: 300px;
+    margin-bottom: 5px;
+}
+.filter div{
+    width: 55px;
+    height: 25px;
+    background: #185790;
+    text-align: center;
+    float: left;
+    margin-right: 5px;
+    padding-top: 4px;
+}
+.filter > div > a {
+    padding: 4px 13px 4px 13px;
+}
+.filter > div > a:hover  {
+    text-decoration: none;   
+}
+#loading-mask {
+	position: absolute;
+	left:     0;
+	top:      0;
+	width:    100%;
+	height:   100%;
+	z-index:  20000;
+	background-color:transparent;
+}
+#loading {
+	position: absolute;
+	left:     50%;
+	top:      40%;
+	padding:  2px;
+	z-index:  20001;
+	height:   auto;
+	margin:   -35px 0 0 -30px;
+}
+#loading .loading-indicator {
+  background-image: url(../img/extjs/loading.gif);
+  height:     120px;
+  width:     120px;
+}
+.assign-loading{
+	background: url(../img/loading_check.gif) no-repeat;
+	width: 35px;
+	height: 35px;
+}
+#GanttChartDIV{
+	width:100%;
+}
+.gantt-chart-wrapper{
+	overflow-x: auto;
+}
+.gantt-chart{
+	margin-left: 0 !important;
+}
+#gantt-display div label{
+	padding: 0 6px;
+}
+#gantt-display{
+	clear: both;
+}
+.inputcheckbox{
+	float: left;
+	width: 50px;
+	margin-left: -20px;
+	margin-top: 1px;
+}
+#listdisplay{
+	width: 340px;
+	float: left;
+    padding: 7px;
+}
+#listdisplay li{
+	width: 162px;
+	float: left;
+}
+
+#ext-quicktips-tip-innerCt{
+	width: 500px !important;
+}
+#ext-quicktips-tip-outerCt{
+	width: auto !important;
+}
+.type_buttons{
+	padding-bottom: 25px !important;
+}
+.item-actif-0{
+	color: #999;
+	
+}
+.wd-list-assign-to .item-actif-0:not(.x-boundlist-selected){
+	display: none !important;
+}
+/*.item-actif-0.x-boundlist-selected{
+	display:block !important;
+}*/

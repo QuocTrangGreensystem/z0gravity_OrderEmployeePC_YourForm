@@ -1,0 +1,588 @@
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 3px solid #7EB7D3;
+}
+#group-infor-address{
+    float: left;
+    padding-left: 142px;
+}
+#group-infor-address li{
+    float: left;
+}
+div.wd-input a.link-wed{
+    padding-left: 142px;
+    display: block;
+    width: 170px;
+    overflow: hidden;
+    padding-top: 10px;
+}
+#ch_avatar img{
+    padding-left: 142px;
+    width: 170px;
+    height: 206px;
+}
+.slick-header .slick-header-column{
+    background: url("/img/business/bg-head-table.png") repeat-x #7EB7D3 !important;
+    border-right: 1px solid #AEC1C4 !important;
+}
+.ch-edit{
+    margin-left: 325px;
+}
+#ch_group_infor_popup{
+    padding-left: 25px;
+}
+#ch_group_infor_popup li{
+    padding-bottom: 6px;
+}
+#ch_group_infor_popup li img{
+
+}
+#ch_group_infor_popup li input{
+    width: 360px;
+    height: 22px;
+    margin-top: 2px;
+    margin-left: 10px;
+    font-size: 13px;
+}
+#group-plus{
+    position: absolute;
+    left: 168px;
+    top: 6px;
+}
+#group-plus span{
+    display: block;
+    height: 8px;
+    padding-top: 2px;
+}
+#group-plus span#ch_cong:hover{
+    border: 1px solid #E0E0E0;
+    cursor: pointer;
+}
+#group-plus span#ch_tru:hover{
+    border: 1px solid #E0E0E0;
+    cursor: pointer;
+}
+.slick-header-columns{
+    background: url("/img/business/bg-head-table.png") repeat-x #7EB7D3 !important;
+}
+#hiddenGridOne{
+    width: 620px;
+    height: 186px;
+    background: #000;
+    margin-top: -186px;
+    z-index: 999;
+    position: absolute;
+    opacity: 0.4;
+    display: none;
+}
+#hiddenGridOne p{
+    color: white;
+    margin: 82px 150px;
+    width: 350px;
+    font-size: 20px;
+}
+#hiddenGridTwo{
+    width: 92%;
+    height: 220px;
+    background: #000;
+    margin-top: -220px;
+    z-index: 999;
+    position: absolute;
+    opacity: 0.4;
+    display: none;
+}
+#hiddenGridTwo p{
+    color: white;
+    margin: 82px 460px;
+    width: 350px;
+    font-size: 20px;
+}
+.wd-title a.wd-add-project{
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #5e9ec3;
+    background-image: url(/img/ui/blank-plus.png);
+    background-origin: padding-box;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    display: block;
+    float: left;
+    height: 33px;
+    width: 30px;
+    line-height: 33px;
+    padding-left: 27px;
+    text-decoration: none;
+    border-radius: 3px;
+}
+.grid_ban{
+    float: left;
+    border-bottom: 1px solid #E0E0E0;
+}
+.grid_ban_header{
+    background: url("/img/business/bg-head-table.png") repeat-x #7EB7D3 !important;
+    position: absolute;
+    padding-bottom: 8px;
+}
+.grid_ban_header div span{
+    color: #fff;
+}
+.width-header{
+    margin-top: 35px;
+}
+.grid_ban div{
+    float: left;
+    border-right: 1px solid #E0E0E0;
+    padding: 8px 8px 2px 8px;
+    text-align: center;
+}
+.grid_ban div span{
+
+}
+.grid_ban div input{
+    width: 100%;
+    height: 26px;
+    margin-top: -7px;
+    display: block;
+    margin-left: -3px;
+    border: none;
+    font-size: 15px;
+}
+.iban_defaults{
+    width: 28px;
+}
+.iban_defaults a.wd-update{
+    margin-left: 2px;
+    margin-top: -4px;
+}
+.iban_bic{
+    width: 160px;
+}
+.iban_iban{
+    width: 295px;
+}
+.iban_action{
+    width: 50px;
+}
+a.wd-hover-advance-tooltip{
+    display: block;
+    background: url(/img/front/ico-move.png) no-repeat left top;
+    text-indent: -1983px;
+    overflow: hidden;
+    width: 23px;
+    height: 24px;
+    margin-left: 15px;
+    margin-top: -4px;
+}
+a.wd-hover-advance-tooltip:hover{
+    background-position: left -24px;
+}
+.created_iban{
+    height: 20px;
+}
+.iban_bic input.loading, .iban_iban input.loading{
+    background: url("/img/ajax-loader.gif") no-repeat 2px center;
+    padding-left: 20px;
+}
+fieldset div.wd-submit input.wd-save {
+    background: url('/img/front/bg-submit-save-new.png') no-repeat left top !important;
+}
+a.wd-next {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: url("../img/front/bg-next-2.png");
+    background-origin: padding-box;
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    color: #FFFFFF;
+    display: block;
+    float: right;
+    height: 33px;
+    line-height: 33px;
+    padding-right: 27px;
+    text-decoration: none;
+}
+.multiselect {
+    width: 62.5%;
+    border-right: 1px solid #c0c0c0;
+}
+.wd-data-manager input {
+    width: 25px !important;
+}
+.wd-combobox, .wd-combobox-2 {
+    border: 1px solid #d4d4d4;
+    background: url("/img/bg-combobox.png") no-repeat right 5px;
+    padding: 3px 0px;
+    width: 100%;
+    display: block;
+    height: 20px;
+    overflow: hidden;
+    line-height: 22px;
+    text-decoration: none;
+    color: black !important;
+    font-weight: inherit !important;
+}
+.wd-combobox:hover, .wd-combobox-2:hover{
+    text-decoration: none;
+}
+#wd-data-project, #wd-data-project-2 {
+    display: none;
+    position: absolute;
+    width: 28.9%;
+    border: solid 1px #c0c0c0;
+    background-color: #fff;
+    height: 150px !important;
+    overflow-y: auto;
+    z-index: 1;
+}
+.ch-button-add{
+    background: url('/img/business/add-1.png') no-repeat !important;
+    width: 32px;
+    height: 28px;
+    padding: 0 !important;
+    float: left;
+    margin-left: 5px;
+    margin-top: 2px;
+}
+.ch-button-add-invoice, .ch-button-delete{
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #4a749a;
+    background-image: url("/img/ui/blank-plus.png");
+    background-origin: padding-box;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    display: block;
+    float: right;
+    height: 33px;
+    line-height: 33px;
+    padding-left: 27px;
+    text-decoration: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.ch-button-add-invoice span, .ch-button-delete span{
+    background: url(../img/ui/btn-blue-right.png) right top no-repeat;
+    display: block;
+    float: left;
+    padding: 0 10px 0 5px;
+    margin: 0;
+    vertical-align: top;
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+    line-height: 32px;
+    height: 32px;
+    font-weight: bold;
+    position: relative;
+}
+.ch-button-add-invoice:hover span, .ch-button-delete:hover span {
+    background-position: right -33px;
+    text-decoration: none;
+}
+.ch-button-add-invoice:hover, .ch-button-delete:hover {
+    background-position: left -33px;
+    text-decoration: none;
+}
+.ch-button-delete{
+    background-image: url("/img/front/bg-delete-project.png") !important;
+}
+.ch-button-delete span{
+    background-image: url("/img/front/bg-delete.png") !important;
+}
+.row-disabled-custom {
+    background-color: #FAFAFA !important;
+}
+.row-number-custom {
+    text-align: right;
+}
+.wd-row-custom{
+    background-color: #EAF1FA !important;
+}
+.wd-row-custom p {
+    padding-top: 5px;
+    font-weight: bold;
+    text-align: right;
+}
+#product_action{
+    padding-top: 2px;
+}
+#product_action a.pch_add_invoice{
+    background: url('/img/business/add-invoi-1.png') no-repeat !important;
+    width: 24px;
+    height: 24px;
+    display: block;
+    float: left;
+    margin-right: 5px;
+}
+#product_action a.pch_add_expense{
+    background: url('/img/business/add-expense-1.png') no-repeat !important;
+    width: 24px;
+    height: 24px;
+    display: block;
+    float: left;
+    margin-right: 5px;
+}
+#product_action a.pch_delete{
+    background: url('/img/business/del-1.png') no-repeat !important;
+    width: 24px;
+    height: 24px;
+    display: block;
+    float: left;
+    margin-right: 5px;
+}
+#product_action a.pch_add_invoice:hover, #product_action a.pch_add_expense:hover, #product_action a.pch_delete:hover{
+    text-decoration: none;
+}
+#pch_product_top, #pch_action{
+    margin-left: 35px;
+    clear: both;
+}
+.pch_input{
+    width: 150px;
+    float: left;
+}
+.pch_input label{
+    color: #000;
+    font-weight: bold;
+    font-size: 13px;
+}
+.pch_input input, .pch_input select{
+    border: 1px solid #E0E0E0;
+    height: 23px;
+    font-size: 13px;
+    width: 140px;
+}
+.pch_input select{
+    height: 27px;
+}
+.pch_input input.input_disabled, .pch_input select.input_disabled, .wd-input select.input_disabled{
+    background-color: rgb(218, 221, 226) !important;
+}
+.pch_loading{
+    background: url("/img/ajax-loader.gif") no-repeat 2px center;
+    padding-left: 20px;
+}
+#pch_invoice{
+    margin: 10px 0 5px 80px;
+}
+#pch_invoice_content{
+    max-height: 200px;
+    overflow-y: auto;
+    width: 840px;
+    clear: both;
+}
+#pch_expense_content{
+    max-height: 200px;
+    overflow-y: auto;
+    width: 1070px;
+    clear: both;
+}
+#pch_invoice div.pch_input, #pch_invoice_content div.pch_input input{
+    width: 200px;
+    margin-top: -1px;#pch_expense
+}
+.loading_input{
+    width: 180px !important;
+}
+.pch_invoice_content_gourp_1 div.pch_input{
+    margin-top: 10px !important;
+}
+#pch_invoice_content div.pch_input_last{
+    width: 220px !important;
+}
+#pch_invoice_total{
+    float: right;
+}
+#pch_invoice_total div.pch_input{
+    width: 546px !important;
+}
+#pch_invoice_total div.pch_input label{
+    float: left;
+    width: 450px !important;
+    margin-left: 55px !important;
+}
+#pch_invoice_total div.pch_input input{
+    width: 400px !important;
+    float: left;
+}
+#pch_invoice_total div.pch_input input[type='checkbox']{
+    width: 25px !important;
+    float: left;
+}
+#pch_message{
+    font-size: 13px;
+    color: red;
+    display: none;
+}
+#totalBilledCheckbox{
+    border: 1px solid #E0E0E0;
+    width: 24px;
+    height: 24px;
+    display: block;
+    background-color: rgb(218, 208, 208);
+    float: left;
+    margin-left: 4px
+}
+#pch_waiting_load, #pch_waiting_load_2{
+    width: 100%;
+    background-color: #000;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    opacity: 0.5;
+    display: none;
+}
+#pch_waiting_load p, #pch_waiting_load_2 p{
+    background-image: url("/img/business/wait-1.gif");
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    display: block;
+    width: 128px;
+    height: 128px;
+    margin: 125px 435px;
+}
+#pch_product_top div.pch_input_expenses{
+    width: 270px;
+}
+#pch_product_top div.pch_input_expenses label{
+
+}
+#pch_product_top div.pch_input_expenses input{
+    width: 240px;
+}
+.border_error{
+    border: 1px solid rgb(230, 119, 119) !important;
+}
+#pch_expense{
+    margin-left: 15px;
+    margin-top: 10px;
+}
+#pch_expense div.pch_input{
+
+}
+#pch_expense_content div.pch_input input{
+
+}
+#pch_expense_content div.pch_input input, #pch_expense_content div.pch_input select{
+    margin-top: -1px;
+}
+#pch_expense div.pch_input_reference, #pch_expense_content div.pch_input_reference{
+    width: 80px;
+}
+#pch_expense_content .pch_input_unit{
+    width: 41px;
+}
+#pch_expense_content .pch_input_unit input{
+    width: 40px;
+}
+#pch_expense_content .pch_input_number{
+    width: 66px;
+}
+#pch_expense_content .pch_input_number input{
+    width: 65px;
+}
+#pch_expense_content .pch_input_product, .pch_input_product input{
+    width: 120px;
+}
+#pch_expense_content .pch_input_name, .pch_input_name input, .pch_input_name select{
+    width: 150px;
+}
+#pch_expense_content .pch_input_capex, .pch_input_capex input{
+    width: 150px;
+}
+#pch_expense_content .pch_input_unit_cost, .pch_input_unit_cost input{
+    width: 130px;
+}
+#pch_expense_content .pch_input_amount_due, .pch_input_amount_due input{
+    width: 130px;
+}
+.pch_action_expense{
+    margin-left: -9px;
+    float: left;
+    margin-top: 5px;
+}
+#pch_expenses_total{
+    float: right;
+    margin-top: 8px;
+    margin-right: 35px;
+}
+#pch_expenses_total div.pch_input{
+    width: 200px;
+}
+#pch_expenses_total div.pch_input input{
+    width: 190px;
+}
+.loang_input_name{
+    width: 130px !important;
+}
+.loang_input_number{
+    width: 45px !important;
+}
+.loang_input_unit_cost{
+    width: 110px !important;
+}
+.plupload_file_action{
+    padding-right: 10px !important;
+}
+.plupload_file_action{
+    margin-right: 0px !important;
+}
+.plupload_file_status{
+    width: 90px !important;
+}
+.plupload_file_size{
+    width: 100px !important;
+}
+.editor-text{
+    margin-top: 3px;
+    margin-left: 3px;
+}
+.pch_log_avatar_content{
+    border-bottom: 1px solid #E0E0E0;
+    display: block;
+    padding-bottom: 3px;
+    cursor: pointer;
+}
+.pch_log_avatar_content img{
+    width: 30px;
+    height: 30px;
+    margin-top: 3px;
+    margin-left: 10px;
+}
+.context-menu-filter, .context-menu-filter-2{
+    clear: both;
+    overflow: hidden;
+    background-color: #004787;
+    padding: 3px;
+}
+.context-menu .notmatch{
+    display: none;
+}
+.context-menu-filter input, .context-menu-filter-2 input{
+    padding: 0 !important;
+    width: 100% !important;
+    border: 0 !important;
+    float: none !important;
+    line-height: normal !important;
+    margin: 0 !important;
+    background: 0 !important;
+}
+.context-menu-filter span, .context-menu-filter-2 span{
+    display: block;
+    background: url("/css/images/search_label.gif") no-repeat 2px center;
+    padding-left: 17px;
+    background-color: #fff;
+    border: 1px solid #D4D4D4;
+}
+.renewal{
+    background-color: rgb(255, 39, 39) !important;
+    color: #fff;
+}

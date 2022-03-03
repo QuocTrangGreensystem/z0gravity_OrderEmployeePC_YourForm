@@ -1,0 +1,101 @@
+msgid  "Login"
+msgstr "Đăng nhập"
+
+msgid  "Forgot your password?"
+msgstr "Quên mật khẩu?"
+
+msgid  "Admin SAS"
+msgstr "Admin SAS"
+
+msgid  "Choose your company role"
+msgstr "Chọn công ty"
+
+msgid  "Continue"
+msgstr "Tiếp tục"
+
+msgid  "Sign out"
+msgstr "Đăng xuất"
+
+msgid  "New Password"
+msgstr "Mật khẩu mới"
+
+msgid  "Change"
+msgstr "Thay đổi"
+
+msgid  "Send"
+msgstr "Gửi"
+
+msgid  "Email"
+msgstr "Email"
+
+msgid  "An email has been sent to %s. Please follow the instructions to change your password"
+msgstr "Một thư điện tử đã được gửi đến %s. Vui lòng làm theo hướng dẫn để thay đổi mật khẩu"
+
+msgid  "z0 GRAVITY :: Login"
+msgstr "z0 GRAVITY :: Đăng nhập"
+
+msgid  "AZURÉE"
+msgstr "AZURÉE"
+
+msgid  "Mobile version"
+msgstr "Phiên bản mobile"
+
+msgid  "Home"
+msgstr "Trang chủ"
+
+msgid  "Business"
+msgstr "Business"
+
+msgid  "Opportunity"
+msgstr "Cơ hội"
+
+msgid  "Projects"
+msgstr "Dự án"
+
+msgid  "Employees"
+msgstr "Nhân sự"
+
+msgid  "Personalized"
+msgstr "Cá nhân hóa"
+
+msgid  "Administration"
+msgstr "Quản trị"
+
+msgid  "Audit"
+msgstr "Kiểm soát"
+
+msgid  "Activity"
+msgstr "Hoạt động"
+
+msgid  "Absence"
+msgstr "Vắng nghỉ"
+
+msgid  "My Diary"
+msgstr "Nhật ký của tôi"
+
+msgid  "Report"
+msgstr "Báo cáo"
+
+msgid  "ZogMsg"
+msgstr "Trao đổi"
+
+msgid  "Reports"
+msgstr "Báo cáo"
+
+msgid  "Personalized Views"
+msgstr "Màn hình cá nhân"
+
+msgid  "Tickets"
+msgstr "Báo lỗi"
+
+msgid  "The license has expired. <br />Please contact administrator for further information!"
+msgstr "Giấy phép sử dụng đã hết hạn. <br />Vui lòng liên hệ quản trị để biết thêm thông tin!"
+
+msgid  "Your licence has expired. <br />To continue to use this app please renew it!"
+msgstr "Giấy phép sử dụng đã hết hạn. <br />Vui lòng gia hạn để tiếp tục sử dụng dịch vụ."
+
+msgid  "Email or password is not match!"
+msgstr "Email hoặc mật khẩu không đúng!"
+
+msgid  "You have not permission to access this function"
+msgstr "Bạn không có quyền để thực hiện chương trình này"

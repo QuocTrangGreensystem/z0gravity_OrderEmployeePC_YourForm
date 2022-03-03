@@ -1,0 +1,210 @@
+.wd-panel .wd-section{
+	display: block;
+	width: 100%;
+}
+.wd-tab .wd-content{
+	width: calc( 100% - 340px);
+	float: left;
+	overflow: visible;
+}
+.wd-table-container #project_container{
+	width: 100%;
+	float: none;
+}
+.wd-list-project .wd-tab .wd-panel{
+	padding: 20px;
+}
+.slick-viewport .slick-row .slick-cell.grid-action{
+	padding: 0;
+	border-top:0;
+}
+.grid-action .wd-actions{
+	margin: 0;;
+}
+.grid-action .wd-actions .wd-btn{
+	width: 40px;
+	height: 40px;
+	float:left;
+}
+.btn.add-field{
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	border-radius: 50%;
+	z-index: 5;
+	top: -25px;
+	margin: 0;
+	right: 15px;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+	background-color: #247FC3;
+}
+.btn.add-field:before{
+	content: '';
+	background-color: #fff;
+	position: absolute;
+	width: 2px;
+	height: 20px;
+	top: calc( 50% - 10px);
+	left: calc( 50% - 1px);
+}
+.btn.add-field:after{
+	content: '';
+	position: absolute;
+	background-color: #fff;
+	width: 20px;
+	height: 2px;
+	left: calc( 50% - 10px);
+	top: calc( 50% - 1px);
+}
+.grid-canvas .editor-text{
+	display: block;
+	margin: 0;
+	box-sizing: border-box;
+}
+#wd-container-main.wd-project-admin .wd-layout {
+	padding: 0 !important;
+}
+.wd-layout .wd-main-content .wd-tab{
+	margin: 0;
+	padding:40px;
+}
+.wd-content .wd-table-container{
+	position: relative;
+	border: none;
+}
+.wd-table-container .wd-table-2019 .slick-row .slick-cell .ui-combobox input{
+	height: 68px;
+}
+.wd-table-2019 .slick-row .slick-cell .ui-combobox{
+	height: 70px;
+	line-height: 68px;
+}
+.wd-table-container .wd-table-2019 .slick-row.active{
+	z-index: 11;
+}
+
+.wd-table-2019 .slick-viewport .slick-row .slick-cell{
+	line-height: 70px;
+}
+.grid-action .wd-actions .wd-btn{
+	height: 70px;
+}
+.wd-table-container .wd-table-2019 .slick-row .slick-cell .ui-combobox input{
+	height: 70px;
+}
+/* width */
+body ::-webkit-scrollbar {
+	width: 4px;
+	height: 4px;
+}
+
+/* Track */
+body ::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px #F2F5F7; 
+	border-radius: 5px;
+	background-color: #fff;
+}
+
+/* Handle */
+body ::-webkit-scrollbar-thumb {
+	background: #C6CCCF;; 
+	border-radius: 5px;
+}
+/* New Popup */
+.wd-popup{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 280px;
+    padding: 20px;
+    padding-top: 40px; 
+    background-color: #fff;
+    z-index: 1111;
+    display: none;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px 1px rgba(29,29,27,0.06);
+
+}
+.wd-popup.loading_thumb:after,
+.wd-popup.loading:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    background: rgba(255,255,255,0.5) url(/img/ajax-loader.gif) center center no-repeat;
+    top: 0;
+    left: 0;
+}
+.wd-popup-container .input{
+    margin-bottom: 18px;
+}
+.wd-popup-container .input label{
+    font-size: 16px;
+    color: #424242;
+    display: block;
+    position: relative;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+.wd-popup-container .input label.label-has-sub:after{
+    content: attr(data-text);
+    float: right;
+    line-height: inherit;
+    font-size: 14px;
+
+}
+.wd-popup-container .input select{
+    height: 48px;
+    line-height: 48px;
+    border: 1px solid #E0E6E8;
+    padding: 0 15px;
+    width: 100%;
+
+}
+.wd-popup-container .submit input{
+    width: 100%;
+    height: 50px;
+    background-color: #C5CCCF;
+    border: 0;
+    color: #fff;
+    border-radius: 4px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+.wd-popup-container .submit input:hover{
+    background-color: #247FC3;
+    color: #fff;
+}
+.wd-popup-container.open .wd-popup{
+    display: block;
+    margin-top: 0;
+}
+.wd-popup-container.open .add-new-item{
+    -ms-transform: rotate(45deg) scale(1.05);
+    -webkit-transform: rotate(45deg) scale(1.05);
+    transform: rotate(45deg) scale(1.05);
+}
+#popup_template_attach{
+    margin-bottom: 20px;
+}
+#upload-popup{
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.dz-message p{
+    font-size: 14px;
+    color: ##C6CCCF;
+    max-width: 210px;
+    margin: auto;
+}
+.wd-popup-container .input-title{
+	font-weight: 600;
+	font-size: 14px;
+	color: #424242;
+	margin-bottom: 10px;
+}

@@ -1,0 +1,1 @@
+ALTER TABLE project_finance_plus_details MODIFY `value` decimal(18,2);

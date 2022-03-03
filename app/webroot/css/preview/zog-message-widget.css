@@ -1,0 +1,172 @@
+
+/* Zogmessages */
+
+.wd-right{
+	background-color: #fff;
+	height: 100%;
+}
+.wd-right .zog-message .zog-title{
+	font-size: 16px;
+}
+.zog-comment .zog-comment-heading .zog-comment-heading-right{
+	width: calc(100% - 55px);
+	display: inline-block;
+	vertical-align: top;
+	padding-left: 10px;
+}
+.zog-comment .zog-comment-heading .zog-comment-heading-right .zog-comment-date{
+	color: #C8CDD0;
+}
+.zog-comment .zog-comment-heading .zog-comment-heading-right h3{
+	color: #404040;
+	font-size: 14px;
+	font-weight: 600;
+}
+.zog-message{
+	padding: 20px;
+}
+.zog-comment{
+	padding: 20px;
+	border: 1px solid #F3F5F7;
+	position: relative;
+	box-sizing: border-box;
+    width: calc(100% - 10px);
+}
+.zog-comment:nth-child(1){
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+.zog-comment:last-child{
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.zog-comment .zog-comment-heading img{
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	border-radius: 20px;
+}
+.zog-comment .menu-zog{
+	position: absolute;;
+	top: 25px;
+	right: 20px;
+}
+.zog-comment .zog-comment-content{
+	margin-top: 8px;
+	font-size: 14px;
+	color: #404040;
+}
+.zog-comment:nth-child(odd){
+	background-color: #F3F5F7;
+}
+
+.zog-current {
+	padding: 20px;
+	padding-bottom: 0;
+}
+
+.zog-current .zog-current-title h3,
+.zog-current .zog-current-title img{
+	display: inline-block;
+	color: #404040;
+    font-size: 18px;
+    margin-bottom: 14px;
+    font-weight: 600;
+}
+.zog-title h3{
+	color: #404040;
+    font-size: 18px;
+    margin-bottom: 14px;
+    font-weight: 600;
+}
+.zog-current .zog-current-title h3{
+	margin-left: 18px;
+	position: relative;
+	top: 5px;
+}
+.project-message-widget .ui-resizable-s {
+	width: 100%;
+	height: 8px;
+	background-color: red;
+	display: block;
+	cursor: s-resize;
+	position: absolute;
+	bottom: -4px;
+	z-index: 3;
+	background: url(/img/new-icon/resizable-handle.png) center no-repeat;
+}
+.project-message-widget .zog-current{
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+}.project-message-widget .zog-message{
+    padding: 0;
+}
+.zog-current .zog-current-title h3,
+.zog-message .zog-title h3{
+    margin-left: 0;
+    font-size: 12px;    
+    font-weight: bold;  
+    line-height: 18px;
+    text-transform: uppercase;
+        color: #C6CCCF;
+}
+.zog-comment{
+    padding: 10px;
+	margin-bottom: 10px;
+}
+.project-message-widget .wd-zog-messages{
+    padding-right: 0;
+    height: 248px;
+    overflow: auto;
+}
+.project-message-widget .add-message{
+    border: 1px solid #E1E6E8;    
+    background-color: #FFFFFF;  
+	    width: calc(100% - 15px);
+}
+.project-message-widget .add-message textarea{
+    padding: 15px;
+    margin: 0;
+    width: calc(100% - 40px);
+    border: none;
+    resize: none;
+    vertical-align: top;
+    height: 50px
+}
+.project-message-widget .add-message button{
+    padding: 0;
+    border: none;
+    vertical-align: top;
+    position: relative;
+    top: 17px;
+    cursor: pointer;
+}
+.project-message-widget .widget_content{
+    padding-right: 10px;
+}
+.project-message-widget .zog-title{
+    margin-bottom: -10px;
+}
+.project-message-widget button{
+    background: transparent;
+}
+.project-message-widget button img{
+    width: 20px;
+    height: auto;
+}
+.project-message-widget button img + img{
+    display: none;
+    top: 10px;
+}
+.project-message-widget button.loading img{
+    display: none;
+}
+.project-message-widget button.loading img + img{
+    display: inline-block;
+}
+.project-message-widget .submit-btn-msg{
+    width: 20px;
+    height: 16px;
+	background-color: transparent !important;
+}

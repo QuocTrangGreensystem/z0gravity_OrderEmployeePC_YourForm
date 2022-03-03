@@ -1,0 +1,1 @@
+ALTER TABLE `project_milestones` ADD COLUMN `effective_date` int(10) NULL AFTER `validated`; 

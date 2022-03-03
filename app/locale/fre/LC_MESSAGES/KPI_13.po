@@ -1,0 +1,54 @@
+msgid "Comment"
+msgstr "Comment"
+
+msgid "Planning"
+msgstr ""
+
+msgid "Progress"
+msgstr "Avancement"
+
+msgid "Budget"
+msgstr ""
+
+msgid "Staffing"
+msgstr ""
+
+msgid "Risk"
+msgstr "Risque"
+
+msgid "Issue"
+msgstr ""
+
+msgid "Log Comment"
+msgstr ""
+
+msgid "Progress %"
+msgstr "Progression %"
+
+msgid "Created"
+msgstr "Date de creation"
+
+msgid "Updated"
+msgstr "Date de modifier"
+
+msgid "Acceptance"
+msgstr "Recette"
+
+msgid "Budget status"
+msgstr "Budget"
+
+msgid "Planning status"
+msgstr "Planning"
+
+msgid "Risk status"
+msgstr "Risk"
+
+msgid "Information"
+msgstr "Avancement"
+
+msgid "Delay"
+msgstr "Jours de retard"
+
+msgid "Weather"
+msgstr "Météo"
+

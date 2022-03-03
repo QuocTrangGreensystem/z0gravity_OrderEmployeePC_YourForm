@@ -1,0 +1,123 @@
+msgid "Project details"
+msgstr ""
+
+msgid "Project Name"
+msgstr "LIBELLE_PROJET"
+
+msgid "Project long name"
+msgstr "PROJECT NAME"
+
+msgid "Project Code 1"
+msgstr "CODE_PROJET"
+
+msgid "Project Code 2"
+msgstr "%BNPP"
+
+msgid "Company"
+msgstr ""
+
+msgid "Project Manager"
+msgstr "CHEF_DE_PROJET"
+
+msgid "Project type"
+msgstr "POLE_LEADER"
+
+msgid "Program"
+msgstr "ACTIVITY"
+
+msgid "Priority"
+msgstr ""
+
+msgid "Implementation Complexity"
+msgstr "Complexité"
+
+msgid "Created value"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Current Phase"
+msgstr ""
+
+msgid "Link To RMS Activity"
+msgstr ""
+
+msgid "Issues"
+msgstr "Issue"
+
+msgid "Primary Objectives"
+msgstr ""
+
+msgid "Project Objectives"
+msgstr ""
+
+msgid "Constraint"
+msgstr ""
+
+msgid "Remark"
+msgstr "Commentaire"
+
+msgid "Chief Business"
+msgstr ""
+
+msgid "Technical manager"
+msgstr ""
+
+msgid "Start Date"
+msgstr "DATE_DEBUT"
+
+msgid "End Date"
+msgstr "DATE_FIN"
+
+msgid "Customer"
+msgstr "CUSTOMER"
+
+msgid "Free 1"
+msgstr ""
+
+msgid "Free 2"
+msgstr ""
+
+msgid "Free 3"
+msgstr ""
+
+msgid "Free 4"
+msgstr ""
+
+msgid "Free 5"
+msgstr ""
+
+msgid "Number 1"
+msgstr ""
+
+msgid "Number 2"
+msgstr ""
+
+msgid "Number 3"
+msgstr ""
+
+msgid "Number 4"
+msgstr ""
+
+msgid "0/1 1"
+msgstr ""
+
+msgid "List 1"
+msgstr ""
+
+msgid "List 2"
+msgstr ""
+
+msgid "List 3"
+msgstr ""
+
+msgid "Number 5"
+msgstr "CODE ACTIVITE"
+
+msgid "0/1 2"
+msgstr ""
+
+msgid "Date 1"
+msgstr ""
+

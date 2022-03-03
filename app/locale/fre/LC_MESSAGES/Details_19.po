@@ -1,0 +1,96 @@
+msgid "Project details"
+msgstr "Nom du projet"
+
+msgid "Project Name"
+msgstr "Nom du projet"
+
+msgid "Project long name"
+msgstr ""
+
+msgid "Project Code 1"
+msgstr ""
+
+msgid "Project Code 2"
+msgstr ""
+
+msgid "Company"
+msgstr ""
+
+msgid "Project Manager"
+msgstr "Chef de projet"
+
+msgid "Project type"
+msgstr ""
+
+msgid "Program"
+msgstr "Programme"
+
+msgid "Priority"
+msgstr "Priorité"
+
+msgid "Implementation Complexity"
+msgstr ""
+
+msgid "Created value"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Current Phase"
+msgstr "Phase courante"
+
+msgid "Link To RMS Activity"
+msgstr ""
+
+msgid "Issues"
+msgstr "Problématique"
+
+msgid "Primary Objectives"
+msgstr "Finalité"
+
+msgid "Project Objectives"
+msgstr "Objectifs"
+
+msgid "Constraint"
+msgstr ""
+
+msgid "Remark"
+msgstr ""
+
+msgid "Chief Business"
+msgstr "Directeur Opération"
+
+msgid "Technical manager"
+msgstr "Directeur usine"
+
+msgid "Start Date"
+msgstr "Début"
+
+msgid "End Date"
+msgstr "Fin"
+
+msgid "Customer"
+msgstr ""
+
+msgid "Functional leader"
+msgstr "Responsable HSEQ"
+
+msgid "UAT manager"
+msgstr "Superviseur chantier"
+
+msgid "Free 1"
+msgstr "Entreprise de travaux"
+
+msgid "Free 2"
+msgstr "Recyclage déchets"
+
+msgid "Free 3"
+msgstr ""
+
+msgid "Free 4"
+msgstr ""
+
+msgid "Free 5"
+msgstr ""
+

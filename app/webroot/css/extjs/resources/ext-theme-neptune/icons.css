@@ -1,0 +1,17 @@
+
+.tasks-special-list {
+	background: url(../images/add-2.png) no-repeat center;
+}
+
+.tasks-delete-list {
+	background: url(../images/remove.png) no-repeat center;
+}
+.tasks-new-list {
+	background: url(../images/add.png) no-repeat center;
+}
+.x-menu-item-link {
+	text-decoration: none !important;
+}
+.x-tree-icon-special {
+	background: url(images/tree/folder-special.png) no-repeat center !important;
+}

@@ -1,0 +1,243 @@
+1
+ Paramétrage de l'administration
+ index.htm
+2
+ Nouveau Design
+ nouveau_design.htm
+3
+ Règles générales - IMPORTANT
+ regles_generales___important.htm
+4
+ 1. Ressources
+ ressources.htm
+5
+ 1.1. Villes
+ villes.htm
+6
+ 1.2. Pays
+ pays.htm
+7
+ 1.3. Type de Contrat
+ type_de_contrat.htm
+8
+ 1.4. Equipe
+ equipe.htm
+9
+ 1.5. Profil
+ profil.htm
+10
+ 1.6. Paramétrage
+ parametrage_1.htm
+11
+ 1.7. Externe
+ externe.htm
+12
+ 2. Projets
+ projets_1.htm
+13
+ 2.1. Projets
+ projets_2.htm
+14
+ 2.1.1. Phases
+ phases.htm
+15
+ 2.1.2. Phases / Gestion des champs
+ phases___gestion_des_champs.htm
+16
+ 2.1.3. Devises
+ devises.htm
+17
+ 2.1.4. Types
+ types.htm
+18
+ 2.1.5. Sous-type du projet
+ sous_type_du_projet.htm
+19
+ 2.1.6. Complexité d'implémentation
+ complexite_d_implementation.htm
+20
+ 2.1.7. Importer des projets
+ importer_des_projets.htm
+21
+ 2.1.8. Importer des tâches
+ importer_des_taches.htm
+22
+ 2.1.9. List 1 / 2 / 3 / 4
+ list_1___2___3___4.htm
+23
+ 2.1.10. Paramétrage des onglets
+ parametrage_des_onglets.htm
+24
+ 2.2. Tâches
+ taches.htm
+25
+ 2.2.1. Statut
+ statut_1.htm
+26
+ 2.2.2. Priorité
+ priorite.htm
+27
+ 2.2.3. Gestion des champs
+ gestion_des_champs.htm
+28
+ 2.2.4. Consommé
+ consomme.htm
+29
+ 2.2.5. Paramétrage
+ parametrage_2.htm
+30
+ 2.3. Capture
+ capture.htm
+31
+ 2.4. Sécurité
+ securite_1.htm
+32
+ 2.5. Création de valeur
+ creation_de_valeur.htm
+33
+ 2.5.1. Financial
+ financial.htm
+34
+ 2.5.2. Business process
+ business_process.htm
+35
+ 2.5.3. Customer
+ customer.htm
+36
+ 2.5.4. Learning & Growth
+ learning___growth.htm
+37
+ 2.6. Compétences
+ competences.htm
+38
+ 2.7. Statut de la phase projet
+ statut_de_la_phase_projet.htm
+39
+ 2.8. Risque
+ risque.htm
+40
+ 2.8.1. Sévérités 
+ severites_.htm
+41
+ 2.8.2. Occurences
+ occurences.htm
+42
+ 2.9. Problème
+ probleme.htm
+43
+ 2.9.1. Sévérités
+ severites.htm
+44
+ 2.9.2. Statut
+ statut_2.htm
+45
+ 2.10. Catégorie de livrable
+ categorie_de_livrable.htm
+46
+ 2.11. Evolutions
+ evolutions.htm
+47
+ 2.11.1. Type d'évolution
+ type_d_evolution.htm
+48
+ 2.11.2. Impact
+ impact.htm
+49
+ Indicateur/Programme
+ indicateur_programme.htm
+50
+ Recette
+ recette.htm
+51
+ Paramétrage Onglet
+ parametrage_onglet.htm
+52
+ Dépendance
+ dependance.htm
+53
+ 3. Licenses
+ licenses.htm
+54
+ 4. Budget
+ budget.htm
+55
+ 4.1. Paramétrage
+ parametrage_3.htm
+56
+ 4.2. Client
+ client.htm
+57
+ 4.3. Fournisseur
+ fournisseur.htm
+58
+ 4.4. Type d'achat
+ type_d_achat.htm
+59
+ 4.5. Financeur
+ financeur.htm
+60
+ 4.6. Année fiscale
+ annee_fiscale.htm
+61
+ 5. Sécurité
+ securite_2.htm
+62
+ 5.1. Sécurité
+ securite_3.htm
+63
+ 5.2. Trace
+ trace.htm
+64
+ 6. Absences
+ absences_1.htm
+65
+ 6.1. Absences
+ absences_2.htm
+66
+ 6.2. Jours travaillés
+ jours_travailles.htm
+67
+ 6.3. Status de la demande
+ status_de_la_demande.htm
+68
+ 6.4. Jours feriés
+ jours_feries.htm
+69
+ 6.5. Document attaché
+ document_attache.htm
+70
+ 6.6. Gestion capacité
+ gestion_capacite.htm
+71
+ 7. Activité
+ activite.htm
+72
+ 7.1. Champs
+ champs.htm
+73
+ 7.2. Famille
+ famille.htm
+74
+ 7.2.1. Sous famille
+ sous_famille.htm
+75
+ 7.3. Règles de gestion feuille de temps
+ regles_de_gestion_feuille_de_temps.htm
+76
+ 7.4. Exporter en Excel
+ exporter_en_excel.htm
+77
+ 7.5. Importer des feuilles de temps
+ importer_des_feuilles_de_temps.htm
+78
+ 7.6. Période comptable
+ periode_comptable.htm
+79
+ 7.7. Prévision
+ prevision.htm
+80
+ 7.8. Diary
+ diary.htm
+81
+ 8. Traduction
+ traduction.htm

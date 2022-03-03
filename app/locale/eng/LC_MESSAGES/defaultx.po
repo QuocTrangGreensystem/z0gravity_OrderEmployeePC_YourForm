@@ -1,0 +1,2 @@
+msgid "Activity SP1"
+msgstr "Activity"

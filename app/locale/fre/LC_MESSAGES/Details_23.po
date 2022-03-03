@@ -1,0 +1,204 @@
+msgid "Project details"
+msgstr "Fiche projet"
+
+msgid "Project Name"
+msgstr "Nom du projet"
+
+msgid "Project long name"
+msgstr ""
+
+msgid "Project Code 1"
+msgstr "Code projet"
+
+msgid "Project Code 2"
+msgstr ""
+
+msgid "Company"
+msgstr ""
+
+msgid "Project Manager"
+msgstr "Chef de projet"
+
+msgid "Project type"
+msgstr "Pole Leader"
+
+msgid "Program"
+msgstr "Comité"
+
+msgid "Priority"
+msgstr "Priorité"
+
+msgid "Implementation Complexity"
+msgstr "Version principale"
+
+msgid "Created value"
+msgstr ""
+
+msgid "Status"
+msgstr "Statut_2"
+
+msgid "Current Phase"
+msgstr "Phase courante"
+
+msgid "Link To RMS Activity"
+msgstr ""
+
+msgid "Issues"
+msgstr ""
+
+msgid "Primary Objectives"
+msgstr ""
+
+msgid "Project Objectives"
+msgstr ""
+
+msgid "Constraint"
+msgstr ""
+
+msgid "Remark"
+msgstr "Description"
+
+msgid "Chief Business"
+msgstr "Chef de projet délégué"
+
+msgid "Technical manager"
+msgstr "Manager de filière"
+
+msgid "Start Date"
+msgstr "Date de début"
+
+msgid "End Date"
+msgstr "Date de fin"
+
+msgid "Customer"
+msgstr ""
+
+msgid "Functional leader"
+msgstr ""
+
+msgid "UAT manager"
+msgstr ""
+
+msgid "Free 1"
+msgstr "Commentaires PMO"
+
+msgid "Free 2"
+msgstr ""
+
+msgid "Free 3"
+msgstr ""
+
+msgid "Free 4"
+msgstr ""
+
+msgid "Free 5"
+msgstr ""
+
+msgid "Date 1"
+msgstr "PPA"
+
+msgid "Date 2"
+msgstr ""
+
+msgid "Date 3"
+msgstr ""
+
+msgid "Date 4"
+msgstr ""
+
+msgid "List 1"
+msgstr "Groupe PMO"
+
+msgid "List 2"
+msgstr "Activité"
+
+msgid "List 3"
+msgstr "Etat du projet"
+
+msgid "List 4"
+msgstr "NATIXIS/BNPP"
+
+msgid "Yes/No 1"
+msgstr ""
+
+msgid "Yes/No 2"
+msgstr ""
+
+msgid "Yes/No 3"
+msgstr ""
+
+msgid "Yes/No 4"
+msgstr ""
+
+msgid "0/1 1"
+msgstr "1 : PLAN / 0 : HORS_PLAN"
+
+msgid "0/1 2"
+msgstr "Exception SPIROU 1:OUI/0:NON"
+
+msgid "0/1 3"
+msgstr "Projet actif 1:OUI/0:NON"
+
+msgid "0/1 4"
+msgstr ""
+
+msgid "Price 1"
+msgstr ""
+
+msgid "Price 2"
+msgstr ""
+
+msgid "Price 3"
+msgstr ""
+
+msgid "Price 4"
+msgstr ""
+
+msgid "Price 5"
+msgstr ""
+
+msgid "Price 6"
+msgstr ""
+
+msgid "Number 1"
+msgstr ""
+
+msgid "Number 2"
+msgstr ""
+
+msgid "Number 3"
+msgstr ""
+
+msgid "Number 4"
+msgstr ""
+
+msgid "Number 5"
+msgstr ""
+
+msgid "Number 6"
+msgstr ""
+
+msgid "Number 7"
+msgstr ""
+
+msgid "Number 8"
+msgstr ""
+
+msgid "Sub type"
+msgstr ""
+
+msgid "Sub program"
+msgstr "Enveloppe"
+
+msgid "Timesheet Filling Activated"
+msgstr "Activé à la saisie"
+
+msgid "Last Update: {time} {date} by {resource}"
+msgstr "Dernière modification: {time} {date} par {resource}"
+
+msgid "Last modified"
+msgstr "Dernière modification"
+
+msgid "List(multiselect) 1"
+msgstr "Direction(s)"
+

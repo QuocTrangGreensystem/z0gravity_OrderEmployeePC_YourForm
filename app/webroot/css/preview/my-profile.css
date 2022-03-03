@@ -1,0 +1,495 @@
+/* Hide the browser's default checkbox */
+div.input.checkbox {
+    position: relative;
+	margin-bottom: 20px;
+}
+
+
+/* Create a custom checkbox */
+div.input.checkbox input{
+	display: none;
+}
+div.input.checkbox label{
+	line-height: 30px;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0;
+	padding-left: 65px;
+	margin-left: -50px;
+	position: relative;
+	z-index: 2;
+}
+div.input.checkbox .checkmark{
+    height: 30px;
+    width: 50px;
+    background-color: #fff;
+    border: 1px solid #E1E6E8;
+    box-shadow: 0 0 10px rgba(29,29,27,0.06);
+    border-radius: 20px;
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	z-index: 1;
+}
+div.input.checkbox .checkmark:after {
+    height: 18px;
+    width: 18px;
+    border: 2px solid #E1E6E8;
+    box-shadow: 0 0 10px rgba(29,29,27,0.06);
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    border-radius: 50%;
+	transition: all 0.3s ease;
+}
+div.input.checkbox  input:checked ~ .checkmark{
+	border: 2px solid #65AF7B;
+	height: 29px;
+}
+div.input.checkbox  input:checked ~ .checkmark:after {
+    border-color: #65AF7B;
+	left: auto;
+	right: 5px;
+	height: 17px;
+    width: 17px;
+    border: 2px solid #65AF7B;
+    top: 2px;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+div.input.checkbox  .checkmark:after {
+    content: "";
+}
+
+/* Show the checkmark when checked */
+div.input.checkbox  input:checked ~ .checkmark:after {
+    display: block;
+    border-color: #65AF7B;
+}
+
+.input.checkbox.has-icon{
+	max-width: calc( 100% - 36px);
+	display: inline-block;
+}
+
+
+
+
+
+
+.wd-layout .wd-main-content{
+	padding-left: 0;
+}
+.wd-tab .wd-panel{
+	border: none;
+}
+.wd-title {
+	margin-bottom: 0;
+	height: 60px;
+	line-height: 60px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.wd-title .wd-title-left h2{
+	display: inline-block;
+	font-size: 20px;
+	font-weight: 600;
+	color: #424242;
+	margin-left: 20px;
+}
+.wd-title .wd-title-left{
+	width: calc(100% - 160px);
+	float: left;
+
+}
+.wd-title .wd-title-left img{
+	position: relative;
+	top: 10px;
+}
+a.btn-text > span{
+	height: 40px;
+	width: 160px;
+	background: none;
+	background-color: #5487FF;
+	text-align: center;
+	line-height: 40px;
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: normal;	
+}
+a.btn-text{
+	height: 40px;
+	width: 160px;
+	float: left;
+	position: relative;
+    top: 10px;
+}
+
+.wd-tab .wd-panel{
+	padding: 0;
+}
+.wd-tab .wd-content .wd-left-content{
+	width: 320px;
+	float: left;
+	background-color: #fff;
+	text-align: center;
+}
+
+.wd-tab .wd-content .wd-right-content{
+	width: calc(100% - 320px);
+
+}
+
+.wd-submit{
+	border-bottom: none;
+}
+.wd-submit .btn-submit{
+	height: 50px;	width: 120px;	background-color: #C6CCCF;
+	color: #fff;
+	line-height: 50px;
+	border-radius: 5px;
+	text-transform: uppercase;
+	display: inline-block;
+	background-image: none;
+	border: none;
+	text-align: center;
+	font-size: 14px;
+	font-family: "Open Sans";
+	cursor: pointer;
+}
+.wd-submit .btn-submit span{
+	background-image: none;
+	font-weight: normal;
+}
+.wd-submit .btn-submit:hover{
+	text-decoration: none;
+}
+.wd-submit .btn-submit.btn-green{
+	background-color: #5487FF;
+	float: right;
+}
+fieldset div.wd-submit{
+	width: 100%;
+	padding-top: 40px;
+}
+.wd-panel-policy{
+	text-align: center;
+	color: #C6CCCF;	font-size: 14px;	line-height: 18px;
+	padding-top: 23px;
+	padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 39px;
+}
+
+#ch_avatar{
+	margin-top: 27px;
+	border-bottom: 1px solid #c7cdd0;
+}
+#ch_avatar .employee-name{
+	color: #424242;	font-size: 20px;	font-weight: 600;	line-height: 18px;
+	text-transform: capitalize;
+	margin-bottom: 45px;
+}
+.wd-tab .wd-content{
+	position: relative;
+}
+/* Attachment */
+#avatar-upload{
+	padding: 20px;
+    box-shadow: 0 0 20px 1px rgba(29,29,27,0.06);
+}
+#avatar-upload .heading .close{
+	float: right;
+	position: relative;
+    cursor: pointer;
+    z-index: 999;
+}
+#avatar-upload .project-name{
+	display: inline-block;
+	font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}	
+#avatar-upload .trigger-upload{
+	margin-top: 20px;
+}
+#avatar-upload.show{
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+    background-color: #fff;
+}
+#avatar-upload.show{
+	display: block !important;
+	z-index: 999;
+}
+
+.trigger-upload fieldset label{
+	text-align: left;
+	color: #424242;
+	font-size: 13px;
+	font-weight: 400;
+}
+.trigger-upload fieldset div.wd-input{
+	position: relative;
+}
+.trigger-upload #gs-attach, .trigger-upload #gs-url{
+	top: 33px;
+}
+.trigger-upload fieldset div.wd-input input, .trigger-upload fieldset div.wd-input1 input{
+	width: 80%;
+}
+.light-popup.show{
+	width: 100%;
+	height: 100%;
+	background-color: #333;
+	opacity: 0.5;
+	display: inline-block;
+	position: absolute;
+	z-index: 99;
+	top: 0;
+	left: 0;
+}
+
+.wd-content-container{
+	box-sizing: border-box;
+	max-width: 940px;
+	margin: auto;
+}
+.input{
+	color: #242424;
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+.input label{
+	display: block;
+	margin-bottom: 10px;
+}
+.input input{
+	width: 100%;
+	padding: 0 20px;
+	height: 48px;
+	line-height: 50px;
+	border: 1px solid #E0E6E8;
+	border-radius: 3px;
+	background-color: #fff;
+}
+.input input:disabled{
+	background-color: #fafafa;
+	color: #C6CCCF;
+}
+#EmployeeConfirmPassword{
+	color: #C6CCCF;
+}
+body #wd-container-main.wd-project-detail .wd-layout{
+	background: #fff;
+}
+.wd-my-info,
+.wd-submit {
+    padding-top:  39px;
+    padding-bottom:  39px;
+    border-bottom:  1px solid #c7cdd0;
+}
+#ch_avatar{
+	position: relative;
+	display: block;
+	
+}
+#ch_avatar .employee-name{
+	color: #242424;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 30px;
+	text-align: center;
+}
+#ch_avatar .avatar-inner{
+	margin-bottom: 18px;
+	/* width: 160px; */
+	/* height: 160px; */
+	/* margin: 0 auto 14px; */
+	display: block;
+}
+#ch_avatar .avatar-inner .circle-name,
+#ch_avatar .avatar-inner img{
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+	margin: 0 auto 10px;
+	display: block;
+	font-size: 70px;
+	line-height: 160px;
+}
+.ch-edit{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.ch-edit .ch-edit-inner{
+	display: block;
+	width: 156px;
+	height: 156px;
+	margin: 0 auto;
+	position: relative;
+	border-radius: 50%;
+	border: 2px solid transparent;
+}
+
+.ch-edit.open .ch-edit-inner{
+	border: 2px solid #217FC2;
+}
+.open-ch-edit-button{
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	border: 2px solid #217FC2;
+	background: #217FC2;
+	position: absolute;
+	top: 118px;
+	left: 118px;
+	text-align: center;
+	z-index: 10;
+}
+.open-ch-edit-button:before{
+	content: '';
+	width:0;
+	height: 100%;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: -4px;
+	
+}
+.open-ch-edit-button .icon-edit{
+	display: inline-block;
+	vertical-align: middle;
+	color: #fff;
+}
+.open-ch-edit-button .icon-edit:before{
+	content: "\e05f";
+	font-family: 'simple-line-icons';
+	font-size: 20px;
+}
+.ch-edit-open {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+.ch-edit.open .ch-edit-open{
+	display: block;
+	opacity: 1;
+	visibility: visible;
+}
+.ch-edit.open .open-ch-edit-button .icon-edit:before,
+.ch-edit.open .open-ch-edit-button .icon-edit:after{
+	content: '';
+	width: 2px;
+	height: 20px;
+	background: #fff;
+	transform: rotate( 45deg);
+	display: inline-block;
+    margin-top: 3px;
+    margin-left: 1px;
+}
+.ch-edit.open .open-ch-edit-button .icon-edit:after {
+    margin-left: -2px;
+    transform: rotate(-45deg);
+}
+.wd-color-avat >p{
+	display: none;
+}
+.ch-edit #edit_avatar_employee{
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid #217FC2;
+    background: #fff url('/img/new-icon/camera-icon.png') center no-repeat;
+    position: absolute;
+    top: 60px;
+    left: 128px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.ch-edit.open #edit_avatar_employee{
+	top: 48px;
+}
+.wd-color-avat ul{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    margin-left: -80px;
+}
+.wd-color-avat ul li {
+    width: calc( 100% + 24px);
+    height: 20px;
+    transform: rotate(-111deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+	margin: -10px -12px 0;
+	transition: all 0.3s ease;
+}
+.ch-edit.open .wd-color-avat ul li:nth-child(2){
+	transform: rotate(-90deg);
+}
+.ch-edit.open .wd-color-avat ul li:nth-child(3){
+	transform: rotate(-68deg);
+}
+.ch-edit.open .wd-color-avat ul li:nth-child(4){
+	transform: rotate(-46deg);
+}
+.ch-edit.open .wd-color-avat ul li:nth-child(5){
+	transform: rotate(-27deg);
+}
+.ch-edit.open .wd-color-avat ul li:nth-child(6){
+	transform: rotate(-5deg);
+}
+.wd-color-avat ul li a{
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	border-radius: 50%;
+	border: 2px solid #217FC2;
+}
+.wd-content-container a:hover{
+	text-decoration: none;
+}
+.wd-my-info .copy-timesheet:before{
+	content: '';
+}
+.input.password{
+	position: relative;
+}
+.strength_meter {
+    color:  red;
+    font-size:  12px;
+}
+.strength_meter img{
+    position: absolute;
+	width: 16px;
+	height: 16px;
+    bottom: 17px;
+	right: 7px;
+}
+.wd-right-title{
+	color: #242424;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 18px;
+	margin-bottom: 8px;
+}
+.wd-color-avat ul li.selected a{
+	padding: 4px;
+    border-width: 1px;
+    margin-left: -2px;
+    margin-top: -2px;
+	transition: all 0.3s ease;
+}

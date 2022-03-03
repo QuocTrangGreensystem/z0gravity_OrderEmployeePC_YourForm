@@ -1,0 +1,373 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 7, 2019, 11:24:39 AM
+    Author     : admin
+*/
+.sub-menu{
+    z-index: 9999999;
+}
+#z0g_chat{
+    display: none   
+}
+.z0g_chat{
+    position: absolute; width: inherit; color: #000; background: #fff; left: 398px;
+    box-shadow: 0px 0px 15px #ddd;
+}
+@media(min-width: 1100px){
+	.z0g_chat{
+		width: 1100px;
+	}
+}
+.popup_cancel{
+    float: right;
+    padding-top: 14px
+}
+.z0g_chat #comment-ct{
+    width: 100% !important; 
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+.z0g_chat #project_container{
+    width: auto !important;
+    height: 531px;
+    padding: 20px;
+    padding-left: 0px;
+}
+.z0g_chat .comment-ct{
+    
+    overflow: auto;
+    border-bottom: none !important;
+}
+
+.z0g_chat a{
+    color: #074E8C;
+}
+
+.z0g_chat .scrollbar
+{
+    float: left;
+    background: #F3F5F7;
+    overflow: auto;
+    width: 100%;
+}
+#accordion::-webkit-scrollbar-track, #comment-ct::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F2F5F7;
+}
+
+#accordion::-webkit-scrollbar, #comment-ct::-webkit-scrollbar
+{
+    width: 4px;
+    background-color: #F2F5F7;
+}
+
+#accordion::-webkit-scrollbar-thumb, #comment-ct::-webkit-scrollbar-thumb
+{
+    background-color: #C7CCCF;
+}
+.z0g_chat_body{
+    display: none
+}
+
+.z0g_chat_left{
+    float: left;
+    width:35%;
+    border-right: 1px solid #ddd;
+}
+.z0g_chat_left_search{
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-right: none;
+    position: relative
+}
+.z0g_chat_left_search img.btn-search{
+    position: absolute;
+    top: 35px;
+    right: 35px;
+}
+.z0g_chat_left_search input{
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 100%;
+    font-size: 16px;
+    font-style: italic;
+}
+.z0g_chat_left_search .popup_cancel{
+    display: none
+}
+.z0g_chat_left ul li {
+    padding: 15px;
+    font-size: 15px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    position: relative;
+}
+.z0g_chat_left ul li a{
+    color: #000000
+}
+
+.z0g_chat_left ul li.wd-current{
+    background: #fff;
+    border-left: 5px solid #217FC2;
+}
+.z0g_chat_right{
+    float: left;
+    width:65%;
+}
+.z0g_chat_right_comment{
+    padding: 20px;
+    position: relative
+}
+.z0g_chat_right_comment .send{
+    position: absolute;
+    top: 35px;
+    right: 100px;
+}
+.z0g_chat_right_comment textarea{
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 90%;
+    height: 50px;
+    resize: none;
+    font-size: 16px;
+    font-style: italic;
+}
+.z0g_chat_right_comment .close{
+    float: right;
+    color: #000;
+}
+.z0g_chat_right h2{
+    padding-left: 20px;
+    font-size: 24px;
+    color: #08c;
+    padding-bottom: 10px;
+    margin-top: -5px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {display:none;}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+    border: 1px solid #ccc;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 17px;
+    left: 0px;
+    bottom: 0px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+}
+
+input:checked + .slider:before {
+    border: 2px solid #2ab934;
+    height: 15px;
+    width: 15px;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(20px);
+}
+.time_notify{
+    padding: 0 20px 20px 20px;
+    overflow: hidden;
+}
+.time_notify .time{
+    float: left
+}
+.time_notify .time img{
+    margin-right: 10px
+}
+.time_notify .notify_email{
+    float: right
+}
+.my-comment{
+    display: inline-block;
+    width: calc( 100% - 60px) !important;
+}
+.comment-content{
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+
+    margin-bottom: 0 !important;
+}
+.sub .comment-content {
+    padding-bottom: 20px;
+}
+.my-header{
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.my-header-left{
+    float: left
+}
+.my-header-left .my-date p{
+    padding: 5px 0;
+}
+.my-header-left .my-date p img{
+    margin-right: 10px;
+}
+.my-header-right{
+    float: right
+}
+.my-header-right .like{
+    padding-right: 5px;
+    color: #666666;
+    font-weight: normal;
+    font-size: 12px;
+}
+.my-header-right .like img{
+    margin-left: 5px;
+    margin-top: 5px;
+}
+.my-header-right .reply{
+    padding-left: 5px;
+    color: #666666;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.my-header-right .reply img{
+    margin-left: 5px;
+    margin-top: 5px;
+}
+.my-avatar{
+    width: 40px !important;
+    height: 40px; 
+    float: left;
+    margin-right: 20px;
+}
+.my-avatar .avatar{
+    margin: 0 !important;
+    width: 40px;
+    height: 40px;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 50%;
+}
+.sub{
+    margin-left: 60px;
+    margin-top: 20px;
+}
+.z0g_chat .loading, .z0g_chat .loading_cmt{
+    margin: 100px auto;
+    text-align: center;
+}
+.back{
+    display: none;
+    color: #000;
+}
+.message-new-ct {
+    float: right;
+    border: 1px solid #C7CCCF;
+    background: #C7CCCF;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+.message-new-ct.red{
+    background: #E74E4F;
+    color: #fff;
+    border: 1px solid #E74E4F;
+}
+.wd-zog-messages .comment-content{
+    border-top: 0;
+    border-bottom: 1px solid #ddd;
+    margin-right: 20px
+}
+.wd-zog-messages .my-header{
+    margin-bottom: 0;
+}
+.wd-zog-messages .user-name{
+    display: none
+}
+.wd-zog-messages .my-content{
+    margin-left: -60px;
+    margin-top: 15px;
+}
+.wd-zog-messages .sub .comment-content {
+    border-bottom: 0;
+    border-top: 1px solid #ddd;
+    margin-right: 0;
+}
+.my-date em, .time span{
+    text-transform: lowercase;
+}
+@media(max-width: 768px){
+    .z0g_chat{
+        left: -225px;
+        z-index: 9999;
+    }
+    .z0g_chat_left{
+        width: 75.5%;
+    }
+    .z0g_chat_right{
+        width: 75.5%;
+        display: none
+    }
+    .z0g_chat_left_search input{
+        width: 90%;
+    }
+    .z0g_chat_left_search img.btn-search{
+        right: 110px;
+    }
+    .z0g_chat_left_search .popup_cancel{
+        display: block
+    }
+
+    .scrollbar{
+        width: 100%;
+    }
+    .back{
+        display: block;
+        color: #000 !important;
+        font-size: 15px;
+        padding: 10px 20px 0 20px;
+    }
+}
+.z0g_chat_body #listProject{
+	overflow: auto;
+}
+.z0g_chat_right .comment-conten{
+	display: block;
+}
+.z0g_chat_right .wrap-list-comment{
+	overflow: auto;
+}

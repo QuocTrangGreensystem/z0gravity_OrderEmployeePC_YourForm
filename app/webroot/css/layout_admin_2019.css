@@ -1,0 +1,180 @@
+/* This file use for design 2019*/
+
+body{
+	background: #f2f5f7 !important;
+	overflow-x: hidden;
+	font-family: "Open Sans";
+}
+#layout{
+	font-size: 14px;
+}
+.wd-layout .wd-main-content .wd-tab{
+	background: #f2f5f7;
+	max-width: 1920px;
+}
+.slick-viewport .slick-row .slick-cell{
+	border-right: 1px solid #F2F5F7;
+	box-sizing: border-box;
+	min-height: 33px;
+}
+body #layout{
+	min-height: inherit;
+	background: #f2f5f7;
+}
+.slick-viewport .slick-row .slick-cell.wd-grey-background{
+	background-color: #f8fafb;
+}
+.slick-viewport .slick-row .slick-cell.wd-grey-background input{
+	background: transparent;
+}
+.slick-sort-indicator {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 4px;
+}
+.slick-header-sortable .slick-sort-indicator{
+	float: right;
+	background: transparent url('/img/new-icon/sort_able.png') center no-repeat;
+}
+.slick-header-sortable .slick-sort-indicator.slick-sort-indicator-desc{
+	background-image: url('/img/new-icon/sort_able_desc.png');
+}
+.slick-header-sortable .slick-sort-indicator.slick-sort-indicator-asc{
+	background-image: url('/img/new-icon/sort_able_asc.png');
+}
+.slick-viewport .slick-row .slick-cell.slick-cell-merged{
+	border-left: none;
+}
+.grid-canvas .error .slick-cell span{
+    color: #F71230;
+}
+body #wd-container-main.wd-project-admin .wd-layout{
+	background: #f2f5f7;
+}
+.filterer{
+	background: none !important;
+	background-color: #f2f5f7 !important;
+}
+.slick-headerrow .slick-headerrow-column input,.slick-headerrow .slick-headerrow-column select{
+	padding:4px 3px;
+	border: none;
+	width: 90%;
+	background-color: #F2F5F7;
+}
+.slick-cell, .slick-headerrow-column {
+    position: absolute;
+    border: 1px solid transparent;
+    border-right: none;
+    border-bottom-color: #E0E0E0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    z-index: 1;
+    white-space: nowrap;
+    cursor: default;
+    margin: 0;
+    padding: 1px 4px 2px 4px;
+}
+.multiselect-filter a.multiSelect {
+    padding: 0;
+    width: 98%;
+    height: 23px;
+    background-color: #F2F5F7;
+    border: none;
+    margin: 0;
+}
+a.multiSelect{
+	background: url(../../img/new-icon/down.png) no-repeat 100% center;
+}
+table.display td{
+	padding: 6px 5px 6px;
+    border: 1px solid #e0e0e0;
+    font-size: 13px;
+    color: #414141;
+	vertical-align: middle;
+}
+.wd-bt-big a.wd-hover-advance-tooltip {
+    display: inline-block !important;
+    background: url(../../img/new-icon/close.png) no-repeat center center !important;
+    text-indent: -1983px;
+    overflow: hidden;
+    width: 24px;
+    height: 24px;
+}
+.wd-bt-big a.wd-hover-advance-tooltip:hover {
+    background: url(../../img/new-icon/close-blue.png) no-repeat center center !important;
+	background-position: 5px;
+}
+table tbody tr td.wd-action a.wd-edit {
+    display: inline-block !important;
+    background: url(../../img/new-icon/pen.png) no-repeat center center !important;
+    text-indent: -1983px;
+    overflow: hidden;
+    width: 24px;
+    height: 24px;
+}
+table tbody tr td.wd-action a.wd-edit:hover {
+    background: url(../../img/new-icon/pen-blue.png) no-repeat center center !important;
+	background-position: 5px;
+}
+.wd-bt-big .wd-edit {
+	display: inline-block !important;
+    background: url(../../img/new-icon/pen.png) no-repeat center center !important;
+    text-indent: -1983px;
+    overflow: hidden;
+    width: 24px;
+    height: 24px;
+}
+.wd-bt-big .wd-edit:hover{
+	background: url(../../img/new-icon/pen-blue.png) no-repeat center center !important;
+	background-position: 5px;
+}
+.wd-input-select{
+	display: block;
+	position: relative;
+}
+.wd-input-select:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.wd-input-select #loadingElm{
+	position: absolute;
+    top: 15px;
+    right: 10px;
+}
+.wd-input-select select{
+	width: 60px;
+    background: url(../../img/new-icon/down.png) no-repeat center right 10px;
+    -webkit-appearance: none;
+    padding: 5px;
+    float: right;
+    border: 1px solid rgb(179, 179, 179);
+}
+.wd-list-project .wd-tab .wd-content label{
+	font-size: 14px;
+    /* width: 200px; */
+	width: 33%;
+    font-weight: 600;
+    color: #424242;
+    height: 30px;
+    display: block;
+    float: left;
+}
+#project_container {
+	float: left;
+}
+.slick-cell .action-menu {
+    text-align: center;
+}
+.action-menu-item:hover svg .cls-1{
+	fill: #F05352;
+}
+.wd-input-select .wd-select-no-title{
+	width: 100%;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+    padding: 0px 10px;
+}

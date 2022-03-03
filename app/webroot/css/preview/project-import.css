@@ -1,0 +1,329 @@
+.error-info li {
+	margin-left: 20px;
+	list-style: decimal;
+}
+
+.buttons ul.type_buttons {
+	padding-right: 2px!important;
+}
+
+table tbody tr:hover td {
+	background: none!important;
+}
+
+center {
+	color: red;
+	font-weight: 700;
+}
+
+.ui-dialog {
+	font-size: 11px;
+}
+
+#dialog_import_CSV label {
+	color: #000;
+}
+
+.type_buttons .error-message {
+	background-color: #FFF;
+	clear: both;
+	color: #D52424;
+	display: block;
+	width: 212px;
+	padding: 5px 0 0;
+}
+
+.form-error {
+	border: 1px solid #D52424;
+	color: #D52424;
+}
+
+.import-fieldset {
+	border: 1px solid #D4D0C8;
+	margin-bottom: 20px;
+	padding: 5px;
+}
+
+.import-legend {
+	font-size: 14px;
+	font-weight: 700;
+	padding: 5px;
+}
+
+.table-info {
+	min-width: 200px;
+}
+
+.table-col {
+	min-width: 200px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.display {
+	min-width: 1165px;
+}
+
+.dataImport {
+	overflow: auto;
+	max-height: 300px;
+}
+
+.buttons ul.type_buttons {
+	height: 33px;
+}
+.buttons ul.type_buttons li a {
+	text-indent: -9999px;
+	height: 33px;
+}
+.display td,
+.display th {
+	vertical-align: middle;
+}
+.buttons ul.type_buttons {
+	height: 33px;
+}
+.buttons ul.type_buttons li{
+	float: right;
+	margin-left: 0px;
+	margin-top: 3px;
+}
+.buttons ul.type_buttons li a {
+	text-indent: -9999px;
+	height: 33px;
+}
+.buttons ul.type_buttons li a.export-excel-icon-all{
+	margin-top: -5px;
+}
+.gradient {
+	cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #fff;
+    border: none;
+    padding: 8px 13px;
+    background-color: #C6CCCF;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+    text-decoration: none;
+    background-size: 250%;
+    background-image: linear-gradient(to right,#C6CCCF 0%,#C6CCCF 39%,#6EAF79 64%,#6EAF79 100%);
+    display: inline-block;
+    margin-right: 16px;
+}
+
+.gradient:hover {
+	background-color: #6EAF79; 
+    background-position: right center;
+}
+#error .error-message {
+	margin: 0;
+	margin-bottom: 10px;
+}
+#download-sample {
+	margin-left: 10px;
+}
+#wd-container-main.wd-project-index .wd-layout{
+	background-color: transparent;
+}
+body.loading{
+	position: relative;
+}
+body.loading:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255, 0.6) url(/img/business/wait-1.gif) no-repeat center center;
+    background-size: 30px;
+    z-index: 12;
+    display: block;
+}
+.wd-table .grid-canvas .slick-row.loading {
+    background: url(../../img/ajax-loader.gif) no-repeat 11px center;
+	padding: 0;
+    opacity: 1;
+}
+.wd-list-project .wd-tab .wd-content label {
+	width: 50px;
+    margin-top: 5px;
+}
+.wd-list-project .slick-headerrow .slick-headerrow-column select {
+    border: none;
+    background-color: transparent;
+    height: 40px;
+    line-height: 40px;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-style: normal;
+    width: calc(100% - 3px);
+    color: #424242;
+}
+.wd-layout .wd-list-project .wd-tab .wd-content label{
+	width: inherit;
+    margin-right: 10px;
+}
+.wd-content .wd-action-import{
+	border: 1px dashed #eee;    border-radius: 4px;
+    height: 60px;
+    line-height: 60px;
+}
+.wd-content .wd-action-import .wd-step-import{
+	display: inline-block;
+    vertical-align: middle;
+    width: 33%;
+    text-align: center;
+	position: relative;
+}
+.wd-content .wd-action-import .wd-step-import:not(:last-child){
+	border-right: 1px dashed #eee;
+}
+.wd-content .wd-action-import .wd-step-import .wd-step-number{
+	font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: -10px;
+    color: #ddd;
+    opacity: 0.2;
+    font-weight: bold;
+}
+.wd-content .wd-action-import .wd-step-import.current .wd-step-number{
+	color: #6EAF79;
+	opacity: 1;
+}
+.wd-content .wd-action-import .wd-step-import.current button{
+	background: #6EAF79;
+	color: #fff;
+	border-color: #6EAF79;
+}
+a.multiSelect.hover, a.multiSelect.active,a.multiSelect.focus {
+    background: url(../../img/new-icon/down.png) no-repeat 100% center;
+	border: none;
+}
+a.multiSelect{
+	height: 40px;
+    line-height: 40px;
+    vertical-align: top;
+	width: calc(100% - 25px);
+}
+a.multiSelect span{
+	margin: 0;
+	margin-left: 5px;
+	font-style: normal;
+}
+a.multiSelect span i{
+	font-style: normal;
+}
+
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 9px #C6CCCF;
+	border-radius: 9px;
+	background-color: #fff;
+}
+::-webkit-scrollbar{
+	width: 8px;
+	height: 8px;
+	border-radius: 8px;
+}
+::-webkit-scrollbar-thumb {
+	background: #C6CCCF;
+	border-radius: 9px;
+}
+body div {
+    scrollbar-color: #C6CCCF #fff;
+    scrollbar-width: thin;
+}
+.wp-error{
+	color: #F05352;
+}
+.wd-t3 .btn {
+	width: 38px;
+	height: 38px;
+	line-height: 38px;
+	border: 1px solid #E1E6E8;
+	background-color: #fff;
+	color: #242424;
+	border-radius: 2px;
+	font-size: 20px;
+	margin: 0;
+	margin-right: 6px;
+	text-align: center;
+	transition: all 0.4s ease;
+	cursor: pointer;
+	display: inline-block;
+	z-index: 2;
+}
+.wp-error.wp-cell-empty{
+	position: relative;
+    display: block;
+    height: 36px;
+    width: 100%;
+}
+.wp-error.wp-cell-empty:after{
+	position: absolute;
+    content: '';
+    border: 1px solid #F05352;
+    display: block;
+    top: 0px;
+    left: -4px;
+    right: -3px;
+    bottom: -2px;
+}
+.slick-viewport .slick-row .slick-cell.no-padding {
+    padding: 0;
+}
+/* Checkbox */
+div.checker{
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	display: inline;
+}
+div.checker span{
+	width: 18px;
+	height: 18px;
+	border: 1px solid #E1E6E8;
+	background: #fff;
+	border-radius: 2px;
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	top: 2px;
+}
+div.checker span:before {
+	content: '';
+	width: 12px;
+	height: 12px;
+	background: white;
+	border-radius: 2px;
+	display: block;
+	top: 2px;
+	left: 2px;
+	top: 3px;
+	left: 3px;
+	position: relative;			
+}
+div.checker:hover span,
+div.checker span.checked{
+	box-shadow: 0 0 10px 1px rgba(29,29,27,0.06);
+}
+div.checker span.checked:before{
+	background-color: #5584FF;
+}
+div.checker span.disabled{
+	background-color: #efefef;
+}
+div.checker span.checked.disabled:before{
+	background-color: #d9d9d9;
+}
+.row-actions .wd-checkbox{
+	display: block;
+    text-align: center;
+}
+/* END Checkbox */

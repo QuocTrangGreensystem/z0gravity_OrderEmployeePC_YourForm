@@ -1,0 +1,119 @@
+<?php
+/** 
+ * AZURÉE
+ * Copyright 2011 -2014 by Global SI (http://globalsi.fr) 
+ * and Green System Solutions (http://greensystem.vn)  
+ */
+class ProjectBudgetInternalDetail extends AppModel {
+
+    var $name = 'ProjectBudgetInternalDetail';
+    
+    var $belongsTo = array(
+        'Project' => array(
+            'className' => 'Project',
+            'foreignKey' => 'project_id',
+            'conditions' => '',
+            'fields' => '',
+            'order' => ''
+        ),
+        'Activity' => array(
+            'className' => 'Activity',
+            'foreignKey' => 'activity_id',
+            'conditions' => '',
+            'fields' => '',
+            'order' => ''
+        )
+    );
+    var $validate = array(
+        //'title' => array(
+//            'notempty' => array(
+//                'rule' => array('notempty'),
+//                'message' => 'The Part is not blank!',
+//            )
+//            //'isUnique' => array(
+////                'rule' => 'isUnique',
+////                'message' => 'The Part has already been exist.',
+////            )
+//        ),
+//        'project_id' => array(
+//            'notempty' => array(
+//                'rule' => array('notempty'),
+//                'message' => 'The Project is not blank!',
+//            ),
+//        )
+    );
+
+    /**
+     * I18n validate
+     *
+     * @param string $field The name of the field to invalidate
+     * @param mixed $value Name of validation rule that was not failed, or validation message to
+     *    be returned. If no validation key is provided, defaults to true.
+     * 
+     * @return void
+     */
+    public function invalidate($field, $value = true) {
+        $value = __($value, true);
+        parent::invalidate($field, $value);
+    }
+    
+    public function afterSave(){
+        if(!empty($this->data[$this->alias])){
+            $this->saveInternalDetailToSyns($this->data[$this->alias]);
+        }
+    }
+    /**
+     * Save project internal detail into table project_budget_syns
+     * 
+     */
+    public function saveInternalDetailToSyns($datas = array()){
+        $Internal = ClassRegistry::init('ProjectBudgetInternal');
+        $InternalDetail = ClassRegistry::init('ProjectBudgetInternalDetail');
+        $BudgetSyn = ClassRegistry::init('ProjectBudgetSyn');
+        if(!empty($datas) && (!empty($datas['project_id']) || !empty($datas['activity_id']))){
+            if($datas['activity_id'] != 0){
+                $conditions = array('activity_id' => $datas['activity_id']);
+            } else {
+                $conditions = array('project_id' => $datas['project_id']);
+            }
+            $internals = $Internal->find('first', array(
+                'recursive' => -1,
+                'conditions' => $conditions,
+                'fields' => array('average_daily_rate')
+            ));
+            $average = !empty($internals['ProjectBudgetInternal']['average_daily_rate']) ? $internals['ProjectBudgetInternal']['average_daily_rate'] : 0;
+            $details = $InternalDetail->find('all', array(
+                'recursive' => -1,
+                'conditions' => $conditions,
+                'fields' => array('budget_md')
+            ));
+            $InternalBudget = 0;
+            if(!empty($details)){
+                foreach($details as $detail){
+                    $dx = $detail['ProjectBudgetInternalDetail'];
+                    if(empty($dx['budget_md'])){
+                        $dx['budget_md'] = 0;
+                    }
+                    $InternalBudget += ($dx['budget_md']*$average);
+                }
+            }
+            $saved = array(
+                'project_id' => $datas['project_id'],
+                'activity_id' => $datas['activity_id'],
+                'internal_costs_average' => $average,
+                'internal_costs_budget' => $InternalBudget
+            );
+            $last = $BudgetSyn->find('first', array(
+                'recursive' => -1,
+                'conditions' => $conditions,
+                'fields' => array('id')
+            ));
+            $BudgetSyn->create();
+            if(!empty($last) && !empty($last['ProjectBudgetSyn']['id'])){
+                $BudgetSyn->id = $last['ProjectBudgetSyn']['id'];
+            }
+            $BudgetSyn->save($saved);
+        }
+    }
+}
+?>

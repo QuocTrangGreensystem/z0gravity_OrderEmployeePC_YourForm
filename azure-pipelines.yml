@@ -1,0 +1,29 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  branches:
+    include:
+    - release/*
+    - hotfix/*
+    - develop
+    - master
+stages:
+- stage: Build
+  jobs:
+  - job: Build
+    pool: z0pool
+    steps:
+    - bash: |
+        echo Git archive changed files.
+        git archive -o '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip' HEAD $(git diff --diff-filter=ACMRTUXB --name-only $(git rev-parse HEAD^1) HEAD)
+        echo List changed files:
+        zipinfo -1 '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
+

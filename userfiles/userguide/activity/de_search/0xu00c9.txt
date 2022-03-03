@@ -1,0 +1,16 @@
+ÉCHÉANT
+ 3
+ÉCRAN
+ 5,8
+ÉGALEMENT
+ 5,4
+ÉQUIPE
+ 7,4,9,5
+ÉTAIT
+ 4
+ÉTAT
+ 7
+ÉTÉ
+ 4,7,5
+ÉVITER
+ 4,3

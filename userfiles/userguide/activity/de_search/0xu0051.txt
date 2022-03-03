@@ -1,0 +1,14 @@
+QU
+ 4,3
+QU'ELLE
+ 4
+QUE
+ 4,7,5,3,9,6
+QUELLE
+ 4
+QUI
+ 4,3,7,5
+QU’ELLE
+ 4
+QU’À
+ 3

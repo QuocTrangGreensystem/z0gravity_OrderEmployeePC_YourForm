@@ -1,0 +1,75 @@
+msgid "Project details"
+msgstr "Détails du projet"
+
+msgid "Project Name"
+msgstr "Nom"
+
+msgid "Project long name"
+msgstr "Nom Long"
+
+msgid "Project Code 1"
+msgstr "Code"
+
+msgid "Project Code 2"
+msgstr "Code bis"
+
+msgid "Company"
+msgstr "Société"
+
+msgid "Project Manager"
+msgstr "Chef de projet"
+
+msgid "Project type"
+msgstr "Type"
+
+msgid "Program"
+msgstr "Programme"
+
+msgid "Priority"
+msgstr "Priorité"
+
+msgid "Implementation Complexity"
+msgstr "Complexité d'implémentation"
+
+msgid "Created value"
+msgstr "Création valeur"
+
+msgid "Status"
+msgstr "Statut"
+
+msgid "Current Phase"
+msgstr "Phase courante"
+
+msgid "Link To RMS Activity"
+msgstr ""
+
+msgid "Issues"
+msgstr "Problème"
+
+msgid "Primary Objectives"
+msgstr "Finalité"
+
+msgid "Project Objectives"
+msgstr "Objectifs"
+
+msgid "Constraint"
+msgstr "Contraintes"
+
+msgid "Remark"
+msgstr "Remarques"
+
+msgid "Chief Business"
+msgstr "Sponsor"
+
+msgid "Technical manager"
+msgstr "Coordinateur Technique"
+
+msgid "Start Date"
+msgstr "Début"
+
+msgid "End Date"
+msgstr "Fin"
+
+msgid "Customer"
+msgstr "Client"
+

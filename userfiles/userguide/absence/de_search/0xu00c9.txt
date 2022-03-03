@@ -1,0 +1,12 @@
+ÉCHÉANT
+ 5
+ÉCRAN
+ 5
+ÉQUIPE
+ 5,6
+ÉQUIPES
+ 3
+ÉTANT
+ 4
+ÉTAPE
+ 6

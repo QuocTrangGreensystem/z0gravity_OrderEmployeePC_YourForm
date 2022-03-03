@@ -1,0 +1,123 @@
+/* Popup upload */
+
+#template_upload{	
+	border: 1px solid #E0E6E8;	
+	background-color: #FFFFFF;	
+	box-shadow: 0 5px 10px 1px rgba(29,29,27,0.06);
+	padding: 20px;
+	color: #424242;
+	box-sizing: border-box;
+	padding-top: 15px;	
+}
+
+#template_upload *{
+	box-sizing: border-box;
+	font-family: 'Open sans';
+	font-size: 14px;
+	color: #C6CCCF;
+}
+
+#template_upload .heading h4{
+	display: inline-block;
+	color: #242424;	
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: 600;
+	position: relative;
+	top: -3px;
+}
+#template_upload .heading span.close-popup{
+	display: inline-block;
+	float: right;
+}
+#template_upload .trigger-upload .dropzone{
+	width: 100%;
+}
+#template_upload .input.text label{
+	display: block;
+	color: #242424;	
+	font-size: 14px;	
+	font-weight: 600;	
+	line-height: 18px;
+	margin-bottom: 5px;
+}
+#template_upload .input.text input{
+	height: 50px;
+	border: 1px solid #E0E6E8;	
+	background-color: #FFFFFF;
+	line-height: 50px;
+	width: 100%;
+	padding-left: 20px;
+	padding-right: 20px;
+	    border-radius: 3px;
+}
+#template_upload .actions{
+	margin-top: 20px;
+}
+#template_upload .actions li{
+	display: inline-block;
+	vertical-align: top;
+}
+#template_upload .actions li:last-child{
+	float: right;
+}
+#template_upload .actions li a{
+	height: 40px;	width: 100px;	background-color: #C6CCCF;
+	display: inline-block;
+	line-height: 40px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 14px;	font-weight: 600;
+	border-radius: 3px;
+	color: #fff;
+}
+#template_upload .actions li a:hover{
+	text-decoration: none;
+}
+#template_upload .actions li a.new{
+	background-color: #217FC2;
+}
+#template_upload{
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 999;
+}
+.light-popup{
+	position: absolute;
+	z-index: 8;
+	width: 100%;
+	height: 100%;
+	display: none;
+	background-color: #fff;
+	opacity: 0.7;
+}
+#template_upload.show, .light-popup.show{
+	display: block;
+}
+#content_comment .append-comment ul li .file-name{
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: calc(100% - 75px);
+    display: inline-block;
+    color: #424242;
+    float: none;
+}
+#template_upload #content_comment .content-attachment{
+	padding-top: 0;
+}
+#template_upload  .trigger-upload .dz-message{
+	max-width: 76%;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 12px;
+}
+#template_upload  .trigger-upload .dz-message p{
+	margin-top: 5px;
+}
+#content_comment ul li i{
+	font-family: 'simple-line-icons';
+}

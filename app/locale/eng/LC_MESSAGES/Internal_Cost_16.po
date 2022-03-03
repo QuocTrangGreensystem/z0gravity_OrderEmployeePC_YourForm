@@ -1,0 +1,24 @@
+msgid "Budget M.D"
+msgstr ""
+
+msgid "Engaged €"
+msgstr ""
+
+msgid "Funder"
+msgstr "COMITE"
+
+msgid "Budget €"
+msgstr ""
+
+msgid "Remain €"
+msgstr ""
+
+msgid "Profit Center"
+msgstr "FILIERE"
+
+msgid "Forecast M.D"
+msgstr ""
+
+msgid "Forecast €"
+msgstr ""
+

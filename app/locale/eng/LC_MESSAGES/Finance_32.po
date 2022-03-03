@@ -1,0 +1,39 @@
+msgid "Budget Investment"
+msgstr ""
+
+msgid "Investment Total Budget"
+msgstr ""
+
+msgid "Investment Budget (Y)"
+msgstr ""
+
+msgid "Budget Operation"
+msgstr ""
+
+msgid "Operation Total Budget"
+msgstr ""
+
+msgid "Operation Budget (Y)"
+msgstr ""
+
+msgid "Investment Total Avancement"
+msgstr ""
+
+msgid "Operation Total Avancement"
+msgstr ""
+
+msgid "Investment Total Percent"
+msgstr ""
+
+msgid "Investment Avancement (Y)"
+msgstr ""
+
+msgid "Operation Avancement (Y)"
+msgstr ""
+
+msgid "Avancement"
+msgstr ""
+
+msgid "Operation Total Percent"
+msgstr ""
+

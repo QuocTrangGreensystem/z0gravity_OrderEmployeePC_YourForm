@@ -1,0 +1,75 @@
+msgid "Comment"
+msgstr ""
+
+msgid "Planning"
+msgstr ""
+
+msgid "Progress"
+msgstr ""
+
+msgid "Budget"
+msgstr ""
+
+msgid "Staffing"
+msgstr ""
+
+msgid "Risk"
+msgstr ""
+
+msgid "Issue"
+msgstr ""
+
+msgid "Log Comment"
+msgstr ""
+
+msgid "Customer Point Of View"
+msgstr ""
+
+msgid "Done"
+msgstr ""
+
+msgid "To Do"
+msgstr ""
+
+msgid "Acceptance"
+msgstr ""
+
+msgid "Progress %"
+msgstr ""
+
+msgid "Information"
+msgstr ""
+
+msgid "Budget status"
+msgstr ""
+
+msgid "Planning status"
+msgstr ""
+
+msgid "Risk status"
+msgstr ""
+
+msgid "Staffing status"
+msgstr ""
+
+msgid "Issue status"
+msgstr ""
+
+msgid "Trend"
+msgstr ""
+
+msgid "Delay"
+msgstr ""
+
+msgid "Created"
+msgstr ""
+
+msgid "Updated"
+msgstr ""
+
+msgid "Weather"
+msgstr ""
+
+msgid "Action"
+msgstr ""
+

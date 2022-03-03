@@ -1,0 +1,273 @@
+1
+ Z0G
+ index.htm
+2
+ Utiliser z0 Gravity
+ utiliser_z0_gravity.htm
+3
+ Chapitre 1 - Prendre en main la solution
+ chapitre_1___prendre_en_main_la_solution.htm
+4
+ I - Bandeau menu et visualisation des projets
+ i___bandeau_menu_et_visualisation_des_projets.htm
+5
+ A - Liste des projets sous forme de vignettes
+ a___liste_des_projets_sous_forme_de_vignettes.htm
+6
+ B - Liste des projets
+ b___liste_des_projets.htm
+7
+ II -  Vues personnalisées
+ ii____vues_personnalisees.htm
+8
+ A - Créer une vue
+ a___creer_une_vue.htm
+9
+ B - Modifier et/ou supprimer une vue
+ b___modifier_et_ou_supprimer_une_vue.htm
+10
+ C - Changer de vue et accéder aux projets de statuts différents
+ c___changer_de_vue_et_acceder_aux_projets_de_statuts_differents.htm
+11
+ D - Mettre à jour l’avancement des projets à partir des vues  
+ d___mettre_a_jour_l_avancement_des_projets_a_partir_des_vues____.htm
+12
+ Chapitre 2 - Manager un projet
+ chapitre_2___manager_un_projet.htm
+13
+ I - Créer un projet 
+ i___creer_un_projet_.htm
+14
+ A - zoom sur l'onglet opportunité
+ a___zoom_sur_l_onglet_opportunite.htm
+15
+ B - Créer un nouveau projet
+ b___creer_un_nouveau_projet.htm
+16
+ a - Créer un projet sans modèle
+ a___creer_un_projet_sans_modele.htm
+17
+ b - Dupliquer un projet de référence 
+ b___dupliquer_un_projet_de_reference_.htm
+18
+ C - Créer des projets modèles
+ c___creer_des_projets_modeles.htm
+19
+ II. Fiche projet
+ ii__fiche_projet.htm
+20
+ A - La fiche en détail
+ a___la_fiche_en_detail.htm
+21
+ B - Localisation
+ b___localisation.htm
+22
+ C - Vignettes
+ c___vignettes.htm
+23
+ D - Visuels/vidéo
+ d___visuels_video.htm
+24
+ III - Création de valeur/Scoring
+ iii___creation_de_valeur_scoring.htm
+25
+ IV -  Dépendances
+ iv____dependances.htm
+26
+ V - Planning
+ v___planning.htm
+27
+ A - Lotir votre projet
+ a___lotir_votre_projet.htm
+28
+ B - Créer et gérer vos phases
+ b___creer_et_gerer_vos_phases.htm
+29
+ a - L'écran PLANNING / PHASES en détail
+ a___l_ecran_planning___phases_en_detail.htm
+30
+ b - Ajouter et supprimer une phase
+ b___ajouter_et_supprimer_une_phase.htm
+31
+ c - Gantt
+ c___gantt.htm
+32
+ d - Avancement manuel
+ d___avancement_manuel.htm
+33
+ C - Jalons - dates importantes
+ c___jalons___dates_importantes.htm
+34
+ a - Ajouter et supprimer un jalon 
+ a___ajouter_et_supprimer_un_jalon_.htm
+35
+ b - Assurer le suivi des jalons
+ b___assurer_le_suivi_des_jalons.htm
+36
+ c - Filtrer les jalons
+ c___filtrer_les_jalons.htm
+37
+ D - Tâches
+ d___taches.htm
+38
+ a - L'écran Tâche en détail
+ a___l_ecran_tache_en_detail.htm
+39
+ b - Créer une tâche
+ b___creer_une_tache.htm
+40
+ c - Créer une tâche non continue
+ c___creer_une_tache_non_continue.htm
+41
+ d - Créer une sous-tâche
+ d___creer_une_sous_tache.htm
+42
+ e - Supprimer une tâche
+ e___supprimer_une_tache.htm
+43
+ f -  Déplacer une tâche
+ f____deplacer_une_tache.htm
+44
+ g -  Afficher les prédécesseurs
+ g____afficher_les_predecesseurs.htm
+45
+ h - Filtrer les tâches
+ h___filtrer_les_taches.htm
+46
+ i - Vérifier la disponibilité d'une ressource
+ i___verifier_la_disponibilite_d_une_ressource.htm
+47
+ j - Repositionner un projet dans le temps
+ j___repositionner_un_projet_dans_le_temps.htm
+48
+ k - Commentaires et documents liés aux tâches
+ k___commentaires_et_documents_lies_aux_taches.htm
+49
+ l - Autres fonctionnalités sur l’écran dédié aux tâches
+ l___autres_fonctionnalites_sur_l_ecran_dedie_aux_taches.htm
+50
+ m - Geler les données initiales
+ m___geler_les_donnees_initiales.htm
+51
+ n - Afficher et modifiez vos tâches sous forme de KANBAN 
+ n___afficher_et_modifiez_vos_taches_sous_forme_de_kanban_.htm
+52
+ o - Créer une tâche à partir des vues VIGNETTES et LISTE
+ o___creer_une_tache_a_partir_des_vues_vignettes_et_liste.htm
+53
+ E - Staffing +
+ e___staffing__.htm
+54
+ a - GANTT
+ a___gantt.htm
+55
+ b - Données ressources
+ b___donnees_ressources.htm
+56
+ VI - Financement
+ vi___financement.htm
+57
+ A - Financement + : budget opération et budget d'investissement
+ a___financement_____budget_operation_et_budget_d_investissement.htm
+58
+ B - Enregistrer une vente
+ b___enregistrer_une_vente.htm
+59
+ C - Coûts internes
+ c___couts_internes.htm
+60
+ D - Coûts externes
+ d___couts_externes.htm
+61
+ VII - Risques 
+ vii___risques_.htm
+62
+ A - Ajouter un risque
+ a___ajouter_un_risque.htm
+63
+ B - Cartographie des risques
+ b___cartographie_des_risques.htm
+64
+ C - Commentaires
+ c___commentaires.htm
+65
+ VIII - Documents
+ viii___documents.htm
+66
+ A - Ajouter un document
+ a___ajouter_un_document.htm
+67
+ B - Ajouter un commentaire
+ b___ajouter_un_commentaire.htm
+68
+ C - Supprimer un document
+ c___supprimer_un_document.htm
+69
+ IX. Tableau de bord
+ ix__tableau_de_bord.htm
+70
+ A - Configurer votre tableau de bord
+ a___configurer_votre_tableau_de_bord.htm
+71
+ B - Mettre à jour l'avancement du projet
+ b___mettre_a_jour_l_avancement_du_projet.htm
+72
+ Chapitre 3 - Chat
+ chapitre_3___chat.htm
+73
+ Chapitre 4 - Manager les absences
+ chapitre_4___manager_les_absences.htm
+74
+ I. Poser une absence
+ i__poser_une_absence.htm
+75
+ II. Poser une absence par délégation
+ ii__poser_une_absence_par_delegation.htm
+76
+ III. Valider/Refuser une absence
+ iii__valider_refuser_une_absence.htm
+77
+ Chapitre 5 - Manager une feuille de temps
+ chapitre_5___manager_une_feuille_de_temps.htm
+78
+ I -  Remplir sa feuille de temps
+ i____remplir_sa_feuille_de_temps.htm
+79
+ II - Remplir une feuille de temps par délégation
+ ii___remplir_une_feuille_de_temps_par_delegation.htm
+80
+ III - Faire valider une feuille de temps
+ iii___faire_valider_une_feuille_de_temps.htm
+81
+ IV - Valider une feuille de temps
+ iv___valider_une_feuille_de_temps.htm
+82
+ V - Rejet d'une feuille de temps
+ v___rejet_d_une_feuille_de_temps.htm
+83
+ VI. Visualiser les feuilles de temps non envoyées
+ vi__visualiser_les_feuilles_de_temps_non_envoyees.htm
+84
+ Chapitre 6 - Staffing et gestion des ressources
+ chapitre_6___staffing_et_gestion_des_ressources.htm
+85
+ I - STAFFING ++ et plan de charge global
+ i___staffing____et_plan_de_charge_global.htm
+86
+ II - FORECAST ++ pour une gestion fine des tâches
+ ii___forecast____pour_une_gestion_fine_des_taches.htm
+87
+ Chapitre 7 - Mon agenda
+ chapitre_7___mon_agenda.htm
+88
+ Chapitre 8 - L'assistant
+ chapitre_8___l_assistant.htm
+89
+ A - Modifier les tâches grâce à l'assistant.
+ a___modifier_les_taches_grace_a_l_assistant_.htm
+90
+ B - Assistant projet – affichage en mode KANBAN
+ b___assistant_projet___affichage_en_mode_kanban.htm
+91
+ C - Ajouter une tâche via l'assistant
+ c___ajouter_une_tache_via_l_assistant.htm
